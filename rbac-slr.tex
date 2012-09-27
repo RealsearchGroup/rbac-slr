@@ -51,7 +51,7 @@
 
 %% Give the name of the journal
 \journalname{Information and Software Technology}
-\input{macros}
+
 
 %% Give the author list to appear in the running head
 %% Example \runauth{C.V. Radhakrishnan et al.}
@@ -95,6 +95,8 @@
 %% for the whole article with \linenumbers after \end{frontmatter}.
 %% \usepackage{lineno}
 
+%\usepackage{natbib}
+
 %% natbib.sty is loaded by default. However, natbib options can be
 %% provided with \biboptions{...} command. Following options are
 %% valid:
@@ -123,6 +125,7 @@
 %   \newcommand{\cZ}{\cal{Z}}
 %   \newtheorem{def}{Definition}[section]
 %   ...
+%\input{macros}
 
 % add words to TeX's hyphenation exception list
 %\hyphenation{author another created financial paper re-commend-ed Post-Script}
@@ -159,7 +162,7 @@
 %% \dochead can also be used to include a conference title, if directed by the editors
 %% e.g. \dochead{17th International Conference on Dynamical Processes in Excited States of Solids}
 
-\title{A Systematic Literature Review of Modeling, Specifying, and Analysis of Access Control Policies}
+\title{A Systematic Literature Review on Role-Based Access Control}
 
 %% use optional labels to link authors explicitly to addresses:
 %% \author[label1,label2]{<author name>}
@@ -173,7 +176,22 @@
 
 \begin{abstract}
 %% Text of abstract
-Abstract.
+
+
+Role-based access control (RBAC) has become an increasingly popular access
+control for various applications such as web applications and
+database applications. RBAC restricts access to resources based on identity of subjects and/or groups
+called roles. 
+Since RBAC is introduced in 1998, researchers have proposed various extended models of RBAC.
+For example, they define additional constraints among roles (e.g., temporal constraints or location constraints) or hierarchy relationship of roles.
+Our goal of this work is to study extended models of RBAC and analyze their extended features and claimed research contributions
+to find limitations of current RBAC models and what extent of extended features that can be used for future RBAC.
+We conduct a systematic literature review by collecting and synthesizing relevant research
+papers. We initially collect XXXX papers from various sources such as IEEE and ACM websites and selected 26 papers systemically.
+We perform a comparative analysis to find relationships among extended models and RBAC.
+\\\\[TBD: Result]
+\\[TBD: Conclusion]
+
 \end{abstract}
 
 \begin{keyword}
@@ -198,6 +216,7 @@ Abstract.
 %\label{}
 \input{intro}
 \input{process}
+%\input{related}
 
 %% The Appendices part is started with the command \appendix;
 %% appendix sections are then done as normal sections
@@ -217,8 +236,8 @@ Abstract.
 %% References with BibTeX database:
 
 \bibliographystyle{elsarticle-num}
-\bibliography{yangtse}
-
+%\bibliography{yangtse,yangtse2,policy}
+\bibliography{policy}
 %% Authors are advised to use a BibTeX database file for their reference list.
 %% The provided style file elsarticle-num.bst formats references in the required Procedia style
 
