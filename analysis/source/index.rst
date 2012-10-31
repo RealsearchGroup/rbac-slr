@@ -13,6 +13,7 @@ Contents:
    :maxdepth: 2
 
    intro
+   process
    constraint
    context
    delegation
@@ -23,3 +24,5 @@ Contents:
    spatial
    temporal
    spatio_temporal
+
+.. bibliography:: references.bib
