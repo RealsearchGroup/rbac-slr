@@ -20,30 +20,9 @@ comparing with similar research work.
 We conducted a systematic literature review (SLR) to evaluate and interpret all available research relevant to a particular research question or topic area of interest.
 
 Our research give benefits to a community as follows:
-    * Our work summarizes current extended RBAC research work and its contributions. By synthesizing the current results, our work shows a roadmap of current extended RBAC research.	
-    * Our work guides a direction for a standard of extended RBAC. Understanding the categorization and the motivation of the existing research results helps decide a standard of extended RBAC.  
-    * Our work shows a criteria in comparison among research results.
-    * Our work helps identify the research challenges in the ares of security policies and suggest a future extension of RBAC.
-
-------------
- Categories
-------------
-
-* Constraint (1)
-* Context (8)
-* Delegation (1)
-* Organizational (1)
-* Privacy (1)
-* Resource (1)
-* Spatial (3)
-* Spatio/Temporal (6)
-* Task (3)
-* Temporal (1)
-
-.. image:: _static/categories_map.png
-   :height: 400px
-   :width:  600px
-   :scale:  100%
-   :align: center
+  * Our work summarizes current extended RBAC research work and its contributions. By synthesizing the current results, our work shows a roadmap of current extended RBAC research.	
+  * Our work guides a direction for a standard of extended RBAC. Understanding the categorization and the motivation of the existing research results helps decide a standard of extended RBAC.  
+  * Our work shows a criteria in comparison among research results.
+  * Our work helps identify the research challenges in the ares of security policies and suggest a future extension of RBAC.
 
 .. bibliography:: references.bib

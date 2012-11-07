@@ -14,15 +14,20 @@ Contents:
 
    intro
    process
-   constraint
-   context
-   delegation
-   organizational
-   task
-   privacy
-   resource
-   spatial
-   temporal
-   spatio_temporal
+   research_questions/RQ_1
+   research_questions/RQ_2
+   research_questions/RQ_3
+   research_questions/RQ_4
+   research_questions/RQ_8
+   categories/constraint
+   categories/context
+   categories/delegation
+   categories/organizational
+   categories/privacy
+   categories/resource
+   categories/spatial
+   categories/spatio_temporal
+   categories/task
+   categories/temporal
 
 .. bibliography:: references.bib
