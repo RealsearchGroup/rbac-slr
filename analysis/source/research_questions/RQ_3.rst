@@ -2,6 +2,10 @@
  RQ3: What are the categorizations of proposed RBAC extensions?
 ================================================================
 
+-------------
+ By Category
+-------------
+
 Constraint (1)
     a limitation or restriction
 Context (8)

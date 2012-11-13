@@ -1,0 +1,17 @@
+================
+ Category Notes
+================
+
+.. toctree::
+   :maxdepth: 2
+
+   categories/constraint
+   categories/context
+   categories/delegation
+   categories/organizational
+   categories/privacy
+   categories/resource
+   categories/spatial
+   categories/spatio_temporal
+   categories/task
+   categories/temporal

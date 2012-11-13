@@ -1,5 +1,5 @@
 ================================================================================
- RQ4: For each categorization, what are the extended features of RBAC proposed?
+ RQ7. Are there any commonalties or generalizations across all categorizations?
 ================================================================================
 
 ---------------

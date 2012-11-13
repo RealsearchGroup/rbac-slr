@@ -1,5 +1,5 @@
 ================================================================================
- RQ4: For each categorization, what are the extended features of RBAC proposed?
+ RQ5. Do these models have corresponding implementations in practice?
 ================================================================================
 
 ---------------

@@ -18,7 +18,11 @@ Contents:
    research_questions/RQ_2
    research_questions/RQ_3
    research_questions/RQ_4
+   research_questions/RQ_5
+   research_questions/RQ_6
+   research_questions/RQ_7
    research_questions/RQ_8
+   categories/notes
    categories/constraint
    categories/context
    categories/delegation
