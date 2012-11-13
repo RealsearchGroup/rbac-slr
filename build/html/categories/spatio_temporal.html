@@ -1,0 +1,337 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Spatio-Temporal &mdash; RBAC-SLR 0.1 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-responsive.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap.js"></script>
+    <link rel="top" title="RBAC-SLR 0.1 documentation" href="../index.html" />
+    <link rel="next" title="Task" href="task.html" />
+    <link rel="prev" title="Spatial" href="spatial.html" />
+<script type="text/javascript">
+(function () {
+  /**
+   * Patch TOC list.
+   *
+   * Will mutate the underlying span to have a correct ul for nav.
+   *
+   * @param $span: Span containing nested UL's to mutate.
+   * @param minLevel: Starting level for nested lists. (1: global, 2: local).
+   */
+  var patchToc = function ($ul, minLevel) {
+    var findA;
+
+    // Find all a "internal" tags, traversing recursively.
+    findA = function ($elem, level) {
+      var level = level || 0,
+        $items = $elem.find("> li > a.internal, > ul, > li > ul");
+
+      // Iterate everything in order.
+      $items.each(function (index, item) {
+        var $item = $(item),
+          tag = item.tagName.toLowerCase(),
+          pad = 15 + ((level - minLevel) * 10);
+
+        if (tag === 'a' && level >= minLevel) {
+          // Add to existing padding.
+          $item.css('padding-left', pad + "px");
+          console.log(level, $item, 'padding-left', pad + "px");
+        } else if (tag === 'ul') {
+          // Recurse.
+          findA($item, level + 1);
+        }
+      });
+    };
+
+    console.log("HERE");
+    findA($ul);
+  };
+
+  $(document).ready(function () {
+    // Add styling, structure to TOC's.
+    $(".dropdown-menu").each(function () {
+      $(this).find("ul").each(function (index, item){
+        var $item = $(item);
+        $item.addClass('unstyled');
+      });
+      $(this).find("li").each(function () {
+        $(this).parent().append(this);
+      });
+    });
+
+    // Patch in level.
+    patchToc($("ul.globaltoc"), 2);
+    patchToc($("ul.localtoc"), 2);
+
+    // Enable dropdown.
+    $('.dropdown-toggle').dropdown();
+  });
+}());
+</script>
+
+  </head>
+  <body>
+  <div id="navbar" class="navbar navbar-inverse navbar-static-top">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../index.html">RBAC-SLR</a>
+        <div class="nav-collapse">
+          <ul class="nav">
+            <li class="divider-vertical"></li>
+            
+              <li class="dropdown">
+  <a href="../index.html" class="dropdown-toggle" data-toggle="dropdown">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../process.html">Methodology and Process</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../research_questions/RQ_1.html">RQ1: What are the deficiencies in current RBAC model?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../research_questions/RQ_2.html">RQ2: What are the motivations behind RBAC extensions?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../research_questions/RQ_3.html">RQ3: What are the categorizations of proposed RBAC extensions?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../research_questions/RQ_4.html">RQ4: For each categorization, what are the extended features of RBAC proposed?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../research_questions/RQ_5.html">RQ5. Do these models have corresponding implementations in practice?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../research_questions/RQ_6.html">RQ6. How are extended RBAC models evaluated in theory and in practice?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../research_questions/RQ_7.html">RQ7. Are there any commonalties or generalizations across all categorizations?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../research_questions/RQ_8.html">RQ8. What domains or scenarios serve as inspiration for these extensions?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="constraint.html">Constraint</a></li>
+<li class="toctree-l1"><a class="reference internal" href="context.html">Context</a></li>
+<li class="toctree-l1"><a class="reference internal" href="delegation.html">Delegation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="organizational.html">Organizational</a></li>
+<li class="toctree-l1"><a class="reference internal" href="privacy.html">Privacy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="resource.html">Resource</a></li>
+<li class="toctree-l1"><a class="reference internal" href="spatial.html">Spatial</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Spatio-Temporal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="task.html">Task</a></li>
+<li class="toctree-l1"><a class="reference internal" href="temporal.html">Temporal</a></li>
+</ul>
+</ul>
+</li>
+              <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"><ul>
+<li><a class="reference internal" href="#">Spatio-Temporal</a></li>
+</ul>
+</ul>
+  <!--<span class="localtoc"><ul>
+<li><a class="reference internal" href="#">Spatio-Temporal</a></li>
+</ul>
+</span>-->
+</li>
+            
+            
+              
+  <li><a href="spatial.html"
+         title="previous chapter">&laquo; Spatial</a></li>
+  <li><a href="task.html"
+         title="next chapter">Task &raquo;</a></li>
+            
+            
+              
+  <li><a href="../_sources/categories/spatio_temporal.txt"
+         rel="nofollow">Source</a></li>
+            
+          </ul>
+          
+            
+<form class="navbar-search pull-right" action="../search.html" method="get">
+  <input type="text" name="q" placeholder="Search" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+
+<div class="container">
+   
+  <div class="section" id="spatio-temporal">
+<h1>Spatio-Temporal<a class="headerlink" href="#spatio-temporal" title="Permalink to this headline">¶</a></h1>
+<dl class="docutils">
+<dt>Definition.</dt>
+<dd>combining space and time</dd>
+<dt>Papers</dt>
+<dd><ul class="first last simple">
+<li><a class="reference external" href="http://www.springerlink.com/index/tq15n88122v63754.pdf">STARBAC: Spatiotemporal role based access control</a></li>
+<li><a class="reference external" href="http://dl.acm.org/citation.cfm?id=1368341">On spatio-temporal constraints and inheritance in role-based access control</a></li>
+<li><a class="reference external" href="https://www.cerias.purdue.edu/tools_and_resources/bibtex_archive/archive/2007-08.pdf">A framework for specification and verification of generalized spatio-temporal role based access control model</a></li>
+<li><a class="reference external" href="http://www.springerlink.com/index/77j0j540004585wv.pdf">LoT-RBAC: A Location and Time-Based RBAC Model</a></li>
+<li><a class="reference external" href="http://www.springerlink.com/index/C3T50338535HX115.pdf">A spatio-temporal role-based access control model</a></li>
+<li><a class="reference external" href="http://www.springerlink.com/index/r1n6j114g5431174.pdf">Role Based Access Control with Spatiotemporal Context for Mobile Applications</a></li>
+</ul>
+</dd>
+</dl>
+<hr class="docutils" />
+<p><strong>STARBAC: Spatiotemporal role based access control</strong></p>
+<blockquote>
+<div><dl class="docutils">
+<dt>Inspired by a real example? Scenarios or examples.</dt>
+<dd>Similar reasoning as other location based models, No formal evaluation, scenarios or real world examples.</dd>
+<dt>What reasons and evidence do researchers claim RBAC needs extension?</dt>
+<dd>Extension of RBAC and of SRBAC by combining spatial and temporal</dd>
+</dl>
+<p>Did they implement the model?</p>
+<dl class="docutils">
+<dt>Is there an evaluation? If yes, how did they do one? If no, why?</dt>
+<dd>Mathematical explanations, definitions
+Includes descriptions and math behind the semantics</dd>
+</dl>
+<p>Does this model extend the core model?</p>
+<p>Notes.</p>
+</div></blockquote>
+<hr class="docutils" />
+<p><strong>On spatio-temporal constraints and inheritance in role-based access control</strong></p>
+<blockquote>
+<div><dl class="docutils">
+<dt>Inspired by a real example? Scenarios or examples.</dt>
+<dd>Believe that previous models focus on syntax and not semantics</dd>
+<dt>What reasons and evidence do researchers claim RBAC needs extension?</dt>
+<dd><ul class="first last simple">
+<li>pervasive computing environments requirement for spatial and temporal awareness</li>
+<li>previous spatio-temporal do nt address interaction between these constraints and inheritance</li>
+<li>makes 4 claims about how existing models do not handle the above</li>
+<li>trusted entities to override restrictions</li>
+<li>attempt to show compatibility with standard model and claim others do not</li>
+</ul>
+</dd>
+</dl>
+<p>Did they implement the model?</p>
+<dl class="docutils">
+<dt>Is there an evaluation? If yes, how did they do one? If no, why?</dt>
+<dd><ul class="first last simple">
+<li>Examine previous models and point out deficiencies, use of graphs to show off relationships</li>
+<li>Evaluation includes a mathematical examination of the role graphs, and ordering</li>
+<li>authors note that there is added complexity in their method, but that is the price to pay to get user  and user-role application constraints</li>
+<li>trade-off between complexity of policies and complexity of constraints</li>
+<li>authors do comparisons of complexity for the various models</li>
+<li>authors note that SoD should be considered in the future</li>
+</ul>
+</dd>
+<dt>Does this model extend the core model?</dt>
+<dd>Additions to the specification for constraints with a specific look at how to do spatial and temporal</dd>
+</dl>
+<p>Notes.</p>
+</div></blockquote>
+<hr class="docutils" />
+<p><strong>A framework for specification and verification of generalized spatio-temporal role based access control model</strong></p>
+<blockquote>
+<div><dl class="docutils">
+<dt>Inspired by a real example? Scenarios or examples.</dt>
+<dd>Based off hospital example with mobile devices inspiring combining location and time based models
+Provides an example hospital access control policy that requires space and time - based on the layout of the floor of a hospital and the various users and entitie sthat might exist such as nurse, doctor and surgeons</dd>
+<dt>What reasons and evidence do researchers claim RBAC needs extension?</dt>
+<dd>Need to be able to handle add attributes that location and spatial specification requires
+Add context mechanisms</dd>
+<dt>Did they implement the model?</dt>
+<dd>No</dd>
+<dt>Is there an evaluation? If yes, how did they do one? If no, why?</dt>
+<dd>To some degree, an example, and some analysis of developing policy and how to deal with conflicts</dd>
+<dt>Does this model extend the core model?</dt>
+<dd>Builds on GTRBAC, extends at all 4 levels
+Adds role activation/deactivation
+Provides conflict resolution
+Includes a GSTRBAC policy specification model using Alloy</dd>
+</dl>
+<p>Notes.</p>
+</div></blockquote>
+<hr class="docutils" />
+<p><strong>LoT-RBAC: A Location and Time-Based RBAC Model</strong></p>
+<blockquote>
+<div><dl class="docutils">
+<dt>Inspired by a real example? Scenarios or examples.</dt>
+<dd>Inspired by growing needs of mobile, peer-to-peer devices with regards to activating and specifying permissions and roles based on time and location
+Detailed scenario of a person having a medical emergency, and a doctor on site needing to request patient data, as well as the progression through the ambulance, to hospital and citing such location based clues to help know if the doctor should be granted privileges such as being in or near his own car</dd>
+<dt>What reasons and evidence do researchers claim RBAC needs extension?</dt>
+<dd>Previous location and time based RBAC models did not incorporate location for both the user and role
+In-depth, detailed location heirarchies and specifications are needed
+Physical, logical, and hybrid location</dd>
+<dt>Did they implement the model?</dt>
+<dd>No</dd>
+<dt>Is there an evaluation? If yes, how did they do one? If no, why?</dt>
+<dd>No</dd>
+</dl>
+<p>Does this model extend the core model?</p>
+<p>Notes.</p>
+</div></blockquote>
+<hr class="docutils" />
+<p><strong>A Spatio-temporal Role-Based Access Control Model</strong></p>
+<blockquote>
+<div><dl class="docutils">
+<dt>Inspired by a real example? Scenarios or examples.</dt>
+<dd>Growth of wireless networks, mobile devices, the move towards pervasive computing</dd>
+<dt>What reasons and evidence do researchers claim RBAC needs extension?</dt>
+<dd>Claim that previously examined models of spatial, temporal, or spatio-temporal lack needed aspects
+Role assignment should be dependent on space and time
+Permissions need to be dependent on space and time not just roles</dd>
+<dt>Did they implement the model?</dt>
+<dd>No. Authors acknowledge need to implement.</dd>
+<dt>Is there an evaluation? If yes, how did they do one? If no, why?</dt>
+<dd>No.  Best they do is provide a detailed scenario with an examination of how such a scenario would be represented in their model. Author acknowledge detailed analysis is needed.</dd>
+<dt>Does this model extend the core model?</dt>
+<dd>Defines for Space - physical location, logical location and mapping functions and relationship definitions
+Defines for Time - time instant, time interval
+Adds objects to Core model, object can be physical or logical (computer or files e.g.)
+Defines a number of potential role hierarchy strategies
+Examines impact on both static and dynamic separation of duties for new attributes and mechanisms</dd>
+</dl>
+<p>Notes.</p>
+</div></blockquote>
+<hr class="docutils" />
+<p><strong>Role Based Access Control with Spatiotemporal Context for Mobile Applications</strong></p>
+<blockquote>
+<div><dl class="docutils">
+<dt>Inspired by a real example? Scenarios or examples.</dt>
+<dd>Need and desire to put spatio-temporal context and constraint on roles and permissions - such as students at a university or hospital facilities</dd>
+<dt>What reasons and evidence do researchers claim RBAC needs extension?</dt>
+<dd>Needs enhancements to be able to handle space and time attributes on roles and permissions</dd>
+<dt>Did they implement the model?</dt>
+<dd>Yes.  Integrated an access control system into iMedik - a telemedicine application in India that is web-based and allows mobile access
+Their implementation is a bolt-on solution, that intercepts calls and verifies their authorization
+Provide detailed architecture and implementation details</dd>
+<dt>Is there an evaluation? If yes, how did they do one? If no, why?</dt>
+<dd>Include section that discusses differences between their model and STRBAC and STARBAC
+Incorporate algorithms for determining whether a particular authorization is granted and use time-complexity arguments to discuss the effectiveness of each algorithm and to attempt to display that the added complexity of their model over traditional RBAC does not impace performance significantly</dd>
+<dt>Does this model extend the core model?</dt>
+<dd>Extends at all 4 levels
+Adds &#8220;extents&#8221; which are design to extend the base entities such as a role, multiple RoleExtents can belong to a single role based off constraint or context</dd>
+</dl>
+<p>Notes.</p>
+</div></blockquote>
+</div>
+
+
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right"><a href="#">Back to top</a></p>
+    <p>
+        &copy; Copyright 2012, Eric D. Helms.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

@@ -1,0 +1,303 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Methodology and Process &mdash; RBAC-SLR 0.1 documentation</title>
+    
+    <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-responsive.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/bootstrap.js"></script>
+    <link rel="top" title="RBAC-SLR 0.1 documentation" href="index.html" />
+    <link rel="next" title="RQ1: What are the deficiencies in current RBAC model?" href="research_questions/RQ_1.html" />
+    <link rel="prev" title="Introduction" href="intro.html" />
+<script type="text/javascript">
+(function () {
+  /**
+   * Patch TOC list.
+   *
+   * Will mutate the underlying span to have a correct ul for nav.
+   *
+   * @param $span: Span containing nested UL's to mutate.
+   * @param minLevel: Starting level for nested lists. (1: global, 2: local).
+   */
+  var patchToc = function ($ul, minLevel) {
+    var findA;
+
+    // Find all a "internal" tags, traversing recursively.
+    findA = function ($elem, level) {
+      var level = level || 0,
+        $items = $elem.find("> li > a.internal, > ul, > li > ul");
+
+      // Iterate everything in order.
+      $items.each(function (index, item) {
+        var $item = $(item),
+          tag = item.tagName.toLowerCase(),
+          pad = 15 + ((level - minLevel) * 10);
+
+        if (tag === 'a' && level >= minLevel) {
+          // Add to existing padding.
+          $item.css('padding-left', pad + "px");
+          console.log(level, $item, 'padding-left', pad + "px");
+        } else if (tag === 'ul') {
+          // Recurse.
+          findA($item, level + 1);
+        }
+      });
+    };
+
+    console.log("HERE");
+    findA($ul);
+  };
+
+  $(document).ready(function () {
+    // Add styling, structure to TOC's.
+    $(".dropdown-menu").each(function () {
+      $(this).find("ul").each(function (index, item){
+        var $item = $(item);
+        $item.addClass('unstyled');
+      });
+      $(this).find("li").each(function () {
+        $(this).parent().append(this);
+      });
+    });
+
+    // Patch in level.
+    patchToc($("ul.globaltoc"), 2);
+    patchToc($("ul.localtoc"), 2);
+
+    // Enable dropdown.
+    $('.dropdown-toggle').dropdown();
+  });
+}());
+</script>
+
+  </head>
+  <body>
+  <div id="navbar" class="navbar navbar-inverse navbar-static-top">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="index.html">RBAC-SLR</a>
+        <div class="nav-collapse">
+          <ul class="nav">
+            <li class="divider-vertical"></li>
+            
+              <li class="dropdown">
+  <a href="index.html" class="dropdown-toggle" data-toggle="dropdown">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="intro.html">Introduction</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Methodology and Process</a></li>
+<li class="toctree-l1"><a class="reference internal" href="research_questions/RQ_1.html">RQ1: What are the deficiencies in current RBAC model?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="research_questions/RQ_2.html">RQ2: What are the motivations behind RBAC extensions?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="research_questions/RQ_3.html">RQ3: What are the categorizations of proposed RBAC extensions?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="research_questions/RQ_4.html">RQ4: For each categorization, what are the extended features of RBAC proposed?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="research_questions/RQ_5.html">RQ5. Do these models have corresponding implementations in practice?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="research_questions/RQ_6.html">RQ6. How are extended RBAC models evaluated in theory and in practice?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="research_questions/RQ_7.html">RQ7. Are there any commonalties or generalizations across all categorizations?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="research_questions/RQ_8.html">RQ8. What domains or scenarios serve as inspiration for these extensions?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="categories/constraint.html">Constraint</a></li>
+<li class="toctree-l1"><a class="reference internal" href="categories/context.html">Context</a></li>
+<li class="toctree-l1"><a class="reference internal" href="categories/delegation.html">Delegation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="categories/organizational.html">Organizational</a></li>
+<li class="toctree-l1"><a class="reference internal" href="categories/privacy.html">Privacy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="categories/resource.html">Resource</a></li>
+<li class="toctree-l1"><a class="reference internal" href="categories/spatial.html">Spatial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="categories/spatio_temporal.html">Spatio-Temporal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="categories/task.html">Task</a></li>
+<li class="toctree-l1"><a class="reference internal" href="categories/temporal.html">Temporal</a></li>
+</ul>
+</ul>
+</li>
+              <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"><ul>
+<li><a class="reference internal" href="#">Methodology and Process</a><ul>
+<li><a class="reference internal" href="#research-questions">Research Questions</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+  <!--<span class="localtoc"><ul>
+<li><a class="reference internal" href="#">Methodology and Process</a><ul>
+<li><a class="reference internal" href="#research-questions">Research Questions</a></li>
+</ul>
+</li>
+</ul>
+</span>-->
+</li>
+            
+            
+              
+  <li><a href="intro.html"
+         title="previous chapter">&laquo; Introduction</a></li>
+  <li><a href="research_questions/RQ_1.html"
+         title="next chapter">RQ1: What are the deficiencies in current RBAC model? &raquo;</a></li>
+            
+            
+              
+  <li><a href="_sources/process.txt"
+         rel="nofollow">Source</a></li>
+            
+          </ul>
+          
+            
+<form class="navbar-search pull-right" action="search.html" method="get">
+  <input type="text" name="q" placeholder="Search" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+
+<div class="container">
+   
+  <div class="section" id="methodology-and-process">
+<h1>Methodology and Process<a class="headerlink" href="#methodology-and-process" title="Permalink to this headline">¶</a></h1>
+<p>For the first phase of our systematic literature review, an automated comprehensive search of multiple academic search engines was performed. The list of search engines were:</p>
+<ul class="simple">
+<li>Google Scholar - <a class="reference external" href="http://scholar.google.com">http://scholar.google.com</a></li>
+<li>IEEExplore     - <a class="reference external" href="http://ieeexplore.ieee.org">http://ieeexplore.ieee.org</a></li>
+<li>ACM Portal     - <a class="reference external" href="http://dl.acm.org">http://dl.acm.org</a></li>
+<li>CiteSeerX      - <a class="reference external" href="http://http://citeseerx.ist.psu.edu/index">http://http://citeseerx.ist.psu.edu/index</a></li>
+</ul>
+<p>For each of the criteria below, a search was performed on each of the search engines for a total of 12 data sets.  The criteria used were:</p>
+<ul class="simple">
+<li>role based access control</li>
+<li>RBAC</li>
+<li>role-based access control</li>
+</ul>
+<p>The search performed was done in an automated way using a set of scripts to query and collect data from each search engine with the criteria string as input.  For each criteria for each search engine, the results were captured until a stopping criteria was met.  Each run was performed as follows:</p>
+<ol class="arabic simple">
+<li>Remote call to search engine with current search start position and the current search criteria.</li>
+<li>Parse results and extract paper title, authors and year of publication.</li>
+<li>Compare results against stopping criteria.</li>
+</ol>
+<blockquote>
+<div><ul class="simple">
+<li>If stopping criteria met, stop search.</li>
+<li>If stopping criteria not met, increase search position by number of results and return to step 1.</li>
+</ul>
+</div></blockquote>
+<p>The stopping criteria used was either after the first 1000 results, a limitation imposed by some of the search engines, or if ten consecutive results did not contain the search criteria phrase within the title.  After gathering all 12 data sets, the data was combined into a master list by systematically comparing the bibliographic information for each.  After producing a master list, a series of assessment rounds were performed to narrow the paper list and identify primary sources.</p>
+<p>There were a total of three elimination rounds.  The first round was based solely on title, the second on reading of the abstract and the last round was based on a full read of the paper and comparison to the research questions outlined.  Each round was performed as follows:</p>
+<ul class="simple">
+<li>Each reviewer independently classified papers as relevant, irrelevant or uncertain.</li>
+<li>Those papers marked as relevant by both reviewers were kept and those marked irrelevant by both were thrown out.</li>
+<li>Papers marked as relevant, or irrelevant by a single reviewer were combined with all papers marked as uncertain and discussed by both reviewers.  From this discussion, papers were either thrown out or kept until the next round of the review.  Ties were broken by an indepedent party.</li>
+</ul>
+<p>The results of the searches is summarised below:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="18%" />
+<col width="5%" />
+<col width="33%" />
+<col width="33%" />
+<col width="11%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Search Engines</th>
+<th class="head">RBAC</th>
+<th class="head">role based access control</th>
+<th class="head">role-based access control</th>
+<th class="head">Total</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Google Scholar</td>
+<td>651</td>
+<td>213</td>
+<td>435</td>
+<td>1299</td>
+</tr>
+<tr class="row-odd"><td>ACM Portal</td>
+<td>500</td>
+<td>20</td>
+<td>720</td>
+<td>1240</td>
+</tr>
+<tr class="row-even"><td>IEEExplore</td>
+<td>200</td>
+<td>40</td>
+<td>230</td>
+<td>470</td>
+</tr>
+<tr class="row-odd"><td>CiteSeerX</td>
+<td>100</td>
+<td>100</td>
+<td>150</td>
+<td>350</td>
+</tr>
+<tr class="row-even"><td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>Totals</td>
+<td>1451</td>
+<td>373</td>
+<td>1535</td>
+<td>3359</td>
+</tr>
+<tr class="row-even"><td>Combined</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td><strong>1716</strong></td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="research-questions">
+<h2>Research Questions<a class="headerlink" href="#research-questions" title="Permalink to this headline">¶</a></h2>
+<p>Based on our intial intent for the systematic literature review, and notes taken during the third phase of elimination, we have identified the following research questions:</p>
+<blockquote>
+<div><ul class="simple">
+<li>RQ1. What are the deficiencies in current RBAC model to propose extended RBAC models?</li>
+<li>RQ2. What are the motivations behind RBAC extensions?</li>
+<li>RQ3. What are the categorizations of RBAC model proposed?</li>
+<li>RQ4. For each categorization, what are the extended features of RBAC model proposed?</li>
+<li>RQ5. Do these models have corresponding implementations in practice?</li>
+<li>RQ6. How are extended RBAC models evaluated in theory and in practice?</li>
+<li>RQ7. Are there any commonalties or generalizations across all categorizations?</li>
+<li>RQ8. What domains or scenarios serve as inspiration for these extensions?</li>
+</ul>
+</div></blockquote>
+</div>
+</div>
+
+
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right"><a href="#">Back to top</a></p>
+    <p>
+        &copy; Copyright 2012, Eric D. Helms.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

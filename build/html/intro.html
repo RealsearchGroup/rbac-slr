@@ -1,0 +1,217 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Introduction &mdash; RBAC-SLR 0.1 documentation</title>
+    
+    <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-responsive.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/bootstrap.js"></script>
+    <link rel="top" title="RBAC-SLR 0.1 documentation" href="index.html" />
+    <link rel="next" title="Methodology and Process" href="process.html" />
+    <link rel="prev" title="Systematic Literature Review of RBAC Analysis Notes" href="index.html" />
+<script type="text/javascript">
+(function () {
+  /**
+   * Patch TOC list.
+   *
+   * Will mutate the underlying span to have a correct ul for nav.
+   *
+   * @param $span: Span containing nested UL's to mutate.
+   * @param minLevel: Starting level for nested lists. (1: global, 2: local).
+   */
+  var patchToc = function ($ul, minLevel) {
+    var findA;
+
+    // Find all a "internal" tags, traversing recursively.
+    findA = function ($elem, level) {
+      var level = level || 0,
+        $items = $elem.find("> li > a.internal, > ul, > li > ul");
+
+      // Iterate everything in order.
+      $items.each(function (index, item) {
+        var $item = $(item),
+          tag = item.tagName.toLowerCase(),
+          pad = 15 + ((level - minLevel) * 10);
+
+        if (tag === 'a' && level >= minLevel) {
+          // Add to existing padding.
+          $item.css('padding-left', pad + "px");
+          console.log(level, $item, 'padding-left', pad + "px");
+        } else if (tag === 'ul') {
+          // Recurse.
+          findA($item, level + 1);
+        }
+      });
+    };
+
+    console.log("HERE");
+    findA($ul);
+  };
+
+  $(document).ready(function () {
+    // Add styling, structure to TOC's.
+    $(".dropdown-menu").each(function () {
+      $(this).find("ul").each(function (index, item){
+        var $item = $(item);
+        $item.addClass('unstyled');
+      });
+      $(this).find("li").each(function () {
+        $(this).parent().append(this);
+      });
+    });
+
+    // Patch in level.
+    patchToc($("ul.globaltoc"), 2);
+    patchToc($("ul.localtoc"), 2);
+
+    // Enable dropdown.
+    $('.dropdown-toggle').dropdown();
+  });
+}());
+</script>
+
+  </head>
+  <body>
+  <div id="navbar" class="navbar navbar-inverse navbar-static-top">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="index.html">RBAC-SLR</a>
+        <div class="nav-collapse">
+          <ul class="nav">
+            <li class="divider-vertical"></li>
+            
+              <li class="dropdown">
+  <a href="index.html" class="dropdown-toggle" data-toggle="dropdown">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"><ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="process.html">Methodology and Process</a></li>
+<li class="toctree-l1"><a class="reference internal" href="research_questions/RQ_1.html">RQ1: What are the deficiencies in current RBAC model?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="research_questions/RQ_2.html">RQ2: What are the motivations behind RBAC extensions?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="research_questions/RQ_3.html">RQ3: What are the categorizations of proposed RBAC extensions?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="research_questions/RQ_4.html">RQ4: For each categorization, what are the extended features of RBAC proposed?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="research_questions/RQ_5.html">RQ5. Do these models have corresponding implementations in practice?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="research_questions/RQ_6.html">RQ6. How are extended RBAC models evaluated in theory and in practice?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="research_questions/RQ_7.html">RQ7. Are there any commonalties or generalizations across all categorizations?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="research_questions/RQ_8.html">RQ8. What domains or scenarios serve as inspiration for these extensions?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="categories/constraint.html">Constraint</a></li>
+<li class="toctree-l1"><a class="reference internal" href="categories/context.html">Context</a></li>
+<li class="toctree-l1"><a class="reference internal" href="categories/delegation.html">Delegation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="categories/organizational.html">Organizational</a></li>
+<li class="toctree-l1"><a class="reference internal" href="categories/privacy.html">Privacy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="categories/resource.html">Resource</a></li>
+<li class="toctree-l1"><a class="reference internal" href="categories/spatial.html">Spatial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="categories/spatio_temporal.html">Spatio-Temporal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="categories/task.html">Task</a></li>
+<li class="toctree-l1"><a class="reference internal" href="categories/temporal.html">Temporal</a></li>
+</ul>
+</ul>
+</li>
+              <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"><ul>
+<li><a class="reference internal" href="#">Introduction</a></li>
+</ul>
+</ul>
+  <!--<span class="localtoc"><ul>
+<li><a class="reference internal" href="#">Introduction</a></li>
+</ul>
+</span>-->
+</li>
+            
+            
+              
+  <li><a href="index.html"
+         title="previous chapter">&laquo; Systematic Literature Review of RBAC Analysis Notes</a></li>
+  <li><a href="process.html"
+         title="next chapter">Methodology and Process &raquo;</a></li>
+            
+            
+              
+  <li><a href="_sources/intro.txt"
+         rel="nofollow">Source</a></li>
+            
+          </ul>
+          
+            
+<form class="navbar-search pull-right" action="search.html" method="get">
+  <input type="text" name="q" placeholder="Search" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+
+<div class="container">
+   
+  <div class="section" id="introduction">
+<h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h1>
+<p>Role-based access control (RBAC) models <a class="reference internal" href="#ferraiolo-rbac">[1]</a> become popularly used to govern access to critical resources.  In an RBAC model, roles represent a group of users who are involved in a specific job function in an organization. RBAC assigns permissions of specific actions on resources to roles instead of individual users.  Therefore, in order to gain roles&#8217; permission on specific resources, users acquire appropriate roles first.</p>
+<p>RBAC is a generalized access control approach used for various applications including web services, database applications, and healthcare applications.  RBAC has advantages in maintaining and managing organization&#8217;s security policies.  For example, if a user is to access manager role&#8217;s resources within a given organization, security policy administrators simply add the user to be associated with the manager role.</p>
+<p>RBAC is first introduced in 1990s, NIST proposed standard RBAC model <a class="reference internal" href="#ferraiolo-rbac">[1]</a>
+Standard RBAC model considers only role-user association and role hierarchy.
+Since standard RBAC model has limitations such as specifying environmental constraints or context information
+Researchers developed extended models of RBAC to overcome the limitations.
+However, as researchers often develop their own specialized extended models of RBAC,
+their research cannot be generalized or compared with other research work appropriately.
+As a result, researchers could take time on reinventing the wheel.
+But how do we, as a community, ensure that a metric is suitable and acceptable for its intended purpose?</p>
+<p>The goal of this work is to synthesize available research results on extended models of RBAC. We analyze their extended features and claimed research contributions to find limitations of current RBAC models and what extent of extended features by
+comparing with similar research work.
+We conducted a systematic literature review (SLR) to evaluate and interpret all available research relevant to a particular research question or topic area of interest.</p>
+<dl class="docutils">
+<dt>Our research give benefits to a community as follows:</dt>
+<dd><ul class="first last simple">
+<li>Our work summarizes current extended RBAC research work and its contributions. By synthesizing the current results, our work shows a roadmap of current extended RBAC research.</li>
+<li>Our work guides a direction for a standard of extended RBAC. Understanding the categorization and the motivation of the existing research results helps decide a standard of extended RBAC.</li>
+<li>Our work shows a criteria in comparison among research results.</li>
+<li>Our work helps identify the research challenges in the ares of security policies and suggest a future extension of RBAC.</li>
+</ul>
+</dd>
+</dl>
+<p id="bibtex-bibliography-intro-0"><table class="docutils citation" frame="void" id="ferraiolo-rbac" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[1]</td><td><em>(<a class="fn-backref" href="#id1">1</a>, <a class="fn-backref" href="#id2">2</a>)</em> <span class="last"><span><span><span><span><span><span><span><span>David</span><span>&nbsp;</span><span>F.</span></span><span> </span></span><span>Ferraiolo</span></span><span>, </span><span><span><span><span>Ravi</span><span>&nbsp;</span><span>S.</span></span><span> </span></span><span>Sandhu</span></span><span>, </span><span><span><span><span>Serban</span><span>&nbsp;</span><span>I.</span></span><span> </span></span><span>Gavrila</span></span><span>, </span><span><span><span><span>D.</span><span>&nbsp;</span><span>Richard</span></span><span> </span></span><span>Kuhn</span></span></span><span>, and </span><span><span><span>Ramaswamy</span><span> </span></span><span>Chandramouli</span></span></span><span>.</span></span><span> </span><span><span>Proposed NIST standard for role-based access control</span><span>.</span></span></span><span> </span><span><span><em><span>ACM Transactions on Information and System Security</span></em><span>, </span><span><span><span>4</span><span><span>(</span><span>3</span><span>)</span></span><span>:</span></span><span><span>224</span><span>–</span><span>274</span></span></span></span><span>, </span><span>2001</span><span>.</span></span></span></td></tr>
+</tbody>
+</table>
+</p>
+</div>
+
+
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right"><a href="#">Back to top</a></p>
+    <p>
+        &copy; Copyright 2012, Eric D. Helms.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

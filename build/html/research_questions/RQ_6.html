@@ -1,0 +1,256 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>RQ6. How are extended RBAC models evaluated in theory and in practice? &mdash; RBAC-SLR 0.1 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-responsive.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap.js"></script>
+    <link rel="top" title="RBAC-SLR 0.1 documentation" href="../index.html" />
+    <link rel="next" title="RQ7. Are there any commonalties or generalizations across all categorizations?" href="RQ_7.html" />
+    <link rel="prev" title="RQ5. Do these models have corresponding implementations in practice?" href="RQ_5.html" />
+<script type="text/javascript">
+(function () {
+  /**
+   * Patch TOC list.
+   *
+   * Will mutate the underlying span to have a correct ul for nav.
+   *
+   * @param $span: Span containing nested UL's to mutate.
+   * @param minLevel: Starting level for nested lists. (1: global, 2: local).
+   */
+  var patchToc = function ($ul, minLevel) {
+    var findA;
+
+    // Find all a "internal" tags, traversing recursively.
+    findA = function ($elem, level) {
+      var level = level || 0,
+        $items = $elem.find("> li > a.internal, > ul, > li > ul");
+
+      // Iterate everything in order.
+      $items.each(function (index, item) {
+        var $item = $(item),
+          tag = item.tagName.toLowerCase(),
+          pad = 15 + ((level - minLevel) * 10);
+
+        if (tag === 'a' && level >= minLevel) {
+          // Add to existing padding.
+          $item.css('padding-left', pad + "px");
+          console.log(level, $item, 'padding-left', pad + "px");
+        } else if (tag === 'ul') {
+          // Recurse.
+          findA($item, level + 1);
+        }
+      });
+    };
+
+    console.log("HERE");
+    findA($ul);
+  };
+
+  $(document).ready(function () {
+    // Add styling, structure to TOC's.
+    $(".dropdown-menu").each(function () {
+      $(this).find("ul").each(function (index, item){
+        var $item = $(item);
+        $item.addClass('unstyled');
+      });
+      $(this).find("li").each(function () {
+        $(this).parent().append(this);
+      });
+    });
+
+    // Patch in level.
+    patchToc($("ul.globaltoc"), 2);
+    patchToc($("ul.localtoc"), 2);
+
+    // Enable dropdown.
+    $('.dropdown-toggle').dropdown();
+  });
+}());
+</script>
+
+  </head>
+  <body>
+  <div id="navbar" class="navbar navbar-inverse navbar-static-top">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../index.html">RBAC-SLR</a>
+        <div class="nav-collapse">
+          <ul class="nav">
+            <li class="divider-vertical"></li>
+            
+              <li class="dropdown">
+  <a href="../index.html" class="dropdown-toggle" data-toggle="dropdown">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../process.html">Methodology and Process</a></li>
+<li class="toctree-l1"><a class="reference internal" href="RQ_1.html">RQ1: What are the deficiencies in current RBAC model?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="RQ_2.html">RQ2: What are the motivations behind RBAC extensions?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="RQ_3.html">RQ3: What are the categorizations of proposed RBAC extensions?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="RQ_4.html">RQ4: For each categorization, what are the extended features of RBAC proposed?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="RQ_5.html">RQ5. Do these models have corresponding implementations in practice?</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">RQ6. How are extended RBAC models evaluated in theory and in practice?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="RQ_7.html">RQ7. Are there any commonalties or generalizations across all categorizations?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="RQ_8.html">RQ8. What domains or scenarios serve as inspiration for these extensions?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../categories/constraint.html">Constraint</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../categories/context.html">Context</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../categories/delegation.html">Delegation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../categories/organizational.html">Organizational</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../categories/privacy.html">Privacy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../categories/resource.html">Resource</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../categories/spatial.html">Spatial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../categories/spatio_temporal.html">Spatio-Temporal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../categories/task.html">Task</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../categories/temporal.html">Temporal</a></li>
+</ul>
+</ul>
+</li>
+              <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"><ul>
+<li><a class="reference internal" href="#">RQ6. How are extended RBAC models evaluated in theory and in practice?</a><ul>
+<li><a class="reference internal" href="#common-themes">Common Themes</a></li>
+<li><a class="reference internal" href="#by-category">By Category</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+  <!--<span class="localtoc"><ul>
+<li><a class="reference internal" href="#">RQ6. How are extended RBAC models evaluated in theory and in practice?</a><ul>
+<li><a class="reference internal" href="#common-themes">Common Themes</a></li>
+<li><a class="reference internal" href="#by-category">By Category</a></li>
+</ul>
+</li>
+</ul>
+</span>-->
+</li>
+            
+            
+              
+  <li><a href="RQ_5.html"
+         title="previous chapter">&laquo; RQ5. Do these models have corresponding implementations in practice?</a></li>
+  <li><a href="RQ_7.html"
+         title="next chapter">RQ7. Are there any commonalties or generalizations across all categorizations? &raquo;</a></li>
+            
+            
+              
+  <li><a href="../_sources/research_questions/RQ_6.txt"
+         rel="nofollow">Source</a></li>
+            
+          </ul>
+          
+            
+<form class="navbar-search pull-right" action="../search.html" method="get">
+  <input type="text" name="q" placeholder="Search" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+
+<div class="container">
+   
+  <div class="section" id="rq6-how-are-extended-rbac-models-evaluated-in-theory-and-in-practice">
+<h1>RQ6. How are extended RBAC models evaluated in theory and in practice?<a class="headerlink" href="#rq6-how-are-extended-rbac-models-evaluated-in-theory-and-in-practice" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="common-themes">
+<h2>Common Themes<a class="headerlink" href="#common-themes" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li></li>
+</ul>
+</div>
+<div class="section" id="by-category">
+<h2>By Category<a class="headerlink" href="#by-category" title="Permalink to this headline">¶</a></h2>
+<dl class="docutils">
+<dt>Constraint</dt>
+<dd><ul class="first last simple">
+<li></li>
+</ul>
+</dd>
+<dt>Context</dt>
+<dd><ul class="first last simple">
+<li></li>
+</ul>
+</dd>
+<dt>Delegation</dt>
+<dd><ul class="first last simple">
+<li></li>
+</ul>
+</dd>
+<dt>Organizational</dt>
+<dd><ul class="first last simple">
+<li></li>
+</ul>
+</dd>
+<dt>Privacy</dt>
+<dd><ul class="first last simple">
+<li></li>
+</ul>
+</dd>
+<dt>Resource</dt>
+<dd><ul class="first last simple">
+<li></li>
+</ul>
+</dd>
+<dt>Spatial</dt>
+<dd><ul class="first last simple">
+<li></li>
+</ul>
+</dd>
+<dt>Spatio/Temporal</dt>
+<dd><ul class="first last simple">
+<li></li>
+</ul>
+</dd>
+<dt>Task</dt>
+<dd><ul class="first last simple">
+<li></li>
+</ul>
+</dd>
+<dt>Temporal</dt>
+<dd><ul class="first last simple">
+<li></li>
+</ul>
+</dd>
+</dl>
+</div>
+</div>
+
+
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right"><a href="#">Back to top</a></p>
+    <p>
+        &copy; Copyright 2012, Eric D. Helms.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

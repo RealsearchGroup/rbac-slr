@@ -1,0 +1,224 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Temporal &mdash; RBAC-SLR 0.1 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-responsive.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap.js"></script>
+    <link rel="top" title="RBAC-SLR 0.1 documentation" href="../index.html" />
+    <link rel="prev" title="Task" href="task.html" />
+<script type="text/javascript">
+(function () {
+  /**
+   * Patch TOC list.
+   *
+   * Will mutate the underlying span to have a correct ul for nav.
+   *
+   * @param $span: Span containing nested UL's to mutate.
+   * @param minLevel: Starting level for nested lists. (1: global, 2: local).
+   */
+  var patchToc = function ($ul, minLevel) {
+    var findA;
+
+    // Find all a "internal" tags, traversing recursively.
+    findA = function ($elem, level) {
+      var level = level || 0,
+        $items = $elem.find("> li > a.internal, > ul, > li > ul");
+
+      // Iterate everything in order.
+      $items.each(function (index, item) {
+        var $item = $(item),
+          tag = item.tagName.toLowerCase(),
+          pad = 15 + ((level - minLevel) * 10);
+
+        if (tag === 'a' && level >= minLevel) {
+          // Add to existing padding.
+          $item.css('padding-left', pad + "px");
+          console.log(level, $item, 'padding-left', pad + "px");
+        } else if (tag === 'ul') {
+          // Recurse.
+          findA($item, level + 1);
+        }
+      });
+    };
+
+    console.log("HERE");
+    findA($ul);
+  };
+
+  $(document).ready(function () {
+    // Add styling, structure to TOC's.
+    $(".dropdown-menu").each(function () {
+      $(this).find("ul").each(function (index, item){
+        var $item = $(item);
+        $item.addClass('unstyled');
+      });
+      $(this).find("li").each(function () {
+        $(this).parent().append(this);
+      });
+    });
+
+    // Patch in level.
+    patchToc($("ul.globaltoc"), 2);
+    patchToc($("ul.localtoc"), 2);
+
+    // Enable dropdown.
+    $('.dropdown-toggle').dropdown();
+  });
+}());
+</script>
+
+  </head>
+  <body>
+  <div id="navbar" class="navbar navbar-inverse navbar-static-top">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../index.html">RBAC-SLR</a>
+        <div class="nav-collapse">
+          <ul class="nav">
+            <li class="divider-vertical"></li>
+            
+              <li class="dropdown">
+  <a href="../index.html" class="dropdown-toggle" data-toggle="dropdown">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../process.html">Methodology and Process</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../research_questions/RQ_1.html">RQ1: What are the deficiencies in current RBAC model?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../research_questions/RQ_2.html">RQ2: What are the motivations behind RBAC extensions?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../research_questions/RQ_3.html">RQ3: What are the categorizations of proposed RBAC extensions?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../research_questions/RQ_4.html">RQ4: For each categorization, what are the extended features of RBAC proposed?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../research_questions/RQ_5.html">RQ5. Do these models have corresponding implementations in practice?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../research_questions/RQ_6.html">RQ6. How are extended RBAC models evaluated in theory and in practice?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../research_questions/RQ_7.html">RQ7. Are there any commonalties or generalizations across all categorizations?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../research_questions/RQ_8.html">RQ8. What domains or scenarios serve as inspiration for these extensions?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="constraint.html">Constraint</a></li>
+<li class="toctree-l1"><a class="reference internal" href="context.html">Context</a></li>
+<li class="toctree-l1"><a class="reference internal" href="delegation.html">Delegation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="organizational.html">Organizational</a></li>
+<li class="toctree-l1"><a class="reference internal" href="privacy.html">Privacy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="resource.html">Resource</a></li>
+<li class="toctree-l1"><a class="reference internal" href="spatial.html">Spatial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="spatio_temporal.html">Spatio-Temporal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="task.html">Task</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Temporal</a></li>
+</ul>
+</ul>
+</li>
+              <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"><ul>
+<li><a class="reference internal" href="#">Temporal</a></li>
+</ul>
+</ul>
+  <!--<span class="localtoc"><ul>
+<li><a class="reference internal" href="#">Temporal</a></li>
+</ul>
+</span>-->
+</li>
+            
+            
+              
+  <li><a href="task.html"
+         title="previous chapter">&laquo; Task</a></li>
+            
+            
+              
+  <li><a href="../_sources/categories/temporal.txt"
+         rel="nofollow">Source</a></li>
+            
+          </ul>
+          
+            
+<form class="navbar-search pull-right" action="../search.html" method="get">
+  <input type="text" name="q" placeholder="Search" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+
+<div class="container">
+   
+  <div class="section" id="temporal">
+<h1>Temporal<a class="headerlink" href="#temporal" title="Permalink to this headline">¶</a></h1>
+<dl class="docutils">
+<dt>Definition.</dt>
+<dd>of or relating to the sequence of time or to a particular time</dd>
+<dt>Papers</dt>
+<dd><ul class="first last simple">
+<li><a class="reference external" href="http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=1363762">A generalized temporal role-based access control model</a></li>
+</ul>
+</dd>
+</dl>
+<hr class="docutils" />
+<p><strong>A generalized temporal role-based access control model</strong></p>
+<blockquote>
+<div><dl class="docutils">
+<dt>Inspired by a real example? Scenarios or examples.</dt>
+<dd>In many organizations, processes and functions may have limited time spans or have periodic temporal durations</dd>
+<dt>What reasons and evidence do researchers claim RBAC needs extension?</dt>
+<dd><ul class="first last simple">
+<li>Workflow based organizations need a time based constraint for disabling/enabling roles</li>
+</ul>
+</dd>
+<dt>Did they implement the model?</dt>
+<dd>No.</dd>
+<dt>Is there an evaluation? If yes, how did they do one? If no, why?</dt>
+<dd><ul class="first last simple">
+<li>Model is limited to enabling/disabling of roles based on time constraints only</li>
+<li>model is fully described from entities, to constraints, to conflict resolution to execution in pseudo-code</li>
+<li>Evaluation lies in the construction of mathematical modeling and graphs to detail the usage and interaction of the model pieces</li>
+<li>A few example scenarios are explained</li>
+</ul>
+</dd>
+<dt>Does this model extend the core model?</dt>
+<dd><ul class="first last simple">
+<li>Extension of the base RBAC model</li>
+<li>adds periodicity and duration constraints for role enabling</li>
+<li>provides for conflict resolution of constraints</li>
+</ul>
+</dd>
+</dl>
+<p>Notes.</p>
+</div></blockquote>
+</div>
+
+
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right"><a href="#">Back to top</a></p>
+    <p>
+        &copy; Copyright 2012, Eric D. Helms.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>
