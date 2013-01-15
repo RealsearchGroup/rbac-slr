@@ -7,6 +7,7 @@ Definition.
 
 Papers
     * `Privacy-aware role-based access control <http://dl.acm.org/citation.cfm?id=1266848>`_
+    * `PuRBAC: Purpose-Aware Role-Based Access Control <http://www.sis.pitt.edu/~amirreza/papers/masoumzadeh2008_purbac.pdf>`_
 
 ----------------------------------------------------
 
@@ -32,3 +33,30 @@ Papers
         - Conflict detection and resolution mechanisms
 
     Notes.
+
+----------------------------------------------------
+
+**PuRBAC: Purpose-Aware Role-Based Access Control**
+
+    Inspired by a real example? Scenarios or examples.
+        - Web and companies with privacy policies make it harder to follow said policies and protect user data
+
+    What reasons and evidence do researchers claim RBAC needs extension?
+        - privacy policies include purposes under which collected data can be used
+        - current RBAC model does not include a entity or relationships to incorporate purpose
+        - authorization requests should include a purpose for performing the intended action
+
+    Did they implement the model?
+        - No.
+
+    Is there an evaluation? If yes, how did they do one? If no, why?
+        - No evaluation, conclusion includes note that further analysis needs to be done
+        - Discusses entities added by this model, the way they were added and why this method is the best way to add purpose and support privacy
+
+    Does this model extend the core model?
+        - extends the base and heirarchy portion of the model, adds in a hybrid heirarchy
+        - connects purposes to permissions
+
+    Notes.
+        - claim to reduce policy complexity by associating a purpose with only a permission and not with roles and users as well
+        - locks down the users ability to declare purpose, by putting authorization controls around the purposes

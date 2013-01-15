@@ -14,6 +14,9 @@ Papers
     * `A Role and Context Based Access Control Model with UML <http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=4709140>`_
     * `Designing an agent-based RBAC system for dynamic security policy <http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=1376833>`_
     * `An extended RBAC model based on granular logic <http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=4664701>`_
+    * `Leveraging Access Control Mechanism of Android Smartphone Using Context-Related Role-Based Access Control Model <http://ieeexplore.ieee.org.prox.lib.ncsu.edu/xpl/articleDetails.jsp?tp=&arnumber=5967517&contentType=Conference+Publications&searchField%3DSearch_All%26queryText%3Dleveraging+access+control+mechanism+of+android+smartphone+using+context-related+role-based+access+control+model>`_
+    * `CRBAC: Imposing multi-grained constraints on the RBAC model in the multi-application environment <http://www.sciencedirect.com.prox.lib.ncsu.edu/science/article/pii/S1084804508000520>`_
+
 
 ----------------------------------------------------
 
@@ -222,4 +225,64 @@ Papers
 
     Notes.
 
+----------------------------------------------------
 
+**Leveraging Access Control Mechanism of Android Smartphone Using Context-Related Role-Based Access Control Model**
+
+    Inspired by a real example? Scenarios or examples.
+        - Access control needs of smart phones
+        - Installation of third party applications that a user needs to trust
+        - User must grant device privileges to the application
+        - Parents want to limit the amount of time kids use phone
+        - User might can to limit accessbility to friends and admins
+        - Companies want to limit data access by employee phones
+        - User loses company phone in admin mode, context to prevent leakage
+
+    What reasons and evidence do researchers claim RBAC needs extension?
+        - smartphone is centralized, user-centric system where identities are known in advance
+        - smartphone has lots of contextual info
+        - 
+
+    Did they implement the model?
+        No.
+
+    Is there an evaluation? If yes, how did they do one? If no, why?
+        No.
+
+    Does this model extend the core model?
+        - Adds objects, environmental context, policies and decisions to model
+        - Object is an accessible entity
+        - a property of the system at the moment of interaction
+        - policy is the formal specification of the access control
+
+    Notes.
+        - precedential order of access privileges to prvent policy bugs
+
+
+----------------------------------------------------
+
+**CRBAC: Imposing multi-grained constraints on the RBAC model in the multi-application environment**
+
+    Inspired by a real example? Scenarios or examples.
+        - proliferation of distributed applications
+        - example of limited disk space when a database read and update are performed to resolve which operation to give preference to
+
+    What reasons and evidence do researchers claim RBAC needs extension?
+        - need flexible and dynamic authorization constraints
+        - authorization differs between and within applications
+        - Users may be granted access to the application and entities or may be granted access to objects with the application depending on context
+        - role and permission constraints are also possible
+
+    Did they implement the model?
+        No.
+
+    Is there an evaluation? If yes, how did they do one? If no, why?
+        - analysis of example scenario, comparison of constraint vs other models, 
+
+    Does this model extend the core model?
+        - adds object sets, entities, status and set of authorization attributes
+        - permissions on objects with constraints
+        - user and user constraints mapped to roles with permission attribute constraints
+
+    Notes.
+        - classification of constraints as either users eligibility to to use a resource/service or constraints on the users actual use of a resource (limiting what they can do)
