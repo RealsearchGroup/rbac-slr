@@ -50,6 +50,7 @@ Papers
         - Attaches an operation to a permission
 
     Did they implement the model?
+        No.
 
     Is there an evaluation? If yes, how did they do one? If no, why?
         Describes in full definition each object and it's role in the graph
@@ -74,6 +75,7 @@ Papers
         - standard RBAC cannot handle location based constraints and attributes
 
     Did they implement the model?
+        No.
 
     Is there an evaluation? If yes, how did they do one? If no, why?
         Mathematical specification of each aspect

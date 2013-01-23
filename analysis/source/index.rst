@@ -25,8 +25,7 @@ Contents:
    categories/notes
    categories/constraint
    categories/context
-   categories/delegation
-   categories/hisstorical
+   categories/historical
    categories/organizational
    categories/privacy
    categories/resource
