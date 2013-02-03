@@ -6,7 +6,7 @@
 %%
 %% elsarticle.dtx  (with options: `class')
 %% 
-%% Copyright 2007, 2008, 2009, 2010 Elsevier Ltd
+%% Copyright 2007, 2008, 2009 Elsevier Ltd
 %% 
 %% This file is part of the 'Elsarticle Bundle'.
 %% -------------------------------------------
@@ -22,11 +22,11 @@
 %% given in the file `manifest.txt'.
 %% 
 %%
-%% $Id: elsarticle.dtx 26 2010-06-11 11:54:01Z rishi $
+%% $Id: elsarticle.dtx 19 2009-12-17 07:07:52Z rishi $
 %%
  \def\RCSfile{elsarticle}%
- \def\RCSversion{1.21}%
- \def\RCSdate{2010/06/11}%
+ \def\RCSversion{1.20b}%
+ \def\RCSdate{2009/09/17}%
  \def\@shortjnl{\relax}
  \def\@journal{Elsevier Ltd} \def\@company{Elsevier Ltd}
  \def\@issn{000-0000}
@@ -36,7 +36,6 @@
 \def\ABD{\AtBeginDocument}
 \newif\ifpreprint \preprintfalse
 \newif\iflongmktitle \longmktitlefalse
-\newif\ifnopreprintline \nopreprintlinefalse
 
 \def\@blstr{1}
 \newdimen\@bls
@@ -55,7 +54,6 @@
 \DeclareOption{preprint}{\global\preprinttrue
   \gdef\@blstr{1}\xdef\jtype{0}%
    \AtBeginDocument{\@twosidefalse\@mparswitchfalse}}
-\DeclareOption{nopreprintline}{\global\nopreprintlinetrue}
 \DeclareOption{final}{\gdef\@blstr{1}\global\preprintfalse}
 \DeclareOption{review}{\global\preprinttrue\gdef\@blstr{1.5}}
 \DeclareOption{authoryear}{\xdef\@biboptions{round,authoryear}}
@@ -75,7 +73,7 @@
   \let\iiint\relax
   \let\iiiint\relax
   \let\idotsint\relax
-  \let\openbox\relax}}{\AtEndOfClass{\RequirePackage{times}}}}
+  \let\openbox\relax}}{\RequirePackage{times}}}
 \ExecuteOptions{a4paper,10pt,oneside,onecolumn,number,preprint}
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{article}}
 \ProcessOptions
@@ -449,9 +447,9 @@
 \def\ps@pprintTitle{%
      \let\@oddhead\@empty
      \let\@evenhead\@empty
-     \def\@oddfoot{\ifnopreprintline\relax\else\footnotesize\itshape
+     \def\@oddfoot{\footnotesize\itshape
        Preprint submitted to \ifx\@journal\@empty Elsevier
-       \else\@journal\fi\hfill\@date\fi}%
+       \else\@journal\fi\hfill\today}%
      \let\@evenfoot\@oddfoot}
 \def\@seccntDot{.}
 \def\@seccntformat#1{\csname the#1\endcsname\@seccntDot\hskip 0.5em}
