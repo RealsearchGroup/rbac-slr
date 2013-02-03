@@ -2,6 +2,18 @@
  RQ5. Do these models have corresponding implementations in practice?
 ================================================================================
 
+When designing and proposing a model targeted at a feature that is rooted in practical
+usage by real software systems, bringing the model to life is strong evidence that the
+proposed model can work in practice.  The concept of authorization, and access control
+is rooted in a business need.  Thus, any access control model needs to be feasible
+in the real world not just on paper.  We analyzed the primary sources to see how many
+proposed models actually had implmenetations associated with them.  And quantified the
+type of implementation.  Whether the implementation was for a real system, for a prototype
+and/or used in a production environment.
+
+
+
+
 ---------------
  Common Themes
 ---------------

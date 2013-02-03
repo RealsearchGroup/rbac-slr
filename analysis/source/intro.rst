@@ -1,6 +1,8 @@
-==============
- Introduction
-==============
+=================
+ 1. Introduction
+=================
+
+Why is the base model of RBAC extended by newer models?
 
 Role-based access control (RBAC) models :cite:`ferraiolo:rbac` become popularly used to govern access to critical resources.  In an RBAC model, roles represent a group of users who are involved in a specific job function in an organization. RBAC assigns permissions of specific actions on resources to roles instead of individual users.  Therefore, in order to gain roles' permission on specific resources, users acquire appropriate roles first.
 
