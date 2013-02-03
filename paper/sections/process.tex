@@ -1,84 +1,88 @@
 \section{Methodology and Process} \label{sec:process}
 
-For the first phase of our systematic literature review, an automated comprehensive search of multiple academic search engines was performed. The list of search engines is:
-
+For the first phase of our systematic literature review, an automated comprehensive search of multiple academic search engines was performed. The list of search engines were:
 \begin{itemize}
-  \item Google Scholar - ttp://scholar.google.com
-  \item IEEExplore - http://ieeexplore.ieee.org
-  \item ACM Portal - http://dl.acm.org
+\item {} 
+Google Scholar - \href{http://scholar.google.com}{http://scholar.google.com}
+\item {} 
+IEEExplore     - \href{http://ieeexplore.ieee.org}{http://ieeexplore.ieee.org}
+\item {} 
+ACM Portal     - \href{http://dl.acm.org}{http://dl.acm.org}
+\item {} 
+CiteSeerX      - \href{http://http://citeseerx.ist.psu.edu/index}{http://http://citeseerx.ist.psu.edu/index}
 \end{itemize}
 
-For each of the criteria below, a search was performed on each of the search engines for a total of 9 data sets.  The criteria used were:
-
+For each of the criteria below, a search was performed on each of the search engines for a total of 12 data sets.  The criteria used were:
 \begin{itemize}
-  \item role based access control
-  \item RBAC
-  \item role-based access control
+\item {} 
+role based access control
+\item {} 
+RBAC
+\item {} 
+role-based access control
 \end{itemize}
 
-The search performed was done in an automated way using a set of scripts to query and collect data from each search engine.  For each criteria for each search engine, the results were captured until a stopping criteria was met.  For a given run was done as follows:
-
+The search performed was done in an automated way using a set of scripts to query and collect data from each search engine with the criteria string as input.  For each criteria for each search engine, the results were captured until a stopping criteria was met.  Each run was performed as follows:
 \begin{enumerate}
-  \item Remote call to search engine with current search start position and the current search criteria.
-  \item Parse results and extract paper title, authors and year of publication.
-  \item Compare results against stopping criteria.
-    \begin{itemize}
-      \item If stopping criteria met, stop search.
-      \item If stopping criteria not met, increase search position by number of results and return to step 1.
-    \end{itemize}
+\item {} 
+Remote call to search engine with current search start position and the current search criteria.
+\item {} 
+Parse results and extract paper title, authors and year of publication.
+\item {} 
+Compare results against stopping criteria.
 \end{enumerate}
 
-The stopping criteria used was either after the first 1000 results, a limitation imposed by some of the search engines, or if ten consecutive results did not contain any of the search criteria words within the title.  After gathering all 9 data sets, the data was combined into a master list by systematically comparing the bibliographic information for each.  After producing a master list a series of assessment rounds were performed to narrow the paper list and identify primary sources.  
+\begin{itemize}
+\item {} 
+If stopping criteria met, stop search.
+\item {} 
+If stopping criteria not met, increase search position by number of results and return to step 1.
+\end{itemize}
+
+The stopping criteria used was either after the first 1000 results, a limitation imposed by some of the search engines, or if ten consecutive results did not contain the search criteria phrase within the title.  After gathering all 12 data sets, the data was combined into a master list by systematically comparing the bibliographic information for each.  After producing a master list, a series of assessment rounds were performed to narrow the paper list and identify primary sources.
 
 There were a total of three elimination rounds.  The first round was based solely on title, the second on reading of the abstract and the last round was based on a full read of the paper and comparison to the research questions outlined.  Each round was performed as follows:
 
 \begin{itemize}
-  \item Each reviewer independently classified papers as relevant, irrelevant or uncertain.  
-  \item Those papers marked as relevant by both reviewers were kept and those marked irrelevant by both were thrown out.  
-  \item Papers marked as relevant, or irrelevant by a single reviewer were combined with all papers marked as uncertain and discussed by both reviewers.  From this discussion, papers were either thrown out or kept until the next round of the review.
+\item {} 
+Each reviewer independently classified papers as relevant, irrelevant or uncertain.
+\item {} 
+Those papers marked as relevant by both reviewers were kept and those marked irrelevant by both were thrown out.
+\item {} 
+Papers marked as relevant, or irrelevant by a single reviewer were combined with all papers marked as uncertain and discussed by both reviewers.  From this discussion, papers were either thrown out or kept until the next round of the review.  Ties were broken by an indepedent party.
 \end{itemize}
 
-The results of the searches was as follows:
+The results of the searches is summarised below:
 
-\begin{center}
-  \begin{tabular}{ l | c | c | c }
-    \hline
-     & RBAC & role based access control & role-based access control \\ \hline \hline
-    Google Scholar & 261 & 581 & 391 \\ \hline
-    ACM Portal & 321 & 281 & 261 \\ \hline
-    IEEExplore & 171 & 221 & 201 \\ \hline
-  \end{tabular}
-\end{center}
-    
-We collect papers on extended role-based access control~\cite{ferraiolo:rbac}.
+\begin{tabulary}{\linewidth}{|L|L|L|L|L|}
+\hline
+\textbf{
+Search Engines
+} & \textbf{
+RBAC
+} & \textbf{
+role based access control
+} & \textbf{
+role-based access control
+} & \textbf{
+Total
+}\\\hline
 
-\subsection{Research Questions} \label{subsec:research questions}
-We have following research questions.
-\begin{itemize}
-	\item RQ1. What are problems in current RBAC model to propose extended RBAC models?
-	\item RQ2. What are reasons to propose RBAC extensions? 
-	\item RQ3. Which extended features of RBAC model are proposed?
-	\item RQ4. How they provide evidence to show that their model work in practice? For example, they provide a prototype to run a real example.
-	\item RQ5. What is criteria for evaluation? We investigate how they evaluate their research work. 
-	
-\end{itemize}
+Google Scholar & 651 & 213 & 435 & 1299
+\\\hline
+ACM Portal & 500 & 20 & 720 & 1240
+\\\hline
+IEEExplore & 200 & 40 & 230 & 470
+\\\hline
+CiteSeerX & 100 & 100 & 150 & 350
+\\\hline
+ &  &  &  & 
+\\\hline
+Totals & 1451 & 373 & 1535 & 3359
+\\\hline
 
-For RQ1-RQ3, we compare of proposed extended models.
-For RQ4, we compare quality of completeness of the proposed models.
-Beyond modeling of extended RBAC models, an prototype shows that their models work in practice and improves the quality
-of the completeness of research papers. For RQ5, we compare criteria for evaluation of extended RBAC models.
-
-\subsection{Categorization} \label{subsec:categorization}
-
-This section describes categorization of papers based on specific extended features as follows. 
-\begin{itemize}
-	\item Temporal-related-constraints~\cite{mossakowski03:temporal,aich07:STARBAC,kumar06:strbac,samuel07:spatio-temporal,ray07:spatio,chandran05:llt,aich09:role,bertino01:trbac, li08:fine, joshi05:generalized, chen08:spatio-temporal}
-	\item Inheritance~\cite{ren10:machine}
-	\item Location~\cite{chandran05:llt}
-	\item Delegation~\cite{hasebe10:capability}
-	\item General constraints~\cite{alam06:constraint,yao08:task}
-	\item Context~\cite{tzelepi01:flexible,haibo05:context,cholewka00:acontext-sensitive,huang06:pervasive,motta03:contextual,bao08:role}						
-	\item General extension~\cite{han08:extended,zhang06:collaborative}
-	\item Combination with other access control models such as Task-based access control~\cite{yao08:task,oh03:task,zhou07:network, oh00:task} and Agent-based access control~\cite{yamazaki04:designing}
-\end{itemize}
-
+Combined
+ &  &  &  & 
+\textbf{1716}
+\\\hline
+\end{tabulary}
