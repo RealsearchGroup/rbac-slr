@@ -10,18 +10,15 @@ P3: Mention audience, why they should care, and why exploring extensions space i
 
 P4: Talk about what this work is going to do, goal, brief process
 
-P5: List goals or contributions
+P5: List contributions
 
 P6: Outline paper and sections
 
 
-Role based access control (RBAC) was first introduced in the 1990 when the National Instittute for Standards and Technology (NIST) requested that a unified standard be created.  proposed standard RBAC model \cite{ferraiolo}
+Role based access control (RBAC) was first introduced in the 1990s when the National Instittute for Standards and Technology (NIST) requested that a unified standard be created by combining the Ferraiolo and Kuhn model \cite{ferraiolokuhn} with the framework proposed by Sandhu, et al \cite{sandhu1996role}.  In an RBAC model, roles represent a group of users who are involved in a specific job function in an organization. RBAC assigns permissions of specific actions on resources to roles instead of individual users.  Therefore, in order to gain roles' permission on specific resources, users acquire appropriate roles first.  RBAC is a generalized access control approach used for various applications including web services, database applications, and healthcare applications.  RBAC has advantages in maintaining and managing organization's security policies.  For example, if a user is to access manager role's resources within a given organization, security policy administrators simply add the user to be associated with the manager role.
 
-Role-based access control (RBAC) models \cite{ferraiolo} became popular used to govern access to critical resources.  In an RBAC model, roles represent a group of users who are involved in a specific job function in an organization. RBAC assigns permissions of specific actions on resources to roles instead of individual users.  Therefore, in order to gain roles' permission on specific resources, users acquire appropriate roles first.
+Since the introduction of the standardized RBAC model, innovation and the spread of software engineering into new domains has led to scenarios that, by some accounts, the standard RBAC model cannot handle.  For example, RBAC is ill-equipped to handle the additional entities that need to be taken into consideration during authorization with the introduction of privacy concerns in domains such as healthcare  Thus, a series of extensions to the standard RBAC model have appeared in the literature, each adding one or more features.
 
-RBAC is a generalized access control approach used for various applications including web services, database applications, and healthcare applications.  RBAC has advantages in maintaining and managing organization's security policies.  For example, if a user is to access manager role's resources within a given organization, security policy administrators simply add the user to be associated with the manager role.
-
-Standard RBAC model considers only role-user association and role hierarchy.
 Since standard RBAC model has limitations such as specifying environmental constraints or context information
 Researchers developed extended models of RBAC to overcome the limitations.
 However, as researchers often develop their own specialized extended models of RBAC,
@@ -29,15 +26,18 @@ their research cannot be generalized or compared with other research work approp
 As a result, researchers could take time on reinventing the wheel.
 But how do we, as a community, ensure that a metric is suitable and acceptable for its intended purpose?
 
-The goal of this work is to synthesize available research results on extended models of RBAC. We analyze their extended features and claimed research contributions to find limitations of current RBAC models and what extent of extended features by
-comparing with similar research work.
+The goal of this work is to provide practioners an assessment of the state of extended models of RBAC..
+
 We conducted a systematic literature review (SLR) to evaluate and interpret all available research relevant to a particular research question or topic area of interest.
 
-Our research give benefits to a community as follows:
+Our research provides contributions to the community by:
 
 \begin{itemize}
-\item Our work summarizes current extended RBAC research work and its contributions. By synthesizing the current results, our work shows a roadmap of current extended RBAC research.
-\item Our work guides a direction for a standard of extended RBAC. Understanding the categorization and the motivation of the existing research results helps decide a standard of extended RBAC.
+\item Summarizes current extended RBAC research work and its contributions
+\item Guides a direction for a standard of extended RBAC. Understanding the categorization and the motivation of the existing research results helps decide a standard of extended RBAC.
 \item Our work shows a criteria in comparison among research results.
-\item Our work helps identify the research challenges in the ares of security policies and suggest a future extension of RBAC.
+\item Identify the research challenges in the areas of security policies and suggest a future extension of RBAC
+\item Identify the deficiencies in RBAC extension evaluation
 \end{itemize}
+
+The rest of the paper is organized as follows.  Section 2. Section 3. Section 4. Section 5.
