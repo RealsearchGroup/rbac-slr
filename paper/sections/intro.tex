@@ -17,20 +17,13 @@ P6: Outline paper and sections
 
 Role based access control (RBAC) was first introduced in the 1990s when the National Instittute for Standards and Technology (NIST) requested that a unified standard be created by combining the Ferraiolo and Kuhn model \cite{ferraiolokuhn} with the framework proposed by Sandhu, et al \cite{sandhu1996role}.  In an RBAC model, roles represent a group of users who are involved in a specific job function in an organization. RBAC assigns permissions of specific actions on resources to roles instead of individual users.  Therefore, in order to gain roles' permission on specific resources, users acquire appropriate roles first.  RBAC is a generalized access control approach used for various applications including web services, database applications, and healthcare applications.  RBAC has advantages in maintaining and managing organization's security policies.  For example, if a user is to access manager role's resources within a given organization, security policy administrators simply add the user to be associated with the manager role.
 
-Since the introduction of the standardized RBAC model, innovation and the spread of software engineering into new domains has led to scenarios that, by some accounts, the standard RBAC model cannot handle.  For example, RBAC is ill-equipped to handle the additional entities that need to be taken into consideration during authorization with the introduction of privacy concerns in domains such as healthcare  Thus, a series of extensions to the standard RBAC model have appeared in the literature, each adding one or more features.
+Since the introduction of the standardized RBAC model, innovation and the spread of software engineering into new domains has led to scenarios that, by some accounts, the standard RBAC model cannot handle.  For example, RBAC is ill-equipped to handle the additional entities that need to be taken into consideration during authorization with the introduction of privacy concerns in domains such as healthcare  Thus, a series of extensions to the standard RBAC model have appeared in the literature, each adding one or more features.  However, as researchers often develop their own specialized extended models of RBAC, their research cannot be generalized or compared with other research work appropriately.
 
-Since standard RBAC model has limitations such as specifying environmental constraints or context information
-Researchers developed extended models of RBAC to overcome the limitations.
-However, as researchers often develop their own specialized extended models of RBAC,
-their research cannot be generalized or compared with other research work appropriately.
-As a result, researchers could take time on reinventing the wheel.
-But how do we, as a community, ensure that a metric is suitable and acceptable for its intended purpose?
+A systematic literature review is designed to yield quanitfiable results across a body of research in order to draw out similarities, trends and defiencies in an area as a whole.  The review we have performed should serve as a future starting place for researcher's looking to tackle new problems in the realm of authorization and prevent re-invention of the wheel. For developer's looking to find a model to fit their seemingly unique access control needs, this review will provide a basis for comparison and easy look-up for what extension based model to use.
 
-The goal of this work is to provide practioners an assessment of the state of extended models of RBAC..
+The goal of this work is to provide practioners an assessment of the state of extended models of RBAC\ldots
 
-We conducted a systematic literature review (SLR) to evaluate and interpret all available research relevant to a particular research question or topic area of interest.
-
-Our research provides contributions to the community by:
+Our research provides contributions to the community in the following ways:
 
 \begin{itemize}
 \item Summarizes current extended RBAC research work and its contributions

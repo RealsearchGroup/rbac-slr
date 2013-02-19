@@ -1,16 +1,69 @@
 \section{Analysis} \label{sec:analysis}
 
+\subsection{Research Question 5}
 
-P1: Discuss focus on going through each research question individually, and combining results across at the end of the process
+Do the extension models have corresponding implementations in practice? \\
 
-P2: List the research questions
+When designing and proposing a model targeted at a feature that is rooted in practical
+usage by real software systems, bringing the model to life is strong evidence that the
+proposed model can work in practice.  The concept of authorization, and access control
+is rooted in a business need.  Thus, any access control model needs to be feasible
+in the real world not just on paper.  We analyzed the primary sources to see how many
+proposed models actually had implmenetations associated with them.  And quantified the
+type of implementation.  Whether the implementation was for a real system, for a prototype
+and/or used in a production environment.
 
-S1: RQ1 and discuss by category and general results
+Of the 29 papers surveyed, there was a significant lack of implementation with 21 of the paper providing no
+mention of a implementation or prototype.  Of the remianing 8 papers that did mention an implementation, half 
+were simply prototypes developed by the authors while the other half were claimed to be implemented within a real
+system.
 
-S2: RQ2 and discuss by category and general results
+\subsection{Research Question 6}
 
-S3: RQ3 and discuss by category and general results
+How are extended RBAC models evaluated in theory and in practice? \\
 
-S4: RQ4 and discuss by category and general results
+Providing evaluation of a proposed model is a key component in establishing the models validity.  The papers were examined
+for evidence of evaluations ranging from performance to mathematical accuracy to application to real world scenarios.  Further,
+for each proposed model, the reviewers looked for evidence that the authors made comparisons between their own model and the base
+model as they pertained to claims made by the authors of why their model is needed.  The quantifiable evaluations looked for were:
 
-S5: RQ5 and discuss by category and general results
+\begin{itemize}
+\item Time-based Performance
+\item Complexity analysis
+\item Comparison to standard RBAC
+\item Mathematical accuracy
+\item Example scenarios of the model in action
+\item Experimental analysis of the model
+\item Case study of the model in practice
+\end{itemize}
+
+Based on the diverse evaluation criteria, 12 models presented no evidence of an evaluation.  8 models presented example scenarios
+and how application of their model would apply and resolve the situation.  6 of the models provided some form of performance
+or complexity analysis of their model.  This included graphs of the model's time to determine authorization as the number of entities
+grew, and the size of the role space for the extension model compared to standard RBAC. 4 models provided mathematical descriptions
+and analsysis as a way to provide evaluation in the form of completeness.
+
+The most widely used evaluation method was providing sample scenarios with accompanying workflows of how the extension model
+would tackle those scenarios.  Much is left to the reader to assume of these types of evaluations, as the authors do not explicitly state
+or show how the standard model is deficient in tackling said scenarios.
+
+\subsection{Research Question X}
+
+What domains or scenarios serve as inspiration for these extensions? \\
+
+Business needs have historically driven RBAC research and development.  The primary mode of evaluation for
+model extensions has been the presentation of business scenarios in various domains and how the model
+uniquely handles those particular scenarios.  Thus, looking for trends in the domains used in the example
+scenarios might serve to illuminate a trend worth further examination into the reason for the explosion of
+RBAC extensions.
+
+Upon examination of the primary sources, the most prevalent domains were:
+
+\begin{itemize}
+\item What domains or scenarios serve as inspiration for these extensions?
+\item Medical domain
+\item Pervasive computing environments
+\item Mobile devices
+\item Large-scale organizations with many sub-departments
+\item Enterprise, organization workflows
+\end{itemize}
