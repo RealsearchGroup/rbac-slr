@@ -1,25 +1,11 @@
 \section{Results} \label{sec:results}
 
-For our systematic literature review, the search strategy was applied to the following search engines based on popularity and database size:
+\subsection{Search}
 
-\begin{itemize}
-\item Google Scholar - \url{http://scholar.google.com}
-\item IEEExplore - \url{http://ieeexplore.ieee.org}
-\item ACM Portal - \url{http://dl.acm.org}
-\item CiteSeerX - \url{http://http://citeseerx.ist.psu.edu/index}
-\end{itemize}
+For our systematic literature review, the search strategy was applied to four search engines and three search strings based on popularity and database size.  This produced 12 different data sets that are combining for overlapping papers resulted in 1716 candidates.  The paper count for each search engine and criteria are shown in Table \ref{tab:search_results}.
 
-For each of the criteria below, a search was performed using the exact query for each of the search engines for a total of 12 data sets.  The criteria used were:
-
-\begin{itemize}
-\item role based access control
-\item RBAC
-\item role-based access control
-\end{itemize}
-
-The breakdown of number of papers found per criteria for each search engine are summarized in Figure X.
-
-\begin{center}
+\begin{table}
+\centering
 \begin{tabular}{|p{3.5cm}|p{1.25cm}|p{4.25cm}|p{4.25cm}|p{1cm}|}
 
 \hline
@@ -39,23 +25,18 @@ Totals & 1451 & 373 & 1535 & 3359 \\\hline
 Combined &  &  &  & \textbf{1716} \\\hline
 
 \end{tabular}
-\end{center}
+\caption{Paper counts after applying search strategy}
+\label{tab:search_results}
+\end{table}
+
+TODO: Add metrics for each portion of the elimination
 
 \subsection{Extraction}
 
-P1: Describe data extraction process, including questions each reviewer based note taking off of
+After selection of primary sources, the next step was to extract data from each paper that pertained to our research questions in order to look for trends.  The first step was to take the individual data generated from the final elimination round and organize this information around the research questions.  During the paper reading round, and resulting data, the fact that the papers were logically falling into a number of categorizations became evident.  Thus, the first step undertaken was to answer the question of what categories exist for the RBAC model extensions and what papers feel into what categories.  Each paper deemed a primary source and the papers associated categorization are shown in Table \ref{tab:categorization}.
 
-P2: Describe how from the data extraction process cateogories of extension became evident
-
-P3: Describe how those categories were deemed relevant and a way to organize going forward
-
-P4: Describe the categories, show how each paper and their category
-
-P5: Discuss how the categories are inter-related and show diagram of relationships
-
-After selection of primary sources, the next step was to extract data from each paper that pertained to our research questions in order to look for trends.  The first step was to take the individual data generated from the final elimination round and organize this information around the research questions.  During the paper reading round, and resulting data, the fact that the papers were logically falling into a number of categorizations became evident.  Thus, the first step undertaken was to answer the question of what categories exist for the RBAC model extensions and what papers feel into what categories.  The result of this paper categorization is displayed below:
-
-\begin{center}
+\begin{table}
+\centering
 \begin{tabular}{|p{12.5cm}|p{3cm}|}
 \hline
 \textbf{Paper} & \textbf{Category}
@@ -89,7 +70,66 @@ Yao, L. and Kong, X. and Xu, Z. 2008 \cite{yao2008task} & Task \\\hline
 ZHANG, S. and CHEN, X. and HOU, G. 2009 \cite{zhou2007team} & Task \\\hline
 Oh, S. and Park, S. 2003 \cite{oh2003task} & Task \\\hline
 Joshi, J.B.D. and Bertino, E. and Latif, U. and Ghafoor, A. 2005 \cite{joshi05:generalized} & Temporal \\\hline
+
 \end{tabular}
-\end{center}
+\caption{Primary sources grouped by categorization}
+\label{tab:categorization}
+\end{table}
 
 Given that there were multiple papers for some categories, the researchers decided to tackle all further research questions by first analyzing the research question on a per category basis and then looking across all categories for generalization and trends.
+
+\section{Category Definitions} \label{sec:terms}
+
+We found that different definitions for the same terms. Therefore, we next describe
+terms and definitions.
+
+\begin{itemize}
+%	\item Access Control Model:
+%	\item Access Control Policy:
+%	\item Access Control Requirements:
+%	\item Rules:
+%	\item Attributes-Based Access Control:
+	\item Task-Based Access Control:
+%	\item Purpose-Based Access Control:
+	\item Agent-Based Access Control:						
+\end{itemize}
+
+
+
+\begin{itemize}
+
+%	\item Role Hierarchies:
+
+	\item Obligations: obligations are requirements, which should be fulfilled before or after authorization decision is enforced.
+	Consider that a user has permission to access specific resources. For example, obligation is that the user should complete
+	her/his office duty before accessing the resources.
+	
+	\item Inheritance:
+	Inheritance defines an inheritance relationship among attributes such as roles. For example, the role structure for a company use
+	employee role for employees. Department manager may inherit all permissions of the employee role. (Role-Based Access Control by F. Ferrailolo et al.)
+	
+	\item Static Separation of Duty (SSoD): SSoD restricts the conflicting-role assignments statically that are associated with a user. On situations
+	where multiple roles can be associated with a single user and roles $Role_A$ and $Role_B$ are conflicting each other, no permission is given to a user who is assigned to both $Role_A$ and $Role_B$. SSoD is known to be too rigid for practical use in cases where a user should have permissions as either $Role_A$ and $Role_B$. (Role-Based Access Control by F. Ferrailolo et al.)
+
+	\item Dynamic Separation of Duty: Dynamic SoD (DSD) is known to be
+more flexible than SSD. DSD restricts the conflicting-role assignments dynamically that are associated with a user. On situations
+	where multiple roles can be associated with a single user and , given a context, roles $Role_A$ and $Role_B$ are conflicting each other dynamically, no permission is given to a user. (Role-Based Access Control by F. Ferrailolo et al.)
+	\end{itemize} 
+
+We define temporal and spatial constraints as follows:
+
+\begin{itemize}
+	\item Temporal Constraints: Temporal constraints are time-based constraints in specifying access
+	control policies. For example, in organizations, 	periodic temporal durations are enforced while a
+	specific role is permitted to conduct an action. Consider that part-time employee works only from 9:00 a.m. to 3:00 p.m.
+	In such cases, the part-time employee role should access required resources during the interval. 
+	Temporal constraints can incorporate either on roles, user-role assignments, or role-permission assignments.   
+	(Role-Based Access Control by F. Ferrailolo et al.)
+	 
+	\item Spatial Constraints: Spatial constraints are location-based constraints in specifying access
+	control policies. For example, in organizations, 	locations are enforced while a
+	specific role is permitted to conduct an action. Consider that part-time employee works only in specific location.
+	In such cases, the part-time employee role should access required resources only when the user is in the location. 
+	Spatial constraints can incorporate either on roles, user-role assignments, or role-permission assignments. 
+	
+\end{itemize}
