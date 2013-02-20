@@ -4,9 +4,35 @@
 
 What are the deficiencies in the current RBAC model? \\
 
+Core RBAC model provides an abstraction of authorization model based on user role assignment (UA) and the role
+permission assignment (PA). Since this simple model may not provide a fine-grained access control for sophisticated
+security mechanism, a variety of extended RBAC models have been proposed over the years to meet
+security requirements. Our surveyed 29 papers address more than one deficiencies described as follows.
+
+\begin{itemize}
+%	\item Core RBAC model needs additional contextual information and constraints to develop fine-grained policies in practice.
+	\item Core RBAC does not incorporate context. Therefore, RBAC belongs to static access control model, which may not capture changes in environments.
+	\item Core RBAC does not support for various constraints such as temporal and spatial constraints to design sophisticated policies on demand.
+	\item Core RBAC does not provide an abstraction to additional user-defined attributes	(e.g., task and team) and their association with existing attributes.
+	\item Core RBAC has limitation on delegation and role hierarchy. For example, partial inheritance in role hierarchy needs to be developed.  
+\end{itemize}
+
 \subsection{Research Question 2}
 
 What are the motivations behind RBAC extensions? \\
+
+When administrators design a model, it is important to capture an important abstraction to help the model to be enforced in a system.
+Administrators improve existing core RBAC model due to following reasons:
+
+\begin{itemize}
+	\item Model needs to incorporate additional contextual information and constraints to develop fine-grained policies in practice.
+	\item Model needs to incorporate additional attributes such as
+	task, team, purpose, organizational roles and collaborative activities over existing attributes. Moreover, new association between attributes
+	are introduced. 
+		\item Model needs to improve existing features such delegation and role hierarchy to meet fine-grained access control. 
+\end{itemize}
+
+
 
 \subsection{Research Question 3}
 
@@ -17,12 +43,12 @@ usage by real software systems, bringing the model to life is strong evidence th
 proposed model can work in practice.  The concept of authorization, and access control
 is rooted in a business need.  Thus, any access control model needs to be feasible
 in the real world not just on paper.  We analyzed the primary sources to see how many
-proposed models actually had implmenetations associated with them.  And quantified the
+proposed models actually had implementations associated with them.  And quantified the
 type of implementation.  Whether the implementation was for a real system, for a prototype
 and/or used in a production environment.
 
 Of the 29 papers surveyed, there was a significant lack of implementation with 21 of the paper providing no
-mention of a implementation or prototype.  Of the remianing 8 papers that did mention an implementation, half 
+mention of a implementation or prototype.  Of the remaining 8 papers that did mention an implementation, half 
 were simply prototypes developed by the authors while the other half were claimed to be implemented within a real
 system.
 
@@ -49,7 +75,7 @@ Based on the diverse evaluation criteria, 12 models presented no evidence of an 
 and how application of their model would apply and resolve the situation.  6 of the models provided some form of performance
 or complexity analysis of their model.  This included graphs of the model's time to determine authorization as the number of entities
 grew, and the size of the role space for the extension model compared to standard RBAC. 4 models provided mathematical descriptions
-and analsysis as a way to provide evaluation in the form of completeness.
+and analysis as a way to provide evaluation in the form of completeness.
 
 The most widely used evaluation method was providing sample scenarios with accompanying workflows of how the extension model
 would tackle those scenarios.  Much is left to the reader to assume of these types of evaluations, as the authors do not explicitly state

@@ -67,7 +67,7 @@ Chandran, S. and Joshi, J. 2005 \cite{chandran05:llt} & Spatio-Temporal \\\hline
 Ray, I. and Toahchoodee, M. 2007 \cite{ray07:spatio} & Spatio-Temporal \\\hline
 Aich, S. and Mondal, S. and Sural, S. and Majumdar, A. 2009 \cite{aich09:role} & Spatio-Temporal \\\hline
 Yao, L. and Kong, X. and Xu, Z. 2008 \cite{yao2008task} & Task \\\hline
-ZHANG, S. and CHEN, X. and HOU, G. 2009 \cite{zhou2007team} & Task \\\hline
+Zhang, S. and Chen, X. and Hou, G. 2009 \cite{zhou2007team} & Task \\\hline
 Oh, S. and Park, S. 2003 \cite{oh2003task} & Task \\\hline
 Joshi, J.B.D. and Bertino, E. and Latif, U. and Ghafoor, A. 2005 \cite{joshi05:generalized} & Temporal \\\hline
 
@@ -89,9 +89,15 @@ terms and definitions.
 %	\item Access Control Requirements:
 %	\item Rules:
 %	\item Attributes-Based Access Control:
-	\item Task-Based Access Control:
+
+%http://www.hpi.uni-potsdam.de/fileadmin/hpi/Forschung/Publikationen/Dissertationen/Diss_Zhou.pdf
+% A Task-Role Based Access Control Model with Multi-Constraints
+	\item Task-role-based access control: a task is a fundamental unit of a business activity. Different from core RBAC, in task-role-based access control model, roles are not directly associated with permissions. Roles are first associated with tasks, which are associated permissions. For example, the employee role is associated with a task, which is to write a report. Then, this task is associated with a permission.
+
+% Team and Task Based RBAC Access Control Model	
+	\item Team-based access control: a team encapsulates a group of users, who have various roles. A team member can activate only roles that can be assigned to a team. Moreover, team-based access control may decide maximum number of permissions such as roles (that are assigned to a team) having a maximum number of permissions to the team.			
 %	\item Purpose-Based Access Control:
-	\item Agent-Based Access Control:						
+%	\item Agent-based access control:						
 \end{itemize}
 
 
@@ -100,6 +106,13 @@ terms and definitions.
 
 %	\item Role Hierarchies:
 
+	\item Delegation: delegation is to assign permissions (to access specific resources) available to a user to another user.
+	A employee $E_1$ may delegate her/his permissions to another employee $E_2$ while $E_1$ is on leave. 
+	
+%	 obligations are requirements, which should be fulfilled before or after authorization decision is enforced.
+%	Consider that a user has permission to access specific resources. For example, obligation is that the user should complete
+%	her/his office duty before accessing the resources.
+	
 	\item Obligations: obligations are requirements, which should be fulfilled before or after authorization decision is enforced.
 	Consider that a user has permission to access specific resources. For example, obligation is that the user should complete
 	her/his office duty before accessing the resources.
@@ -109,11 +122,11 @@ terms and definitions.
 	employee role for employees. Department manager may inherit all permissions of the employee role. (Role-Based Access Control by F. Ferrailolo et al.)
 	
 	\item Static Separation of Duty (SSoD): SSoD restricts the conflicting-role assignments statically that are associated with a user. On situations
-	where multiple roles can be associated with a single user and roles $Role_A$ and $Role_B$ are conflicting each other, no permission is given to a user who is assigned to both $Role_A$ and $Role_B$. SSoD is known to be too rigid for practical use in cases where a user should have permissions as either $Role_A$ and $Role_B$. (Role-Based Access Control by F. Ferrailolo et al.)
+	where multiple roles can be associated with a single user and roles $Role_A$ and $Role_B$ are conflicting each other, no permission is given to a user who is assigned to both $Role_A$ and $Role_B$. SSoD is known to be too rigid for practical use in cases where a user should have permissions as either $Role_A$ and $Role_B$.
 
 	\item Dynamic Separation of Duty: Dynamic SoD (DSD) is known to be
 more flexible than SSD. DSD restricts the conflicting-role assignments dynamically that are associated with a user. On situations
-	where multiple roles can be associated with a single user and , given a context, roles $Role_A$ and $Role_B$ are conflicting each other dynamically, no permission is given to a user. (Role-Based Access Control by F. Ferrailolo et al.)
+	where multiple roles can be associated with a single user and , given a context, roles $Role_A$ and $Role_B$ are conflicting each other dynamically, no permission is given to a user.
 	\end{itemize} 
 
 We define temporal and spatial constraints as follows:
@@ -124,7 +137,7 @@ We define temporal and spatial constraints as follows:
 	specific role is permitted to conduct an action. Consider that part-time employee works only from 9:00 a.m. to 3:00 p.m.
 	In such cases, the part-time employee role should access required resources during the interval. 
 	Temporal constraints can incorporate either on roles, user-role assignments, or role-permission assignments.   
-	(Role-Based Access Control by F. Ferrailolo et al.)
+	
 	 
 	\item Spatial Constraints: Spatial constraints are location-based constraints in specifying access
 	control policies. For example, in organizations, 	locations are enforced while a
