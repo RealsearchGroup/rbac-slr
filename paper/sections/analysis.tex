@@ -2,41 +2,66 @@
 
 \subsection{Research Question 1}
 
-What are the deficiencies in the current RBAC model? \\
+What categorizations exist within RBAC extensions? \\
 
-Core RBAC model provides an abstraction of authorization model based on user role assignment (UA) and the role
-permission assignment (PA). Since this simple model may not provide a fine-grained access control for sophisticated
-security mechanism, a variety of extended RBAC models have been proposed over the years to meet
-security requirements. Our surveyed 29 papers address more than one deficiencies described as follows.
+
 
 \begin{itemize}
-%	\item Core RBAC model needs additional contextual information and constraints to develop fine-grained policies in practice.
-	\item Core RBAC does not incorporate context. Therefore, RBAC belongs to static access control model, which may not capture changes in environments.
-	\item Core RBAC does not support for various constraints such as temporal and spatial constraints to design sophisticated policies on demand.
-	\item Core RBAC does not provide an abstraction to additional user-defined attributes	(e.g., task and team) and their association with existing attributes.
-	\item Core RBAC has limitation on delegation and role hierarchy. For example, partial inheritance in role hierarchy needs to be developed.  
+
+  \item Constraint:
+
+  \item Context:
+
+  \item Organizational:
+
+  \item Privacy:
+
+  \item Resource:
+
+  \item Spatial:  Spatial constraints are location-based constraints in specifying access
+	control policies. For example, in organizations, 	locations are enforced while a
+	specific role is permitted to conduct an action. Consider that part-time employee works only in specific location.
+	In such cases, the part-time employee role should access required resources only when the user is in the location. 
+	Spatial constraints can incorporate either on roles, user-role assignments, or role-permission assignments. 
+
+  \item Spatio-Temporal:
+
+  \item Task: A task is a fundamental unit of a business activity. Different from core RBAC, in task-role-based access control model, roles are not directly associated with permissions. Roles are first associated with tasks, which are associated permissions. For example, the employee role is associated with a task, which is to write a report. Then, this task is associated with a permission.
+
+  \item Temporal:  Temporal constraints are time-based constraints in specifying access
+	control policies. For example, in organizations, 	periodic temporal durations are enforced while a
+	specific role is permitted to conduct an action. Consider that part-time employee works only from 9:00 a.m. to 3:00 p.m.
+	In such cases, the part-time employee role should access required resources during the interval. 
+	Temporal constraints can incorporate either on roles, user-role assignments, or role-permission assignments.   
+	
 \end{itemize}
 
 \subsection{Research Question 2}
 
 What are the motivations behind RBAC extensions? \\
 
-When administrators design a model, it is important to capture an important abstraction to help the model to be enforced in a system.
-Administrators improve existing core RBAC model due to following reasons:
+Core RBAC model provides an abstraction of authorization model based on user role assignment (UA) and the role
+permission assignment (PA). Since this simple model may not provide a fine-grained access control for sophisticated
+security mechanism, a variety of extended RBAC models have been proposed over the years to meet
+security requirements. When administrators design a model, it is important to capture an important abstraction to help the model to be enforced in a system.
 
 \begin{itemize}
-	\item Model needs to incorporate additional contextual information and constraints to develop fine-grained policies in practice.
-	\item Model needs to incorporate additional attributes such as
-	task, team, purpose, organizational roles and collaborative activities over existing attributes. Moreover, new association between attributes
-	are introduced. 
-		\item Model needs to improve existing features such delegation and role hierarchy to meet fine-grained access control. 
+\item Core RBAC model needs additional contextual information and constraints to develop fine-grained policies in practice.
+\item Core RBAC does not incorporate context. Therefore, RBAC belongs to static access control model, which may not capture changes in environments.
+\item Core RBAC does not support for various constraints such as temporal and spatial constraints to design sophisticated policies on demand.
+\item Core RBAC does not provide an abstraction to additional user-defined attributes	(e.g., task and team) and their association with existing attributes.
+\item Core RBAC has limitation on delegation and role hierarchy. For example, partial inheritance in role hierarchy needs to be developed.  
+\item Model needs to incorporate additional contextual information and constraints to develop fine-grained policies in practice.
+\item Model needs to incorporate additional attributes such as
+task, team, purpose, organizational roles and collaborative activities over existing attributes. Moreover, new association between attributes
+are introduced. 
+\item Model needs to improve existing features such delegation and role hierarchy to meet fine-grained access control. 
 \end{itemize}
-
 
 
 \subsection{Research Question 3}
 
-Do the extension models have corresponding implementations in practice? \\
+Do the extension models have corresponding implementations? \\
 
 When designing and proposing a model targeted at a feature that is rooted in practical
 usage by real software systems, bringing the model to life is strong evidence that the
@@ -54,7 +79,7 @@ system.
 
 \subsection{Research Question 4}
 
-How are extended RBAC models evaluated in theory and in practice? \\
+How are extension to RBAC evaluated theoritically and in practice? \\
 
 Providing evaluation of a proposed model is a key component in establishing the models validity.  The papers were examined
 for evidence of evaluations ranging from performance to mathematical accuracy to application to real world scenarios.  Further,
@@ -62,13 +87,13 @@ for each proposed model, the reviewers looked for evidence that the authors made
 model as they pertained to claims made by the authors of why their model is needed.  The quantifiable evaluations looked for were:
 
 \begin{itemize}
-\item Time-based Performance
-\item Complexity analysis
-\item Comparison to standard RBAC
-\item Mathematical accuracy
-\item Example scenarios of the model in action
+\item Time-based Performance \cite{ni2010privacy}, \cite{aich09:role}
+\item Complexity analysis \cite{bao08:role}, \cite{zhang06:collaborative}, \cite{chen08:spatio-temporal}, \cite{aich09:role}
+\item Comparison to standard RBAC \cite{bao08:role}, \cite{zou2009crbac}, \cite{zhang06:collaborative}, \cite{zhao2008flexible}, \cite{ray07:spatio}
+\item Mathematical modeling \cite{damian2007geo}, \cite{hansen2003spatial}, \cite{aich07:STARBAC}, \cite{chen08:spatio-temporal}, \cite{joshi05:generalized}
+\item Example scenarios of the model in action \cite{alam06:constraint}, \cite{tzelepi01:flexible}, \cite{cholewka00:acontext-sensitive}, \cite{huang06:pervasive}, \cite{bao08:role}, \cite{jian2008extended}, \cite{yamazaki104:designing}, \cite{zou2009crbac}, \cite{ray07:spatio}, \cite{samuel07:spatio-temporal}, \cite{ray07:spatio}, \cite{joshi05:generalized}, \cite{yao2008task}, \cite{zhou2007team}, \cite{oh2003task}
 \item Experimental analysis of the model
-\item Case study of the model in practice
+\item Case study of the model in practice \cite{motta03:contextual}
 \end{itemize}
 
 Based on the diverse evaluation criteria, 12 models presented no evidence of an evaluation.  8 models presented example scenarios
@@ -81,9 +106,11 @@ The most widely used evaluation method was providing sample scenarios with accom
 would tackle those scenarios.  Much is left to the reader to assume of these types of evaluations, as the authors do not explicitly state
 or show how the standard model is deficient in tackling said scenarios.
 
+TODO: Add references to list above.
+
 \subsection{Research Question 5}
 
-What domains or scenarios serve as inspiration for these extensions? \\
+What domains have RBAC extensions been created for? \\
 
 Business needs have historically driven RBAC research and development.  The primary mode of evaluation for
 model extensions has been the presentation of business scenarios in various domains and how the model

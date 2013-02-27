@@ -1,41 +1,69 @@
 \section{Process} \label{sec:process}
 
-The systematic literature review process was developed in whole prior to application and agreed upon by the researchers following recommendations from Kitchenham's suggested processes \cite{kitchenham2007guidelines}.  The systematic literature review process was broken down in to four stages and the rest of this section is broken down by each stage.  The stages were:
+The authors adopted and applied a systematic literature review following recommendations from Kitchenham's suggested processes \cite{kitchenham2007guidelines}.  The systematic literature review process was broken down in to four stages and the rest of this section is broken down by each stage.  The stages were:
 
 \begin{itemize}
-\item Development of a search strategy
-\item Elimination of papers based on title
-\item Elimination of papers based on abstract
-\item Elimination of papers based on content and matching to elimination criteria
+\item Step 1: Development of a search strategy
+\item Step 2: Elimination of papers based on title criteria
+\item Step 3: Elimination of papers based on abstract criteria
+\item Step 4: Elimination of papers based on content and matching to elimination criteria
 \end{itemize}
 
-\subsection{Search Strategy}
+\subsection{Step 1: Search Strategy}
 
-For the first phase of our systematic literature review, a search strategy for finding papers was developed.  The search strategy was executed by an automated comprehensive search taking as input a set of academic search engines and a list of search criteria.  The search performed was done in an automated way using a set of scripts to query and collect data from each search engine with the criteria string as input.  For each criteria for each search engine, the results were captured until a stopping criteria was met.  The search algorithm was performed as follows:
+For the first phase of our systematic literature review, the authors developed a search strategy for finding papers.  The search strategy was executed by an automated comprehensive search taking as input a set of academic search engines and a list of search terms.  The search was performed by applying each search term to each engine incrementally until a stopping criteria was met. Table \ref{tab:search_results} lists the four search engines along the left most column with the three search term across the top row along with the papers for each criteria and engine combination.  The search algorithm was performed as follows:
 
 \begin{enumerate}
-\item Remote call to search engine with current search start position and the current search criteria.
+\item Call to search engine with current search position and current search term.
 \item Parse results and extract paper title, authors and year of publication.
-\item Compare results against stopping criteria.
+\item Compare results against stopping criteria:
 	\begin{itemize}
-	\item If stopping criteria met, stop search.
-	\item If stopping criteria not met, increase search position by number of results and return to step 1.
+	\item If the size of the result set is greater than or equal to 1000 then stop.
+	\item If the last ten results did not contain the search term phrase within the tite then stop.
 	\end{itemize}
+\item If stopping criteria not met, increment search position and go back to step one.
 \end{enumerate}
 
-The stopping criteria used was either after the first 1000 results, a limitation imposed by some of the search engines, or if ten consecutive results did not contain the search criteria phrase within the title.  After gathering all 12 data sets, the data was combined into a master list by systematically comparing the bibliographic information for each.  After producing a master list, a series of elimination rounds were performed to narrow the list of papers and identify primary sources.
+The result set size stopping criteria was chosen due to a technical limitation of some search engines.  The stopping criteria related to the last ten titles is meant to stop after relevant results are no longer being returned by the search engine.  After gathering all 12 data sets, the authors combined the papers into a master list by systematically comparing the bibliographic information for each.  The master list of 1716 papers was used to perform a series of elimination rounds to narrow the list of papers and identify primary sources.
 
-\subsection{Elimination Rounds}
+\begin{table}
+\centering
+\begin{tabular}{|p{3.5cm}|p{1.25cm}|p{4.25cm}|p{4.25cm}|p{1cm}|}
+
+\hline
+ & 
+\textbf{RBAC} & 
+\textbf{role based access control} & 
+\textbf{role-based access control} & 
+\textbf{Total}
+\\\hline
+
+Google Scholar & 651 & 213 & 435 & 1299 \\\hline
+ACM Portal & 500 & 20 & 720 & 1240 \\\hline
+IEEExplore & 200 & 40 & 230 & 470 \\\hline
+CiteSeerX & 100 & 100 & 150 & 350 \\\hline
+ &  &  &  & \\\hline
+Totals & 1451 & 373 & 1535 & 3359 \\\hline
+Combined &  &  &  & \textbf{1716} \\\hline
+
+\end{tabular}
+\caption{Paper counts after applying search strategy}
+\label{tab:search_results}
+\end{table}
+
+TODO: Add elimination stats.
+
+\subsection{Steps 2-4: Elimination Rounds}
 
 The elimination rounds were performed based on reading of the title, abstract and finally the paper itself.  While each elimination stage had a unique set of criteria for elimination the general procedure for elimination for the researchers was as follows.
 
 \begin{itemize}
-\item Each reviewer independently classified papers as relevant, irrelevant or uncertain based off elimination criteria
+\item The two first authors independently classified papers as relevant, irrelevant or uncertain based off elimination criteria
 \item Those papers marked as relevant by both reviewers were kept and those marked irrelevant by both were thrown out.
-\item Papers marked as relevant, or irrelevant by a single reviewer were combined with all papers marked as uncertain and discussed by both reviewers.  From this discussion, papers were either thrown out or kept until the next round of the review.  Ties were broken by an indepedent party.
+\item Papers marked as relevant, or irrelevant by a single reviewer were combined with all papers marked as uncertain and discussed by both reviewers.  From this discussion, papers were either thrown out or kept until the next round of the review.
 \end{itemize}
 
-\subsubsection{Title Elimination}
+\subsubsection{Step 2: Title Elimination}
 
 The first round of elimination was performed by strict examination of the title.  Each researcher was tasked with deciding on elimination by answering the following questions:
 
@@ -44,7 +72,7 @@ The first round of elimination was performed by strict examination of the title.
 \item Did the title contain a reference to 'model'?
 \end{itemize}
 
-\subsubsection{Abstract Elimination}
+\subsubsection{Step 3: Abstract Elimination}
 
 The second round of elimination was based on strict reading of the abstracts of papers that survived title elimination.  Researchers read each abstract and evaluated relevancy based off:
 
@@ -54,14 +82,16 @@ The second round of elimination was based on strict reading of the abstracts of 
 \item Does the abstract mention either an implementation, evaluation or domain for their model?
 \end{itemize}
 
-\subsubsection{Content Elimination}
+\subsubsection{Step 4: Content Elimination}
 
 The final elimination round involved taking the entire paper into consideration and answering five questions that would serve as the basis for elimination.  The data collected by answering these questions served as the basis towards answering the research questions.  The questions each reviewer attempted to answer based on the content of the paper was:
 
-\begin{itemize}
-\item Does this model extend the core model?
-\item What reasons and evidence do researchers give that RBAC needs extension?
-\item Was the paper and subsequent model inspired by a real world example?
-\item Is there any evaluation of the proposed model? If yes, how did they do one? If no, why?
-\item Did the authors implement their model?
-\end{itemize}
+\begin{enumerate}
+\item Does this model extend the core model? (Exclusion)
+\item Do the researchers give evidence that RBAC needs extension? (Inclusion)
+\item Was the paper and subsequent model inspired by a real world example?  (Conditional Inclusion)
+\item Did the researchers offer any evaluation of the proposed model? If yes, how did they do one? If no, why? (Conditional Inclusion)
+\item Did the authors implement their model? (Inclusion)
+\end{enumerate}
+
+Question 1 was a definitive exclusion criteria as any paper that failed in the affirmative was rejected.  Questions 3 and 4 were marked as conditional includes given that they were connected in making a decision.  A paper that met Question 3 but not 4, or met 4 but not 3 would be included since in some cases the real world examples served as research evaluations and without this conditional include the paper list size would be too small to be significant.

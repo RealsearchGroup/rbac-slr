@@ -47,32 +47,6 @@ Papers
 
     Notes.
 
-
-----------------------------------------------------
- 
-**A Context-Aware Role-Based Access Control Model for Web Services**
-
-    Inspired by a real example? Scenarios or examples.
-        No.
-
-    What reasons and evidence do researchers claim RBAC needs extension?
-        - claim is that RBAC can not handle many small services that need roles/perms wrapped around them
-
-    Did they implement the model?
-        No.
-
-    Is there an evaluation? If yes, how did they do one? If no, why?
-        No.
-
-    Does this model extend the core model?
-        - services replace objects/actions
-        - adds contexts that must be satisfied
-        - splits roles into local and global, where local is reflective of actions within a service/domain and global roles are reflective of the permissions to access the service
-        - roles are activated based on context at execution time
-
-    Notes.
-        - context oriented, provides what appears to be a different spin or implementation of heirarchies
-
 ----------------------------------------------------
 
 **Context-sensitive access control model and prototype implementation**
