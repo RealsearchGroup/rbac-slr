@@ -24,7 +24,7 @@ For the first phase of our systematic literature review, the authors developed a
 \item If stopping criteria not met, increment search position and go back to step one.
 \end{enumerate}
 
-The result set size stopping criteria was chosen due to a technical limitation of some search engines.  The stopping criteria related to the last ten titles is meant to stop after relevant results are no longer being returned by the search engine.  After gathering all 12 data sets, the authors combined the papers into a master list by systematically comparing the bibliographic information for each.  The master list of 1716 papers was used to perform a series of elimination rounds to narrow the list of papers and identify primary sources.
+The result set size stopping criteria was chosen due to a technical limitation of some search engines.  The stopping criteria related to the last ten titles is meant to stop after relevant results are no longer being returned by the search engine.  After gathering all 12 data sets, the authors combined the papers into a master list by systematically comparing the bibliographic information for each.  The master list of 1716 papers was used to perform a series of elimination rounds to narrow the list of papers and identify primary sources.  Table \ref{tab:eliminations} shows the total number of papers selected by each author for each round and how many papers from the disjoint set for each round survived to the next round.
 
 \begin{table}
 \centering
@@ -65,7 +65,7 @@ The elimination rounds were performed based on reading of the title, abstract an
 
 \subsubsection{Step 2: Title Elimination}
 
-The first round of elimination was performed by strict examination of the title.  Each researcher was tasked with deciding on elimination by answering the following questions:
+The first round of elimination was performed by strict examination based on the title.  Each author was tasked with deciding on elimination by answering the following questions:
 
 \begin{itemize}
 \item Did the title contain a reference to 'role based access control' or 'RBAC'? 
@@ -95,3 +95,24 @@ The final elimination round involved taking the entire paper into consideration 
 \end{enumerate}
 
 Question 1 was a definitive exclusion criteria as any paper that failed in the affirmative was rejected.  Questions 3 and 4 were marked as conditional includes given that they were connected in making a decision.  A paper that met Question 3 but not 4, or met 4 but not 3 would be included since in some cases the real world examples served as research evaluations and without this conditional include the paper list size would be too small to be significant.
+
+\begin{table}
+\centering
+\begin{tabular}{ c c | c | c | c | }
+\cline{3-5}
+
+ & \multicolumn{1}{ c| }{} & \textbf{Title} & \textbf{Abstract} & \textbf{Paper Body} \\ \hline
+
+\multicolumn{1}{ |c| }{Eric}  &  & 305 & 86 & 46 \\ \hline
+\multicolumn{1}{ |c| }{Hwang} &  & 176 & 102 & 42 \\ \hline
+
+\multicolumn{1}{ c| }{} & Overlap & 249 & 51 & 24 \\ \cline{2-5}
+\multicolumn{1}{ c| }{} & Disjoint & 232 & 137 & 64 \\ \cline{2-5}
+\multicolumn{1}{ c| }{} & Rejected & 208 & 116 & 59 \\ \cline{2-5}
+\multicolumn{1}{ c| }{} & Retained & 41 & 21 & 5 \\ \cline{2-5}
+\multicolumn{1}{ c| }{} & \textbf{Total} & 290 & 72 & 29 \\ \cline{2-5}
+
+\end{tabular}
+\caption{Elimination Rounds}
+\label{tab:search_results}
+\end{table}
