@@ -1,4 +1,4 @@
-\section{Categorization}
+\subsection{Research Question 1}
 
 After deciding upon a set of primary sources, the authors noticed that each paper fell into one or more categorization's of extensions to RBAC.
 The categorizations were extracted by looking at how they are defined, what are their characteristics and how do individual categories relate
@@ -12,20 +12,20 @@ The primary sources contained either within the title, or by multiple references
 type of extension their model was.  For example, the paper "Privacy-aware role-based access control" \cite{ni2010privacy} contained "privacy" in
 the title leading to the papers categorization of Privacy.  By comparison, the paper "An extended RBAC model based on granular logic" \cite{jian2008extended}
 does not contain a direct categorization in the title or model name, but in reading the body of the paper the authors assessed that this paper was 
-context based.  The authors offer definitions for each categorization and their characteristics based on the primary sources and the english definitions
+context based.  The authors offer definitions for each categorization and their characteristics based on the primary sources and the English definitions
 for each.
 
 \begin{itemize}
 
-  \item Constraint:
+  \item Constraint: Access control model in this category extends constraints, which are conditional restrictions on permissions of given roles. This constraint is either static and dynamic. For example, a doctor can modify any medical record for which the doctor is assigned as the designated primary care physician. This example describes doctor's permission with conditional restriction, "only when the doctor is assigned as the designated primary care physician".
 
-  \item Context:
+  \item Context: Access control model integrates context information. In access control, context often refers to user's current state and environment information (e.g., location, time, system resources, network state, network security configuration, etc) which may affect user's access privileges.
 
-  \item Organizational:
+  \item Organizational: Organizational access control is concerned with access control associated with multiple organizations. Typically, users may have the same role name in different organizations, but may have different access privileges due to different local variations.
+  
+  \item Privacy: Access control model can be extended to describe privacy policies, which are legal statements or documents about disclose and management of personally identifiable information such as name, address, data of birth, etc.
 
-  \item Privacy:
-
-  \item Resource:
+  \item Resource: Access control model can be extended to handle any system resources (e.g., a file, printer, terminal, database record, etc) in a flexible way. 
 
   \item Spatial:  Spatial constraints are location-based constraints in specifying access
 	control policies. For example, in organizations, 	locations are enforced while a
@@ -33,7 +33,7 @@ for each.
 	In such cases, the part-time employee role should access required resources only when the user is in the location. 
 	Spatial constraints can incorporate either on roles, user-role assignments, or role-permission assignments. 
 
-  \item Spatio-Temporal:
+  \item Spatio-Temporal: Spatio-temporal constraints are combination of spatial (location-based) and temporal (time-based) constraints in specifying access control policies. For example, specific locations are enforced while a role is permitted to conduct an action from 8 am to 5 pm.
 
   \item Task: A task is a fundamental unit of a business activity. Different from core RBAC, in task-role-based access control model, roles are not directly associated with permissions. Roles are first associated with tasks, which are associated permissions. For example, the employee role is associated with a task, which is to write a report. Then, this task is associated with a permission.
 

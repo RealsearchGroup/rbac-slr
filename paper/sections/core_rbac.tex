@@ -1,3 +1,4 @@
+
 \section{Core Role Based Access Control} \label{sec:core-rbac}
 
 Since the basis for our review is extensions to the core model, we will describe the core model, associated entities and other terminology encountered across the space of our review.  The NIST RBAC model proposed by Ferraiolo et al. and later adopted as the official standard for RBAC by the International Committee for Information Technology Standards (INCITS) consists of four basic entities:
@@ -16,21 +17,14 @@ permission assignment (PA) functions.
 UA models assignment of users to roles.
 PA models assignment of permissions to roles.
 
-%Each user incorporates a session    
-%The user function maps each session to a
-%single user, whereas the role function establishes a
-%mapping between a session and a set of roles activated
-%by the corresponding user in the session.
+\begin{figure}[ht]
+    \centering
+        \includegraphics[width=4.0in]{sections/core-model.png}
+    \caption{\label{fig:overview}RBAC Core Diagram in NIST RBAC model \cite{ferraiolokuhn}.}
+\end{figure}
 
-P1: Describe RBAC entities
 
-P2: Note the 4 levels of RBAC
-
-P3: Concisely describe level 1
-
-P4: Concisely describe level 2
-
-P5: COncisely describe level 3
-
-P6: Concisely describe level 4
-
+Figure~\ref{fig:overview} presents an overview of core RBAC model diagram where elements and their relations are described.
+Let "USERS", "ROLES", "OBS", "OPS", "PRM", and "SESSIONS" denote users, roles, objects, operations, permissions, and sessions, respectively.
+Permissions are associated with possible users' pre-defined operation on an object (e.g., execute a file).
+Note that, at user or role activation, a session associated with user or role is established.
