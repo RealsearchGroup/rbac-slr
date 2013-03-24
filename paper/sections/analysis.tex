@@ -1,4 +1,4 @@
-\section{Analysis} \label{sec:analysis}
+\section{Motivations} \label{sec:motivations}
 
 \subsection{Research Question 2}
 
@@ -10,6 +10,7 @@ security mechanism, a variety of extended RBAC models have been proposed over th
 security requirements. When administrators design a model, it is important to capture an important abstraction to help the model to be enforced in a system.
 
 \begin{itemize}
+\setlength{\itemsep}{0.25pt}
 \item Core RBAC model needs additional contextual information and constraints to develop fine-grained policies in practice.
 \item Core RBAC does not incorporate context. Therefore, RBAC belongs to static access control model, which may not capture changes in environments.
 \item Core RBAC does not support for various constraints such as temporal and spatial constraints to design sophisticated policies on demand.
@@ -22,6 +23,8 @@ are introduced.
 \item Model needs to improve existing features such delegation and role hierarchy to meet fine-grained access control. 
 \end{itemize}
 
+
+\section{Implementations} \label{sec:implementations}
 
 \subsection{Research Question 3}
 
@@ -36,10 +39,13 @@ proposed models actually had implementations associated with them.  And quantifi
 type of implementation.  Whether the implementation was for a real system, for a prototype
 and/or used in a production environment.
 
-Of the 29 papers surveyed, there was a significant lack of implementation with 21 of the paper providing no
+Of the 29 papers surveyed, there was a lack of implementation with 21 of the paper providing no
 mention of a implementation or prototype.  Of the remaining 8 papers that did mention an implementation, half 
 were simply prototypes developed by the authors while the other half were claimed to be implemented within a real
 system.
+
+
+\section{Evaluations} \label{sec:evaluations}
 
 \subsection{Research Question 4}
 
@@ -51,6 +57,7 @@ for each proposed model, the reviewers looked for evidence that the authors made
 model as they pertained to claims made by the authors of why their model is needed.  The quantifiable evaluations looked for were:
 
 \begin{itemize}
+\setlength{\itemsep}{0.25pt}
 \item Time-based Performance \cite{ni2010privacy}, \cite{aich09:role}
 \item Complexity analysis \cite{bao08:role}, \cite{zhang06:collaborative}, \cite{chen08:spatio-temporal}, \cite{aich09:role}
 \item Comparison to standard RBAC \cite{bao08:role}, \cite{zou2009crbac}, \cite{zhang06:collaborative}, \cite{zhao2008flexible}, \cite{ray07:spatio}
@@ -70,7 +77,8 @@ The most widely used evaluation method was providing sample scenarios with accom
 would tackle those scenarios.  Much is left to the reader to assume of these types of evaluations, as the authors do not explicitly state
 or show how the standard model is deficient in tackling said scenarios.
 
-TODO: Add references to list above.
+
+\section{Domains} \label{sec:domains}
 
 \subsection{Research Question 5}
 
@@ -85,6 +93,7 @@ RBAC extensions.
 Upon examination of the primary sources, the most prevalent domains were:
 
 \begin{itemize}
+\setlength{\itemsep}{0.25pt}
 \item What domains or scenarios serve as inspiration for these extensions?
 \item Medical domain
 \item Pervasive computing environments
@@ -92,6 +101,9 @@ Upon examination of the primary sources, the most prevalent domains were:
 \item Large-scale organizations with many sub-departments
 \item Enterprise, organization workflows
 \end{itemize}
+
+
+\section{Generaliations} \label{sec:generalizations}
 
 \subsection{Research Question 6}
 
