@@ -1,7 +1,7 @@
 \begin{abstract}
 
 \noindent
-{\bf Context}: Since the introduction of the role based access control (RBAC) standard in the late 1990's, 
+{\bf Context}: Since the introduction of the role based access control (RBAC) standard in the late 1990's by the National Institute of Standards and Technology (NIST),
 RBAC has become an increasingly popular access control mechanism for applications such as 
 web applications, mobile computing and databases. RBAC restricts access to resources 
 based on the identity of subjects connected to logical groupings of permissions.  
@@ -10,9 +10,10 @@ RBAC model; for example, defining additional constraints among roles, adding con
 \\
 \\
 \noindent
-{\bf Aim}: Our work aims to aid researchers looking to expand on the body of knowledge surrounding extensions to RBAC need a starting place to prevent re-invention of the wheel and
-developers needing to find and select an access control mode based on their project requirements. 
-\textit{The goal of this work is to provide practioners an assessment of the current extensions to RBAC to aid with choosing a model that meets their requirements, and researchers with insights into the state of RBAC extension models and how they are evaluated.}
+{\bf Aim}: The goal of our work is to aid practioners and researchers in choosing an exentsion to the RBAC standard model, and in understanding
+how extensions to RBAC are evaluated by providing an assessment of the state of extensions to the RBAC standard model through: establisment of a 
+set of extension categories, an examination of the state of the art in evaluations of extension models and a breakdown of the reasoning and motivations
+that have led to extension of the RBAC standard.
 \\
 \\
 \noindent
@@ -24,14 +25,19 @@ We performed a comparative analysis of the primary sources to find relationships
 \\
 \\
 \noindent
-{\bf Results}: Our results showed that extensions to RBAC fall into a number of categories that in turn all
-fall under the single category of context based extensions.  We look into the motivations behind RBAC extensions and
-the domains that are leading factors in developing these newer models. We also quantify the current evaluation methods
-used when RBAC extension models are presented to the research community.
+{\bf Results}: Our results showed that extensions to RBAC can be classified under seven categories: Constraint, Context, 
+Organization, Privacy, Resource, Task, Spatio-Temporal, Spatial and Temporal. We found a range of motivations behind RBAC extensions from 
+lack of fine-grained controls to a need for context placed on permissions, roles and assignment.  We found that 12 models presented no evidence
+of an evaluation, 8 models used example scenarios and 6 others provided some complexity and time analysis.  Of the 29 papers, we identified only
+8 that provided in an implementation of their model in the form of an enterprise application or prototype. We found that the primary domains 
+that inspired were the model domain with 9 of the 29 models, enterprise workflows with 5 of 29, and mobile computing with 5 of 29.
 \\
 \\
 \noindent
-{\bf Conclusions}: The extensions to RBAC fall into a number of categorizations with Organization, Privacy, Resource, Task, Spatio-Temporal, Spatial and Temporal falling under the general category of context.
-Domains, such as healthcare and mobile computing, were idenitfied as motivations behind the development of extensions to the RBAC model.  Our literature review showed that the state of RBAC model evaluation could benefit from the research community given most model evaluations seen within the papers were based on hypothetical situations with little to no case studies or implementations in practice.
+{\bf Conclusions}: The extensions to RBAC found by our systematic literature review fall into seven categoriies that upon closer inspection can be 
+aligned under the single category of context. Two domains, healthcare and mobile computing, were idenitfied as predominant motivations behind the 
+development of extensions to the RBAC model. Our literature review showed that the state of evaluation of RBAC model evaluation is limited with 1 
+paper doing an evaluation comparing itself to the core RBAC model, 12 of the 29 models lacking any identifiable evaluation and 8 presenting example 
+scenarios of their model in action, the predominant evaluation method.
 
 \end{abstract}

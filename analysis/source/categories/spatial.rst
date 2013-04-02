@@ -70,6 +70,7 @@ Papers
 
     Inspired by a real example? Scenarios or examples.
         Provide an application scenario of where this would be needed and used
+        medical
 
     What reasons and evidence do researchers claim RBAC needs extension?
         - standard RBAC cannot handle location based constraints and attributes

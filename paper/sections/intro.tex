@@ -1,8 +1,23 @@
 \section{Introduction} \label{sec:introduction}
 
-Innovation and the use of RBAC into new domains has led to scenarios that, by some accounts, the standard RBAC model cannot handle.  For example, Ni, Q. and Bertino, E. et al \cite{ni2010privacy} state that RBAC is ``not designed to enforce privacy policies and barely meet privacy protection requirements`` with the introduction of privacy concerns in domains such as healthcare. Thus, a series of extensions to the standard RBAC model have appeared in the literature, each adding one or more features.  However, as researchers often develop their own specialized extended models of RBAC, their research cannot be generalized or compared with other research work appropriately.
+Innovation and the use of role based access control (RBAC) into new domains has led to scenarios that, by some accounts, the standard RBAC model cannot handle \cite{kuhn2010adding}.  
+For example, Ni, Q. et al \cite{ni2010privacy} state that RBAC is ``not designed to enforce privacy policies and barely 
+meet privacy protection requirements`` with the introduction of privacy concerns in domains such as healthcare. 
+Since the introduciton of the NIST RBAC standard in 2000, extension models to the RBAC standard have appeared in the literature, each adding one or more features onto the core.  
+A cursory examination of the extension model papers does not provide good comparisons. Further, no generalizations among models have been made which inherently defies the reasoning behind
+creating a standard.
 
-Role based access control (RBAC) was first introduced in the 1990s when the National Institute for Standards and Technology (NIST) requested that a unified standard be created by combining the Ferraiolo and Kuhn model \cite{ferraiolokuhn} with the framework proposed by Sandhu, et al \cite{sandhu1996role}.  The development of a standard was inspired by an economic impact study done during the 1990s and later confirmed in 2011 \footnote{\url{http://csrc.nist.gov/groups/SNS/rbac/documents/20101219_RBAC2_Final_Report.pdf}}. In an RBAC model, roles represent a group of users who are involved in a specific job function in an organization. RBAC assigns permissions of specific actions on resources to roles instead of individual users.  Therefore, in order to gain roles' permission on specific resources, users acquire appropriate roles first.  RBAC is a generalized access control approach used for various applications including web services, database applications, and healthcare applications.  RBAC has advantages in maintaining and managing organization's security policies.  For example, if a user is to access manager role's resources within a given organization, security policy administrators simply add the user to be associated with the manager role.
+The RBAC standard was first introduced in the 1990s when the National Institute for Standards and Technology (NIST) 
+requested that a unified standard be created by combining the Ferraiolo and Kuhn model \cite{ferraiolokuhn} with the framework 
+proposed by Sandhu, et al \cite{sandhu1996role}.  In 2004, this standard was adopted as ANSI/INCITS 359-2004.  The development of a standard was inspired by an economic impact study done 
+during the 1990s and later confirmed in 2011 \footnote{\url{http://csrc.nist.gov/groups/SNS/rbac/documents/20101219_RBAC2_Final_Report.pdf}}
+that showed the cost savings of RBAC in implementation and maintenance.
+RBAC is a generalized access control approach used for various applications including web services, 
+database applications, and healthcare applications.  RBAC has advantages in maintaining and managing organization's security policies.  
+For example, if a user is to access manager role's resources within a given organization, security policy administrators simply add the user to be associated with the manager role.
+In an RBAC model, roles represent a group of users who are involved in a specific job function in an organization. RBAC assigns permissions 
+of specific actions on resources to roles instead of individual users. Therefore, in order to gain a roles' permission on specific resources, 
+users acquire appropriate roles first.  
 
 \textit{The goal of this work is to provide practioners an assessment of the current extensions to RBAC to aid with choosing a model that meets their requirements, and researchers with insights into the state of RBAC extension models and how they are evaluated.} With respect to our goal, the authors addressed the following research questions:
 
@@ -28,4 +43,4 @@ Our research provides contributions to the community in the following ways:
 \item Identifies the deficiencies in RBAC extension evaluation.
 \end{itemize}
 
-The rest of the paper is organized as follows.  Section 2 covers background and the core RBAC model. Section 3 lays out the process used in conducting the review. Section 4 discusses the categorization break down of the papers. Section 5 analyzes the rest of the research questions.  Section 6 contains the final conclusions.
+The rest of the paper is organized as follows.  Section 2 covers background and the core RBAC model. Section 3 lays out the process used in conducting the review. Sections 4-9 present the analysis and discussion of the research questions. Section 10 contains the final conclusions.
