@@ -1,8 +1,6 @@
 \section{Motivations} \label{sec:motivations}
 
-\subsection{Research Question 2}
-
-What are the motivations behind RBAC extensions? \\
+RQ2: What are the motivations behind RBAC extensions? \\
 
 Core RBAC model provides an abstraction of authorization model based on user role assignment (UA) and the role
 permission assignment (PA). Since this simple model may not provide a fine-grained access control for sophisticated
@@ -26,9 +24,7 @@ are introduced.
 
 \section{Implementations} \label{sec:implementations}
 
-\subsection{Research Question 3}
-
-Do the extension models have corresponding implementations? \\
+RQ3: Do the extension models have corresponding implementations? \\
 
 When designing and proposing a model targeted at a feature that is rooted in practical
 usage by real software systems, bringing the model to life is strong evidence that the
@@ -47,9 +43,7 @@ system.
 
 \section{Evaluations} \label{sec:evaluations}
 
-\subsection{Research Question 4}
-
-How are extension to RBAC evaluated theoritically and in practice? \\
+RQ4: How are extension to RBAC evaluated theoritically and in practice? \\
 
 Providing evaluation of a proposed model is a key component in establishing the models validity.  The papers were examined
 for evidence of evaluations ranging from performance to mathematical accuracy to application to real world scenarios.  Further,
@@ -77,20 +71,20 @@ The most widely used evaluation method was providing sample scenarios with accom
 would tackle those scenarios.  Much is left to the reader to assume of these types of evaluations, as the authors do not explicitly state
 or show how the standard model is deficient in tackling said scenarios.
 
+\subsection{Analysis and Discussion}
+
 
 \section{Domains} \label{sec:domains}
 
-\subsection{Research Question 5}
-
-What domains have RBAC extensions been created for? \\
+RQ5: What domains have RBAC extensions been created for? \\
 
 Business needs have historically driven RBAC research and development.  The primary mode of evaluation for
 model extensions has been the presentation of business scenarios in various domains and how the model
 uniquely handles those particular scenarios.  Thus, looking for trends in the domains used in the example
-scenarios might serve to illuminate a trend worth further examination into the reason for the explosion of
-RBAC extensions.
-
-Upon examination of the primary sources, the most prevalent domains were:
+scenarios might serve to illuminate a trend worth further examination into the reasaon for the explosion of
+RBAC extensions.  The authors identified domains presented within the primary sources by looking for example
+scenarios cast within a particular domain or mention of domain requirements within the body of the paper.
+We found that the domains mentioned and their associated sources are:
 
 \begin{itemize}
 \setlength{\itemsep}{0.25pt}
@@ -102,6 +96,32 @@ Upon examination of the primary sources, the most prevalent domains were:
 \item Large-scale organizations with many sub-departments \cite{yamazaki04:designing}, \cite{han08:extended}, \cite{yao2008task}
 \item Enterprise, organization workflows \cite{cholewka00:acontext-sensitive}, \cite{bao08:role}, \cite{zhang06:collaborative}, \cite{oh2003task}, \cite{joshi05:generalized}
 \end{itemize}
+
+The predominant domain for which extension models have been generated for is that of the medical domain with 9 of 29 mentioning scenarios or requirements of that industry.
+Mobile computing and enterprise workflows were each represented by 5 papers claiming to be influenced by the requirements for access control within these domains. The final set
+of domains was pervasive computing environments and large-scale organizations with 3 each and web applications with 1.  There were 4 papers without any direct mention of a domain
+since Aich et al. \cite{aich09:role} fall under both the medical domain and mobile computing.
+
+\subsection{Analysis and Discussion}
+
+The medical domain produced the largest selection of papers when analyzing the domains influencing the proposals of extension models.  
+Further, the authors noted that the categories associated with papers identifying the medical domain was not limited to one or two but cut across
+each of the nine categories except for Organization and Resource. 
+The cross-category nature of the medical domain papers appears indicative of the complex nature of medical applications and the requirements therein.
+Given the growth of the research and development of medical applications over the past decade this result does not appear to be surprising. However,
+the RBAC standard was originally created to reduce cost and increase interoperability - two goals of current regulation around the standardization
+of electronic health record systems. The large number of proposed models, and the cross-category result stand in direct opposition of the goals
+of both the RBAC standard and current regulations.
+
+The RBAC standard has been re-enforced by the economic impact that standardization has had on enterprises needing to apply access control.  The
+inclusion of extension models targeted at the enterprise workflow domain is indicative of the expansion of requirements for enterprises. Developers
+and researchers should take care when looking at extension models designed to addresses the newer requirements of enterprise workflows in order to
+achieve the same economic implementation and maintainability benefits the original standard model presents.
+
+Mobile computing has seen a dramatic increase in the number of available devices, operating systems and applications since 1997 when the first smart phone
+was introduced. 
+The domain analysis results produced 5 papers that targeted extensions that are designed to address the requirements of mobile computing.
+For a domain that was roots in personal and enterprise computing, protecting the data of both through access controls is paramount given their ubiquity.
 
 
 \section{Generaliations} \label{sec:generalizations}
