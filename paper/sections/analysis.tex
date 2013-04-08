@@ -21,6 +21,8 @@ are introduced.
 \item Model needs to improve existing features such delegation and role hierarchy to meet fine-grained access control. 
 \end{itemize}
 
+\subsection{Analysis and Discussion}
+
 
 \section{Implementations} \label{sec:implementations}
 
@@ -35,11 +37,37 @@ proposed models actually had implementations associated with them.  And quantifi
 type of implementation.  Whether the implementation was for a real system, for a prototype
 and/or used in a production environment.
 
-Of the 29 papers surveyed, there was a lack of implementation with 21 of the paper providing no
+\begin{table}
+\centering
+\begin{tabular}{ | c | c | }
+\cline{1-2}
+
+\textbf{Implementation Type} & \textbf{Paper Count} \\ \cline{1-2}
+Enterprise Implementation & 4 \\ \cline{1-2}
+Prototype Implementation & 4 \\ \cline{1-2}
+No Implementation & 20 \\
+
+\cline{1-2}
+\end{tabular}
+\caption{Implementation types found and the count of primary sources}
+\label{tab:implementations}
+\end{table}
+
+Table \ref{tab:implementations} shows the breakdown of implementations found within the primary sources.
+Of the 28 papers surveyed, there was a lack of implementation with 20 of the paper providing no
 mention of a implementation or prototype.  Of the remaining 8 papers that did mention an implementation, half 
 were simply prototypes developed by the authors while the other half were claimed to be implemented within a real
 system.
 
+\subsection{Analysis and Discussion}
+
+The RBAC standard was designed with enterprises in mind such that when practioners implemented RBAC into their systems
+there would be a reasonable assurance being based off a well thought out model.  As extensions to the standard model
+come along, thought and time should be given to how features and nuances of their models may impact implementation
+in order to achieve the same goals as the original standard.  The primary sources should a significant lack of implementation
+with over 70\% of the models having no notion of attempting to implement them.  The bare minimum, as 4 papers did, should be
+a prototype implementation of the model for review by both pracitioners and researchers. Of the models that produced an 
+implementation within the enterprise world, two were from within the medical domain and two were implemented using web application technologies.  
 
 \section{Evaluations} \label{sec:evaluations}
 
@@ -88,7 +116,6 @@ We found that the domains mentioned and their associated sources are:
 
 \begin{itemize}
 \setlength{\itemsep}{0.25pt}
-\item What domains or scenarios serve as inspiration for these extensions?
 \item Medical domain \cite{alam06:constraint}, \cite{tzelepi01:flexible}, \cite{motta03:contextual}, \cite{ni2010privacy}, \cite{damiani2007geo}, \cite{hansen2003spatial}, \cite{samuel07:spatio-temporal}, \cite{aich09:role}, \cite{zhou2007team}
 \item Pervasive computing environments \cite{huang06:pervasive}, \cite{chen08:spatio-temporal}, \cite{ray07:spatio}
 \item Web applications \cite{masoumzadeh2008purbac}
@@ -97,7 +124,7 @@ We found that the domains mentioned and their associated sources are:
 \item Enterprise, organization workflows \cite{cholewka00:acontext-sensitive}, \cite{bao08:role}, \cite{zhang06:collaborative}, \cite{oh2003task}, \cite{joshi05:generalized}
 \end{itemize}
 
-The predominant domain for which extension models have been generated for is that of the medical domain with 9 of 29 mentioning scenarios or requirements of that industry.
+The predominant domain for which extension models have been generated for is that of the medical domain with 9 of 28 mentioning scenarios or requirements of that industry.
 Mobile computing and enterprise workflows were each represented by 5 papers claiming to be influenced by the requirements for access control within these domains. The final set
 of domains was pervasive computing environments and large-scale organizations with 3 each and web applications with 1.  There were 4 papers without any direct mention of a domain
 since Aich et al. \cite{aich09:role} fall under both the medical domain and mobile computing.
@@ -126,10 +153,9 @@ For a domain that was roots in personal and enterprise computing, protecting the
 
 \section{Generaliations} \label{sec:generalizations}
 
-\subsection{Research Question 6}
-
-What commonalities or generalizations exist across all categorizations? \\
+RQ6: What commonalities or generalizations exist across all categorizations? \\
 
 Core or any extended role-based access control is used in various aspects of computer systems. In order to reduce efforts for modeling access control used in various applications, researchers often focus on developing generalized core concepts of access control.
 We found that propositional logic is used to describe access control model across all categorizations. Propositional logic is concerned with propositions and their logical relationships. In propositional logic, simple (i.e., atomic) or compound condition at given context is evaluated to true or false based on specified rules and access control logic. Researchers are concerned to extend limited set of propositions specific to core RBAC to meet real-world scenarios such as dynamic constraints, temporal, or spatial constraints. However, semantic meanings of such propositions are various based on researchers' intention.
 
+\subsection{Analysis and Discussion}
