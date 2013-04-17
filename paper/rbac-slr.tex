@@ -9,6 +9,21 @@
 \usepackage{array}
 \usepackage{epstopdf}
 \usepackage{enumitem}
+
+\usepackage{times}
+\usepackage{color}
+\usepackage{calc}
+
+\definecolor{lightgray}{gray}{0.75}
+
+% greybox command definition
+\newcommand\greybox[1]{%
+  \vskip\baselineskip%
+  \par\noindent\colorbox{lightgray}{%
+    \begin{minipage}{\linewidth-2\fboxsep}#1\end{minipage}%
+  }%
+  \vskip\baselineskip%
+}
  
 
 \journal{TBD}

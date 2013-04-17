@@ -1,6 +1,8 @@
 \section{Motivations} \label{sec:motivations}
 
-RQ2: What are the motivations behind RBAC extensions? \\
+RQ2: What are the motivations behind extensions to RBAC?
+
+\subsection{Results}
 
 Core RBAC model provides an abstraction of authorization model based on user role assignment (UA) and the role
 permission assignment (PA). Since this simple model may not provide a fine-grained access control for sophisticated
@@ -26,7 +28,9 @@ are introduced.
 
 \section{Implementations} \label{sec:implementations}
 
-RQ3: Do the extension models have corresponding implementations? \\
+RQ3: Do the extension models have corresponding implementations?
+
+\subsection{Results}
 
 When designing and proposing a model targeted at a feature that is rooted in practical
 usage by real software systems, bringing the model to life is strong evidence that the
@@ -39,6 +43,7 @@ and/or used in a production environment.
 
 \begin{table}
 \centering
+\caption{Implementation types found and the count of primary sources}
 \begin{tabular}{ | c | c | }
 \cline{1-2}
 
@@ -49,7 +54,6 @@ No Implementation & 20 \\
 
 \cline{1-2}
 \end{tabular}
-\caption{Implementation types found and the count of primary sources}
 \label{tab:implementations}
 \end{table}
 
@@ -71,7 +75,9 @@ implementation within the enterprise world, two were from within the medical dom
 
 \section{Evaluations} \label{sec:evaluations}
 
-RQ4: How are extension to RBAC evaluated theoritically and in practice? \\
+RQ4: How are extension to RBAC evaluated theoeetically and in practice?
+
+\subsection{Results}
 
 Providing evaluation of a proposed model is a key component in establishing the models validity.  The papers were examined
 for evidence of evaluations ranging from performance to mathematical accuracy to application to real world scenarios.  Further,
@@ -104,7 +110,9 @@ or show how the standard model is deficient in tackling said scenarios.
 
 \section{Domains} \label{sec:domains}
 
-RQ5: What domains have RBAC extensions been created for? \\
+RQ5: What domains have extensions to RBAC been created for?
+
+\subsection{Results}
 
 Business needs have historically driven RBAC research and development.  The primary mode of evaluation for
 model extensions has been the presentation of business scenarios in various domains and how the model
@@ -133,7 +141,7 @@ since Aich et al. \cite{aich09:role} fall under both the medical domain and mobi
 
 The medical domain produced the largest selection of papers when analyzing the domains influencing the proposals of extension models.  
 Further, the authors noted that the categories associated with papers identifying the medical domain was not limited to one or two but cut across
-each of the nine categories except for Organization and Resource. 
+each of the eight categories except for Organization. 
 The cross-category nature of the medical domain papers appears indicative of the complex nature of medical applications and the requirements therein.
 Given the growth of the research and development of medical applications over the past decade this result does not appear to be surprising. However,
 the RBAC standard was originally created to reduce cost and increase interoperability - two goals of current regulation around the standardization
@@ -153,7 +161,9 @@ For a domain that was roots in personal and enterprise computing, protecting the
 
 \section{Generaliations} \label{sec:generalizations}
 
-RQ6: What commonalities or generalizations exist across all categorizations? \\
+RQ6: What commonalities or generalizations exist across all categories?
+
+\subsection{Results}
 
 Core or any extended role-based access control is used in various aspects of computer systems. In order to reduce efforts for modeling access control used in various applications, researchers often focus on developing generalized core concepts of access control.
 We found that propositional logic is used to describe access control model across all categorizations. Propositional logic is concerned with propositions and their logical relationships. In propositional logic, simple (i.e., atomic) or compound condition at given context is evaluated to true or false based on specified rules and access control logic. Researchers are concerned to extend limited set of propositions specific to core RBAC to meet real-world scenarios such as dynamic constraints, temporal, or spatial constraints. However, semantic meanings of such propositions are various based on researchers' intention.

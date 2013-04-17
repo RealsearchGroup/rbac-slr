@@ -1,24 +1,28 @@
 \section{Categorization} \label{sec:categorization}
 
-RQ1: What categories exist within RBAC extensions? \\
+RQ1: What categories exist within RBAC extensions?
+
+\subsection{Results}
 
 During the paper reading phase, the authors noted that categorical themes were present among the extensions. 
 For example, the paper ``Privacy-aware role-based access control'' \cite{ni2010privacy} brings in the notion of privacy directly within the title of the paper and the name of their model. 
-Some papers presented this direct prouncement of a theme, while others were less obvious. 
-Thus, the authors developed a set of guidelines to aide in determining a set of extension categories based upon observations during the paper reading phase. The guidelines were:
+Some papers presented this direct pronouncement of a theme, while others were less obvious. 
+Thus, we developed a set of guidelines to aide in determining a set of extension categories based upon observations during the paper reading phase. 
+In developing these guidelines, we attempted to define each category by a single noun-phrase descriptor.
+The guidelines were:
 
 \begin{itemize}
-\item Self Declaration - Does the title or name of the model classify itself?
+\item Model Name - Does the name of the model classify itself?
+\item Self Assessment - Do the authors of the paper directly identify a descriptor for their model within the body of the paper?
 \item Repetition of Phrase - Does the body of the paper present the same phrase repeatedly when discussing their model?
-\item Self Assessment - Do the authors of the paper directly identify a quantifier for their paper within the body of the paper?
-\item Simple - Can the category be represented by a single quantifier?
 \end{itemize}
 
-If we take the previous example above, the paper "Privacy-aware role-based access control" \cite{ni2010privacy} contained "privacy" in
-the title and in the name of the model leading to the creation of the Privacy categorization and the subsequent placement of the paper under that category.
-By comparison, the paper "An extended RBAC model based on granular logic" \cite{jian2008extended} does not contain a direct categorization in the title or model name, but in reading the body of the paper the authors assessed that this paper was context based.  
+If we take the previous example above, the paper ``Privacy-aware role-based access control'' \cite{ni2010privacy} contained ``privacy'' in
+the title and in the name of the model leading to the creation of the Privacy category and the subsequent placement of the paper under that category.
+By comparison, the paper ``An extended RBAC model based on granular logic'' \cite{jian2008extended} does not contain a direct categorization in the title or model name, but in reading the body of the paper the authors assessed that this paper was context based.  
 
-The authors offer definitions for each category based on the data extracted from the primary sources and the English definitions for each word.
+We offer definitions for each of the 8 observed categories based on the data extracted from the primary sources and the English definitions for each noun-phrase. 
+Some category descriptors contain abbreviations in parenthesis that match the shortened name found within Table \ref{tab:categorization}.
 
 \subsection{Definitions}
 
@@ -26,13 +30,11 @@ The authors offer definitions for each category based on the data extracted from
 
   \item Context: Access control model integrates context information. In access control, context often refers to user's current state and environment information (e.g., location, time, system resources, network state, network security configuration, etc) which may affect user's access privileges.
 
-  \item Constraint (Const): Access control model in this category extends constraints, which are conditional restrictions on permissions of given roles. This constraint is either static and dynamic. For example, a doctor can modify any medical record for which the doctor is assigned as the designated primary care physician. This example describes doctor's permission with conditional restriction, "only when the doctor is assigned as the designated primary care physician".
+  \item Constraint (Const): Access control model in this category extends constraints, which are conditional restrictions on permissions of given roles. This constraint is either static and dynamic. For example, a doctor can modify any medical record for which the doctor is assigned as the designated primary care physician. This example describes doctor's permission with conditional restriction, ``only when the doctor is assigned as the designated primary care physician''.
 
   \item Organizational (Org): Organizational access control is concerned with access control associated with multiple organizations. Typically, users may have the same role name in different organizations, but may have different access privileges due to different local variations.
   
   \item Privacy (Priv): Access control model can be extended to describe privacy policies, which are legal statements or documents about disclose and management of personally identifiable information such as name, address, data of birth, etc.
-
-  \item Resource (Res): Access control model can be extended to handle any system resources (e.g., a file, printer, terminal, database record, etc) in a flexible way. 
   
   \item Task: A task is a fundamental unit of a business activity. Different from core RBAC, in task-role-based access control model, roles are not directly associated with permissions. Roles are first associated with tasks, which are associated permissions. For example, the employee role is associated with a task, which is to write a report. Then, this task is associated with a permission.
 
@@ -68,3 +70,7 @@ While the new entity provided by the Privacy based models is inspired by domains
 The system must take into account not just a static set of permissions a user has through their roles, but also the context of the data being accessed as that data relates to privacy policy. 
 In the spatio-temporal models, a users location and the time of day are two factors that can be taken into account when activating a role or verifying a permission.  
 The concepts of location and time are properties of the user and place specific contexts around the role and permission entities.
+
+\greybox{We found eight categories that exist within extensions to RBAC: Constraint, Context, 
+Organization, Privacy, Task, Spatio-Temporal, Spatial and Temporal. We further found that the other
+seven categories are all fall under the category of Context.}
