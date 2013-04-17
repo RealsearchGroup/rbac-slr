@@ -25,6 +25,15 @@ are introduced.
 
 \subsection{Analysis and Discussion}
 
+The core RBAC standard represents four elements such as roles, sessions, users, and permissions, and their relations. While this model is considered fundamental in any RBAC systems, this model can be extended to be applicable for emerging applications such as healthcare and mobile devices. Such extended RBAC models are formally presented to describe its behaviors. In the selected papers, researchers illustrate how an extended model incorporates new element based on the correct RBAC and describe their relations with pre-defined elements in the core RBAC.
+
+We classify motivations behind RBAC extensions to these three categories:
+
+\begin{itemize}
+	\item Addition: an extended model incorporates additional elements with regards to context/constraints and their relations with existing elements of the core RBAC. Models in this category does not change the core model. We found OO papers in this category.
+	\item Modification:  an extended model incorporates modification of existing features in the core RBAC. For example, changes of attribute relations such as role hierarchy is to show modification. For models in this category, changes occur within the core model. We found OO papers in this category.
+	\item Combination: an extended model is combination of RBAC and an another access control model, which uses model-specific attributes and their relations such as task, team, purpose, organizational roles. For this combination, new association between attributes of two models should be introduced. Models in this category requires a new association between attributes of different access control models to work together. We found OO papers in this category.
+\end{itemize}
 
 \section{Implementations} \label{sec:implementations}
 
@@ -169,3 +178,6 @@ Core or any extended role-based access control is used in various aspects of com
 We found that propositional logic is used to describe access control model across all categorizations. Propositional logic is concerned with propositions and their logical relationships. In propositional logic, simple (i.e., atomic) or compound condition at given context is evaluated to true or false based on specified rules and access control logic. Researchers are concerned to extend limited set of propositions specific to core RBAC to meet real-world scenarios such as dynamic constraints, temporal, or spatial constraints. However, semantic meanings of such propositions are various based on researchers' intention.
 
 \subsection{Analysis and Discussion}
+
+Since NIST proposed RBAC standard using propositional logic, researchers describe extended RBAC models using propositional logic. Given context, propositional logic is used to evaluate true or false based on specified rules and access control logic. As access control is typically evaluated to either true (Permit) or false (Deny) based on predicates, propositional logic is sufficient to describe key ideas and definitions. We found that OO papers of RBAC extensions use propositional logic to describe its extended model.
+However, propositional logic has limitations. While this logic is simple, this logic does not support for reasoning about RBAC, which helps reduce the administrative complexity of associations such as user- role associations. An alternative logic to describe RBAC is first-order logic. This logic is sufficient to describe RBAC and extended RBAC. Moreover, this logic supports for concise and elegant formulation of the RBAC model and its relation.  First-Order logic is expressive enough to concisely represent access control systems. First-Order logic uses relations, variables, and quantifiers.
