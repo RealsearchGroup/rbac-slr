@@ -28,35 +28,35 @@ Some category descriptors contain abbreviations in parenthesis that match the sh
 
 \begin{itemize}
 
-  \item Context: Access control model integrates context information. In access control, context often refers to user's current state and environment information (e.g., location, time, system resources, network state, network security configuration, etc) which may affect user's access privileges.
+  \item Context: The extension model integrates contextual information into the RBAC standard model. Context is defined as a user's current state and environment information (e.g., location, time, system resources, network state, network security configuration, etc) which may affect user's access privileges.
 
-  \item Constraint (Const): Access control model in this category extends constraints, which are conditional restrictions on permissions of given roles. This constraint is either static and dynamic. For example, a doctor can modify any medical record for which the doctor is assigned as the designated primary care physician. This example describes doctor's permission with conditional restriction, ``only when the doctor is assigned as the designated primary care physician''.
+  \item Constraint (Const): The extension model provides conditional restrictions on permissions of given roles. The constraint is either static or dynamic. For example, a doctor can modify any medical record for which the doctor is assigned as the designated primary care physician. This example describes a doctor's permission with conditional restriction - ``only when the doctor is assigned as the designated primary care physician can the doctor modify a particular medical record''.
 
-  \item Organizational (Org): Organizational access control is concerned with access control associated with multiple organizations. Typically, users may have the same role name in different organizations, but may have different access privileges due to different local variations.
+  \item Organizational (Org): The extension model is concerned with providing mechanisms and entities that allow for RBAC across multiple organizations. Typically, users may have the same role name in different organizations, but may have different access privileges due to different local variations.
   
-  \item Privacy (Priv): Access control model can be extended to describe privacy policies, which are legal statements or documents about disclose and management of personally identifiable information such as name, address, data of birth, etc.
+  \item Privacy (Priv): The extension model provides entities and mechanisms to describe privacy policies, which are legal statements or documents about disclose and management of personally identifiable information such as name, address, data of birth, etc.
   
-  \item Task: A task is a fundamental unit of a business activity. Different from core RBAC, in task-role-based access control model, roles are not directly associated with permissions. Roles are first associated with tasks, which are associated permissions. For example, the employee role is associated with a task, which is to write a report. Then, this task is associated with a permission.
+  \item Task: The extension model provides a task entity which are associated with permissions and roles. A task is a fundamental unit of a business activity. Different from core RBAC, in task-role-based access control model, roles are not directly associated with permissions. Roles are first associated with tasks, which are associated permissions. For example, the employee role is associated with a task, which is to write a report. Then, this task is associated with a permission.
 
-  \item Spatio-Temporal: Spatio-temporal constraints are combination of spatial (location-based) and temporal (time-based) constraints in specifying access control policies. For example, specific locations are enforced while a role is permitted to conduct an action from 8 am to 5 pm.
+  \item Spatio-Temporal: The extension model combines spatial (location-based) and temporal (time-based) constraints in specifying access control policies. For example, specific locations are enforced while a role is permitted to conduct an action from 8 am to 5 pm.
 
-  \item Spatial:  Spatial constraints are location-based constraints in specifying access
-	control policies. For example, in organizations, 	locations are enforced while a
-	specific role is permitted to conduct an action. Consider that part-time employee works only in specific location.
+  \item Spatial: The extension model provides spatial constraints, location-based constraints in specifying access
+	control policies. For example, in organizations, locations are enforced while a
+	specific role is permitted to conduct an action. Consider that a part-time employee works only in a specific location.
 	In such cases, the part-time employee role should access required resources only when the user is in the location. 
-	Spatial constraints can incorporate either on roles, user-role assignments, or role-permission assignments. 
+	Spatial constraints can integrate with roles, user-role assignments, or role-permission assignments. 
 
-  \item Temporal (Temp):  Temporal constraints are time-based constraints in specifying access
-	control policies. For example, in organizations, 	periodic temporal durations are enforced while a
-	specific role is permitted to conduct an action. Consider that part-time employee works only from 9:00 a.m. to 3:00 p.m.
+  \item Temporal (Temp):  The extension model provides temporal constraints, time-based constraints in specifying access
+	control policies. For example, in organizations, periodic temporal durations are enforced while a
+	specific role is permitted to conduct an action. Consider that a part-time employee works only from 9:00 a.m. to 3:00 p.m.
 	In such cases, the part-time employee role should access required resources during the interval. 
-	Temporal constraints can incorporate either on roles, user-role assignments, or role-permission assignments.   
+	Temporal constraints can integrate with roles, user-role assignments, or role-permission assignments.   
 	
 \end{itemize}
 
 \subsection{Analysis and Discussion}
 
-The 28 primary sources produced a set of 8 heirarchical categories. Table \ref{tab:categorization} summarizes each primary source under their assumed
+The 28 primary sources produced a set of 8 heirarchical categories. Table \ref{tab:categorization} summarizes each primary source under their designated
 category and further, displays the perceived heirarchy of the categories. 
 The Spatial and Temporal categories were treated as subsets of the broader category of Spatio-Temporal since this category encompasses them individually and
 the Spatio-Temporal category contained more primary sources that the Spatial or Temporal categories alone.  
@@ -65,7 +65,7 @@ When looking across all categories, the authors noted that each category added s
 These domain specific features were under the surface adding contextual relationships between the core user, permission and role entities.  Thus, the authors
 concluded that all categories stemmed from the context category, of which some primary sources were already deemed direct members.  
 
-For example, in the case of Privacy the models added entities such as purpose binding to represent within the model data collected for one purpose should not used for another purpose without user consent {\cite{ni2010privacy}. 
+For example, in the case of the Privacy category, the models added entities such as purpose binding to represent within the model data collected for one purpose should not used for another purpose without user consent {\cite{ni2010privacy}. 
 While the new entity provided by the Privacy based models is inspired by domains such as healthcare where privacy is of legal concern, the underlying mechanism that drives purpose binding is providing context around making an access control decision. 
 The system must take into account not just a static set of permissions a user has through their roles, but also the context of the data being accessed as that data relates to privacy policy. 
 In the spatio-temporal models, a users location and the time of day are two factors that can be taken into account when activating a role or verifying a permission.  
@@ -73,4 +73,4 @@ The concepts of location and time are properties of the user and place specific 
 
 \greybox{We found eight categories that exist within extensions to RBAC: Constraint, Context, 
 Organization, Privacy, Task, Spatio-Temporal, Spatial and Temporal. We further found that the other
-seven categories are all fall under the category of Context.}
+seven categories fall under the category of Context.}
