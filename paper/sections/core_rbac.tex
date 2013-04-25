@@ -63,12 +63,12 @@ a role $r_1$, who inherits all permissions from more than one roles.
 \subsection{Constrained RBAC}
 
 Constrained RBAC incorporates static and dynamic separation of duty relations to the RBAC model. Separation of 
-duty relations enforce conflict of interest among roles. This model defines two types of separation of duty relations; static and dynamic.
+duty relations enforces conflict of interest among roles. This model defines two types of separation of duty relations; static and dynamic.
 
 \begin{itemize}
 	\item Static Separation of Duty (SSoD): SSoD restricts the conflicting-role assignments statically that are associated with a user. On situations
-	where multiple roles can be associated with a single user and roles $Role_A$ and $Role_B$ are conflicting each other, no permission is given to a user who is assigned to both $Role_A$ and $Role_B$. SSoD is known to be too rigid for practical use in cases where a user should have permissions as either $Role_A$ and $Role_B$.
+	where multiple roles can be associated with a single user and roles $Role_A$ and $Role_B$ are conflicting each other, no permission is given to a user who is assigned to both $Role_A$ and $Role_B$. SSoD is known to be too rigid for practical use in cases where a user should have permissions when a user is assigned to both $Role_A$ and $Role_B$.
 	\item Dynamic Separation of Duty (DSD): Dynamic SoD is known to be
 more flexible than SSD. DSD restricts the conflicting-role assignments dynamically that are associated with a user. On situations
-	where multiple roles can be associated with a single user and , given a context, roles $Role_A$ and $Role_B$ are conflicting each other dynamically, no permission is given to a user.	
+	where multiple roles can be associated with a single user and, roles $Role_A$ and $Role_B$ are conflicting each other dynamically, no permission is given to a user.	
 \end{itemize}
