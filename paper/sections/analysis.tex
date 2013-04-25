@@ -4,36 +4,65 @@ RQ2: What are the motivations behind extensions to RBAC?
 
 \subsection{Results}
 
+We first describe motivations described in 28 papers surveyed.
+
 \begin{itemize}
 \setlength{\itemsep}{0.25pt}
-\item Core RBAC model needs additional contextual information and constraints to develop fine-grained policies in practice.
-\item Core RBAC does not incorporate context. Therefore, RBAC belongs to static access control model, which may not capture changes in environments.
-\item Core RBAC does not support for various constraints such as temporal and spatial constraints to design sophisticated policies on demand.
-\item Core RBAC does not provide an abstraction to additional user-defined attributes	(e.g., task and team) and their association with existing attributes.
-\item Core RBAC has limitation on delegation and role hierarchy. For example, partial inheritance in role hierarchy needs to be developed.  
-\item Model needs to incorporate additional contextual information and constraints to develop fine-grained policies in practice.
-\item Model needs to incorporate additional attributes such as
+\item The RBAC standard needs additional contextual information and constraints to develop fine-grained policies in practice.
+\item The RBAC standard does not incorporate context. Therefore, RBAC belongs to static access control model, which may not capture changes in environments.
+\item The RBAC standard does not support for various constraints such as temporal and spatial constraints to design sophisticated policies on demand.
+\item The RBAC standard does not provide an abstraction to additional user-defined attributes	(e.g., task and team) and their association with existing attributes.
+\item The RBAC standard has limitation on delegation and role hierarchy. For example, partial inheritance in role hierarchy needs to be developed.  
+\item The RBAC standard needs to incorporate additional contextual information and constraints to develop fine-grained policies in practice.
+\item The RBAC standard needs to incorporate additional attributes such as
 task, team, purpose, organizational roles and collaborative activities over existing attributes. Moreover, new association between attributes
 are introduced. 
-\item Model needs to improve existing features such delegation and role hierarchy to meet fine-grained access control. 
+\item RBAC model needs to improve existing features such delegation and role hierarchy to meet fine-grained access control. 
 \end{itemize}
 
-\subsection{Analysis and Discussion}
-
-The RBAC standard model provides an abstraction on top of authorization based on user role assignment (UA) and role
-permission assignment (PA). Since this simple model may not provide a fine-grained access control for sophisticated
-security mechanism, a variety of extended RBAC models have been proposed over the years to meet
-security requirements. When administrators design a model, it is important to capture an important abstraction to help the model to be enforced in a system.
-
-The RBAC standard model presents four entities: roles, sessions, users, and permissions, and their relations. While this model is considered fundamental in any RBAC systems, this model can be extended to be applicable for emerging applications such as healthcare and mobile devices. Such extended RBAC models are formally presented to describe its behaviors. In the selected papers, researchers illustrate how an extended model incorporates new element based on the correct RBAC and describe their relations with pre-defined elements in the core RBAC.
 
 We classify motivations behind RBAC extensions to these three categories:
 
 \begin{itemize}
-	\item Addition: an extended model incorporates additional elements with regards to context/constraints and their relations with existing elements of the core RBAC. Models in this category does not change the core model. We found OO papers in this category.
-	\item Modification: an extended model incorporates modification of existing features in the core RBAC. For example, changes of attribute relations such as role hierarchy is to show modification. For models in this category, changes occur within the core model. We found OO papers in this category.
-	\item Combination: an extended model is combination of RBAC and an another access control model, which uses model-specific attributes and their relations such as task, team, purpose, organizational roles. For this combination, new association between attributes of two models should be introduced. Models in this category requires a new association between attributes of different access control models to work together. We found OO papers in this category.
+	\item Addition: an extended model incorporates additional elements with regards to context/constraints and their relations with existing elements of the RBAC standard. Models in this category does not change the core model. We found 23 papers in this category.
+	\item Modification: an extended model incorporates modification of existing features in the RBAC standard. For example, changes of attribute relations such as role hierarchy is to show modification. For models in this category, changes occur within the core model. We found 1 papers in this category.
+	\item Combination: an extended model is combination of RBAC and an another access control model, which uses model-specific attributes and their relations such as task, team, purpose, organizational roles. For this combination, new association between attributes of two models should be introduced. Models in this category requires a new association between attributes of different access control models to work together. We found 4 papers in this category.
 \end{itemize}
+
+%\begin{table}
+%\centering
+%\caption{Motivation categories found and the count of primary sources}
+%\begin{tabular}{ | c | c | }
+%\cline{1-2}
+%
+%\textbf{Motivation Category} & \textbf{Paper Count} \\ \cline{1-2}
+%Addition & 23 \\ \cline{1-2}
+%Modification & 1 \\ \cline{1-2}
+%Combination & 4 \\
+%
+%\cline{1-2}
+%\end{tabular}
+%\label{tab:motivations}
+%\end{table}
+%
+%Table \ref{tab:motivations} shows the breakdown of motivations found within the primary sources.
+%The result shows that 23 papers out of 28 papers are classified into ``Addition'' category. Only
+%one paper and four papers are classified into ``Modification'' category and ``Combination'' category, respectively.
+
+\subsection{Analysis and Discussion}
+
+The RBAC standard provides a formal access model, which is an abstraction on top of authorization based on user role assignment (UA) and role
+permission assignment (PA). Since this simple model may not provide a fine-grained access control for sophisticated
+security mechanism, a variety of extended RBAC models have been proposed over the years to meet
+security requirements. When administrators design a model, it is important to capture an important abstraction to help the model to be enforced in a system.
+
+The RBAC standard presents four entities: roles, sessions, users, and permissions, and their relations. While this model is considered fundamental in any RBAC systems, this model can be extended to be applicable for emerging applications such as healthcare and mobile devices. 
+In such environments, the RBAC standard needs additional constraints and dynamic context to support dynamic environments such as spatial and location. For this category, more than 80\% of papers are classified into ``Addition'' category. Besides, one paper~\cite{alam06:constraint} modifies relationship among elements to support partial inheritence. RBAC is shown to be combined with other access control models such as team-based access control and task-based access control~\cite{zhou2007team, oh2003task}.
+
+
+%Such extended RBAC models are formally presented to describe its behaviors. In the selected papers, researchers illustrate how an extended model incorporates new element based on the correct RBAC and describe their relations with pre-defined elements in the core RBAC.
+
+
 
 \section{Implementations} \label{sec:implementations}
 
@@ -197,7 +226,7 @@ RQ6: What commonalities or generalizations exist across all categories?
 
 \subsection{Results}
 
-Core or any extended role-based access control is used in various aspects of computer systems. In order to reduce efforts for modeling access control used in various applications, researchers often focus on developing generalized core concepts of access control.
+The RBAC standard is used in various aspects of computer systems. In order to reduce efforts for modeling access control used in various applications, researchers often focus on developing generalized core concepts of access control.
 We found that propositional logic is used to describe access control model across all categorizations. Propositional logic is concerned with propositions and their logical relationships. In propositional logic, simple (i.e., atomic) or compound condition at given context is evaluated to true or false based on specified rules and access control logic. Researchers are concerned to extend limited set of propositions specific to core RBAC to meet real-world scenarios such as dynamic constraints, temporal, or spatial constraints. However, semantic meanings of such propositions are various based on researchers' intention.
 
 \subsection{Analysis and Discussion}
