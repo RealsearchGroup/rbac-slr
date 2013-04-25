@@ -4,11 +4,6 @@ RQ2: What are the motivations behind extensions to RBAC?
 
 \subsection{Results}
 
-The RBAC standard model provides an abstraction of authorization based on user role assignment (UA) and role
-permission assignment (PA). Since this simple model may not provide a fine-grained access control for sophisticated
-security mechanism, a variety of extended RBAC models have been proposed over the years to meet
-security requirements. When administrators design a model, it is important to capture an important abstraction to help the model to be enforced in a system.
-
 \begin{itemize}
 \setlength{\itemsep}{0.25pt}
 \item Core RBAC model needs additional contextual information and constraints to develop fine-grained policies in practice.
@@ -25,13 +20,18 @@ are introduced.
 
 \subsection{Analysis and Discussion}
 
+The RBAC standard model provides an abstraction on top of authorization based on user role assignment (UA) and role
+permission assignment (PA). Since this simple model may not provide a fine-grained access control for sophisticated
+security mechanism, a variety of extended RBAC models have been proposed over the years to meet
+security requirements. When administrators design a model, it is important to capture an important abstraction to help the model to be enforced in a system.
+
 The RBAC standard model presents four entities: roles, sessions, users, and permissions, and their relations. While this model is considered fundamental in any RBAC systems, this model can be extended to be applicable for emerging applications such as healthcare and mobile devices. Such extended RBAC models are formally presented to describe its behaviors. In the selected papers, researchers illustrate how an extended model incorporates new element based on the correct RBAC and describe their relations with pre-defined elements in the core RBAC.
 
 We classify motivations behind RBAC extensions to these three categories:
 
 \begin{itemize}
 	\item Addition: an extended model incorporates additional elements with regards to context/constraints and their relations with existing elements of the core RBAC. Models in this category does not change the core model. We found OO papers in this category.
-	\item Modification:  an extended model incorporates modification of existing features in the core RBAC. For example, changes of attribute relations such as role hierarchy is to show modification. For models in this category, changes occur within the core model. We found OO papers in this category.
+	\item Modification: an extended model incorporates modification of existing features in the core RBAC. For example, changes of attribute relations such as role hierarchy is to show modification. For models in this category, changes occur within the core model. We found OO papers in this category.
 	\item Combination: an extended model is combination of RBAC and an another access control model, which uses model-specific attributes and their relations such as task, team, purpose, organizational roles. For this combination, new association between attributes of two models should be introduced. Models in this category requires a new association between attributes of different access control models to work together. We found OO papers in this category.
 \end{itemize}
 
@@ -43,11 +43,11 @@ RQ3: Do the extension models have corresponding implementations?
 
 When designing and proposing a model targeted at a feature that is rooted in practical
 usage by real software systems, bringing the model to life is strong evidence that the
-proposed model can work in practice.  The concept of authorization, and access control
-is rooted in a business need.  Thus, any access control model needs to be feasible
-in the real world not just on paper.  We analyzed the primary sources to see how many
+proposed model can work in practice. The concept of authorization, and access control
+is rooted in a business need. Thus, any access control model needs to be feasible
+in the real world not just on paper. We analyzed the primary sources to see how many
 proposed models actually had implementations associated with them.  And quantified the
-type of implementation.  Whether the implementation was for a real system, for a prototype
+type of implementation. Whether the implementation was for a real system, for a prototype
 and/or used in a production environment.
 
 \begin{table}
@@ -74,12 +74,12 @@ system.
 
 \subsection{Analysis and Discussion}
 
-The RBAC standard was designed with enterprises in mind such that when practioners implemented RBAC into their systems
+The RBAC standard was designed with enterprises in mind such that when practitioners implemented RBAC into their systems
 there would be a reasonable assurance being based off a well thought out model.  As extensions to the standard model
 come along, thought and time should be given to how features and nuances of their models may impact implementation
 in order to achieve the same goals as the original standard.  The primary sources should a significant lack of implementation
 with over 70\% of the models having no notion of attempting to implement them.  The bare minimum, as 4 papers did, should be
-a prototype implementation of the model for review by both pracitioners and researchers. Of the models that produced an 
+a prototype implementation of the model for review by both practitioners and researchers. Of the models that produced an 
 implementation within the enterprise world, two were from within the medical domain and two were implemented using web application technologies.  
 
 \section{Evaluations} \label{sec:evaluations}
@@ -90,7 +90,7 @@ RQ4: How are extension to RBAC evaluated theoretically and in practice?
 
 The 28 primary sources were examined for evidence that evaluations of the proposed model were presented by the model authors.
 Further, we identified a set of evaluation types found within the each of the primary sources and provide below a list of the 
-evaluation types and which primary sources provided which type.  In some cases a single primary source provided mutliple evaluation
+evaluation types and which primary sources provided which type.  In some cases a single primary source provided multiple evaluation
 types.
 
 \begin{itemize}
@@ -118,13 +118,13 @@ or show how the standard model is deficient in tackling said scenarios.
 When proposing an access control model, providing an evaluation of the model is a key component in establishing the validity of the model. 
 Further, in the case of extensions to the RBAC standard model, the model should be accompanied by validation of the model as a stand-alone
 access control model and in comparison to the model upon which the enhancements are being made. The results show that robust evaluations of
-extenion models are lacking. 
+extension models are lacking. 
 
-The primary source of validation a developer or practioner may encounter is a qualitative discussion of real-world
+The primary source of validation a developer or practitioner may encounter is a qualitative discussion of real-world
 scenarios and how the proposed model can tackle those situations. In rare cases, five primary sources, the model 
 authors provide some discussion of how the RBAC standard model is deficient in tackling the scenario. In rarer cases, 
 one paper from our results, a case study is performed to examine how the proposed model works in practice. Discussions
-of how an extension model handles a real-world scenario provides developers and practioners ancedotal evidence at best
+of how an extension model handles a real-world scenario provides developers and practitioners anecdotal evidence at best
 for what types of situations the proposed model could handle. Further, by not providing a comparison to the RBAC standard
 model, developers may be left implementing a more complex model to address their requirements when the standard model would
 have sufficed.  Further, given the nature of access control models as grounded in application to enterprise implementations, 
@@ -149,7 +149,7 @@ RQ5: What domains have extensions to RBAC been created for?
 Business needs have historically driven RBAC research and development.  The primary mode of evaluation for
 model extensions has been the presentation of business scenarios in various domains and how the model
 uniquely handles those particular scenarios.  Thus, looking for trends in the domains used in the example
-scenarios might serve to illuminate a trend worth further examination into the reasaon for the explosion of
+scenarios might serve to illuminate a trend worth further examination into the reason for the explosion of
 RBAC extensions.  The authors identified domains presented within the primary sources by looking for example
 scenarios cast within a particular domain or mention of domain requirements within the body of the paper.
 We found that the domains mentioned and their associated sources are:
@@ -187,7 +187,7 @@ achieve the same economic implementation and maintainability benefits the origin
 
 Mobile computing has seen a dramatic increase in the number of available devices, operating systems and applications since 1997 when the first smart phone
 was introduced. 
-The domain analysis results produced 5 papers that targeted extensions that are designed to address the requirements of mobile computing.
+The domain analysis results produced five papers that targeted extensions that are designed to address the requirements of mobile computing.
 For a domain that has roots in personal and enterprise computing, protecting the data of both through access controls is paramount given their ubiquity.
 
 
