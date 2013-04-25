@@ -16,7 +16,7 @@ We first describe motivations described in 28 papers surveyed.
 \item The RBAC standard needs to incorporate additional contextual information and constraints to develop fine-grained policies in practice.
 \item The RBAC standard needs to incorporate additional attributes such as
 task, team, purpose, organizational roles and collaborative activities over existing attributes. Moreover, new association between attributes
-are introduced. 
+is introduced. 
 \item RBAC model needs to improve existing features such delegation and role hierarchy to meet fine-grained access control. 
 \end{itemize}
 
@@ -24,9 +24,9 @@ are introduced.
 We classify motivations behind RBAC extensions to these three categories:
 
 \begin{itemize}
-	\item Addition: an extended model incorporates additional elements with regards to context/constraints and their relations with existing elements of the RBAC standard. Models in this category does not change the core model. We found 23 papers in this category.
-	\item Modification: an extended model incorporates modification of existing features in the RBAC standard. For example, changes of attribute relations such as role hierarchy is to show modification. For models in this category, changes occur within the core model. We found 1 papers in this category.
-	\item Combination: an extended model is combination of RBAC and an another access control model, which uses model-specific attributes and their relations such as task, team, purpose, organizational roles. For this combination, new association between attributes of two models should be introduced. Models in this category requires a new association between attributes of different access control models to work together. We found 4 papers in this category.
+	\item Addition: The extension model incorporates additional elements with regards to context/constraints and their relations with existing elements of the RBAC standard. Models in this category do not change the RBAC standard model. We found 23 papers in this category.
+	\item Modification: The extension model incorporates modification of existing features in the RBAC standard. For example, changes of attribute relations such as role hierarchy are to show modification. For models in this category, changes occur within the the RBAC standard model. We found one paper in this category.
+	\item Combination: The extension model is combination of RBAC and another access control model, which uses model-specific attributes and their relations such as task, team, purpose, organizational roles. For this combination, new association between attributes of two models should be introduced. Models in this category require a new association between attributes of different access control models to work together. We found four papers in this category.
 \end{itemize}
 
 %\begin{table}
@@ -57,7 +57,7 @@ security mechanism, a variety of extended RBAC models have been proposed over th
 security requirements. When administrators design a model, it is important to capture an important abstraction to help the model to be enforced in a system.
 
 The RBAC standard presents four entities: roles, sessions, users, and permissions, and their relations. While this model is considered fundamental in any RBAC systems, this model can be extended to be applicable for emerging applications such as healthcare and mobile devices. 
-In such environments, the RBAC standard needs additional constraints and dynamic context to support dynamic environments such as spatial and location. For this category, more than 80\% of papers are classified into ``Addition'' category. Besides, one paper~\cite{alam06:constraint} modifies relationship among elements to support partial inheritence. RBAC is shown to be combined with other access control models such as team-based access control and task-based access control~\cite{zhou2007team, oh2003task}.
+In such environments, the RBAC standard needs additional constraints and dynamic context to support dynamic environments such as spatial and location. For this category, more than 80\% of papers are classified into ``Addition'' category. Besides, one paper~\cite{alam06:constraint} describes modification of existing relationship among elements to support partial inheritance. The RBAC standard is shown to be combined with other access control models such as team-based access control and task-based access control~\cite{zhou2007team, oh2003task}.
 
 
 %Such extended RBAC models are formally presented to describe its behaviors. In the selected papers, researchers illustrate how an extended model incorporates new element based on the correct RBAC and describe their relations with pre-defined elements in the core RBAC.
@@ -72,11 +72,11 @@ RQ3: Do the extension models have corresponding implementations?
 
 When designing and proposing a model targeted at a feature that is rooted in practical
 usage by real software systems, bringing the model to life is strong evidence that the
-proposed model can work in practice. The concept of authorization, and access control
+proposed model can work in practice. The concept of authorization and access control
 is rooted in a business need. Thus, any access control model needs to be feasible
 in the real world not just on paper. We analyzed the primary sources to see how many
-proposed models actually had implementations associated with them.  And quantified the
-type of implementation. Whether the implementation was for a real system, for a prototype
+proposed models actually had implementations associated with them.  Then, we quantified
+types of implementations. Whether the implementation was for a real system, for a prototype
 and/or used in a production environment.
 
 \begin{table}
@@ -97,7 +97,7 @@ No Implementation & 20 \\
 
 Table \ref{tab:implementations} shows the breakdown of implementations found within the primary sources.
 Of the 28 papers surveyed, there was a lack of implementation with 20 of the paper providing no
-mention of a implementation or prototype.  Of the remaining 8 papers that did mention an implementation, half 
+mention of an implementation or prototype.  Of the remaining eight papers that did mention an implementation, half 
 were simply prototypes developed by the authors while the other half were claimed to be implemented within a real
 system.
 
@@ -107,18 +107,18 @@ The RBAC standard was designed with enterprises in mind such that when practitio
 there would be a reasonable assurance being based off a well thought out model.  As extensions to the standard model
 come along, thought and time should be given to how features and nuances of their models may impact implementation
 in order to achieve the same goals as the original standard.  The primary sources should a significant lack of implementation
-with over 70\% of the models having no notion of attempting to implement them.  The bare minimum, as 4 papers did, should be
+with over 70\% of the models having no notion of attempting to implement them.  The bare minimum, as four papers did, should be
 a prototype implementation of the model for review by both practitioners and researchers. Of the models that produced an 
 implementation within the enterprise world, two were from within the medical domain and two were implemented using web application technologies.  
 
 \section{Evaluations} \label{sec:evaluations}
 
-RQ4: How are extension to RBAC evaluated theoretically and in practice?
+RQ4: How are extensions to RBAC evaluated theoretically and in practice?
 
 \subsection{Results}
 
 The 28 primary sources were examined for evidence that evaluations of the proposed model were presented by the model authors.
-Further, we identified a set of evaluation types found within the each of the primary sources and provide below a list of the 
+Further, we identified a set of evaluation types found within  each of the primary sources and provide below a list of the 
 evaluation types and which primary sources provided which type.  In some cases a single primary source provided multiple evaluation
 types.
 
@@ -151,7 +151,7 @@ extension models are lacking.
 
 The primary source of validation a developer or practitioner may encounter is a qualitative discussion of real-world
 scenarios and how the proposed model can tackle those situations. In rare cases, five primary sources, the model 
-authors provide some discussion of how the RBAC standard model is deficient in tackling the scenario. In rarer cases, 
+authors provide some discussion of how the RBAC standard model is deficient in tackling the scenario. In rare cases, 
 one paper from our results, a case study is performed to examine how the proposed model works in practice. Discussions
 of how an extension model handles a real-world scenario provides developers and practitioners anecdotal evidence at best
 for what types of situations the proposed model could handle. Further, by not providing a comparison to the RBAC standard
@@ -193,15 +193,15 @@ We found that the domains mentioned and their associated sources are:
 \item Enterprise, organization workflows \cite{cholewka00:acontext-sensitive}, \cite{bao08:role}, \cite{zhang06:collaborative}, \cite{oh2003task}, \cite{joshi05:generalized}
 \end{itemize}
 
-The predominant domain for which extension models have been generated for is that of the medical domain with 9 of 28 mentioning scenarios or requirements of that industry.
-Mobile computing and enterprise workflows were each represented by 5 papers claiming to be influenced by the requirements for access control within these domains. The final set
-of domains was pervasive computing environments and large-scale organizations with 3 each and web applications with 1.  There were 4 papers without any direct mention of a domain
+The predominant domain for which extension models have been generated for is that of the medical domain with nine of 28 mentioning scenarios or requirements of that industry.
+Mobile computing and enterprise workflows were each represented by five papers claiming to be influenced by the requirements for access control within these domains. The final set
+of domains was pervasive computing environments and large-scale organizations with three each and web applications with one.  There were four papers without any direct mention of a domain
 since Aich et al. \cite{aich09:role} fall under both the medical domain and mobile computing.
 
 \subsection{Analysis and Discussion}
 
 The medical domain produced the largest selection of papers when analyzing the domains influencing the proposals of extension models.  
-Further, the authors noted that the categories associated with papers identifying the medical domain was not limited to one or two but cut across
+Further, the authors noted that the categories associated with papers identifying the medical domain were not limited to one or two but cut across
 each of the eight categories except for Organization. 
 The cross-category nature of the medical domain papers appears indicative of the complex nature of medical applications and the requirements therein.
 Given the growth of the research and development of medical applications over the past decade this result does not appear to be surprising. However,
@@ -220,7 +220,7 @@ The domain analysis results produced five papers that targeted extensions that a
 For a domain that has roots in personal and enterprise computing, protecting the data of both through access controls is paramount given their ubiquity.
 
 
-\section{Generaliations} \label{sec:generalizations}
+\section{Generalizations} \label{sec:generalizations}
 
 RQ6: What commonalities or generalizations exist across all categories?
 
@@ -231,5 +231,5 @@ We found that propositional logic is used to describe access control model acros
 
 \subsection{Analysis and Discussion}
 
-Since NIST proposed RBAC standard using propositional logic, researchers describe extended RBAC models using propositional logic. Given context, propositional logic is used to evaluate true or false based on specified rules and access control logic. As access control is typically evaluated to either true (Permit) or false (Deny) based on predicates, propositional logic is sufficient to describe key ideas and definitions. We found that OO papers of RBAC extensions use propositional logic to describe its extended model.
+Since NIST proposed RBAC standard using propositional logic, researchers describe extended RBAC models using propositional logic. Given context, propositional logic is used to evaluate true or false based on specified rules and access control logic. As access control is typically evaluated to either true (Permit) or false (Deny) based on predicates, propositional logic is sufficient to describe key ideas and definitions. We found that 28 papers of RBAC extensions use propositional logic to describe its extended model.
 However, propositional logic has limitations. While this logic is simple, this logic does not support for reasoning about RBAC, which helps reduce the administrative complexity of associations such as user- role associations. An alternative logic to describe RBAC is first-order logic. This logic is sufficient to describe RBAC and extended RBAC. Moreover, this logic supports for concise and elegant formulation of the RBAC model and its relation.  First-Order logic is expressive enough to concisely represent access control systems. First-Order logic uses relations, variables, and quantifiers.
