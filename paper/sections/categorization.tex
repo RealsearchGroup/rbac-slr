@@ -28,25 +28,25 @@ Some category descriptors contain abbreviations in parenthesis that match the sh
 
 \begin{itemize}
 
-  \item Context: The extension model integrates contextual information into the RBAC standard model. Context is defined as a user's current state and environment information (e.g., location, time, system resources, network state, network security configuration, etc) which may affect user's access privileges.
+  \item \textbf{Context}: The extension model integrates contextual information into the RBAC standard model. Context is defined as a user's current state and environment information (e.g., location, time, system resources, network state, network security configuration, etc) which may affect user's access privileges.
 
-  \item Constraint (Const): The extension model provides conditional restrictions on permissions of given roles. The constraint is either static or dynamic. For example, a doctor can modify any medical record for which the doctor is assigned as the designated primary care physician. This example describes a doctor's permission with conditional restriction - ``only when the doctor is assigned as the designated primary care physician can the doctor modify a particular medical record''.
+  \item \textbf{Constraint (Const)}: The extension model provides conditional restrictions on permissions of given roles. The constraint is either static or dynamic. For example, a doctor can modify any medical record for which the doctor is assigned as the designated primary care physician. This example describes a doctor's permission with conditional restriction - ``only when the doctor is assigned as the designated primary care physician can the doctor modify a particular medical record''.
 
-  \item Organizational (Org): The extension model is concerned with providing mechanisms and entities that allow for RBAC across multiple organizations. Typically, users may have the same role name in different organizations, but may have different access privileges due to different local variations.
+  \item \textbf{Organizational (Org)}: The extension model is concerned with providing mechanisms and entities that allow for RBAC across multiple organizations. Typically, users may have the same role name in different organizations, but may have different access privileges due to different local variations.
   
-  \item Privacy (Priv): The extension model provides entities and mechanisms to describe privacy policies, which are legal statements or documents about disclose and management of personally identifiable information such as name, address, data of birth, etc.
+  \item \textbf{Privacy (Priv)}: The extension model provides entities and mechanisms to describe privacy policies, which are legal statements or documents about disclose and management of personally identifiable information such as name, address, data of birth, etc.
   
-  \item Task: The extension model provides a task entity which are associated with permissions and roles. A task is a fundamental unit of a business activity. Different from core RBAC, in task-role-based access control model, roles are not directly associated with permissions. Roles are first associated with tasks, which are associated permissions. For example, the employee role is associated with a task, which is to write a report. Then, this task is associated with a permission.
+  \item \textbf{Task}: The extension model provides a task entity which are associated with permissions and roles. A task is a fundamental unit of a business activity. Different from core RBAC, in task-role-based access control model, roles are not directly associated with permissions. Roles are first associated with tasks, which are associated permissions. For example, the employee role is associated with a task, which is to write a report. Then, this task is associated with a permission.
 
-  \item Spatio-Temporal: The extension model combines spatial (location-based) and temporal (time-based) constraints in specifying access control policies. For example, specific locations are enforced while a role is permitted to conduct an action from 8 am to 5 pm.
+  \item \textbf{Spatio-Temporal}: The extension model combines spatial (location-based) and temporal (time-based) constraints in specifying access control policies. For example, specific locations are enforced while a role is permitted to conduct an action from 8 am to 5 pm.
 
-  \item Spatial: The extension model provides spatial constraints, location-based constraints in specifying access
+  \item \textbf{Spatial}: The extension model provides spatial constraints, location-based constraints in specifying access
 	control policies. For example, in organizations, locations are enforced while a
 	specific role is permitted to conduct an action. Consider that a part-time employee works only in a specific location.
 	In such cases, the part-time employee role should access required resources only when the user is in the location. 
 	Spatial constraints can integrate with roles, user-role assignments, or role-permission assignments. 
 
-  \item Temporal (Temp):  The extension model provides temporal constraints, time-based constraints in specifying access
+  \item \textbf{Temporal (Temp)}:  The extension model provides temporal constraints, time-based constraints in specifying access
 	control policies. For example, in organizations, periodic temporal durations are enforced while a
 	specific role is permitted to conduct an action. Consider that a part-time employee works only from 9:00 a.m. to 3:00 p.m.
 	In such cases, the part-time employee role should access required resources during the interval. 
