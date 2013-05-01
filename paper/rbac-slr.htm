@@ -1,0 +1,1360 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+           "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+<meta name="GENERATOR" content="TtH 4.02">
+ <style type="text/css"> div.p { margin-top: 7pt;}</style>
+ <style type="text/css"><!--
+ td div.comp { margin-top: -0.6ex; margin-bottom: -1ex;}
+ td div.comb { margin-top: -0.6ex; margin-bottom: -.6ex;}
+ td div.hrcomp { line-height: 0.9; margin-top: -0.8ex; margin-bottom: -1ex;}
+ td div.norm {line-height:normal;}
+ span.roman {font-family: serif; font-style: normal; font-weight: normal;} 
+ span.overacc2 {position: relative;  left: .8em; top: -1.2ex;}
+ span.overacc1 {position: relative;  left: .6em; top: -1.2ex;} --></style>
+ 
+
+   
+<title>No Title</title>
+
+<div class="p"><!----></div>
+
+<title>A Systematic Literature Review on Extensions to Role Based Access Control</title>
+    
+<h1 align="center">A Systematic Literature Review on Extensions to Role Based Access Control </h1>
+
+<div class="p"><!----></div>
+
+<h3 align="center">Eric D. Helms, JeeHyun Hwang, Laurie Williams, Tao Xie </h3>
+
+<h3 align="center">North Carolina State University </h3>
+
+<h3 align="center">Department of Computer Science </h3>
+
+<h3 align="center">890 Oval Drive, Box 8206 </h3>
+
+<h3 align="center">Raleigh, NC 27695-2858 </h3>
+
+<div class="p"><!----></div>
+
+<h2> Abstract</h2>
+<b>Context</b>: Since the introduction of the role based access control (RBAC) standard in the late 1990's by the National Institute of Standards and Technology (NIST),
+computing in new domains has led to proposals for extensions to the RBAC standard model; for example adding context around permission granting and role activation.
+<br />
+<br />
+
+<b>Aim</b>: The goal of our work is to aid practitioners and researchers in choosing an extension to the RBAC standard model, and in understanding
+how extensions to RBAC are evaluated by providing an assessment of the state of extensions to the RBAC standard model. We accomplished this through: 
+establishment of a set of extension categories, an examination of the state of the art in evaluations of extension models and a breakdown of the 
+motivations that have led to extension of the RBAC standard model.
+<br />
+<br />
+
+<b>Method</b>: We performed a systematic literature review that yielded 1716 papers, of which 28 were deemed primary sources for inclusion as extensions to the RBAC standard model. 
+<br />
+<br />
+
+<b>Results</b>: Our results show that extensions to RBAC can be classified under eight categories: Constraint, Context, 
+Organization, Privacy, Task, Spatio-Temporal, Spatial and Temporal. We identified only
+eight of the 28 papers provided an implementation of their model in the form of an enterprise application or prototype. We found that the primary domains 
+that inspired extensions were the medical domain with nine of the 28 models, enterprise workflows with five of 28, and mobile computing with five of 28.
+<br />
+<br />
+
+<b>Conclusions</b>: When examined as an entire group, the eight categories can be aligned under the single category of context. 
+Our literature review showed that the state of evaluation of RBAC model evaluation is limited with one
+paper doing an evaluation comparing itself to the core RBAC model, eight presenting example 
+scenarios of their model in action, and 12 of the 28 models lacking any identifiable evaluation. The landscape of extensions
+to the RBAC standard model serves as a basis from which a new, and vetted, extended standard RBAC model should be derived.
+
+<div class="p"><!----></div>
+
+RBAC access control systematic literature review
+
+
+<div class="p"><!----></div>
+
+ <a name="tth_sEc1"></a><h2>
+1&nbsp;&nbsp;Introduction</h2> <a name="sec:introduction">
+</a>
+
+<div class="p"><!----></div>
+Role based access control (RBAC) is used for maintaining and managing an organization's 
+access control based on assigning permissions to roles, and roles to users, instead of 
+assigning the permissions directly to individual users. 
+The use of an RBAC model has become popular since the National Institute for Standards and Technology (NIST) 
+first proposed the RBAC standard model in the 1990s [<a href="#o20102010" name="CITEo20102010">1</a>]. The RBAC standard model is widely used for securing 
+various applications including web services, database applications, and healthcare applications. 
+In the RBAC standard model, roles represent a set of permissions needed to perform a particular job function within an organization.  
+One to many users who are involved in that specific job function within the organization can then be 
+assigned to the role to inherit the required access instead of assigning individual permissions to individual users. 
+The ability to logically group both users and permissions into smaller total entities becomes paramount for managing access control
+as an organization grows and the number of permissions and users scales upward, 
+The RBAC standard model has advantages for managing access control. For example, if a user requires access to resources 
+associated with the manager role within a given organization, security policy administrators need only associate the user with the manager role.
+
+<div class="p"><!----></div>
+The RBAC standard was first proposed in the 1990s when NIST 
+requested that a unified standard be created by combining the Ferraiolo and Kuhn model [<a href="#ferraiolokuhn" name="CITEferraiolokuhn">2</a>] with the framework 
+proposed by Sandhu, et al [<a href="#sandhu1996role" name="CITEsandhu1996role">3</a>].  
+In 2004, this standard was adopted as ANSI/INCITS 359-2004 approved by American National Standards Institute (ANSI) and the InterNational Committee for Information Technology Standards (INCITS). 
+The development of a standard was inspired by an economic impact study done during the 1990s and later confirmed in 2010 <a href="#tthFtNtAAB" name="tthFrefAAB"><sup>1</sup></a> that showed the cost savings of RBAC implementation and maintenance. 
+Prior to the development of the RBAC standard, vendors proposed and implemented their own defined RBAC features without general agreement on a unified definition of RBAC or feature set. 
+The RBAC standard addressed this issue by providing definitions and a functional specification of RBAC features using a reference model.
+
+<div class="p"><!----></div>
+Innovation and the use of RBAC in new domains has led to scenarios that, by some accounts, the standard RBAC model cannot handle [<a href="#kuhn2010adding" name="CITEkuhn2010adding">4</a>].  
+For example, Ni, Q. et al [<a href="#ni2010privacy" name="CITEni2010privacy">5</a>] state that RBAC is "not designed to enforce privacy policies and barely 
+meet privacy protection requirements" with the introduction of privacy concerns in domains such as healthcare. 
+Since the introduction of the NIST RBAC standard in 2000, extension models to the RBAC standard have appeared in the literature, each adding one or more features on top of the core RBAC model. 
+A cursory examination of the extension model papers does not provide good comparisons for developers and researchers to build upon. 
+Further, these extension models are each building upon and adding features to a standard that was designed to reduce the economic impact experienced by enterprises and increase interoperability [<a href="#o20102010">1</a>].
+
+<div class="p"><!----></div>
+<i>The goal of our work is to aid practitioners and researchers in choosing an extension to the RBAC standard model, and in understanding
+how extensions to RBAC are evaluated by providing an assessment of the state of extensions to the RBAC standard model. We accomplished this through: 
+establishment of a set of extension categories, an examination of the state of the art in evaluations of extension models and a breakdown of the 
+motivations that have led to extension of the RBAC standard model.</i> With respect to our goal, the authors addressed the following research questions:
+
+<div class="p"><!----></div>
+
+<ul>
+<li> RQ1: What categories exist within extensions to RBAC?
+<div class="p"><!----></div>
+</li>
+
+<li> RQ2: What are the motivations behind extensions to RBAC?
+<div class="p"><!----></div>
+</li>
+
+<li> RQ3: Do the extensions to RBAC have corresponding implementations?
+<div class="p"><!----></div>
+</li>
+
+<li> RQ4: How are extensions to RBAC evaluated theoretically and in practice?
+<div class="p"><!----></div>
+</li>
+
+<li> RQ5: What domains have extensions to RBAC been created for?
+<div class="p"><!----></div>
+</li>
+
+<li> RQ6: What commonalities or generalizations exist across all categories?
+<div class="p"><!----></div>
+</li>
+</ul>
+
+<div class="p"><!----></div>
+The authors performed a systematic literature review designed to explore the current body of research in the area of extensions to the RBAC standard model. 
+The review we performed yielded 1716 papers, of which 28 were deemed primary sources for inclusion as extension models to the RBAC standard model.  
+This review is intended to serve as a starting place for researcher's looking to tackle new problems in the realm of authorization and a reference guide for discovering
+the current state of extensions to the RBAC standard model. 
+For developer's looking to find a model to fit their potentially unique access control needs, this review will provide a basis for comparison and easy look-up for what extension model to use.  
+Further, the review provides insight into the state of the art in evaluating RBAC extension models.
+
+<div class="p"><!----></div>
+Our research provides contributions to the community in the following ways:
+
+<div class="p"><!----></div>
+
+<ul>
+<li> Summarizes current research on extensions to RBAC.
+<div class="p"><!----></div>
+</li>
+
+<li> Guides a direction for a new standard based on an extension to the RBAC standard model.
+<div class="p"><!----></div>
+</li>
+</ul>
+
+<div class="p"><!----></div>
+The rest of the paper is organized as follows. 
+Section 2 covers background and the core RBAC model. 
+Section 3 lays out the process used in conducting the review. 
+Sections 4-9 present the analysis and discussion of the research questions. 
+Section 10 is a general discussion section brings together all the research questions.
+Section 11 contains the final conclusions.
+
+
+ <a name="tth_sEc2"></a><h2>
+2&nbsp;&nbsp;Role Based Access Control Standard</h2> <a name="sec:core-rbac">
+</a>
+
+<div class="p"><!----></div>
+RBAC provides effective and efficient permissions management for operations, especially when sharing resources within an organization.
+Prior to the creation of the NIST RBAC standard, no general agreement on the definition 
+of RBAC existed among practitioners or within the research community. 
+Without a unified definition of RBAC, software developers described similar concepts and features of RBAC models using different terminology. 
+This lack of consistent terminology was shown to slow the implementation of RBAC [<a href="#o20102010">1</a>].  
+Moreover, in cases where organizations were concerned with adopting RBAC,
+evaluation and comparison of RBAC technologies developed by different vendors was difficult.
+NIST, in collaboration with industry and academics, worked on defining a set of consensus RBAC concepts and terminology and proposed a standard for 
+RBAC that addressed these cost and interoperability issues by developing a common definition that can be used across different vendors.
+
+<div class="p"><!----></div>
+NIST's work can directly benefit organizations by lowering cost of early phase R&amp;D and the implementation of RBAC.
+Since the RBAC standard was first introduced, a 2010 report by RTI International showed that the the rate of RBAC adoption has rapidly grown over recent years [<a href="#o20102010">1</a>]. 
+The analysts estimate that, by the end of 2010, at least a part of permission of systems use RBAC for more than 50% of IT users at organizations, which
+hire more than 500 employees. For economic estimate analysis, the analysts estimate that RBAC technology has generated $6.1 billion in net economic benefits to industry, of which $1.1 billion is attributable to NIST RBAC standard work.
+
+<div class="p"><!----></div>
+The NIST RBAC standard model proposed by Ferraiolo et al. [<a href="#ferraiolo" name="CITEferraiolo">6</a>] and later adopted as the official standard for RBAC by the INCITS includes three levels of RBAC: core RBAC, hierarchical RBAC, and constrained RBAC.
+Since the basis for our review is extensions to the RBAC standard model, we describe the core model, associated entities and other terminology encountered across the space of our review. Then, we describe hierarchical RBAC and constrained RBAC, which are developed by incorporating new features into the core RBAC. 
+
+<div class="p"><!----></div>
+     <a name="tth_sEc2.1"></a><h3>
+2.1&nbsp;&nbsp;Core RBAC</h3> 
+
+<div class="p"><!----></div>
+The four entities of the standard RBAC model are:
+
+<div class="p"><!----></div>
+
+<ul>
+<li> a set of <em>Users</em>: A user can be a person or an agent.
+<div class="p"><!----></div>
+</li>
+
+<li> a set of <em>Roles</em>: A role is a collection of permissions to perform a specific job function in an organization.
+<div class="p"><!----></div>
+</li>
+
+<li> a set of <em>Permissions</em>: A permission refers to an access mode that can be exercised on an object in the system and a session relates a user to possibly many roles.
+<div class="p"><!----></div>
+</li>
+
+<li> a set of <em>Sessions</em>: In each session, a user can be assigned to some of the roles, only when the corresponding role is enabled for activation for that time.
+<div class="p"><!----></div>
+</li>
+</ul>
+
+<div class="p"><!----></div>
+In RBAC, a user can exercise a permission only if the user is assigned to a role.
+In addition to the four basic components, two functions are defined:
+the user role assignment (UA) and the role and permission assignment (PA) functions.
+User role assignment models assignment of users to roles.
+Permission role assignment models assignment of permissions to roles.
+
+<div class="p"><!----></div>
+
+<div class="p"><!----></div>
+<a name="tth_fIg1">
+</a>     <div style="text-align:center">        <img src="sections/core-model.png" alt="sections/core-model.png" />
+    
+<div style="text-align:center">Figure 1: <a name="fig:overview">
+</a>RBAC Core Diagram in NIST RBAC model [<a href="#ferraiolokuhn">2</a>].</div>
+</div>
+<div class="p"><!----></div>
+Figure&nbsp;<a href="#fig:overview">1</a> presents an overview of core RBAC model diagram where elements and their relations are described.
+Let &#220;SERS", "ROLES", &#214;BS", &#214;PS", "PRM", and "SESSIONS" denote users, roles, objects, operations, permissions, and sessions, respectively.
+Permissions are associated with possible users' pre-defined operation on an object (e.g., execute a file).
+Note that, at user or role activation, a session associated with user or role is established.
+
+<div class="p"><!----></div>
+     <a name="tth_sEc2.2"></a><h3>
+2.2&nbsp;&nbsp;Hierarchical RBAC</h3> 
+
+<div class="p"><!----></div>
+Hierarchical RBAC model adds role hierarchies (RH) feature to core RBAC model.
+This model incorporates a structure of roles in an organization using inheritance relationship among attributes such as roles.
+The role structure in an organization may use
+a role <i>r</i><sub>1</sub>, who inherits all permissions of another role <i>r</i><sub>2</sub>.
+For example, a manager role may inherit all permissions of a employee role.
+Role hierarchies help simplify access control policy creation and maintenance by reducing the number of
+individual role assignments to a user. Formally, role inheritance relation is shown as <i>RH</i>  &#8838;  <i>ROLES</i> &times; <i>ROLES</i> describing many-to-many mapping role inheritance relation. 
+General role hierarchies can be extended to use the concept of multiple inheritance where
+a role <i>r</i><sub>1</sub>, who inherits all permissions from more than one roles.
+
+<div class="p"><!----></div>
+     <a name="tth_sEc2.3"></a><h3>
+2.3&nbsp;&nbsp;Constrained RBAC</h3>
+
+<div class="p"><!----></div>
+Constrained RBAC incorporates static and dynamic separation of duty relations to the RBAC model. Separation of 
+duty relations enforce conflict of interest among roles. This model defines two types of separation of duty relations; static and dynamic.
+
+<div class="p"><!----></div>
+
+<ul>
+<li> Static Separation of Duty (SSoD): SSoD restricts the conflicting-role assignments statically that are associated with a user. On situations
+	where multiple roles can be associated with a single user and roles <i>Role</i><sub><i>A</i></sub> and <i>Role</i><sub><i>B</i></sub> are conflicting each other, no permission is given to a user who is assigned to both <i>Role</i><sub><i>A</i></sub> and <i>Role</i><sub><i>B</i></sub>. SSoD is known to be too rigid for practical use in cases where a user should have permissions as either <i>Role</i><sub><i>A</i></sub> and <i>Role</i><sub><i>B</i></sub>.
+<div class="p"><!----></div>
+</li>
+
+<li> Dynamic Separation of Duty (DSD): Dynamic SoD is known to be
+more flexible than SSD. DSD restricts the conflicting-role assignments dynamically that are associated with a user. On situations
+	where multiple roles can be associated with a single user and , given a context, roles <i>Role</i><sub><i>A</i></sub> and <i>Role</i><sub><i>B</i></sub> are conflicting each other dynamically, no permission is given to a user.
+<div class="p"><!----></div>
+</li>
+</ul>
+
+
+ <a name="tth_sEc3"></a><h2>
+3&nbsp;&nbsp;Methodology and Process</h2> <a name="sec:process">
+</a>
+
+<div class="p"><!----></div>
+The authors adopted and applied a systematic literature review following recommendations from Kitchenham's suggested processes [<a href="#kitchenham2007guidelines" name="CITEkitchenham2007guidelines">7</a>].  The systematic literature review process was broken down in to four stages and the rest of this section is broken down by each stage.  The stages were:
+
+<div class="p"><!----></div>
+
+<ul>
+<li> Step 1: Development of a search strategy
+<div class="p"><!----></div>
+</li>
+
+<li> Step 2: Elimination of papers based on title criteria
+<div class="p"><!----></div>
+</li>
+
+<li> Step 3: Elimination of papers based on abstract criteria
+<div class="p"><!----></div>
+</li>
+
+<li> Step 4: Elimination of papers based on content and matching to elimination criteria
+<div class="p"><!----></div>
+</li>
+</ul>
+
+<div class="p"><!----></div>
+     <a name="tth_sEc3.1"></a><h3>
+3.1&nbsp;&nbsp;Step 1: Search Strategy</h3>
+
+<div class="p"><!----></div>
+For the first phase of our systematic literature review, the authors developed a search strategy for finding papers.  The search strategy was executed by an automated comprehensive search taking as input a set of academic search engines and a list of search terms.  The search was performed by applying each search term to each engine incrementally until a stopping criteria was met. Table <a href="#tab:search_results">2</a> lists the four search engines along the left most column with the three search term across the top row along with the papers for each criteria and engine combination.  The search algorithm was performed as follows:
+
+<div class="p"><!----></div>
+
+<ol type="1">
+<li> Call to search engine with current search position and current search term.
+<div class="p"><!----></div>
+</li>
+
+<li> Parse results and extract paper title, authors and year of publication.
+<div class="p"><!----></div>
+</li>
+
+<li> Compare results against stopping criteria:
+	
+<ul>
+<li> If the size of the result set is greater than or equal to 1000 then stop.
+<div class="p"><!----></div>
+</li>
+
+<li> If the last ten results did not contain the search term phrase within the tite then stop.
+<div class="p"><!----></div>
+</li>
+</ul>
+<div class="p"><!----></div>
+</li>
+
+<li> If stopping criteria not met, increment search position and go back to step one.
+<div class="p"><!----></div>
+</li>
+</ol>
+
+<div class="p"><!----></div>
+The result set size stopping criteria was chosen due to a technical limitation of some search engines.  The stopping criteria related to the last ten titles is meant to stop after relevant results are no longer being returned by the search engine.  After gathering all 12 data sets, the authors combined the papers into a master list by systematically comparing the bibliographic information for each.  The master list of 1716 papers was used to perform a series of elimination rounds to narrow the list of papers and identify primary sources.  Table  shows the total number of papers selected by each author for each round and how many papers from the disjoint set for each round survived to the next round.
+
+<div class="p"><!----></div>
+
+<div class="p"><!----></div>
+<a name="tth_tAb1">
+</a> <div style="text-align:center"><div style="text-align:center">Table 1: Paper counts after applying search strategy</div>
+
+<table border="1">
+<tr><td width="138"></td><td width="49"><b>RBAC</b> </td><td width="167"><b>role based access control</b> </td><td width="167"><b>role-based access control</b> </td><td width="39"><b>Total</b>
+</td></tr>
+<tr><td width="138">Google Scholar </td><td width="49">651 </td><td width="167">213 </td><td width="167">435 </td><td width="39">1299 </td></tr>
+<tr><td width="138">ACM Portal </td><td width="49">500 </td><td width="167">20 </td><td width="167">720 </td><td width="39">1240 </td></tr>
+<tr><td width="138">IEEExplore </td><td width="49">200 </td><td width="167">40 </td><td width="167">230 </td><td width="39">470 </td></tr>
+<tr><td width="138">CiteSeerX </td><td width="49">100 </td><td width="167">100 </td><td width="167">150 </td><td width="39">350 </td></tr>
+<tr><td width="138"></td><td width="49"></td><td width="167"></td><td width="167"></td><td width="39"></td></tr>
+<tr><td width="138">Totals </td><td width="49">1451 </td><td width="167">373 </td><td width="167">1535 </td><td width="39">3359 </td></tr>
+<tr><td width="138">Combined </td><td width="49"></td><td width="167"></td><td width="167"></td><td width="39"><b>1716</b> </td></tr></table>
+
+<a name="tab:search_results">
+</a>
+</div>
+<div class="p"><!----></div>
+     <a name="tth_sEc3.2"></a><h3>
+3.2&nbsp;&nbsp;Steps 2-4: Elimination Rounds</h3>
+
+<div class="p"><!----></div>
+The elimination rounds were performed based on reading of the title, abstract and finally the paper itself.  While each elimination stage had a unique set of criteria for elimination the general procedure for elimination for the researchers was as follows.
+
+<div class="p"><!----></div>
+
+<ul>
+<li> The two first authors independently classified papers as relevant, irrelevant or uncertain based off elimination criteria
+<div class="p"><!----></div>
+</li>
+
+<li> Those papers marked as relevant by both reviewers were kept and those marked irrelevant by both were thrown out.
+<div class="p"><!----></div>
+</li>
+
+<li> Papers marked as relevant, or irrelevant by a single reviewer were combined with all papers marked as uncertain and discussed by both reviewers.  From this discussion, papers were either thrown out or kept until the next round of the review.
+<div class="p"><!----></div>
+</li>
+</ul>
+
+<div class="p"><!----></div>
+      <a name="tth_sEc3.2.1"></a><h4>
+3.2.1&nbsp;&nbsp;Step 2: Title Elimination</h4>
+
+<div class="p"><!----></div>
+The first round of elimination was performed by strict examination based on the title.  Each author was tasked with deciding on elimination by answering the following questions:
+
+<div class="p"><!----></div>
+
+<ul>
+<li> Did the title contain a reference to 'role based access control' or 'RBAC'?
+<div class="p"><!----></div>
+</li>
+
+<li> Did the title contain a reference to 'model'?
+<div class="p"><!----></div>
+</li>
+</ul>
+
+<div class="p"><!----></div>
+      <a name="tth_sEc3.2.2"></a><h4>
+3.2.2&nbsp;&nbsp;Step 3: Abstract Elimination</h4>
+
+<div class="p"><!----></div>
+The second round of elimination was based on strict reading of the abstracts of papers that survived title elimination.  Researchers read each abstract and evaluated relevancy based off:
+
+<div class="p"><!----></div>
+
+<ul>
+<li> Does the abstract mention a proposed model?
+<div class="p"><!----></div>
+</li>
+
+<li> Does the abstract mention extension of role-based access control?
+<div class="p"><!----></div>
+</li>
+
+<li> Does the abstract mention either an implementation, evaluation or domain for their model?
+<div class="p"><!----></div>
+</li>
+</ul>
+
+<div class="p"><!----></div>
+      <a name="tth_sEc3.2.3"></a><h4>
+3.2.3&nbsp;&nbsp;Step 4: Content Elimination</h4>
+
+<div class="p"><!----></div>
+The final elimination round involved taking the entire paper into consideration and answering five questions that would serve as the basis for elimination.  The data collected by answering these questions served as the basis towards answering the research questions.  The questions each reviewer attempted to answer based on the content of the paper was:
+
+<div class="p"><!----></div>
+
+<ol type="1">
+<li> Does this model extend the core model? (Exclusion)
+<div class="p"><!----></div>
+</li>
+
+<li> Do the researchers give evidence that RBAC needs extension? (Inclusion)
+<div class="p"><!----></div>
+</li>
+
+<li> Was the paper and subsequent model inspired by a real world example?  (Conditional Inclusion)
+<div class="p"><!----></div>
+</li>
+
+<li> Did the researchers offer any evaluation of the proposed model? If yes, how did they do one? If no, why? (Conditional Inclusion)
+<div class="p"><!----></div>
+</li>
+
+<li> Did the authors implement their model? (Inclusion)
+<div class="p"><!----></div>
+</li>
+</ol>
+
+<div class="p"><!----></div>
+Question 1 was a definitive exclusion criteria as any paper that failed in the affirmative was rejected.  Questions 3 and 4 were marked as conditional includes given that they were connected in making a decision.  A paper that met Question 3 but not 4, or met 4 but not 3 would be included since in some cases the real world examples served as research evaluations and without this conditional include the paper list size would be too small to be significant.
+
+<div class="p"><!----></div>
+
+<div class="p"><!----></div>
+<a name="tth_tAb2">
+</a> <div style="text-align:center"><div style="text-align:center">Table 2: Elimination Rounds</div>
+
+<table>
+<tr><td align="center"></td><td colspan="1" align="center"> </td><td align="center"><b>Title</b> </td><td align="center"><b>Abstract</b> </td><td align="center"><b>Content</b> </td></tr>
+<tr><td colspan="1" align="center">Eric  </td><td align="center"></td><td align="center">305 </td><td align="center">86 </td><td align="center">46 </td></tr>
+<tr><td colspan="1" align="center">Hwang </td><td align="center"></td><td align="center">176 </td><td align="center">102 </td><td align="center">42 </td></tr>
+<tr><td colspan="1" align="center"> </td><td align="center">Overlap </td><td align="center">249 </td><td align="center">51 </td><td align="center">24 </td></tr>
+<tr><td colspan="1" align="center"> </td><td align="center">Disjoint </td><td align="center">232 </td><td align="center">137 </td><td align="center">64 </td></tr>
+<tr><td colspan="1" align="center"> </td><td align="center">Rejected </td><td align="center">208 </td><td align="center">116 </td><td align="center">59 </td></tr>
+<tr><td colspan="1" align="center"> </td><td align="center">Retained </td><td align="center">41 </td><td align="center">21 </td><td align="center">5 </td></tr>
+<tr><td colspan="1" align="center"> </td><td align="center"><b>Total</b> </td><td align="center">290 </td><td align="center">72 </td><td align="center">28 </td></tr></table>
+
+<a name="tab:search_results">
+</a>
+</div>
+<div class="p"><!----></div>
+     <a name="tth_sEc3.3"></a><h3>
+3.3&nbsp;&nbsp;Extraction</h3>
+
+<div class="p"><!----></div>
+After selection of primary sources, the next step was to extract data from each paper that pertained to our research questions in order to look for trends.  The first step was to take the individual data generated from the final elimination round and organize this information around the research questions.  During the paper reading round, and resulting data, the fact that the papers were logically falling into a number of categorizations became evident.  Thus, the first step undertaken was to answer the question of what categories exist for the RBAC model extensions and what papers feel into what categories.
+		
+
+ <a name="tth_sEc4"></a><h2>
+4&nbsp;&nbsp;Categorization</h2> <a name="sec:categorization">
+</a>
+
+<div class="p"><!----></div>
+RQ1: What categories exist within RBAC extensions?
+
+<div class="p"><!----></div>
+     <a name="tth_sEc4.1"></a><h3>
+4.1&nbsp;&nbsp;Results</h3>
+
+<div class="p"><!----></div>
+During the paper reading phase, the authors noted that categorical themes were present among the extensions. 
+For example, the paper "Privacy-aware role-based access control" [<a href="#ni2010privacy">5</a>] brings in the notion of privacy directly within the title of the paper and the name of their model. 
+Some papers presented this direct pronouncement of a theme, while others were less obvious. 
+Thus, we developed a set of guidelines to aide in determining a set of extension categories based upon observations during the paper reading phase. 
+In developing these guidelines, we attempted to define each category by a single noun-phrase descriptor.
+The guidelines were:
+
+<div class="p"><!----></div>
+
+<ul>
+<li> Model Name - Does the name of the model classify itself?
+<div class="p"><!----></div>
+</li>
+
+<li> Self Assessment - Do the authors of the paper directly identify a descriptor for their model within the body of the paper?
+<div class="p"><!----></div>
+</li>
+
+<li> Repetition of Phrase - Does the body of the paper present the same phrase repeatedly when discussing their model?
+<div class="p"><!----></div>
+</li>
+</ul>
+
+<div class="p"><!----></div>
+If we take the previous example above, the paper "Privacy-aware role-based access control" [<a href="#ni2010privacy">5</a>] contained "privacy" in
+the title and in the name of the model leading to the creation of the Privacy category and the subsequent placement of the paper under that category.
+By comparison, the paper "An extended RBAC model based on granular logic" [<a href="#jian2008extended" name="CITEjian2008extended">8</a>] does not contain a direct categorization in the title or model name, but in reading the body of the paper the authors assessed that this paper was context based.  
+
+<div class="p"><!----></div>
+We offer definitions for each of the 8 observed categories based on the data extracted from the primary sources and the English definitions for each noun-phrase. 
+Some category descriptors contain abbreviations in parenthesis that match the shortened name found within Table <a href="#tab:categorization">5</a>.
+
+<div class="p"><!----></div>
+     <a name="tth_sEc4.2"></a><h3>
+4.2&nbsp;&nbsp;Definitions</h3>
+
+<div class="p"><!----></div>
+
+<ul>
+<li> <b>Context</b>: The extension model integrates contextual information into the RBAC standard model. Context is defined as a user's current state and environment information (e.g., location, time, system resources, network state, network security configuration, etc) which may affect user's access privileges.
+<div class="p"><!----></div>
+</li>
+
+<li> <b>Constraint (Const)</b>: The extension model provides conditional restrictions on permissions of given roles. The constraint is either static or dynamic. For example, a doctor can modify any medical record for which the doctor is assigned as the designated primary care physician. This example describes a doctor's permission with conditional restriction - "only when the doctor is assigned as the designated primary care physician can the doctor modify a particular medical record".
+<div class="p"><!----></div>
+</li>
+
+<li> <b>Organizational (Org)</b>: The extension model is concerned with providing mechanisms and entities that allow for RBAC across multiple organizations. Typically, users may have the same role name in different organizations, but may have different access privileges due to different local variations.
+<div class="p"><!----></div>
+</li>
+
+<li> <b>Privacy (Priv)</b>: The extension model provides entities and mechanisms to describe privacy policies, which are legal statements or documents about disclose and management of personally identifiable information such as name, address, data of birth, etc.
+<div class="p"><!----></div>
+</li>
+
+<li> <b>Task</b>: The extension model provides a task entity which are associated with permissions and roles. A task is a fundamental unit of a business activity. Different from core RBAC, in task-role-based access control model, roles are not directly associated with permissions. Roles are first associated with tasks, which are associated permissions. For example, the employee role is associated with a task, which is to write a report. Then, this task is associated with a permission.
+<div class="p"><!----></div>
+</li>
+
+<li> <b>Spatio-Temporal</b>: The extension model combines spatial (location-based) and temporal (time-based) constraints in specifying access control policies. For example, specific locations are enforced while a role is permitted to conduct an action from 8 am to 5 pm.
+<div class="p"><!----></div>
+</li>
+
+<li> <b>Spatial</b>: The extension model provides spatial constraints, location-based constraints in specifying access
+	control policies. For example, in organizations, locations are enforced while a
+	specific role is permitted to conduct an action. Consider that a part-time employee works only in a specific location.
+	In such cases, the part-time employee role should access required resources only when the user is in the location. 
+	Spatial constraints can integrate with roles, user-role assignments, or role-permission assignments.
+<div class="p"><!----></div>
+</li>
+
+<li> <b>Temporal (Temp)</b>:  The extension model provides temporal constraints, time-based constraints in specifying access
+	control policies. For example, in organizations, periodic temporal durations are enforced while a
+	specific role is permitted to conduct an action. Consider that a part-time employee works only from 9:00 a.m. to 3:00 p.m.
+	In such cases, the part-time employee role should access required resources during the interval. 
+	Temporal constraints can integrate with roles, user-role assignments, or role-permission assignments.
+<div class="p"><!----></div>
+</li>
+</ul>
+
+<div class="p"><!----></div>
+     <a name="tth_sEc4.3"></a><h3>
+4.3&nbsp;&nbsp;Analysis and Discussion</h3>
+
+<div class="p"><!----></div>
+The 28 primary sources produced a set of 8 heirarchical categories. Table <a href="#tab:categorization">5</a> summarizes each primary source under their designated
+category and further, displays the perceived heirarchy of the categories. 
+The Spatial and Temporal categories were treated as subsets of the broader category of Spatio-Temporal since this category encompasses them individually and
+the Spatio-Temporal category contained more primary sources that the Spatial or Temporal categories alone.  
+
+<div class="p"><!----></div>
+When looking across all categories, the authors noted that each category added some new features on top of the standard RBAC model that were domain specific.
+These domain specific features were under the surface adding contextual relationships between the core user, permission and role entities.  Thus, the authors
+concluded that all categories stemmed from the context category, of which some primary sources were already deemed direct members.  
+
+<div class="p"><!----></div>
+For example, in the case of the Privacy category, the models added entities such as purpose binding to represent within the model data collected for one purpose should not used for another purpose without user consent [<a href="#ni2010privacy">5</a>]. 
+While the new entity provided by the Privacy based models is inspired by domains such as healthcare where privacy is of legal concern, the underlying mechanism that drives purpose binding is providing context around making an access control decision. 
+The system must take into account not just a static set of permissions a user has through their roles, but also the context of the data being accessed as that data relates to privacy policy. 
+In the spatio-temporal models, a users location and the time of day are two factors that can be taken into account when activating a role or verifying a permission.  
+The concepts of location and time are properties of the user and place specific contexts around the role and permission entities.
+
+<div class="p"><!----></div>
+  
+
+<span style="background: #BFBFBF;"><br /><table border="0" align="left"><tr><td></td><td width="1000">
+-2We found eight categories that exist within extensions to RBAC: Constraint, Context, 
+Organization, Privacy, Task, Spatio-Temporal, Spatial and Temporal. We further found that the other
+seven categories fall under the category of Context.
+</td></tr></table><!--vbox--><!--hbox--><br clear="all" />  </span>   <a name="tth_sEc5"></a><h2>
+5&nbsp;&nbsp;Motivations</h2> <a name="sec:motivations">
+</a>
+
+<div class="p"><!----></div>
+RQ2: What are the motivations behind extensions to RBAC?
+
+<div class="p"><!----></div>
+     <a name="tth_sEc5.1"></a><h3>
+5.1&nbsp;&nbsp;Results</h3>
+
+<div class="p"><!----></div>
+We first describe motivations described in 28 papers surveyed.
+
+<div class="p"><!----></div>
+
+<ul>
+<li> The RBAC standard needs additional contextual information and constraints to develop fine-grained policies in practice.
+<div class="p"><!----></div>
+</li>
+
+<li> The RBAC standard does not incorporate context. Therefore, RBAC belongs to static access control model, which may not capture changes in environments.
+<div class="p"><!----></div>
+</li>
+
+<li> The RBAC standard does not support for various constraints such as temporal and spatial constraints to design sophisticated policies on demand.
+<div class="p"><!----></div>
+</li>
+
+<li> The RBAC standard does not provide an abstraction to additional user-defined attributes	(e.g., task and team) and their association with existing attributes.
+<div class="p"><!----></div>
+</li>
+
+<li> The RBAC standard has limitation on delegation and role hierarchy. For example, partial inheritance in role hierarchy needs to be developed.
+<div class="p"><!----></div>
+</li>
+
+<li> The RBAC standard needs to incorporate additional contextual information and constraints to develop fine-grained policies in practice.
+<div class="p"><!----></div>
+</li>
+
+<li> The RBAC standard needs to incorporate additional attributes such as
+task, team, purpose, organizational roles and collaborative activities over existing attributes. Moreover, new association between attributes
+are introduced.
+<div class="p"><!----></div>
+</li>
+
+<li> RBAC model needs to improve existing features such delegation and role hierarchy to meet fine-grained access control.
+<div class="p"><!----></div>
+</li>
+</ul>
+
+<div class="p"><!----></div>
+We classify motivations behind RBAC extensions to these three categories:
+
+<div class="p"><!----></div>
+
+<ul>
+<li> Addition: an extended model incorporates additional elements with regards to context/constraints and their relations with existing elements of the RBAC standard. Models in this category does not change the core model. We found 23 papers in this category.
+<div class="p"><!----></div>
+</li>
+
+<li> Modification: an extended model incorporates modification of existing features in the RBAC standard. For example, changes of attribute relations such as role hierarchy is to show modification. For models in this category, changes occur within the core model. We found 1 papers in this category.
+<div class="p"><!----></div>
+</li>
+
+<li> Combination: an extended model is combination of RBAC and an another access control model, which uses model-specific attributes and their relations such as task, team, purpose, organizational roles. For this combination, new association between attributes of two models should be introduced. Models in this category requires a new association between attributes of different access control models to work together. We found 4 papers in this category.
+<div class="p"><!----></div>
+</li>
+</ul>
+
+<div class="p"><!----></div>
+
+<div class="p"><!----></div>
+     <a name="tth_sEc5.2"></a><h3>
+5.2&nbsp;&nbsp;Analysis and Discussion</h3>
+
+<div class="p"><!----></div>
+The RBAC standard provides a formal access model, which is an abstraction on top of authorization based on user role assignment (UA) and role
+permission assignment (PA). Since this simple model may not provide a fine-grained access control for sophisticated
+security mechanism, a variety of extended RBAC models have been proposed over the years to meet
+security requirements. When administrators design a model, it is important to capture an important abstraction to help the model to be enforced in a system.
+
+<div class="p"><!----></div>
+The RBAC standard presents four entities: roles, sessions, users, and permissions, and their relations. While this model is considered fundamental in any RBAC systems, this model can be extended to be applicable for emerging applications such as healthcare and mobile devices. 
+In such environments, the RBAC standard needs additional constraints and dynamic context to support dynamic environments such as spatial and location. For this category, more than 80% of papers are classified into "Addition" category. Besides, one paper&nbsp;[<a href="#alam06:constraint" name="CITEalam06:constraint">9</a>] modifies relationship among elements to support partial inheritence. RBAC is shown to be combined with other access control models such as team-based access control and task-based access control&nbsp;[<a href="#zhou2007team" name="CITEzhou2007team">10</a>,<a href="#oh2003task" name="CITEoh2003task">11</a>].
+
+<div class="p"><!----></div>
+
+<div class="p"><!----></div>
+ <a name="tth_sEc6"></a><h2>
+6&nbsp;&nbsp;Implementations</h2> <a name="sec:implementations">
+</a>
+
+<div class="p"><!----></div>
+RQ3: Do the extension models have corresponding implementations?
+
+<div class="p"><!----></div>
+     <a name="tth_sEc6.1"></a><h3>
+6.1&nbsp;&nbsp;Results</h3>
+
+<div class="p"><!----></div>
+When designing and proposing a model targeted at a feature that is rooted in practical
+usage by real software systems, bringing the model to life is strong evidence that the
+proposed model can work in practice. The concept of authorization, and access control
+is rooted in a business need. Thus, any access control model needs to be feasible
+in the real world not just on paper. We analyzed the primary sources to see how many
+proposed models actually had implementations associated with them.  And quantified the
+type of implementation. Whether the implementation was for a real system, for a prototype
+and/or used in a production environment.
+
+<div class="p"><!----></div>
+
+<div class="p"><!----></div>
+<a name="tth_tAb3">
+</a> <div style="text-align:center"><div style="text-align:center">Table 3: Implementation types found and the count of primary sources</div>
+
+<table border="1">
+<tr><td align="center"><b>Implementation Type</b> </td><td align="center"><b>Paper Count</b> </td></tr>
+<tr><td align="center">Enterprise Implementation </td><td align="center">4 </td></tr>
+<tr><td align="center">Prototype Implementation </td><td align="center">4 </td></tr>
+<tr><td align="center">No Implementation </td><td align="center">20 </td></tr></table>
+
+<a name="tab:implementations">
+</a>
+</div>
+<div class="p"><!----></div>
+Table <a href="#tab:implementations">4</a> shows the breakdown of implementations found within the primary sources.
+Of the 28 papers surveyed, there was a lack of implementation with 20 of the paper providing no
+mention of a implementation or prototype.  Of the remaining 8 papers that did mention an implementation, half 
+were simply prototypes developed by the authors while the other half were claimed to be implemented within a real
+system.
+
+<div class="p"><!----></div>
+     <a name="tth_sEc6.2"></a><h3>
+6.2&nbsp;&nbsp;Analysis and Discussion</h3>
+
+<div class="p"><!----></div>
+The RBAC standard was designed with enterprises in mind such that when practitioners implemented RBAC into their systems
+there would be a reasonable assurance being based off a well thought out model.  As extensions to the standard model
+come along, thought and time should be given to how features and nuances of their models may impact implementation
+in order to achieve the same goals as the original standard.  The primary sources should a significant lack of implementation
+with over 70% of the models having no notion of attempting to implement them.  The bare minimum, as 4 papers did, should be
+a prototype implementation of the model for review by both practitioners and researchers. Of the models that produced an 
+implementation within the enterprise world, two were from within the medical domain and two were implemented using web application technologies.  
+
+<div class="p"><!----></div>
+ <a name="tth_sEc7"></a><h2>
+7&nbsp;&nbsp;Evaluations</h2> <a name="sec:evaluations">
+</a>
+
+<div class="p"><!----></div>
+RQ4: How are extension to RBAC evaluated theoretically and in practice?
+
+<div class="p"><!----></div>
+     <a name="tth_sEc7.1"></a><h3>
+7.1&nbsp;&nbsp;Results</h3>
+
+<div class="p"><!----></div>
+The 28 primary sources were examined for evidence that evaluations of the proposed model were presented by the model authors.
+Further, we identified a set of evaluation types found within the each of the primary sources and provide below a list of the 
+evaluation types and which primary sources provided which type.  In some cases a single primary source provided multiple evaluation
+types.
+
+<div class="p"><!----></div>
+
+<ul>
+<li> Time-based Performance [<a href="#ni2010privacy">5</a>], [<a href="#aich09:role" name="CITEaich09:role">12</a>]
+<div class="p"><!----></div>
+</li>
+
+<li> Complexity analysis [<a href="#bao08:role" name="CITEbao08:role">13</a>], [<a href="#zhang06:collaborative" name="CITEzhang06:collaborative">14</a>], [<a href="#chen08:spatio-temporal" name="CITEchen08:spatio-temporal">15</a>], [<a href="#aich09:role">12</a>]
+<div class="p"><!----></div>
+</li>
+
+<li> Comparison to standard RBAC [<a href="#bao08:role">13</a>], [<a href="#zou2009crbac" name="CITEzou2009crbac">16</a>], [<a href="#zhang06:collaborative">14</a>], [<a href="#zhao2008flexible" name="CITEzhao2008flexible">17</a>], [<a href="#ray07:spatio" name="CITEray07:spatio">18</a>]
+<div class="p"><!----></div>
+</li>
+
+<li> Mathematical modeling [], [<a href="#hansen2003spatial" name="CITEhansen2003spatial">19</a>], [<a href="#aich07:STARBAC" name="CITEaich07:STARBAC">20</a>], [<a href="#chen08:spatio-temporal">15</a>], [<a href="#joshi05:generalized" name="CITEjoshi05:generalized">21</a>]
+<div class="p"><!----></div>
+</li>
+
+<li> Example scenarios of the model in action [<a href="#alam06:constraint">9</a>], [<a href="#tzelepi01:flexible" name="CITEtzelepi01:flexible">22</a>], [<a href="#cholewka00:acontext-sensitive" name="CITEcholewka00:acontext-sensitive">23</a>], [<a href="#huang06:pervasive" name="CITEhuang06:pervasive">24</a>], [<a href="#bao08:role">13</a>], [<a href="#jian2008extended">8</a>], [], [<a href="#zou2009crbac">16</a>], [<a href="#ray07:spatio">18</a>], [<a href="#samuel07:spatio-temporal" name="CITEsamuel07:spatio-temporal">25</a>], [<a href="#ray07:spatio">18</a>], [<a href="#joshi05:generalized">21</a>], [<a href="#yao2008task" name="CITEyao2008task">26</a>], [<a href="#zhou2007team">10</a>], [<a href="#oh2003task">11</a>]
+<div class="p"><!----></div>
+</li>
+
+<li> Experimental analysis of the model
+<div class="p"><!----></div>
+</li>
+
+<li> Case study of the model in practice [<a href="#motta03:contextual" name="CITEmotta03:contextual">27</a>]
+<div class="p"><!----></div>
+</li>
+</ul>
+
+<div class="p"><!----></div>
+Based on the diverse evaluation criteria, 12 models presented no evidence of an evaluation. Eight models presented example scenarios
+and how application of their model would apply and resolve the situation.  Six of the models provided some form of performance
+or complexity analysis of their model.  This included graphs of the model's time to determine authorization as the number of entities
+grew, and the size of the role space for the extension model compared to standard RBAC. Four models provided mathematical descriptions
+and analysis as a way to provide evaluation in the form of completeness. 
+The most widely used evaluation method was providing sample scenarios with accompanying workflows of how the extension model
+would tackle those scenarios. Much is left to the reader to assume of these types of evaluations, as the authors do not explicitly state
+or show how the standard model is deficient in tackling said scenarios.
+
+<div class="p"><!----></div>
+     <a name="tth_sEc7.2"></a><h3>
+7.2&nbsp;&nbsp;Analysis and Discussion</h3>
+
+<div class="p"><!----></div>
+When proposing an access control model, providing an evaluation of the model is a key component in establishing the validity of the model. 
+Further, in the case of extensions to the RBAC standard model, the model should be accompanied by validation of the model as a stand-alone
+access control model and in comparison to the model upon which the enhancements are being made. The results show that robust evaluations of
+extension models are lacking. 
+
+<div class="p"><!----></div>
+The primary source of validation a developer or practitioner may encounter is a qualitative discussion of real-world
+scenarios and how the proposed model can tackle those situations. In rare cases, five primary sources, the model 
+authors provide some discussion of how the RBAC standard model is deficient in tackling the scenario. In rarer cases, 
+one paper from our results, a case study is performed to examine how the proposed model works in practice. Discussions
+of how an extension model handles a real-world scenario provides developers and practitioners anecdotal evidence at best
+for what types of situations the proposed model could handle. Further, by not providing a comparison to the RBAC standard
+model, developers may be left implementing a more complex model to address their requirements when the standard model would
+have sufficed.  Further, given the nature of access control models as grounded in application to enterprise implementations, 
+case studies of a model in action provide developers with evidence that the model works as intended when applied.
+
+<div class="p"><!----></div>
+When looking for an enterprise ready access control mechanism, developers must balance usability with security. 
+Two of the primary sources examined provided time-based performance analysis of their extension model compared
+to the RBAC standard model. This inclusion of time analysis provides some assurances to developers that any non-functional
+requirements surrounding time to compute authorizations compete or beat the standard model. Further, four of the models provided
+some form of complexity of their model. This complexity analysis plays a key role in the management of the access control mechanism
+over the course of the models implementation lifetime. As the number of roles, users and additional entities grows, developers will 
+need to ensure non-functional requirements are met that deal with the ability for a system administrator to effectively manage these
+entities.
+
+<div class="p"><!----></div>
+ <a name="tth_sEc8"></a><h2>
+8&nbsp;&nbsp;Domains</h2> <a name="sec:domains">
+</a>
+
+<div class="p"><!----></div>
+RQ5: What domains have extensions to RBAC been created for?
+
+<div class="p"><!----></div>
+     <a name="tth_sEc8.1"></a><h3>
+8.1&nbsp;&nbsp;Results</h3>
+
+<div class="p"><!----></div>
+Business needs have historically driven RBAC research and development.  The primary mode of evaluation for
+model extensions has been the presentation of business scenarios in various domains and how the model
+uniquely handles those particular scenarios.  Thus, looking for trends in the domains used in the example
+scenarios might serve to illuminate a trend worth further examination into the reason for the explosion of
+RBAC extensions.  The authors identified domains presented within the primary sources by looking for example
+scenarios cast within a particular domain or mention of domain requirements within the body of the paper.
+We found that the domains mentioned and their associated sources are:
+
+<div class="p"><!----></div>
+
+<ul>
+<li> Medical domain [<a href="#alam06:constraint">9</a>], [<a href="#tzelepi01:flexible">22</a>], [<a href="#motta03:contextual">27</a>], [<a href="#ni2010privacy">5</a>], [<a href="#damiani2007geo" name="CITEdamiani2007geo">28</a>], [<a href="#hansen2003spatial">19</a>], [<a href="#samuel07:spatio-temporal">25</a>], [<a href="#aich09:role">12</a>], [<a href="#zhou2007team">10</a>]
+<div class="p"><!----></div>
+</li>
+
+<li> Pervasive computing environments [<a href="#huang06:pervasive">24</a>], [<a href="#chen08:spatio-temporal">15</a>], [<a href="#ray07:spatio">18</a>]
+<div class="p"><!----></div>
+</li>
+
+<li> Web applications [<a href="#masoumzadeh2008purbac" name="CITEmasoumzadeh2008purbac">29</a>]
+<div class="p"><!----></div>
+</li>
+
+<li> Mobile computing [<a href="#thein2011leveraging" name="CITEthein2011leveraging">30</a>], [<a href="#zou2009crbac">16</a>], [<a href="#chandran05:llt" name="CITEchandran05:llt">31</a>], [<a href="#ray07:spatio">18</a>], [<a href="#aich09:role">12</a>]
+<div class="p"><!----></div>
+</li>
+
+<li> Large-scale organizations with many sub-departments [<a href="#yamazaki04:designing" name="CITEyamazaki04:designing">32</a>], [<a href="#han08:extended" name="CITEhan08:extended">33</a>], [<a href="#yao2008task">26</a>]
+<div class="p"><!----></div>
+</li>
+
+<li> Enterprise, organization workflows [<a href="#cholewka00:acontext-sensitive">23</a>], [<a href="#bao08:role">13</a>], [<a href="#zhang06:collaborative">14</a>], [<a href="#oh2003task">11</a>], [<a href="#joshi05:generalized">21</a>]
+<div class="p"><!----></div>
+</li>
+</ul>
+
+<div class="p"><!----></div>
+The predominant domain for which extension models have been generated for is that of the medical domain with 9 of 28 mentioning scenarios or requirements of that industry.
+Mobile computing and enterprise workflows were each represented by 5 papers claiming to be influenced by the requirements for access control within these domains. The final set
+of domains was pervasive computing environments and large-scale organizations with 3 each and web applications with 1.  There were 4 papers without any direct mention of a domain
+since Aich et al. [<a href="#aich09:role">12</a>] fall under both the medical domain and mobile computing.
+
+<div class="p"><!----></div>
+     <a name="tth_sEc8.2"></a><h3>
+8.2&nbsp;&nbsp;Analysis and Discussion</h3>
+
+<div class="p"><!----></div>
+The medical domain produced the largest selection of papers when analyzing the domains influencing the proposals of extension models.  
+Further, the authors noted that the categories associated with papers identifying the medical domain was not limited to one or two but cut across
+each of the eight categories except for Organization. 
+The cross-category nature of the medical domain papers appears indicative of the complex nature of medical applications and the requirements therein.
+Given the growth of the research and development of medical applications over the past decade this result does not appear to be surprising. However,
+the RBAC standard was originally created to reduce cost and increase interoperability - two goals of current regulation around the standardization
+of electronic health record systems. The large number of proposed models, and the cross-category result stand in direct opposition of the goals
+of both the RBAC standard and current regulations.
+
+<div class="p"><!----></div>
+The RBAC standard has been re-enforced by the economic impact that standardization has had on enterprises needing to apply access control.  The
+inclusion of extension models targeted at the enterprise workflow domain is indicative of the expansion of requirements for enterprises. Developers
+and researchers should take care when looking at extension models designed to addresses the newer requirements of enterprise workflows in order to
+achieve the same economic implementation and maintainability benefits the original standard model presents.
+
+<div class="p"><!----></div>
+Mobile computing has seen a dramatic increase in the number of available devices, operating systems and applications since 1997 when the first smart phone
+was introduced. 
+The domain analysis results produced five papers that targeted extensions that are designed to address the requirements of mobile computing.
+For a domain that has roots in personal and enterprise computing, protecting the data of both through access controls is paramount given their ubiquity.
+
+<div class="p"><!----></div>
+ <a name="tth_sEc9"></a><h2>
+9&nbsp;&nbsp;Generaliations</h2> <a name="sec:generalizations">
+</a>
+
+<div class="p"><!----></div>
+RQ6: What commonalities or generalizations exist across all categories?
+
+<div class="p"><!----></div>
+     <a name="tth_sEc9.1"></a><h3>
+9.1&nbsp;&nbsp;Results</h3>
+
+<div class="p"><!----></div>
+The RBAC standard is used in various aspects of computer systems. In order to reduce efforts for modeling access control used in various applications, researchers often focus on developing generalized core concepts of access control.
+We found that propositional logic is used to describe access control model across all categorizations. Propositional logic is concerned with propositions and their logical relationships. In propositional logic, simple (i.e., atomic) or compound condition at given context is evaluated to true or false based on specified rules and access control logic. Researchers are concerned to extend limited set of propositions specific to core RBAC to meet real-world scenarios such as dynamic constraints, temporal, or spatial constraints. However, semantic meanings of such propositions are various based on researchers' intention.
+
+<div class="p"><!----></div>
+     <a name="tth_sEc9.2"></a><h3>
+9.2&nbsp;&nbsp;Analysis and Discussion</h3>
+
+<div class="p"><!----></div>
+Since NIST proposed RBAC standard using propositional logic, researchers describe extended RBAC models using propositional logic. Given context, propositional logic is used to evaluate true or false based on specified rules and access control logic. As access control is typically evaluated to either true (Permit) or false (Deny) based on predicates, propositional logic is sufficient to describe key ideas and definitions. We found that OO papers of RBAC extensions use propositional logic to describe its extended model.
+However, propositional logic has limitations. While this logic is simple, this logic does not support for reasoning about RBAC, which helps reduce the administrative complexity of associations such as user- role associations. An alternative logic to describe RBAC is first-order logic. This logic is sufficient to describe RBAC and extended RBAC. Moreover, this logic supports for concise and elegant formulation of the RBAC model and its relation.  First-Order logic is expressive enough to concisely represent access control systems. First-Order logic uses relations, variables, and quantifiers.
+
+
+ <a name="tth_sEc10"></a><h2>
+10&nbsp;&nbsp;Discussion</h2> <a name="sec:discussion">
+</a>
+
+<div class="p"><!----></div>
+The research questions we identified, presented results for and analyzed provide specific views of portions of the extension model landscape. 
+By stepping back, and looking across all the research questions we can arrive at cross-cutting concerns and identify areas that may benefit from future work.
+We break the discussion into two issues: recommendations for the enhancement of the evaluation of extensions to role-based access control models and guidelines for developers needing to choose an extension model to meet their requirements.
+
+<div class="p"><!----></div>
+     <a name="tth_sEc10.1"></a><h3>
+10.1&nbsp;&nbsp;Metrics for the Evaluation of Extensions to RBAC</h3>
+
+<div class="p"><!----></div>
+A small percentage of primary sources presented substantial evaluations or implementations of their model in practice.  This in turn leaves researchers and practioners little data from which to compare one model to the next. And given the wide swath of popluar and critical domains being targeted by RBAC extension models, we propose a set of metrics by which RBAC extension models should be evaluated. Hu, Vincent C. and Scarfone, Karen provide metrics for access control system evaluation or a security system in general&nbsp;[<a href="#hu2012:NIST7874" name="CITEhu2012:NIST7874">34</a>]. Hu, Vincent C. and Scarfone, Karen collect metrics, which can be applicable for not only access control models, but also requirements, system implementation, and extended application such as verification and testing. From these metrics, and guided by the data surrounding how extension models are currently evaluated, we select metrics that can be applicable for evaluation of extended RBAC models as follows:
+
+<div class="p"><!----></div>
+
+<ul>
+<li> <b>Ease of Privilege Assignments</b>: measures number of steps for assigning, changing, or deleting a privilege for users and roles when a user or administrator manage RBAC. If a model requires more steps for such a given task, there is a potential increase in human or system error due to increased complexity. While extended RBAC may have similar features to that of the RBAC standard model, we measure worst cases after extended, and the gap between an extension model and the RBAC standard model.
+<div class="p"><!----></div>
+</li>
+
+<li> <b>Syntactic and semantic support for specifying AC rules</b>: checks whether privileges and constraints can be specified using complex logic expressions such as AND, OR,  &#8804;  when specifying constraints. This support helps specify complex and flexible access controls. For example, given a spatial RBAC model, one may measure whether spatial constraints can be specified using various logic expressions.
+<div class="p"><!----></div>
+</li>
+
+<li> <b>Delegation of administrative capabilities</b>: measures how easy and secure an access control model supports for privilege delegation of administrators to another user.
+<div class="p"><!----></div>
+</li>
+
+<li> <b>Capable of combining different policy models</b>: measures whether an access model has a feature to combine more than two policies.
+<div class="p"><!----></div>
+</li>
+
+<li> <b>Capable of conflict resolution</b>: checks whether an access model has a feature to resolve conflicts when two rules in a policy may be applicable for the same request, but evaluate different decisions: One grants permission and the other one denies permission.
+<div class="p"><!----></div>
+</li>
+
+<li> <b>Least privilege principle support</b>: checks whether an access model supports for least privilege principle where a subject can access least set of information and resources that are necessary for its legitimate functioning. Least privilege principle support can reduce damage when malicious users gain legitimate privileges.
+<div class="p"><!----></div>
+</li>
+
+<li> <b>Separation of Duty (SoD)</b>: checks whether an access model supports for static SoD and/or dynamic SoD. Note that NIST Standard supports both static SoD and dynamic SoD described in Section&nbsp;<a href="#sec:core-rbac">2</a>.
+<div class="p"><!----></div>
+</li>
+</ul>
+
+<div class="p"><!----></div>
+We recommend these metrics be incorporated in any extension models presented hence forth. A future work could include providing metric measurements for the primary sources prsented here. 
+A developer could attemot to apply these metrics to an extension model not already evaluated when attempting to choose a model. 
+These metrics focus on comparing specific features support of access control models.
+
+<div class="p"><!----></div>
+     <a name="tth_sEc10.2"></a><h3>
+10.2&nbsp;&nbsp;Adoption of Extensions to RBAC</h3>
+
+<div class="p"><!----></div>
+In order to adopt a model in practice, software developers should implement the model in real system environments based on intended use of the models. Typically, a model provides abstract formal representation of extended RBAC and its operation. To configure intended use (i.e., which subjects can access which resources), we define an access control policy, which specifies high-level rules such as which subjects can access to which resources. Given an access control model and policy, security mechanism provides low-level implementation in a system, which controls access of roles.
+
+<div class="p"><!----></div>
+A formal representation of access control models is a critical step of designing high-level abstraction where which elements are used and how elements are operated.
+One of the objectives of a formal representation is to help ensure the correct behaviors through formal verification. Given the formal representation of access control models, software developers may prove of properties (e.g., safety, consistency and completeness) and check whether these properties are satisfied. 
+
+<div class="p"><!----></div>
+While the concept of the RBAC model is clear and can be applicable to any system, it is challenging to implement the security mechanism of RBAC because the RBAC model is can be interpreted in more than one interpretation due to its complexity. In order to bridge gap between RBAC standard and its implementation, NIST published RBAC Implementation and Interoperability standard (RIIS/ ANSI INCITS-459) in 2011. This standard specifies how to implement RBAC system, which is consistent with NIST RBAC standard. Moreover, this standard describes interoperability specification where one RBAC implementation can be translated to another one.
+
+<div class="p"><!----></div>
+This standard does not provide a specific guideline for implementation of various extended RBAC models.
+Moreover, when software developers implemented extended RBAC models, they require clear security requirements of extended role-based access control, which identifies security objectives, intended environments, and assumed threats. Moreover, software developers understand how this extended RBAC overlaps with other access control models when more than two access control models are integrated into a single system. A survey&nbsp;[<a href="#o20102010">1</a>] shows that over 50% of users at organizations with more than 500 employees are given some of their permissions to access resources based on RBAC. To adopt RBAC into a system, organizations often use hybrid approaches, which combine RBAC and access control lists since specific user types, systems, and workflow may not be effective to manage access based on roles. Therefore, when RBAC is extended and combined with other access control models, software developers often require to provide a formal representation, which can support of proof of the model. Then, software developers implement extended models based on NIST standard of RBAC implementation. Especially, software developers should understand intended use of extended access control models to meet a new system requirement. For example, for a spatial RBAC model, software developers incorporate additional spatial constraints, which can be either static or dynamic, in practice into the RBAC model.
+
+<div class="p"><!----></div>
+ <a name="tth_sEc11"></a><h2>
+11&nbsp;&nbsp;Conclusion</h2> <a name="sec:conclusion">
+</a>
+
+<div class="p"><!----></div>
+The extensions to RBAC were revealed to fall into a number of categorizations with Organization, Privacy, Resource, Task, Spatio-Temporal, Spatial and Temporal falling under the general category of context.
+The categories each had properties specific to their implementation, but were seen to generalize to being specialized instances of context tailored to the entities or actions the categories covered.
+A number of domains were idenitfied as being the motivations behind needing extensions to the core RBAC model.  The domains, such as healthcare, presenting new challenges the previous models were not
+required to design for.  Our literature review showed that the state of RBAC model evaluation needs focused from the research community given most model evaluations seen within the papers were
+based on hypothetical situations with little to no case studies or implementations in practice.
+
+
+<div class="p"><!----></div>
+
+
+<div class="p"><!----></div>
+<h2>References</h2>
+
+<dl>
+  <dt><a href="#CITEo20102010" name="o20102010">[1]</a></dt><dd>
+A.&nbsp;C. O'Connor, R.&nbsp;J. Loomis, 2010 economic analysis of role-based access
+  control, RTI International report for NIST.
+
+<div class="p"><!----></div>
+</dd>
+ <dt><a href="#CITEferraiolokuhn" name="ferraiolokuhn">[2]</a></dt><dd>
+D.&nbsp;Ferraiolo, D.&nbsp;Kuhn, Role based access control, in: 15th National Computer
+  Security Conference, Oct 13-16, 1992, pp. 554-563.
+
+<div class="p"><!----></div>
+</dd>
+ <dt><a href="#CITEsandhu1996role" name="sandhu1996role">[3]</a></dt><dd>
+R.&nbsp;Sandhu, E.&nbsp;Coyne, H.&nbsp;Feinstein, C.&nbsp;Youman, Role-based access control models,
+  Computer 29&nbsp;(2) (1996) 38-47.
+
+<div class="p"><!----></div>
+</dd>
+ <dt><a href="#CITEkuhn2010adding" name="kuhn2010adding">[4]</a></dt><dd>
+D.&nbsp;R. Kuhn, E.&nbsp;J. Coyne, T.&nbsp;R. Weil, Adding attributes to role-based access
+  control, Computer 43&nbsp;(6) (2010) 79-81.
+
+<div class="p"><!----></div>
+</dd>
+ <dt><a href="#CITEni2010privacy" name="ni2010privacy">[5]</a></dt><dd>
+Q.&nbsp;Ni, E.&nbsp;Bertino, J.&nbsp;Lobo, C.&nbsp;Brodie, C.&nbsp;Karat, J.&nbsp;Karat, A.&nbsp;Trombeta,
+  Privacy-aware role-based access control, ACM Transactions on Information and
+  System Security (TISSEC) 13&nbsp;(3) (2010) 24.
+
+<div class="p"><!----></div>
+</dd>
+ <dt><a href="#CITEferraiolo" name="ferraiolo">[6]</a></dt><dd>
+D.&nbsp;F. Ferraiolo, R.&nbsp;S. Sandhu, S.&nbsp;I. Gavrila, D.&nbsp;R. Kuhn, R.&nbsp;Chandramouli,
+  Proposed NIST standard for role-based access control, ACM Transactions on
+  Information and System Security 4&nbsp;(3) (2001) 224-274.
+
+<div class="p"><!----></div>
+</dd>
+ <dt><a href="#CITEkitchenham2007guidelines" name="kitchenham2007guidelines">[7]</a></dt><dd>
+B.&nbsp;Kitchenham, S.&nbsp;Charters, Guidelines for performing systematic literature
+  reviews in software engineering.
+
+<div class="p"><!----></div>
+</dd>
+ <dt><a href="#CITEjian2008extended" name="jian2008extended">[8]</a></dt><dd>
+H.&nbsp;Jian-min, L.&nbsp;Xi-yu, Y.&nbsp;Hui-qun, T.&nbsp;Jun, An extended rbac model based on
+  granular logic, in: Granular Computing, 2008. GrC 2008. IEEE International
+  Conference on, IEEE, 2008, pp. 261-264.
+
+<div class="p"><!----></div>
+</dd>
+ <dt><a href="#CITEalam06:constraint" name="alam06:constraint">[9]</a></dt><dd>
+M.&nbsp;Alam, M.&nbsp;Hafner, R.&nbsp;Breu, A constraint based role based access control in
+  the sectet a model-driven approach, in: Proceedings of the 2006 International
+  Conference on Privacy, Security and Trust: Bridge the Gap Between PST
+  Technologies and Business Services, PST '06, 2006, pp. 13:1-13:13.
+
+<div class="p"><!----></div>
+</dd>
+ <dt><a href="#CITEzhou2007team" name="zhou2007team">[10]</a></dt><dd>
+W.&nbsp;Zhou, C.&nbsp;Meinel, Team and task based rbac access control model, in: Network
+  Operations and Management Symposium, 2007. LANOMS 2007. Latin American, IEEE,
+  2007, pp. 84-94.
+
+<div class="p"><!----></div>
+</dd>
+ <dt><a href="#CITEoh2003task" name="oh2003task">[11]</a></dt><dd>
+S.&nbsp;Oh, S.&nbsp;Park, Task-role-based access control model, Information Systems
+  28&nbsp;(6) (2003) 533-562.
+
+<div class="p"><!----></div>
+</dd>
+ <dt><a href="#CITEaich09:role" name="aich09:role">[12]</a></dt><dd>
+S.&nbsp;Aich, S.&nbsp;Mondal, S.&nbsp;Sural, A.&nbsp;K. Majumdar, Transactions on computational
+  science iv, 2009, Ch. Role Based Access Control with Spatiotemporal Context
+  for Mobile Applications, pp. 177-199.
+
+<div class="p"><!----></div>
+</dd>
+ <dt><a href="#CITEbao08:role" name="bao08:role">[13]</a></dt><dd>
+Y.&nbsp;Bao, J.&nbsp;Song, D.&nbsp;Wang, D.&nbsp;Shen, G.&nbsp;Yu, A role and context based access
+  control model with uml, in: Young Computer Scientists, 2008. ICYCS 2008. The
+  9th International Conference for, 2008, pp. 1175 -1180.
+
+<div class="p"><!----></div>
+</dd>
+ <dt><a href="#CITEzhang06:collaborative" name="zhang06:collaborative">[14]</a></dt><dd>
+Z.&nbsp;Zhang, X.&nbsp;Zhang, R.&nbsp;Sandhu, Robac: Scalable role and organization based
+  access control models, in: Collaborative Computing: Networking, Applications
+  and Worksharing, 2006. CollaborateCom 2006. International Conference on,
+  2006, pp. 1 -9.
+
+<div class="p"><!----></div>
+</dd>
+ <dt><a href="#CITEchen08:spatio-temporal" name="chen08:spatio-temporal">[15]</a></dt><dd>
+L.&nbsp;Chen, J.&nbsp;Crampton, On spatio-temporal constraints and inheritance in
+  role-based access control, in: ASIACCS: ACM Symposium on InformAtion,
+  Computer and Communications Security, 2008, pp. 205-216.
+
+<div class="p"><!----></div>
+</dd>
+ <dt><a href="#CITEzou2009crbac" name="zou2009crbac">[16]</a></dt><dd>
+D.&nbsp;Zou, L.&nbsp;He, H.&nbsp;Jin, X.&nbsp;Chen, Crbac: Imposing multi-grained constraints on
+  the rbac model in the multi-application environment, Journal of Network and
+  Computer Applications 32&nbsp;(2) (2009) 402-411.
+
+<div class="p"><!----></div>
+</dd>
+ <dt><a href="#CITEzhao2008flexible" name="zhao2008flexible">[17]</a></dt><dd>
+Y.&nbsp;Zhao, Y.&nbsp;Zhao, H.&nbsp;Lu, A flexible role-and resource-based access control
+  model, in: Computing, Communication, Control, and Management, 2008. CCCM'08.
+  ISECS International Colloquium on, Vol.&nbsp;2, IEEE, 2008, pp. 75-79.
+
+<div class="p"><!----></div>
+</dd>
+ <dt><a href="#CITEray07:spatio" name="ray07:spatio">[18]</a></dt><dd>
+I.&nbsp;Ray, M.&nbsp;Toahchoodee, A spatio-temporal role-based access control model, in:
+  Proceedings of the 21st annual IFIP WG 11.3 working conference on Data and
+  applications security, 2007, pp. 211-226.
+
+<div class="p"><!----></div>
+</dd>
+ <dt><a href="#CITEhansen2003spatial" name="hansen2003spatial">[19]</a></dt><dd>
+F.&nbsp;Hansen, V.&nbsp;Oleshchuk, Spatial role-based access control model for wireless
+  networks, in: Vehicular Technology Conference, 2003. VTC 2003-Fall. 2003 IEEE
+  58th, Vol.&nbsp;3, IEEE, 2003, pp. 2093-2097.
+
+<div class="p"><!----></div>
+</dd>
+ <dt><a href="#CITEaich07:STARBAC" name="aich07:STARBAC">[20]</a></dt><dd>
+S.&nbsp;Aich, S.&nbsp;Sural, A.&nbsp;K. Majumdar, Starbac: spatiotemporal role based access
+  control, in: Proceedings of the 2007 OTM confederated international
+  conference on On the move to meaningful internet systems: CoopIS, DOA,
+  ODBASE, GADA, and IS - Volume Part II, OTM'07, 2007, pp. 1567-1582.
+
+<div class="p"><!----></div>
+</dd>
+ <dt><a href="#CITEjoshi05:generalized" name="joshi05:generalized">[21]</a></dt><dd>
+J.&nbsp;Joshi, E.&nbsp;Bertino, U.&nbsp;Latif, A.&nbsp;Ghafoor, A generalized temporal role-based
+  access control model, Knowledge and Data Engineering, IEEE Transactions on
+  17&nbsp;(1) (2005) 4 - 23.
+
+<div class="p"><!----></div>
+</dd>
+ <dt><a href="#CITEtzelepi01:flexible" name="tzelepi01:flexible">[22]</a></dt><dd>
+S.&nbsp;K. Tzelepi, D.&nbsp;K. Koukopoulos, G.&nbsp;Pangalos, A flexible content and
+  context-based access control model for multimedia medical image database
+  systems, in: Proceedings of the 2001 workshop on Multimedia and security: new
+  challenges, Sec '01, 2001, pp. 52-55.
+
+<div class="p"><!----></div>
+</dd>
+ <dt><a href="#CITEcholewka00:acontext-sensitive" name="cholewka00:acontext-sensitive">[23]</a></dt><dd>
+D.&nbsp;G. Cholewka, R.&nbsp;A. Botha, J.&nbsp;H.&nbsp;P. Eloff, A context-sensitive access control
+  model and prototype implementation, in: In: Information Security for Global
+  Information Infrastructures: IFIP TC 11 Sixteenth Annual Working Conference
+  on Information Security, Kluwer Academic Publishers, 2000, pp. 341-350.
+
+<div class="p"><!----></div>
+</dd>
+ <dt><a href="#CITEhuang06:pervasive" name="huang06:pervasive">[24]</a></dt><dd>
+X.&nbsp;Huang, H.&nbsp;Wang, Z.&nbsp;Chen, J.&nbsp;Lin, A context, rule and role-based access
+  control model in enterprise pervasive computing environment, in: Pervasive
+  Computing and Applications, 2006 1st International Symposium on, 2006, pp.
+  497 -502.
+
+<div class="p"><!----></div>
+</dd>
+ <dt><a href="#CITEsamuel07:spatio-temporal" name="samuel07:spatio-temporal">[25]</a></dt><dd>
+E.&nbsp;B. Arjmand&nbsp;Samuel, Arif&nbsp;Ghafoor, A framework for specification and
+  verification of generalized spatio-temporal role based access control model,
+  Tech. Rep. CERIAS Tech Report 2007-08.
+
+<div class="p"><!----></div>
+</dd>
+ <dt><a href="#CITEyao2008task" name="yao2008task">[26]</a></dt><dd>
+L.&nbsp;Yao, X.&nbsp;Kong, Z.&nbsp;Xu, A task-role based access control model with
+  multi-constraints, in: Networked Computing and Advanced Information
+  Management, 2008. NCM'08. Fourth International Conference on, Vol.&nbsp;1, IEEE,
+  2008, pp. 137-143.
+
+<div class="p"><!----></div>
+</dd>
+ <dt><a href="#CITEmotta03:contextual" name="motta03:contextual">[27]</a></dt><dd>
+G.&nbsp;Motta, S.&nbsp;Furuie, A contextual role-based access control authorization model
+  for electronic patient record, Information Technology in Biomedicine, IEEE
+  Transactions on 7&nbsp;(3) (2003) 202 -207.
+
+<div class="p"><!----></div>
+</dd>
+ <dt><a href="#CITEdamiani2007geo" name="damiani2007geo">[28]</a></dt><dd>
+M.&nbsp;Damiani, E.&nbsp;Bertino, B.&nbsp;Catania, P.&nbsp;Perlasca, Geo-rbac: A spatially aware
+  rbac, ACM Transactions on Information and System Security (TISSEC) 10&nbsp;(1)
+  (2007) 2.
+
+<div class="p"><!----></div>
+</dd>
+ <dt><a href="#CITEmasoumzadeh2008purbac" name="masoumzadeh2008purbac">[29]</a></dt><dd>
+A.&nbsp;Masoumzadeh, J.&nbsp;Joshi, Purbac: Purpose-aware role-based access control, On
+  the Move to Meaningful Internet Systems: OTM 2008 (2008) 1104-1121.
+
+<div class="p"><!----></div>
+</dd>
+ <dt><a href="#CITEthein2011leveraging" name="thein2011leveraging">[30]</a></dt><dd>
+N.&nbsp;Thein, et&nbsp;al., Leveraging access control mechanism of android smartphone
+  using context-related role-based access control model, in: Networked
+  Computing and Advanced Information Management (NCM), 2011 7th International
+  Conference on, IEEE, 2011, pp. 54-61.
+
+<div class="p"><!----></div>
+</dd>
+ <dt><a href="#CITEchandran05:llt" name="chandran05:llt">[31]</a></dt><dd>
+S.&nbsp;M. Chandran, J.&nbsp;B.&nbsp;D. Joshi, Lot-rbac: a location and time-based RBAC
+  model, in: Proceedings of the 6th international conference on Web Information
+  Systems Engineering, WISE'05, 2005, pp. 361-375.
+
+<div class="p"><!----></div>
+</dd>
+ <dt><a href="#CITEyamazaki04:designing" name="yamazaki04:designing">[32]</a></dt><dd>
+W.&nbsp;Yamazaki, H.&nbsp;Hiraishi, F.&nbsp;Mizoguchi, Designing an Agent-Based RBAC system
+  for dynamic security policy, in: Proceedings of the 13th IEEE International
+  Workshops on Enabling Technologies: Infrastructure for Collaborative
+  Enterprises, WETICE '04, 2004, pp. 199-204.
+
+<div class="p"><!----></div>
+</dd>
+ <dt><a href="#CITEhan08:extended" name="han08:extended">[33]</a></dt><dd>
+H.&nbsp;Jian-min, L.&nbsp;Xi-yu, Y.&nbsp;Hui-qun, T.&nbsp;Jun, An extended RBAC model based on
+  granular logic, in: Granular Computing, 2008. GrC 2008. IEEE International
+  Conference on, 2008, pp. 261 -264.
+
+<div class="p"><!----></div>
+</dd>
+ <dt><a href="#CITEhu2012:NIST7874" name="hu2012:NIST7874">[34]</a></dt><dd>
+V.&nbsp;C. Hu, K.&nbsp;Scarfone, Nistir 7874: Guidelines for access control system
+  evaluation metrics, National Institute of Standards and Technology.
+
+<div class="p"><!----></div>
+</dd>
+ <dt><a href="#CITEhaibo2005context" name="haibo2005context">[35]</a></dt><dd>
+S.&nbsp;Haibo, H.&nbsp;Fan, A context-aware role-based access control model for web
+  services, in: e-Business Engineering, 2005. ICEBE 2005. IEEE International
+  Conference on, IEEE, 2005, pp. 220-223.</dd>
+</dl>
+
+
+<div class="p"><!----></div>
+ <a name="tth_sEc12"></a><h2>
+12&nbsp;&nbsp;Appendix</h2> <a name="sec:appendix">
+</a>
+
+<div class="p"><!----></div>
+<div style="text-align:center">#1Primary sources grouped by categorization
+
+
+<table border="1">
+<tr><td colspan="1" align="center">   </td><td colspan="3" align="left">A flexible content and context-based access control model for multimedia medical image database systems, 2001 [<a href="#tzelepi01:flexible">22</a>] </td></tr>
+<tr><td colspan="1" align="center">  </td><td colspan="3" align="left"> A Context-Aware Role-Based Access Control Model for Web Services, 2005 [<a href="#haibo2005context" name="CITEhaibo2005context">35</a>] </td></tr>
+<tr><td colspan="1" align="center">  </td><td colspan="3" align="left">A context-sensitive access control model and prototype implementation, 2000 [<a href="#cholewka00:acontext-sensitive">23</a>] </td></tr>
+<tr><td colspan="1" align="center">  </td><td colspan="3" align="left">A Context, Rule and Role-Based Access Control Model In Enterprise Pervasive Computing Environment, 2006 [<a href="#huang06:pervasive">24</a>] </td></tr>
+<tr><td colspan="1" align="center">  </td><td colspan="3" align="left">A contextual role-based access control authorization model for electronic patient record Motta, 2003 [<a href="#motta03:contextual">27</a>] </td></tr>
+<tr><td colspan="1" align="center">  </td><td colspan="3" align="left">A Role and Context Based Access Control Model with UML, 2008 [<a href="#bao08:role">13</a>] </td></tr>
+<tr><td colspan="1" align="center">  </td><td colspan="3" align="left">An extended RBAC model based on granular logic, 2008 [<a href="#jian2008extended">8</a>] </td></tr>
+<tr><td colspan="1" align="center">  </td><td colspan="3" align="left">Designing an agent-based RBAC system for dynamic security policy, 2004 [<a href="#yamazaki04:designing">32</a>] </td></tr>
+<tr><td colspan="1" align="center">  </td><td colspan="3" align="left">An extended RBAC model based on granular logic, 2008 [<a href="#han08:extended">33</a>] </td></tr>
+<tr><td colspan="1" align="center">  </td><td colspan="3" align="left">Leveraging Access Control Mechanism of Android Smartphone Using Context-Related Role-Based Access Control Model, 2011 [<a href="#thein2011leveraging">30</a>] </td></tr>
+<tr><td colspan="1" align="center">  </td><td colspan="3" align="left">CRBAC: Imposing multi-grained constraints on the RBAC model in the multi-application environment, 2009 [<a href="#zou2009crbac">16</a>] </td></tr>
+<tr><td colspan="1" align="center"> </td><td colspan="1" align="center"> </td><td colspan="2" align="left">A constraint based role based access control in the SECTET a model-driven approach, 2006 [<a href="#alam06:constraint">9</a>] </td></tr>
+<tr><td colspan="1" align="center"> </td><td colspan="1" align="center"> </td><td colspan="2" align="left">ROBAC: Scalable Role and Organization Based Access Control Models, 2006 [<a href="#zhang06:collaborative">14</a>] </td></tr>
+<tr><td colspan="1" align="center"> </td><td colspan="1" align="center"> </td><td colspan="2" align="left">Privacy-aware role-based access control, 2007 [<a href="#ni2010privacy">5</a>] </td></tr>
+<tr><td colspan="1" align="center">  </td><td colspan="1" align="center">  </td><td colspan="2" align="left">PuRBAC: Purpose-Aware Role-Based Access Control, 2008 [<a href="#masoumzadeh2008purbac">29</a>] </td></tr>
+<tr><td colspan="1" align="center"> </td><td colspan="1" align="center"> </td><td colspan="2" align="left">A Task-Role Based Access Control Model with Multi-Constraints, 2008 [<a href="#yao2008task">26</a>] </td></tr>
+<tr><td colspan="1" align="center">  </td><td colspan="1" align="center">  </td><td colspan="2" align="left">Team and Task Based RBAC Access Control Model, 2009 [<a href="#zhou2007team">10</a>] </td></tr>
+<tr><td colspan="1" align="center">  </td><td colspan="1" align="center">  </td><td colspan="2" align="left">Task-role-based access control model, 2003 [<a href="#oh2003task">11</a>] </td></tr>
+<tr><td colspan="1" align="center"> </td><td colspan="1" align="center"> </td><td colspan="2" align="left">STARBAC: Spatiotemporal role based access control, 2007 [<a href="#aich07:STARBAC">20</a>] </td></tr>
+<tr><td colspan="1" align="center">  </td><td colspan="1" align="center">  </td><td colspan="2" align="left">On spatio-temporal constraints and inheritance in role-based access control, 2008 [<a href="#chen08:spatio-temporal">15</a>] </td></tr>
+<tr><td colspan="1" align="center">  </td><td colspan="1" align="center">  </td><td colspan="2" align="left">A framework for specification and verification of generalized spatio-temporal role based access control model, 2007 [<a href="#samuel07:spatio-temporal">25</a>] </td></tr>
+<tr><td colspan="1" align="center">  </td><td colspan="1" align="center">  </td><td colspan="2" align="left">LoT-RBAC: A Location and Time-Based RBAC Model, 2005 [<a href="#chandran05:llt">31</a>] </td></tr>
+<tr><td colspan="1" align="center">  </td><td colspan="1" align="center">  </td><td colspan="2" align="left">A Spatio-temporal Role-Based Access Control Model, 2007 [<a href="#ray07:spatio">18</a>] </td></tr>
+<tr><td colspan="1" align="center">  </td><td colspan="1" align="center">  </td><td colspan="2" align="left">Role Based Access Control with Spatiotemporal Context for Mobile Applications, 2009 [<a href="#aich09:role">12</a>] </td></tr>
+<tr><td colspan="1" align="center"> </td><td colspan="1" align="center"> </td><td colspan="1" align="center"> </td><td colspan="1" align="left">GEO-RBAC: a spatially aware RBAC, 2005 [<a href="#damiani2007geo">28</a>] </td></tr>
+<tr><td colspan="1" align="center">  </td><td colspan="1" align="center"> </td><td colspan="1" align="center">  </td><td colspan="1" align="left">LRBAC: A location-aware role-based access control model, 2006 [<a href="#ray07:spatio">18</a>] </td></tr>
+<tr><td colspan="1" align="center">  </td><td colspan="1" align="center"> </td><td colspan="1" align="center">  </td><td colspan="1" align="left">Spatial role-based access control model for wireless networks, 2003 [<a href="#hansen2003spatial">19</a>] </td></tr>
+<tr><td colspan="1" align="center"> </td><td colspan="1" align="center"> </td><td colspan="1" align="center"> </td><td colspan="1" align="left">A generalized temporal role-based access control model, 2005 [<a href="#joshi05:generalized">21</a>] </td></tr></table>
+
+
+<a name="tab:categorization">
+</a>
+</div>
+
+
+<div class="p"><!----></div>
+<hr /><h3>Footnotes:</h3>
+
+<div class="p"><!----></div>
+<a name="tthFtNtAAB"></a><a href="#tthFrefAAB"><sup>1</sup></a><a href="http://csrc.nist.gov/groups/SNS/rbac/documents/20101219_RBAC2_Final_Report.pdf"><tt>http://csrc.nist.gov/groups/SNS/rbac/documents/20101219_RBAC2_Final_Report.pdf</tt></a>
+<br /><br /><hr /><small>File translated from
+T<sub><font size="-1">E</font></sub>X
+by <a href="http://hutchinson.belmont.ma.us/tth/">
+T<sub><font size="-1">T</font></sub>H</a>,
+version 4.02.<br />On 24 Apr 2013, 23:50.</small>
+</html>

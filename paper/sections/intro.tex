@@ -1,67 +1,71 @@
 \section{Introduction} \label{sec:introduction}
 
-Role based access control (RBAC) is used for maintaining and managing an organization's 
+Role-Based Access Control (RBAC) is widely used for maintaining and managing an organization's 
 access control based on assigning permissions to roles, and roles to users, instead of 
-assigning the permissions directly to individual users. 
-The use of an RBAC model has become popular since the National Institute for Standards and Technology (NIST) 
-first proposed the RBAC standard model in the 1990s \cite{o20102010}. The RBAC standard model is widely used for securing 
+assigning the permissions directly to individual users.
+RBAC is used for securing 
 various applications including web services, database applications, and healthcare applications. 
-In the RBAC standard model, roles represent a set of permissions needed to perform a particular job function within an organization.  
-One to many users who are involved in that specific job function within the organization can then be 
-assigned to the role to inherit the required access instead of assigning individual permissions to individual users. 
-The ability to logically group both users and permissions into smaller total entities becomes paramount for managing access control
-as an organization grows and the number of permissions and users scales upward, 
-The RBAC standard model has advantages for managing access control. For example, if a user requires access to resources 
-associated with the manager role within a given organization, security policy administrators need only associate the user with the manager role.
+In RBAC, roles represent a set of permissions needed to perform a particular job function within an organization.  
+Multiple users who are involved in that specific job function within the organization can then be 
+assigned to a single role to inherit the required access. 
+The ability to logically group users into roles associated with permissions becomes paramount for managing access control as an organization grows
+and the number of permissions and users scales upward.
+As permissions can be managed by a role instead of a user, RBAC has an advantage to significantly reduce complexity of security
+administration.
+For example, if a user requires access to resources 
+associated with a manager role within a given organization, security policy administrators need only associate the user with the manager role instead
+of assigning permissions of the manager role to the user.
 
-The RBAC standard was first proposed in the 1990s when NIST 
+
+The use of RBAC has become popular since the National Institute for Standards and Technology (NIST) 
+first proposed RBAC standard in the 1990s \cite{o20102010}.
+The RBAC standard was first proposed when NIST 
 requested that a unified standard be created by combining the Ferraiolo and Kuhn model \cite{ferraiolokuhn} with the framework 
 proposed by Sandhu, et al \cite{sandhu1996role}.  
 In 2004, this standard was adopted as ANSI/INCITS 359-2004 approved by American National Standards Institute (ANSI) and the InterNational Committee for Information Technology Standards (INCITS). 
 The development of a standard was inspired by an economic impact study done during the 1990s and later confirmed in 2010 \footnote{\url{http://csrc.nist.gov/groups/SNS/rbac/documents/20101219_RBAC2_Final_Report.pdf}} that showed the cost savings of RBAC implementation and maintenance. 
-Prior to the development of the RBAC standard, vendors proposed and implemented their own defined RBAC features without general agreement on a unified definition of RBAC or feature set. 
-The RBAC standard addressed this issue by providing definitions and a functional specification of RBAC features using a reference model.
+Prior to the development of the RBAC standard, vendors proposed and implemented their own defined RBAC features without general agreement on a unified definition of RBAC or feature set. The RBAC standard includes RBAC reference models (RBAC$_{m}$ in short). RBAC$_{m}$ serve as a basis for defining scope of RBAC features and functional specifications of RBAC features.
 
-Innovation and the use of RBAC in new domains has led to scenarios that, by some accounts, the standard RBAC model cannot handle \cite{kuhn2010adding}.  
-For example, Ni, Q. et al \cite{ni2010privacy} state that RBAC is ``not designed to enforce privacy policies and barely 
+Innovation and the use of RBAC in new domains has led to scenarios that, by some accounts, the RBAC$_{m}$ cannot handle \cite{kuhn2010adding}.  
+For example, Ni et al. \cite{ni2010privacy} state that RBAC$_{m}$ are ``not designed to enforce privacy policies and barely 
 meet privacy protection requirements'' with the introduction of privacy concerns in domains such as healthcare. 
-Since the introduction of the NIST RBAC standard in 2000, extension models to the RBAC standard have appeared in the literature, each adding one or more features on top of the core RBAC model. 
-A cursory examination of the extension model papers does not provide good comparisons for developers and researchers to build upon. 
+Since the introduction of the RBAC standard, extension models to the RBAC$_{m}$ have appeared in the literature, each adding one or more features on top of components in the RBAC$_{m}$.
+%A cursory examination of the extension model papers does not provide good comparisons for developers and researchers to build upon. 
 Further, these extension models are each building upon and adding features to a standard that was designed to reduce the economic impact experienced by enterprises and increase interoperability \cite{o20102010}.
 
-\textit{The goal of our work is to aid practitioners and researchers in choosing an extension to the RBAC standard model, and in understanding
-how extensions to RBAC are evaluated by providing an assessment of the state of extensions to the RBAC standard model. We accomplished this through: 
-establishment of a set of extension categories, an examination of the state of the art in evaluations of extension models and a breakdown of the 
-motivations that have led to extension of the RBAC standard model.} With respect to our goal, the authors addressed the following research questions:
+\textit{The goal of our work is to aid practitioners and researchers in choosing an extension to the RBAC$_{m}$, and in understanding
+how extensions to RBAC$_{m}$ are evaluated by providing an assessment of RBAC extensions. We accomplished this through: 
+establishment of a set of RBAC extension categories, an examination of the state of the art in evaluations of RBAC extension, and a breakdown of the 
+motivations that have led to extensions to RBAC$_{m}$.} To accomplish this goal, we seek to answer following research questions:
 
 \begin{itemize}
 \setlength{\itemsep}{0.25pt}
-\item RQ1: What categories exist within extensions to RBAC?
-\item RQ2: What are the motivations behind extensions to RBAC?
-\item RQ3: Do the extensions to RBAC have corresponding implementations?
-\item RQ4: How are extensions to RBAC evaluated theoretically and in practice?
-\item RQ5: What domains have extensions to RBAC been created for?
+\item RQ1: What categories exist within extensions to RBAC$_{m}$?
+\item RQ2: What are the motivations behind extensions to RBAC$_{m}$?
+\item RQ3: Do the extensions to RBAC$_{m}$ have corresponding implementations?
+\item RQ4: How are extensions to RBAC$_{m}$ evaluated theoretically and in practice?
+\item RQ5: What domains have extensions to RBAC$_{m}$ been created for?
 \item RQ6: What commonalities or generalizations exist across all categories?
 \end{itemize}
 
-The authors performed a systematic literature review designed to explore the current body of research in the area of extensions to the RBAC standard model. 
-The review we performed yielded 1716 papers, of which 28 were deemed primary sources for inclusion as extension models to the RBAC standard model.  
-This review is intended to serve as a starting place for researcher's looking to tackle new problems in the realm of authorization and a reference guide for discovering
-the current state of extensions to the RBAC standard model. 
-For developer's looking to find a model to fit their potentially unique access control needs, this review will provide a basis for comparison and easy look-up for what extension model to use.  
-Further, the review provides insight into the state of the art in evaluating RBAC extension models.
+We performed a systematic literature review designed to explore the current body of research in the area of extensions to the RBAC$_{m}$. 
+The review we performed yielded 1,716 papers, of which 28 were deemed primary sources for inclusion as extension models to the RBAC$_{m}$.  
+This review is intended to serve as a starting place for researchers looking to tackle new problems in the realm of authorization and as a reference guide for discovering
+the current state of extensions to the RBAC$_{m}$. 
+For developers looking to find a model to fit their potentially unique access control needs, this review provides a basis for comparison and easy look up for what extension model to use.  
+Furthermore, the review provides insight into the state of the art in evaluating RBAC extension models.
 
-Our research provides contributions to the community in the following ways:
+Our research provides contributions to the community in following ways:
 
 \begin{itemize}
 \setlength{\itemsep}{0.25pt}
-\item Summarizes current research on extensions to RBAC.
-\item Guides a direction for a new standard based on an extension to the RBAC standard model.
+\item Summarizes current research on extensions to RBAC$_{m}$.
+\item Guides a direction for a new standard based on an extension to the RBAC$_{m}$.
 \end{itemize}
 
 The rest of the paper is organized as follows. 
-Section 2 covers background and the RBAC standard. 
-Section 3 lays out the process used in conducting the review. 
-Sections 4-9 present the analysis and discussion of the research questions. 
-Section 10 is a general discussion section brings together all the research questions.
-Section 11 contains the final conclusions.
+Section~\ref{sec:core-rbac} presents background and the RBAC standard. 
+Section~\ref{sec:process} presents methodology and process, which we used in conducting the systemic literature review. 
+Sections~\ref{sec:categorization}-\ref{sec:generalizations} present analysis and discussion of the research questions. 
+Section~\ref{sec:discussion} discusses issues about extensions to RBAC$_{m}$.
+Section~\ref{sec:conclusion} concludes the paper.

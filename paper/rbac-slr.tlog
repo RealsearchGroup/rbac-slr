@@ -1,0 +1,19 @@
+Tth log file for C:\Users\JeeHyun\Desktop\slr_rbac_git_local_repo\rbac-slr\paper\rbac-slr.tex
+
+Including LaTeX commands
+**** Unknown command \journal, (2 user-defined) Line 29
+**** Unknown command \AtBeginDocument, (3 user-defined) Line 32
+**** File starts with "\begin{frontmatter}". It can't be the HTML title.
+**** Unknown or ignored environment: \begin{frontmatter} Line 35
+**** Unknown or ignored environment: \begin{keyword} Line 48
+**** Unknown parameter/dimension/glue command \itemsep = Line 57
+Not a [e]ps file: sections/core-model.png, no conversion
+Unknown Latex \ref:tab:eliminations
+**** Unknown command \linewidth, (64 user-defined) Line 60
+No bibcite for damian2007geo
+No bibcite for yamazaki104:designing
+**** Unknown or ignored environment: \begin{sidewaystable} Line 70
+**** Unknown command \vline, (62 user-defined) Line 70
+**** Unknown command \multirow, (62 user-defined) Line 70
+**** Unknown command \rotatebox, (62 user-defined) Line 70
+Number of lines processed approximately 72

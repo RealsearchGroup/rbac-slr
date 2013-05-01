@@ -1,32 +1,32 @@
 \section{Motivations} \label{sec:motivations}
 
-RQ2: What are the motivations behind extensions to RBAC?
+RQ2: What are the motivations behind RBAC extensions?
 
 \subsection{Results}
 
-We first describe motivations described in 28 papers surveyed.
+We first describe motivations described in the 28 papers surveyed.
 
 \begin{itemize}
 \setlength{\itemsep}{0.25pt}
-\item The RBAC standard needs additional contextual information and constraints to develop fine-grained policies in practice.
-\item The RBAC standard does not incorporate context. Therefore, RBAC belongs to static access control model, which may not capture changes in environments.
-\item The RBAC standard does not support for various constraints such as temporal and spatial constraints to design sophisticated policies on demand.
-\item The RBAC standard does not provide an abstraction to additional user-defined attributes	(e.g., task and team) and their association with existing attributes.
-\item The RBAC standard has limitation on delegation and role hierarchy. For example, partial inheritance in role hierarchy needs to be developed.  
-\item The RBAC standard needs to incorporate additional contextual information and constraints to develop fine-grained policies in practice.
-\item The RBAC standard needs to incorporate additional attributes such as
-task, team, purpose, organizational roles and collaborative activities over existing attributes. Moreover, new association between attributes
-is introduced. 
-\item RBAC model needs to improve existing features such delegation and role hierarchy to meet fine-grained access control. 
+\item The RBAC$_{m}$ needs additional contextual information and constraints to develop fine-grained policies.
+\item The RBAC$_{m}$ does not incorporate context. Therefore, RBAC belongs to the static access control model, which may not capture changes in environments.
+\item The RBAC$_{m}$ does not support various constraints such as temporal and spatial constraints to design sophisticated policies on demand.
+\item The RBAC$_{m}$ does not provide an abstraction for additional user-defined attributes	(e.g., task and team) and their association with existing attributes.
+\item The RBAC$_{m}$ has limitation on delegation and role hierarchy. For example, partial inheritance in role hierarchy needs to be developed.  
+%\item The RBAC standard needs to incorporate additional contextual information and constraints to develop fine-grained policies in practice.
+\item The RBAC$_{m}$ needs to incorporate additional attributes such as
+task, team, purpose, organizational roles and collaborative activities over existing attributes. Moreover, new associations between attributes
+are introduced. 
+\item The RBAC$_{m}$ needs to improve existing features such as delegation and role hierarchy to provide fine-grained access control. 
 \end{itemize}
 
 
 We classify motivations behind RBAC extensions to these three categories:
 
 \begin{itemize}
-	\item Addition: The extension model incorporates additional elements with regards to context/constraints and their relations with existing elements of the RBAC standard. Models in this category do not change the RBAC standard model. We found 23 papers in this category.
-	\item Modification: The extension model incorporates modification of existing features in the RBAC standard. For example, changes of attribute relations such as role hierarchy are to show modification. For models in this category, changes occur within the the RBAC standard model. We found one paper in this category.
-	\item Combination: The extension model is combination of RBAC and another access control model, which uses model-specific attributes and their relations such as task, team, purpose, organizational roles. For this combination, new association between attributes of two models should be introduced. Models in this category require a new association between attributes of different access control models to work together. We found four papers in this category.
+	\item Addition: The extension model incorporates additional elements with regards to context/constraints and their relations with existing elements of the RBAC standard. Models in this category do not change the RBAC$_{m}$. We found 23 papers in this category.
+	\item Modification: The extension model incorporates modification of existing features in the RBAC$_{m}$. For example, changes of attribute relations such as role hierarchy fall into this modification category. For models in this category, changes occur within the RBAC$_{m}$. We found one paper in this category.
+	\item Combination: The extension model is a combination of RBAC$_{m}$ and another access control model, which uses model-specific attributes and their relations such as task, team, purpose, and organizational roles. For this combination, new associations between attributes of two models should be introduced. Models in this category require new associations between attributes of different access control models to work together. We found four papers in this category.
 \end{itemize}
 
 %\begin{table}
@@ -51,12 +51,11 @@ We classify motivations behind RBAC extensions to these three categories:
 
 \subsection{Analysis and Discussion}
 
-The RBAC standard provides a formal access model, which is an abstraction on top of authorization based on user role assignment (UA) and role
-permission assignment (PA). Since this simple model may not provide a fine-grained access control for sophisticated
+The RBAC standard provides RBAC$_{m}$, which is an abstraction on top of authorization based on $UA$ and $PA$. Since RBAC$_{m}$ may not provide a fine-grained access control for a sophisticated
 security mechanism, a variety of extended RBAC models have been proposed over the years to meet
 security requirements. When administrators design a model, it is important to capture an important abstraction to help the model to be enforced in a system.
 
-The RBAC standard presents four entities: roles, sessions, users, and permissions, and their relations. While this model is considered fundamental in any RBAC systems, this model can be extended to be applicable for emerging applications such as healthcare and mobile devices. 
+RBAC$_{m}$ presents four entities: roles, sessions, users, and permissions, and their relations. While RBAC$_{m}$ is considered fundamental in any RBAC systems, RBAC$_{m}$ can be extended to be applicable for emerging applications such as healthcare and mobile devices. 
 In such environments, the RBAC standard needs additional constraints and dynamic context to support dynamic environments such as spatial and location. For this category, more than 80\% of papers are classified into ``Addition'' category. Besides, one paper~\cite{alam06:constraint} describes modification of existing relationship among elements to support partial inheritance. The RBAC standard is shown to be combined with other access control models such as team-based access control and task-based access control~\cite{zhou2007team, oh2003task}.
 
 
@@ -104,7 +103,7 @@ system.
 \subsection{Analysis and Discussion}
 
 The RBAC standard was designed with enterprises in mind such that when practitioners implemented RBAC into their systems
-there would be a reasonable assurance being based off a well thought out model.  As extensions to the standard model
+there would be a reasonable assurance being based off a well thought out model.  As extensions to the RBAC$_{m}$
 come along, thought and time should be given to how features and nuances of their models may impact implementation
 in order to achieve the same goals as the original standard.  The primary sources should a significant lack of implementation
 with over 70\% of the models having no notion of attempting to implement them.  The bare minimum, as four papers did, should be
@@ -140,29 +139,28 @@ grew, and the size of the role space for the extension model compared to standar
 and analysis as a way to provide evaluation in the form of completeness. 
 The most widely used evaluation method was providing sample scenarios with accompanying workflows of how the extension model
 would tackle those scenarios. Much is left to the reader to assume of these types of evaluations, as the authors do not explicitly state
-or show how the standard model is deficient in tackling said scenarios.
+or show how the RBAC$_{m}$ is deficient in tackling said scenarios.
 
 \subsection{Analysis and Discussion}
 
 When proposing an access control model, providing an evaluation of the model is a key component in establishing the validity of the model. 
-Further, in the case of extensions to the RBAC standard model, the model should be accompanied by validation of the model as a stand-alone
+Further, in the case of extensions to the RBAC$_{m}$, the model should be accompanied by validation of the model as a stand-alone
 access control model and in comparison to the model upon which the enhancements are being made. The results show that robust evaluations of
 extension models are lacking. 
 
 The primary source of validation a developer or practitioner may encounter is a qualitative discussion of real-world
 scenarios and how the proposed model can tackle those situations. In rare cases, five primary sources, the model 
-authors provide some discussion of how the RBAC standard model is deficient in tackling the scenario. In rare cases, 
+authors provide some discussion of how the RBAC$_{m}$ is deficient in tackling the scenario. In rare cases, 
 one paper from our results, a case study is performed to examine how the proposed model works in practice. Discussions
 of how an extension model handles a real-world scenario provides developers and practitioners anecdotal evidence at best
-for what types of situations the proposed model could handle. Further, by not providing a comparison to the RBAC standard
-model, developers may be left implementing a more complex model to address their requirements when the standard model would
+for what types of situations the proposed model could handle. Further, by not providing a comparison to the RBAC$_{m}$, developers may be left implementing a more complex model to address their requirements when the RBAC$_{m}$ would
 have sufficed.  Further, given the nature of access control models as grounded in application to enterprise implementations, 
 case studies of a model in action provide developers with evidence that the model works as intended when applied.
 
 When looking for an enterprise ready access control mechanism, developers must balance usability with security. 
 Two of the primary sources examined provided time-based performance analysis of their extension model compared
-to the RBAC standard model. This inclusion of time analysis provides some assurances to developers that any non-functional
-requirements surrounding time to compute authorizations compete or beat the standard model. Further, four of the models provided
+to the RBAC$_{m}$. This inclusion of time analysis provides some assurances to developers that any non-functional
+requirements surrounding time to compute authorizations compete or beat the RBAC$_{m}$. Further, four of the models provided
 some form of complexity of their model. This complexity analysis plays a key role in the management of the access control mechanism
 over the course of the models implementation lifetime. As the number of roles, users and additional entities grows, developers will 
 need to ensure non-functional requirements are met that deal with the ability for a system administrator to effectively manage these
@@ -171,7 +169,7 @@ entities.
 
 \section{Domains} \label{sec:domains}
 
-RQ5: What domains have extensions to RBAC been created for?
+RQ5: What domains have RBAC extensions been created for?
 
 \subsection{Results}
 
@@ -212,7 +210,7 @@ of both the RBAC standard and current regulations.
 The RBAC standard has been re-enforced by the economic impact that standardization has had on enterprises needing to apply access control.  The
 inclusion of extension models targeted at the enterprise workflow domain is indicative of the expansion of requirements for enterprises. Developers
 and researchers should take care when looking at extension models designed to addresses the newer requirements of enterprise workflows in order to
-achieve the same economic implementation and maintainability benefits the original standard model presents.
+achieve the same economic implementation and maintainability benefits the RBAC$_{m}$ presents.
 
 Mobile computing has seen a dramatic increase in the number of available devices, operating systems and applications since 1997 when the first smart phone
 was introduced. 
@@ -232,4 +230,4 @@ We found that propositional logic is used to describe access control model acros
 \subsection{Analysis and Discussion}
 
 Since NIST proposed RBAC standard using propositional logic, researchers describe extended RBAC models using propositional logic. Given context, propositional logic is used to evaluate true or false based on specified rules and access control logic. As access control is typically evaluated to either true (Permit) or false (Deny) based on predicates, propositional logic is sufficient to describe key ideas and definitions. We found that 28 papers of RBAC extensions use propositional logic to describe its extended model.
-However, propositional logic has limitations. While this logic is simple, this logic does not support for reasoning about RBAC, which helps reduce the administrative complexity of associations such as user- role associations. An alternative logic to describe RBAC is first-order logic. This logic is sufficient to describe RBAC and extended RBAC. Moreover, this logic supports for concise and elegant formulation of the RBAC model and its relation.  First-Order logic is expressive enough to concisely represent access control systems. First-Order logic uses relations, variables, and quantifiers.
+However, propositional logic has limitations. While this logic is simple, this logic does not support for reasoning about RBAC, which helps reduce the administrative complexity of associations such as user- role associations. An alternative logic to describe RBAC is first-order logic. This logic is sufficient to describe RBAC and extended RBAC. Moreover, this logic supports for concise and elegant formulation of the RBAC$_{m}$ and its relation.  First-Order logic is expressive enough to concisely represent access control systems. First-Order logic uses relations, variables, and quantifiers.
