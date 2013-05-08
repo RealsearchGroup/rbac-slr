@@ -8,10 +8,10 @@ RQ1: What categories exist within RBAC extensions?
 During the paper reading phase, we identify categorical themes, which are
 central topic or context of RBAC extensions. 
 For example, the paper ``Privacy-aware role-based access control'' \cite{ni2010privacy} brings in the notion of privacy explicitly within the title of the paper and the name of their model. 
-Some papers presented this direct pronouncement of theme of RBAC extensions, while others were less obvious. 
+Some papers presented this direct pronouncement of theme of RBAC extensions, whereas others were less obvious. 
 Thus, we developed a set of guidelines to aide in determining a set of eight categories based upon observations during the paper reading phase. 
 In developing these guidelines, we defined each category by a single noun-phrase descriptor.
-The guidelines were:
+The guidelines were
 
 \begin{itemize}
 \item Model Name - Does the name of the model classify itself?
@@ -35,20 +35,20 @@ Some category descriptors contain abbreviations in parenthesis that match the sh
 
   \item \textbf{Organizational (Org)}: The extension model is concerned with providing mechanisms and entities that allow for RBAC across multiple organizations. Typically, users may have the same role name in different organizations, but may have different access privileges due to different local variations.
   
-  \item \textbf{Privacy (Priv)}: The extension model provides entities and mechanisms to describe privacy policies, which are legal statements or documents about disclosure or management of personally identifiable information such as name, address, data of birth, etc.
+  \item \textbf{Privacy (Priv)}: The extension model provides entities and mechanisms to describe privacy policies, which are legal statements or documents about disclosure or management of personally identifiable information such as name, address, or data of birth.
   
   \item \textbf{Task}: The extension model provides task entities which are associated with permissions and roles. A task is a fundamental unit of a business activity. Different from core RBAC, in task-role-based access control model, roles are not directly associated with permissions. Roles are associated with tasks that are associated with permissions. For example, the employee role is associated with a task, for example, to write a report. Then, this task is associated with a permission.
 
   \item \textbf{Spatio-Temporal}: The extension model combines spatial (location-based) and temporal (time-based) constraints in specifying access control policies. For example, specific locations permit roles to conduct actions from 8:00 a.m. to 5:00 p.m.
 
   \item \textbf{Spatial}: The extension model provides spatial constraints, location-based constraints in specifying access
-	control policies. For example, in organizations, locations are enforced while a
+	control policies. For example, in organizations, locations are enforced whereas a
 	specific role is permitted to conduct an action. Consider that a part-time employee works only in a specific location.
 	In such cases, the part-time employee role should access required resources only when the user is in that location. 
 	Spatial constraints can integrate with roles, user-role assignments, or role-permission assignments. 
 
   \item \textbf{Temporal (Temp)}:  The extension model provides temporal constraints, time-based constraints in specifying access
-	control policies. For example, in organizations, periodic temporal durations are enforced while a
+	control policies. For example, in organizations, periodic temporal durations are enforced whereas a
 	specific role is permitted to conduct an action. Consider that a part-time employee works only from 9:00 a.m. to 3:00 p.m.
 	In such cases, the part-time employee role should be allowed to access required resources during the interval. 
 	Temporal constraints can integrate with roles, user-role assignments, or role-permission assignments.   
@@ -62,11 +62,11 @@ category and furthermore, displays the perceived hierarchy of the categories.
 The Spatial and Temporal categories were treated as subsets of the broader category of Spatio-Temporal since this category encompasses them individually and
 the Spatio-Temporal category contained more primary sources that the Spatial or Temporal categories alone.  
 
-When looking across all categories, the authors noted that each category added some new features on top of the standard RBAC model that were domain specific.
-These domain specific features were under the surface these features adding contextual relationships between the core user, permission and role entities.  Thus, the authors
+When looking across all categories, we noted that each category added some new features on top of the standard RBAC model that were domain specific.
+These domain specific features were under the surface these features adding contextual relationships between the core user, permission and role entities.  Thus, we
 concluded that all categories stemmed from the context category, of which some primary sources were already deemed direct members.  
 
-For example, in the case of the Privacy category, the models added entities such as purpose binding to represent within the model data collected for one purpose should not used for another purpose without user consent {\cite{ni2010privacy}. 
+For example, in the case of the Privacy category, the models added entities such as purpose binding to represent within the model data collected for one purpose should not be used for another purpose without user consent {\cite{ni2010privacy}. 
 While the new entity provided by the Privacy based models is inspired by domains such as healthcare where privacy is of legal concern, the underlying mechanism that drives purpose binding is providing context around making an access control decision. 
 The system must take into account not just a static set of permissions a user has through their roles, but also the context of the data being accessed as that data relates to privacy policy. 
 In the spatio-temporal models, a users location and the time of day are two factors that can be taken into account when activating a role or verifying a permission.  

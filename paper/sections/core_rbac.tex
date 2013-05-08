@@ -51,7 +51,7 @@ The hierarchical RBAC reference model adds role hierarchies ($RH$) feature to th
 $RH$ incorporates a structure of roles in an organization using inheritance relationships among attributes such as roles.
 The role structure in an organization may use
 a role $r_1$, which inherits all permissions of another role $r_2$.
-For example, a manager role may inherit all permissions of a employee role.
+For example, a manager role may inherit all permissions of an employee role.
 Role hierarchies help simplify access control policy creation and maintenance by reducing the number of
 individual role assignments for a user. Formally, the role inheritance relation is shown as \textit{RH} $\subseteq$ \textit{ROLES} $\times$ \textit{ROLES} describing the many-to-many mapping role inheritance relation. 
 General role hierarchies can be extended to use the concept of multiple inheritances where
@@ -61,7 +61,7 @@ $r_1$ inherits all permissions from more than one roles.
 \subsection{Constrained RBAC}
 
 The constrained RBAC reference model incorporates separation of duty relations to  the core or the hierarchical RBAC reference. Separation of 
-duty relations enforces conflict of interest among roles. This model defines two types of separation of duty relations; static and dynamic.
+duty relations enforces conflict of interest among roles. This model defines two types of separation of duty relations: static and dynamic.
 
 \begin{itemize}
 	\item Static Separation of Duty (SSoD): SSoD restricts the conflicting-roles, which can be assigned to a single user statically. Consider that roles $Role_A$ and $Role_B$ are conflicting with each other. On situations
