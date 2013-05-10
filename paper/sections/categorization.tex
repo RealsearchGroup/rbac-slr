@@ -1,17 +1,18 @@
+
 \section{Categorization} \label{sec:categorization}
 
-RQ1: What categories exist within RBAC extensions?
+RQ1: What categories exist within the RBAC extension models?
 
 \subsection{Results}
 
 
 During the paper reading phase, we identify categorical themes, which are
-central topic or context of RBAC extensions. 
+central topic or context of the RBAC extension models. 
 For example, the paper ``Privacy-aware role-based access control'' \cite{ni2010privacy} brings in the notion of privacy explicitly within the title of the paper and the name of their model. 
-Some papers presented this direct pronouncement of theme of RBAC extensions, whereas others were less obvious. 
+Some papers presented this direct pronouncement of theme of the RBAC extension models, whereas others were less obvious. 
 Thus, we developed a set of guidelines to aide in determining a set of eight categories based upon observations during the paper reading phase. 
 In developing these guidelines, we defined each category by a single noun-phrase descriptor.
-The guidelines were
+The guidelines were as follows:
 
 \begin{itemize}
 \item Model Name - Does the name of the model classify itself?
@@ -33,21 +34,21 @@ Some category descriptors contain abbreviations in parenthesis that match the sh
 
   \item \textbf{Constraint (Const)}: The extension model provides conditional restrictions on permissions of given roles. The constraint is either static or dynamic. For example, a doctor may modify any medical record for which the doctor is assigned as the designated primary care physician. This example describes a doctor's permission with a conditional restriction - ``only when the doctor is assigned as the designated primary care physician may modify a particular medical record''.
 
-  \item \textbf{Organizational (Org)}: The extension model is concerned with providing mechanisms and entities that allow for RBAC across multiple organizations. Typically, users may have the same role name in different organizations, but may have different access privileges due to different local variations.
+  \item \textbf{Organizational (Org)}: The RBAC extension model is concerned with providing mechanisms and entities that allow for RBAC across multiple organizations. Typically, users may have the same role name in different organizations, but may have different access privileges due to different local variations.
   
-  \item \textbf{Privacy (Priv)}: The extension model provides entities and mechanisms to describe privacy policies, which are legal statements or documents about disclosure or management of personally identifiable information such as name, address, or data of birth.
+  \item \textbf{Privacy (Priv)}: The RBAC extension model provides entities and mechanisms to describe privacy policies, which are legal statements or documents about disclosure or management of personally identifiable information such as name, address, or data of birth.
   
-  \item \textbf{Task}: The extension model provides task entities which are associated with permissions and roles. A task is a fundamental unit of a business activity. Different from core RBAC, in task-role-based access control model, roles are not directly associated with permissions. Roles are associated with tasks that are associated with permissions. For example, the employee role is associated with a task, for example, to write a report. Then, this task is associated with a permission.
+  \item \textbf{Task}: The RBAC extension model provides task entities which are associated with permissions and roles. A task is a fundamental unit of a business activity. Different from core RBAC, in task-role-based access control model, roles are not directly associated with permissions. Roles are associated with tasks that are associated with permissions. For example, the employee role is associated with a task, for example, to write a report. Then, this task is associated with a permission.
 
-  \item \textbf{Spatio-Temporal}: The extension model combines spatial (location-based) and temporal (time-based) constraints in specifying access control policies. For example, specific locations permit roles to conduct actions from 8:00 a.m. to 5:00 p.m.
+  \item \textbf{Spatio-Temporal}: The RBAC extension model combines spatial (location-based) and temporal (time-based) constraints in specifying access control policies. For example, specific locations permit roles to conduct actions from 8:00 a.m. to 5:00 p.m.
 
-  \item \textbf{Spatial}: The extension model provides spatial constraints, location-based constraints in specifying access
+  \item \textbf{Spatial}: The RBAC extension model provides spatial constraints, location-based constraints in specifying access
 	control policies. For example, in organizations, locations are enforced whereas a
 	specific role is permitted to conduct an action. Consider that a part-time employee works only in a specific location.
 	In such cases, the part-time employee role should access required resources only when the user is in that location. 
 	Spatial constraints can integrate with roles, user-role assignments, or role-permission assignments. 
 
-  \item \textbf{Temporal (Temp)}:  The extension model provides temporal constraints, time-based constraints in specifying access
+  \item \textbf{Temporal (Temp)}:  The RBAC extension model provides temporal constraints, time-based constraints in specifying access
 	control policies. For example, in organizations, periodic temporal durations are enforced whereas a
 	specific role is permitted to conduct an action. Consider that a part-time employee works only from 9:00 a.m. to 3:00 p.m.
 	In such cases, the part-time employee role should be allowed to access required resources during the interval. 
@@ -55,14 +56,18 @@ Some category descriptors contain abbreviations in parenthesis that match the sh
 	
 \end{itemize}
 
+\begin{figure}[ht]
+    \centering
+        \includegraphics[width=6.0in]{sections/category_structrure.eps}
+\vspace{-0.7 in}
+    \caption{\label{fig:category_structrure}Structure of categories within the RBAC extension models.}
+\end{figure}
+
 \subsection{Analysis and Discussion}
 
-The 28 primary sources produced a set of eight hierarchical categories. Table \ref{tab:categorization} summarizes each primary source under their designated
-category and furthermore, displays the perceived hierarchy of the categories. 
-The Spatial and Temporal categories were treated as subsets of the broader category of Spatio-Temporal since this category encompasses them individually and
-the Spatio-Temporal category contained more primary sources that the Spatial or Temporal categories alone.  
+The 28 primary sources produced a set of eight hierarchical categories. Table \ref{tab:categorization} summarizes each primary source under their designated category and furthermore, displays the perceived hierarchy of the categories. Figure~\ref{fig:category_structrure} shows the hierarchy structure among categories. The Constraint, Organizational, Privacy, Task, and Spatial and Temporal categories can be special cases of the Context category. The Spatio-Temporal category subsumes Spatial and Temporal categories. The Spatial and Temporal categories were treated as subsets of the broader category of Spatio-Temporal since this category encompasses them individually and the Spatio-Temporal category contained more primary sources that the Spatial or Temporal categories alone.
 
-When looking across all categories, we noted that each category added some new features on top of the standard RBAC model that were domain specific.
+When looking across all categories, we noted that each category added domain specific features on top of the RBAC Reference Model.
 These domain specific features were under the surface these features adding contextual relationships between the core user, permission and role entities.  Thus, we
 concluded that all categories stemmed from the context category, of which some primary sources were already deemed direct members.  
 
@@ -72,6 +77,6 @@ The system must take into account not just a static set of permissions a user ha
 In the spatio-temporal models, a users location and the time of day are two factors that can be taken into account when activating a role or verifying a permission.  
 The concepts of location and time are properties of the user and place specific contexts around the role and permission entities.
 
-\greybox{We found eight categories that exist within extensions to RBAC: Constraint, Context, 
+\greybox{We found eight categories that exist within the RBAC extension models: Constraint, Context, 
 Organization, Privacy, Task, Spatio-Temporal, Spatial and Temporal. We further found that the other
 seven categories fall under the category of Context.}

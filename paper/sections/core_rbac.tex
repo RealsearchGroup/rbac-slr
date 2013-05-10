@@ -11,14 +11,14 @@ NIST, in collaboration with industry and academics, worked on defining a set of 
 RBAC that addressed these cost and interoperability issues by developing a common definition that can be used across different vendors.
 
 NIST's work can directly benefit organizations by lowering cost of early phase Research and Development, and implementation of RBAC.
-Since the RBAC standard was first introduced, a 2010 report by RTI International showed that the the rate of RBAC adoption has rapidly grown over recent years \cite{o20102010}. 
-The analysts estimate that by the end of 2010 at least a portion of permission of systems will use RBAC for more than half of users at organizations with more than 500 employees. The analysts estimate that RBAC technology has generated \$6.1 billion in net economic benefits to industry where NIST RBAC standard work saved \$1.1 billion.
+Since the RBAC standard was first introduced, a 2010 report by RTI International showed that the rate of RBAC adoption has rapidly grown over recent years \cite{o20102010}. 
+The analysts estimate that by the end of 2010 at least a portion of permission of systems will use RBAC for more than half of users at organizations with more than 500 employees. The analysts estimate that RBAC technology has generated \$6.1 billion in net economic benefits to industry where NIST RBAC standard saved \$1.1 billion.
 
-The NIST RBAC standard proposed by Ferraiolo et al. \cite{ferraiolo} and later adopted as the official standard for RBAC by the INCITS includes three components of RBAC: core RBAC, hierarchical RBAC, and constrained RBAC. Each component includes a RBAC reference model. RBAC$_{m}$ includes RBAC reference models of these three components. We first describe the core RBAC, associated entities and other terminology encountered across the space of our review. We next describe hierarchical RBAC and constrained RBAC, which are developed by incorporating new features into the core RBAC. 
+The NIST RBAC standard proposed by Ferraiolo et al. \cite{ferraiolo} and later adopted as the official standard for RBAC by the INCITS includes three components of RBAC: core RBAC, hierarchical RBAC, and constrained RBAC. Each component includes its corresponding RBAC Reference model. We first describe the core RBAC, associated entities and other terminology encountered across the space of our review. We next describe hierarchical RBAC and constrained RBAC, which are developed by incorporating new features into the core RBAC. 
 
 \subsection{Core RBAC} 
 
-The four entities of the core RBAC reference model are:
+The four entities of the core RBAC Reference Model are:
 
 \begin{itemize}
 \setlength{\itemsep}{0.25pt}
@@ -31,8 +31,8 @@ The four entities of the core RBAC reference model are:
 In RBAC, a user can exercise a permission only if the user is assigned to a role.
 In addition to the four basic entities, two functions are defined:
 user assignment ($UA$) and permission assignment ($PA$) functions.
-$UA$ assignment of users to roles.
-$PA$ assignment of permissions to roles.
+$UA$ represents assignment of users to roles.
+$PA$ represents assignment of permissions to roles.
 
 \begin{figure}[ht]
     \centering
@@ -47,7 +47,7 @@ Note that, at user or role activation, a session associated with user or role is
 
 \subsection{Hierarchical RBAC} 
 
-The hierarchical RBAC reference model adds role hierarchies ($RH$) feature to the core RBAC reference model.
+The hierarchical RBAC Reference Model adds role hierarchies ($RH$) feature to the core RBAC Reference Model.
 $RH$ incorporates a structure of roles in an organization using inheritance relationships among attributes such as roles.
 The role structure in an organization may use
 a role $r_1$, which inherits all permissions of another role $r_2$.
@@ -55,12 +55,12 @@ For example, a manager role may inherit all permissions of an employee role.
 Role hierarchies help simplify access control policy creation and maintenance by reducing the number of
 individual role assignments for a user. Formally, the role inheritance relation is shown as \textit{RH} $\subseteq$ \textit{ROLES} $\times$ \textit{ROLES} describing the many-to-many mapping role inheritance relation. 
 General role hierarchies can be extended to use the concept of multiple inheritances where
-$r_1$ inherits all permissions from more than one roles.
+$r_1$ inherits all permissions from more than one role.
 
 
 \subsection{Constrained RBAC}
 
-The constrained RBAC reference model incorporates separation of duty relations to  the core or the hierarchical RBAC reference. Separation of 
+The constrained RBAC Reference Model incorporates separation of duty relations to  the core or the hierarchical RBAC Reference Model. Separation of 
 duty relations enforces conflict of interest among roles. This model defines two types of separation of duty relations: static and dynamic.
 
 \begin{itemize}

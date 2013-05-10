@@ -1,42 +1,26 @@
 \section{Discussion} \label{sec:discussion}
 
-The research questions we identified, presented results for and analyzed provide specific views of portions of the extension model landscape. 
+The research questions we identified, presented results for and analyzed provide specific views of portions of the RBAC extension model landscape. 
 By stepping back, and looking across all the research questions we can arrive at cross-cutting concerns and identify areas that may benefit from future work.
-We break the discussion into two issues: recommendations for the enhancement of the evaluation of extensions to role-based access control models and guidelines for developers needing to choose an extension model to meet their requirements.
+We break the discussion into two issues: recommendations for the enhancement of the evaluation of RBAC extension models to role-based access control models and guidelines for developers needing to choose an RBAC extension model to meet their requirements.
 
-\subsection{Metrics for the Evaluation of RBAC Extensions}
+\subsection{Metrics for the Evaluation of RBAC Extension Models}
 
-A small percentage of primary sources presented substantial evaluations or implementations of their model in practice.  This in turn leaves researchers and practitioners little data from which to compare one model to the next. And given the wide swath of popular and critical domains being targeted by RBAC extension models, we propose a set of metrics by which RBAC extension models should be evaluated. Hu and Scarfone provide metrics for access control system evaluation or a security system in general~\cite{hu2012:NIST7874}. They collect metrics, which can be applicable for not only access control models, but also requirements, system implementation, and extended application such as verification and testing. From these metrics, and guided by the data surrounding how extension models are currently evaluated, we select metrics that can be applicable for evaluation of extended RBAC models as follows:
-
-\begin{itemize}
-	\item \textbf{Ease of Privilege Assignments}: measures number of steps for assigning, changing, or deleting a privilege for users and roles when a user or administrator manages RBAC. If a model requires more steps for such a given task, there is a potential increase in human or system error due to increased complexity. While extended RBAC may have similar features to that of the RBAC$_{m}$, we measure worst cases after extended, and the gap between an extension model and the RBAC$_{m}$.
-	
-	\item \textbf{Syntactic and semantic support for specifying AC rules}: checks whether privileges and constraints can be specified using complex logic expressions such as AND, OR, $\leq$ when specifying constraints. This support helps specify complex and flexible access controls. For example, given a spatial RBAC model, one may measure whether spatial constraints can be specified using various logic expressions.
-
-	\item \textbf{Delegation of administrative capabilities}: measures how easy and secure an access control model supports for privilege delegation of administrators to another user.
-
-	\item \textbf{Capable of combining different policy models}: measures whether an access model has a feature to combine more than two policies.
-
-	\item \textbf{Capable of conflict resolution}: checks whether an access model has a feature to resolve conflicts when two rules in a policy may be applicable for the same request, but evaluate different decisions: One grants permission and the other one denies permission.
-
-	\item \textbf{Least privilege principle support}: checks whether an access model supports for least privilege principle where a subject can access least set of information and resources that are necessary for its legitimate functioning. Least privilege principle support can reduce damage when malicious users gain legitimate privileges.
-
-	\item \textbf{Separation of Duty (SoD)}: checks whether an access model supports for static SoD and/or dynamic SoD. Note that NIST Standard supports both static SoD and dynamic SoD described in Section~\ref{sec:core-rbac}.
-\end{itemize}
-
-We recommend these metrics be incorporated in any extension models presented hence forth. A future work could include providing metric measurements for the primary sources presented here. 
-A developer could attempt to apply these metrics to an extension model not already evaluated when attempting to choose a model. 
+A small percentage of primary sources presented substantial evaluations or implementations of their model in practice.  This in turn leaves researchers and practitioners little data from which to compare one model to the next. And given the wide swath of popular and critical domains being targeted by RBAC extension models, Hu and Scarfone proposed metrics for access control system evaluation or a security system in general~\cite{hu2012:NIST7874}. They collect metrics, which can be applicable for not only access control models, but also requirements, system implementation, and extended application such as verification and testing. For example, ``Ease of Privilege Assignments'' metric measures number of steps for assigning, changing, or deleting a privilege for users and roles when a user or administrator manages RBAC. If a model requires more steps for such a given task, there is a potential increase in human or system error due to increased complexity. This metric can be applicable for not only the RBAC Reference Model but also RBAC extension models.
+%Future work could include providing metric measurements for the primary sources presented in this paper. 
+We plan to use these metrics proposed by Hu and Scarfone for any extension models presented in this paper. 
+A developer could attempt to apply these metrics to an RBAC extension model not already evaluated when attempting to choose a model. 
 These metrics focus on comparing specific features support of access control models.
 
 
-\subsection{Adoption of Extensions to RBAC}
+\subsection{Adoption of RBAC Extension Models}
 
 In order to adopt a model in practice, software developers should implement the model in real system environments based on intended use of the models. Typically, a model provides abstract formal representation of extended RBAC and its operation. To configure intended use (i.e., which subjects can access which resources), we define an access control policy, which specifies high-level rules such as which subjects can access to which resources. Given an access control model and policy, security mechanism provides low-level implementation in a system, which controls access of roles.
 
 A formal representation of access control models is a critical step of designing high-level abstraction where which entities are used and how these entities are operated.
 One of the objectives of a formal representation is to help ensure the correct behaviors through formal verification. Given the formal representation of access control models, software developers may prove of properties (e.g., safety, consistency and completeness) and check whether these properties are satisfied. 
 
-While the concept of the RBAC$_{m}$ is clear and can be applicable to any system, it is challenging to implement the security mechanism of RBAC because the RBAC$_{m}$ is can be interpreted in more than one interpretation due to its complexity. In order to bridge gap between RBAC standard and its implementation, NIST published RBAC Implementation and Interoperability standard (RIIS/ ANSI INCITS-459) in 2011. This standard specifies how to implement RBAC system, which is consistent with NIST RBAC standard. Moreover, this standard describes interoperability specification where one RBAC implementation can be translated to another one.
+While the concept of the Reference Model is clear and can be applicable to any system, it is challenging to implement the security mechanism of RBAC because the Reference Model is can be interpreted in more than one interpretation due to its complexity. In order to bridge gap between RBAC standard and its implementation, NIST published RBAC Implementation and Interoperability standard (RIIS/ ANSI INCITS-459) in 2011. This standard specifies how to implement RBAC system, which is consistent with NIST RBAC standard. Moreover, this standard describes interoperability specification where one RBAC implementation can be translated to another one.
 
 This standard does not provide a specific guideline for implementation of various extended RBAC models.
 Moreover, when software developers implemented extended RBAC models, they require clear security requirements of extended role-based access control, which identifies security objectives, intended environments, and assumed threats. Moreover, software developers understand how this extended RBAC overlaps with other access control models when more than two access control models are integrated into a single system. A survey~\cite{o20102010} shows that over 50\% of users at organizations with more than 500 employees are given some of their permissions to access resources based on RBAC. To adopt RBAC into a system, organizations often use hybrid approaches, which combine RBAC and access control lists because specific user types, systems, and workflow may not be effective to manage access based on roles. Therefore, when RBAC is extended and combined with other access control models, software developers often require to provide a formal representation, which can support of proof of the model. Then, software developers implement extended models based on NIST standard of RBAC implementation. Especially, software developers should understand intended use of extended access control models to meet a new system requirement. For example, for a spatial RBAC model, software developers incorporate additional spatial constraints, which can be either static or dynamic, in practice into the RBAC model.

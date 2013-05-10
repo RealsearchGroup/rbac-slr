@@ -1,5 +1,13 @@
-Tth log file for C:\Users\JeeHyun\Desktop\slr_rbac_git_local_repo\rbac-slr\paper\rbac-slr.tex
+Tth log file for C:\Users\JeeHyun\Desktop\_a\rbac-slr\paper\rbac-slr.tex
 
+'ps2png' is not recognized as an internal or external command,
+operable program or batch file.
+'ps2gif' is not recognized as an internal or external command,
+operable program or batch file.
+'ps2png' is not recognized as an internal or external command,
+operable program or batch file.
+'ps2gif' is not recognized as an internal or external command,
+operable program or batch file.
 Including LaTeX commands
 **** Unknown command \journal, (2 user-defined) Line 29
 **** Unknown command \AtBeginDocument, (3 user-defined) Line 32
@@ -8,12 +16,13 @@ Including LaTeX commands
 **** Unknown or ignored environment: \begin{keyword} Line 48
 **** Unknown parameter/dimension/glue command \itemsep = Line 57
 Not a [e]ps file: sections/core-model.png, no conversion
-Unknown Latex \ref:tab:eliminations
-**** Unknown command \linewidth, (64 user-defined) Line 60
-No bibcite for damian2007geo
-No bibcite for yamazaki104:designing
+Converting file sections/category_structrure.eps Converting file sections/category_structrure.eps **** System call:ps2gif sections/category_structrure.eps sections/category_structrure.gif failed.
+**** This failure is NOT in TtH; it is in an auxiliary program.
+**** Unknown command \linewidth, (65 user-defined) Line 60
+Converting file sections/dist_domains_byYear.eps Converting file sections/dist_domains_byYear.eps **** System call:ps2gif sections/dist_domains_byYear.eps sections/dist_domains_byYear.gif failed.
+**** This failure is NOT in TtH; it is in an auxiliary program.
 **** Unknown or ignored environment: \begin{sidewaystable} Line 70
-**** Unknown command \vline, (62 user-defined) Line 70
-**** Unknown command \multirow, (62 user-defined) Line 70
-**** Unknown command \rotatebox, (62 user-defined) Line 70
+**** Unknown command \vline, (63 user-defined) Line 70
+**** Unknown command \multirow, (63 user-defined) Line 70
+**** Unknown command \rotatebox, (63 user-defined) Line 70
 Number of lines processed approximately 72
