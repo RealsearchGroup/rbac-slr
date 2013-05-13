@@ -27,8 +27,7 @@ For the first phase of our systematic literature review, we developed a search s
 \end{enumerate}
 
 The result set size stopping criteria was chosen due to a technical limitation of some search engines.  The stopping criteria related to the last ten titles are meant to stop after relevant results are no longer being returned by the search engine.  After gathering all 12 data sets, we combined the papers into a master list, which includes only distinct papers by systematically comparing the bibliographic information for each.
-%The master list of 1,716 papers was used to perform a series of elimination rounds to narrow the list of papers and identify primary sources.
-Out of the master list of 1,716 papers, two reviewers, namely Author 1 and Author 2, conducted a series of elimination rounds to narrow the list of papers and identify primary sources. Table \ref{tab:eliminations} shows the total number of papers selected by each reviewer for each round and how many papers from the disjoint set for each round survived to the next round.
+Out of the master list of 1,716 papers, two reviewers, denoted by Reviewer 1 and Reviewer 2, conducted a series of elimination rounds to narrow the list of papers and identify primary sources. Table \ref{tab:eliminations} shows the total number of papers selected by each reviewer for each round and how many papers from the disjoint set for each round survived to the next round.
 
 \begin{table}
 \centering
@@ -76,6 +75,9 @@ The first round of elimination was performed by examination based on the title. 
 \item Did the title contain a reference to 'model'?
 \end{itemize}
 
+The title elimination round resulted in Reviewer 1 selecting 305 papers, and Reviewer 2 selecting 176 papers with 149 papers of overlap between the two. 
+Between the two reviewers selections, there were 332 papers not in common, of which, 149 were rejected and 141 retained after a second review.
+
 \subsubsection{Step 3: Abstract Elimination}
 
 The second round of elimination was based on reading of the abstracts of papers that survived title elimination.  Researchers read each abstract and evaluated relevancy based off:
@@ -86,6 +88,9 @@ The second round of elimination was based on reading of the abstracts of papers 
 \item Does the abstract mention extension of role-based access control?
 \item Does the abstract mention an implementation, evaluation, or domain for their model?
 \end{itemize}
+
+The abstract elimination round resulted in Reviewer 1 selecting 86 papers, and Reviewer 2 selecting 102 papers with 51 papers of overlap between the two. 
+Between the two reviewers selections, there were 137 papers not in common, of which, 116 were rejected and 21 retained after a second review.
 
 \subsubsection{Step 4: Content Elimination}
 
@@ -100,7 +105,11 @@ The final elimination round involved reading the entire paper into consideration
 \item Did the authors implement their model? (Inclusion)
 \end{enumerate}
 
-Question 1 was a definitive exclusion criterion as any paper that failed in the affirmative was rejected.  Questions 3 and 4 were marked as conditional includes given that they were connected in making a decision.  A paper that met question 3 but not 4, or met 4 but not 3 would be included because for some cases the real world examples served as research evaluations and without this conditional include the paper list size would be too small to be significant.
+Question 1 was a definitive exclusion criterion as any paper that failed in the affirmative was rejected.  Questions 3 and 4 were marked as conditional includes given that they were connected in making a decision. 
+A paper that met question 3 but not 4, or met 4 but not 3 would be included because for some cases the real world examples served as research evaluations and without this conditional include the paper list size would be too small to be significant.
+
+The content elimination round resulted in Reviewer 1 selecting 46 papers, and Reviewer 2 selecting 42 papers with 24 papers of overlap between the two. 
+Between the two reviewers selections, there were 64 papers not in common, of which, 59 were rejected and 5 retained after a second review.
 
 \begin{table}
 \centering
@@ -110,14 +119,14 @@ Question 1 was a definitive exclusion criterion as any paper that failed in the 
 
  & \multicolumn{1}{ c| }{} & \textbf{Title} & \textbf{Abstract} & \textbf{Content} \\ \hline
 
-\multicolumn{1}{ |c| }{Author 1}  &  & 305 & 86 & 46 \\ \hline
-\multicolumn{1}{ |c| }{Author 2} &  & 176 & 102 & 42 \\ \hline
+\multicolumn{1}{ |c| }{Reviewer 1}  &  & 305 & 86 & 46 \\ \hline
+\multicolumn{1}{ |c| }{Reviewer 2} &  & 176 & 102 & 42 \\ \hline
 
-\multicolumn{1}{ c| }{} & Overlap & 249 & 51 & 24 \\ \cline{2-5}
-\multicolumn{1}{ c| }{} & Disjoint & 232 & 137 & 64 \\ \cline{2-5}
-\multicolumn{1}{ c| }{} & Rejected & 208 & 116 & 59 \\ \cline{2-5}
-\multicolumn{1}{ c| }{} & Retained & 41 & 21 & 5 \\ \cline{2-5}
-\multicolumn{1}{ c| }{} & \textbf{Total} & 290 & 72 & 28 \\ \cline{2-5}
+\multicolumn{1}{ c| }{} & Overlap & 149 & 51 & 24 \\ \cline{2-5}
+\multicolumn{1}{ c| }{} & Disjoint & 332 & 137 & 64 \\ \cline{2-5}
+\multicolumn{1}{ c| }{} & Rejected & 191 & 116 & 60 \\ \cline{2-5}
+\multicolumn{1}{ c| }{} & Retained & 141 & 21 & 5 \\ \cline{2-5}
+\multicolumn{1}{ c| }{} & \textbf{Num Left} & 290 & 72 & 28 \\ \cline{2-5}
 
 \end{tabular}
 \label{tab:eliminations}
