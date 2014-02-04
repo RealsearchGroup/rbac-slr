@@ -4,62 +4,40 @@ RQ2: What are the motivations behind the RBAC extension models?
 
 \subsection{Results}
 
-We first describe motivations described in the 27 papers surveyed.
+During the paper reading phase, we identify motivations of the RBAC extension models by category. We identify motivations by looking for issues regarding why the RBAC reference model was inadequate and how the authors addressed the issues. For example, the papers in the Spatial Category argue that the RBAC reference model does not support spatial constraints, which are used in determining users' access decisions based on spatial dimensions (i.e., location). To address this issue, the authors developed the RBAC extension models by incorporating additional spatial entities and their relations with existing entities of the RBAC Reference Model. We describe motivations behind the RBAC extension models by category as follows:
+
 
 \begin{itemize}
-\setlength{\itemsep}{0.25pt}
-\item The RBAC Reference Model needs additional contextual information and constraints to develop fine-grained policies.
-\item The RBAC Reference Model does not incorporate context. Therefore, RBAC belongs to the static access control model, which may not capture changes in environments.
-\item The RBAC Reference Model does not support various constraints such as temporal and spatial constraints to design sophisticated policies on demand.
-\item The RBAC Reference Model does not provide an abstraction for additional user-defined attributes	(e.g., task and team) and their association with existing attributes.
-\item The RBAC Reference Model has limitation on delegation and role hierarchy. For example, partial inheritance in role hierarchy needs to be developed.  
-%\item The RBAC standard needs to incorporate additional contextual information and constraints to develop fine-grained policies in practice.
-\item The RBAC Reference Model needs to incorporate additional attributes such as
-task, team, purpose, organizational roles and collaborative activities over existing attributes. Moreover, new associations between attributes
-are introduced. 
-\item The RBAC Reference Model needs to improve existing features such as delegation and role hierarchy to provide fine-grained access control. 
+
+  \item \textbf{Context}: The RBAC Reference Model does not support the notion of context constraints  related to changes in environments. Therefore, RBAC belongs to the static access control model, which may not capture changes in environments.
+ 
+  \item \textbf{Const}: The RBAC Reference Model has limitations on its features such as delegation and role hierarchy. For example, partial inheritance in role hierarchy needs to be developed.
+  
+  \item \textbf{Org}: The RBAC extension model does not handle RBAC administrative tasks efficiently across multiple organizations. The model needs to reduce the administrative complexity of RBAC across multiple organizations.
+   
+  \item \textbf{Priv}: The RBAC extension model does not support the notion of privacy. For example, the model lacks components, constraints, and obligations to handle privacy in RBAC.
+  
+  \item \textbf{Task}: The RBAC extension model does not support the notion of a task, team, purpose, and organizational roles, which help specify a business activity in enterprises.
+    
+  \item \textbf{Spatio-Temporal}: The RBAC extension model does not support spatial (location-based) and temporal (time-based) constraints, which specify role-assignment, role-activation and permissions based on location and time.
+  
+  \item \textbf{Spatial}: The RBAC extension model does not support the notion of spatial (location-based)  constraints, which specify role-assignment and permissions based on location.
+        
+  \item \textbf{Temp}: The RBAC extension model does not support the notion of temporal (time-based)  constraints, which specify role-assignments and permissions based on time.
+      
+	
 \end{itemize}
-
-
-We classify motivations behind the RBAC extension models to these three categories:
-
-\begin{itemize}
-	\item Addition: The RBAC extension model incorporates additional entities with regards to context/constraints and their relations with existing entities of the RBAC Reference Model. Models in this category do not change the RBAC Reference Model.
-	\item Modification: The RBAC extension model incorporates modification of existing features in the RBAC Reference Model. For example, changes of attribute relations such as role hierarchy fall into this modification category. For models in this category, changes occur within the RBAC Reference Model.
-	\item Combination: The RBAC extension model is a combination of the RBAC Reference Model and another access control model, which uses model-specific attributes and their relations such as task, team, purpose, and organizational roles. For this combination, new associations between attributes of two models should be introduced. Models in this category require new associations between attributes of different access control models to work together. 
-\end{itemize}
-
-1 paper~\cite{alam06:constraint} is classified into ``Modification'' category since the paper describes modification of existing relationship among entities to support partial inheritance. 2 papers~\cite{zhou2007team, oh2003task} are classified into ``Combination'' category since the papers describe an RBAC extension model, which is combination of the RBAC Reference Model and other access control models such as team-based access control and task-based access control. The remaining 25 papers are classified into ``Addition'' category.
-
-
-%\begin{table}
-%\centering
-%\caption{Motivation categories found and the count of primary sources}
-%\begin{tabular}{ | c | c | }
-%\cline{1-2}
-%
-%\textbf{Motivation Category} & \textbf{Paper Count} \\ \cline{1-2}
-%Addition & 23 \\ \cline{1-2}
-%Modification & 1 \\ \cline{1-2}
-%Combination & 4 \\
-%
-%\cline{1-2}
-%\end{tabular}
-%\label{tab:motivations}
-%\end{table}
-%
-%Table \ref{tab:motivations} shows the breakdown of motivations found within the primary sources.
-%The result shows that 23 papers out of 27 papers are classified into ``Addition'' category. Only
-%one paper and four papers are classified into ``Modification'' category and ``Combination'' category, respectively.
+ 
 
 \subsection{Analysis and Discussion}
 
-The RBAC standard provides the RBAC Reference Model, which is an abstraction on top of authorization based on $UA$ and $PA$. Since the RBAC Reference Model may not provide a fine-grained access control for a sophisticated
-security mechanism, a variety of RBAC extension models have been proposed over the years to meet
-security requirements. When administrators design a model, it is important to capture an important abstraction to help the model to be enforced in a system. RBAC Reference Model presents four entities: roles, sessions, users, and permissions, and their relations. While the RBAC Reference Model is considered fundamental in any RBAC systems, the RBAC Reference Model has limitation on providing features such as dealing with context for emerging applications such as healthcare and mobile devices. In such environments, the RBAC standard needs additional constraints and dynamic context to support dynamic environments such as spatial and location. 
+The RBAC standard provides the RBAC Reference Model, which is an abstraction on top of authorization based on $UA$ and $PA$. RBAC Reference Model presents four entities: roles, sessions, users, and permissions, and their relations. While the RBAC Reference Model is considered fundamental in any RBAC systems, the RBAC Reference Model has limitations on providing features such as dealing with context for emerging applications such as healthcare and mobile devices. 
 
+The Context, Org, Priv, Spatio-Temporal, Spatial, and Temp categories claim that the RBAC extension model does not support the notion of specific constraints. The RBAC extension model in these categories incorporates additional entities with regards to context/constraints and their relations with existing entities of the RBAC Reference Model. The extension model does not change the RBAC Reference Model.
 
-%Such extended RBAC models are formally presented to describe its behaviors. In the selected papers, researchers illustrate how an extended model incorporates new element based on the correct RBAC and describe their relations with pre-defined elements in the core RBAC.
+The Const category claims that the RBAC extension model has limitations on its features. The RBAC extension model in this category incorporates modification of existing features in the RBAC Reference Model. For models in this category, changes occur within the RBAC Reference Model.
+
+The Task category claims that the RBAC extension model does not support the notion of task, team, purpose, and organizational roles. Because task-based access control has been developed, the RBAC extension model in this category is a combination of the RBAC Reference Model and another access control model, which uses model-specific attributes and their relations. For this combination, new associations between attributes of two models should be introduced. Models in this category require new associations between attributes of different access control models to work together.
 
 
 
