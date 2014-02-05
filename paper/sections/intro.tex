@@ -12,28 +12,24 @@ Multiple users who are involved in that specific job function within the organiz
 assigned to a single role to inherit the required access. 
 The ability to logically group users into roles associated with permissions becomes paramount for managing access control as an organization grows
 and the number of permissions and users scales upward.
-As permissions can be managed by a role instead of a user, RBAC has an advantage to significantly reduce complexity of security
+As permissions can be managed by a role instead of a user, RBAC has been shown to significantly reduce complexity of security
 administration.
 For example, if a user requires access to resources 
 associated with a manager role within a given organization, security policy administrators need only associate the user with the manager role instead
-of assigning a set of individual permissions of the manager role.
+of assigning a set of individual permissions to the user that represent the manager role.
 
 
 The use of RBAC has become popular since the National Institute for Standards and Technology (NIST) 
 first proposed the RBAC standard in the 1990s \cite{o20102010}.
-The RBAC standard was first proposed when NIST 
-requested that a unified standard be created by combining the Ferraiolo and Kuhn model \cite{ferraiolokuhn} with the framework 
+NIST requested that a unified standard be created by combining the Ferraiolo and Kuhn model \cite{ferraiolokuhn} with the framework 
 proposed by Sandhu et al.~\cite{sandhu1996role}.  
 In 2004, this standard was adopted as ANSI/INCITS 359-2004 approved by American National Standards Institute (ANSI) and the InterNational Committee for Information Technology Standards (INCITS). 
-The development of a standard was inspired by an economic impact study done during the 1990s and later confirmed in 2010\footnote{\url{http://csrc.nist.gov/groups/SNS/rbac/documents/20101219_RBAC2_Final_Report.pdf}} that showed the cost savings of RBAC implementation and maintenance. 
-Prior to the development of the RBAC standard, vendors proposed and implemented their own defined RBAC without general agreement on a unified definition of RBAC or RBAC features (e.g., inheritance relationships among roles). The RBAC standard includes the RBAC Reference Model. The RBAC Reference Model serves as a basis for defining scope of RBAC features and functional specifications of RBAC features.
+The development of a standard was inspired by an economic impact study done during the 1990s and later confirmed in 2010\footnote{\url{http://csrc.nist.gov/groups/SNS/rbac/documents/20101219_RBAC2_Final_Report.pdf}}. The study showed the cost savings of RBAC implementation and maintenance. 
+Prior to the development of the RBAC standard, vendors proposed and implemented their own RBAC definition without general agreement on a unified definition of RBAC or RBAC features (e.g., inheritance relationships among roles). The RBAC standard includes the RBAC Reference Model which serves as a basis for defining the scope of RBAC features and functional specifications of RBAC features.
 
-Since the introduction of the RBAC standard, researchers proposed domain-specific extensions such as features of dynamic context or privacy, which
-can be critical in medical and mobile domains. RBAC extension models have appeared in the literature, each adding one or more features on top of components in the RBAC Reference Model \cite{kuhn2010adding}.
-For example, Ni et al. \cite{ni2010privacy} state that the RBAC Reference Model is ``not designed to enforce privacy policies and barely 
-meet privacy protection requirements'', with the introduction of privacy concerns in the medical domain.
-They proposed an RBAC extension model for privacy concerns incorporated in the RBAC Reference Model.
-%A cursory examination of the extension model papers does not provide good comparisons for developers and researchers to build upon. 
+Since the introduction of the RBAC standard, researchers have proposed domain-targeted extensions that add one or more features on top of components in the RBAC Reference Model \cite{kuhn2010adding}.
+For example, there are extensions that provide dynamic context or privacy, which can be critical in medical and mobile domains.
+Further, Ni et al. \cite{ni2010privacy} proposed an RBAC extension model to incorporate privacy concerns in to the RBAC Reference Model noting that the RBAC Reference Model is ``not designed to enforce privacy policies and barely meet privacy protection requirements'' with the introduction of privacy concerns in to the medical domain.
 Further, these extension models are each building upon and adding features to a standard that was designed to reduce the economic impact experienced by enterprises and increase interoperability \cite{o20102010}.
 
 \textit{The goal of our work is to aid practitioners and researchers in choosing an RBAC extension model, and in understanding
@@ -52,19 +48,14 @@ how the RBAC extension models are evaluated by providing an assessment of RBAC e
 
 We performed a systematic literature review to explore the current body of research in the area of extensions to the RBAC Reference Model. 
 The review began with 1,716 papers, of which 27 were deemed primary sources for inclusion as extension models to the RBAC Reference Model.
-%This review is intended to serve as a starting place for researchers looking to tackle new problems in the realm of authorization and as a reference guide for discovering
-%the current state of the RBAC extension models. 
-%For developers looking to find a model to fit their potentially unique access control needs, this review provides a basis for comparison and easy look up for what extension model to use.  
-%Furthermore, the review provides insight into the state of the art in evaluating RBAC extension models.
 Our research provides contributions to the community in following ways:
 
 \begin{itemize}
 \setlength{\itemsep}{0.25pt}
 \item Serves as a starting place for researchers looking to tackle new problems in the realm of authorization and as a reference guide for discovering
 the current state of the RBAC extension models. 
-\item Provides a basis for comparison and easy look up for what extension model to use for developers looking to find a model to fit their potentially unique access control needs
-\item Provides insight in evaluating RBAC extension models.
-%\item Summarizes current research on the RBAC extension models.
+\item Provides a basis for comparison and look up for what extension model to use for developers looking to find a model to fit their access control needs
+\item Summarizes current evaluation methods used in research on RBAC extension models.
 %\item Guides a direction for a new standard based on the RBAC extension models.
 \end{itemize}
 

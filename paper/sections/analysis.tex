@@ -39,7 +39,7 @@ The Const category claims that the RBAC extension model has limitations on its f
 
 The Task category claims that the RBAC extension model does not support the notion of task, team, purpose, and organizational roles. Because task-based access control has been developed, the RBAC extension model in this category is a combination of the RBAC Reference Model and another access control model, which uses model-specific attributes and their relations. For this combination, new associations between attributes of two models should be introduced. Models in this category require new associations between attributes of different access control models to work together.
 
-
+\greybox{Motivations for RBAC extension models vary across category but are rooted in adding new entities or relationships to allow authorization flexibility in meeting the demands of emerging requirements.}
 
 \section{Implementations} \label{sec:implementations}
 
@@ -77,9 +77,6 @@ Of the 27 papers surveyed, 4 papers~\cite{zhou2007team,bao08:role, cholewka00:ac
 system. The remaining 20 papers provide no
 mention of an implementation or prototype.  
 
-%Of the remaining eight papers that did mention an implementation, half 
-%were simply prototypes developed by the authors whereas the other half were claimed to be implemented within a real
-%system.
 
 \subsection{Analysis and Discussion}
 
@@ -90,6 +87,8 @@ in order to achieve the same goals as the original standard.  The primary source
 with over 70\% of the models having no notion of attempting to implement them.  The bare minimum, as four papers did, should be
 a prototype implementation of the model for review by both practitioners and researchers. Of the models that produced an 
 implementation within the enterprise world, two were from within the medical domain and two were implemented using web application technologies.  
+
+\greybox{Research on RBAC extension models shows a lack of application and testing in the real world scenarios that the models are ultimately designed for.}
 
 \section{Evaluations} \label{sec:evaluations}
 
@@ -147,6 +146,7 @@ over the course of the models implementation lifetime. As the number of roles, u
 need to ensure non-functional requirements are met that deal with the ability for a system administrator to effectively manage these
 entities.
 
+\greybox{RBAC extension model research lacks comprehensive evaluation of the models both in theory and in practice.}
 
 \section{Domains} \label{sec:domains}
 
@@ -186,8 +186,6 @@ of domains was pervasive computing environments and large-scale organizations wi
     X-axis represents 3-year period from 2000 to 2011.}
 \end{figure}
 
-
-
 The medical domain produced the largest selection of papers when analyzing the domains influencing the proposals of RBAC extension models.  
 Moreover, we observed that the categories associated with papers identifying the medical domain were not limited to one or two but cut across
 each of the eight categories except for the Organizational category. 
@@ -207,7 +205,7 @@ We observed that medical and enterprise domain papers constantly appear for ever
 For a domain that has roots in medical and enterprise computing, protecting the data of both through access controls is paramount given their ubiquity. 
 Mobile computing has seen a dramatic increase in the number of available devices, operating systems and applications since 1997 when the first smart phone was introduced. Since 2004, the domain analysis results produced five papers that targeted extensions that are designed to address the requirements of mobile computing. 
 
-
+\greybox{RBAC extension models were found targeting domains such as medical, pervasive computing, web applications, enterprise workflows and mobile computing.}
 
 \section{Generalizations} \label{sec:generalizations}
 
