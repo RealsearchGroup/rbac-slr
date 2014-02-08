@@ -1,62 +1,51 @@
 \section{Introduction} \label{sec:introduction}
 
-Software systems use access control mechanisms to determine which subjects can access
-which resources.
-Role-Based Access Control (RBAC) is a widely used access control mechanism designed for maintaining and managing an organization's 
-access control based on assigning permissions to roles, and roles to users, instead of 
-assigning the permissions directly to individual users.
-RBAC is used for securing 
-various applications including web services, database applications, and healthcare applications. 
+Software systems use access control mechanisms to determine which subjects can access which resources.
+Role-Based Access Control (RBAC) is a widely used access control mechanism designed for maintaining and managing an organization's  access control based on assigning permissions to roles, and roles to users, instead of assigning the permissions directly to individual users.
+RBAC is used for securing various applications including web services, database applications, and healthcare applications. 
 In RBAC, roles represent a set of permissions needed to perform a particular job function within an organization.  
-Multiple users who are involved in that specific job function within the organization can then be 
-assigned to a single role to inherit the required access. 
-The ability to logically group users into roles associated with permissions becomes paramount for managing access control as an organization grows
-and the number of permissions and users scales upward.
-As permissions can be managed by a role instead of a user, RBAC has been shown to significantly reduce complexity of security
-administration.
-For example, if a user requires access to resources 
-associated with a manager role within a given organization, security policy administrators need only associate the user with the manager role instead
-of assigning a set of individual permissions to the user that represent the manager role.
+Multiple users who are involved in that specific job function within the organization can then be assigned to a single role to inherit the required access. 
+The ability to logically group users into roles associated with permissions becomes paramount for managing access control as an organization grows and the number of permissions and users scales upward.
+As permissions can be managed by role instead of by user, RBAC has been shown to significantly reduce complexity of security administration\cite{impact2002}.
+For example, if a user requires access to resources associated with a manager role within a given organization, security policy administrators need only associate the user with the manager role instead of assigning a set of individual permissions.
 
-
-The use of RBAC has become popular since the National Institute for Standards and Technology (NIST) 
-first proposed the RBAC standard in the 1990s \cite{o20102010}.
-NIST requested that a unified standard be created by combining the Ferraiolo and Kuhn model \cite{ferraiolokuhn} with the framework 
-proposed by Sandhu et al.~\cite{sandhu1996role}.  
-In 2004, this standard was adopted as ANSI/INCITS 359-2004 approved by American National Standards Institute (ANSI) and the InterNational Committee for Information Technology Standards (INCITS). 
-The development of a standard was inspired by an economic impact study done during the 1990s and later confirmed in 2010\footnote{\url{http://csrc.nist.gov/groups/SNS/rbac/documents/20101219_RBAC2_Final_Report.pdf}}. The study showed the cost savings of RBAC implementation and maintenance. 
-Prior to the development of the RBAC standard, vendors proposed and implemented their own RBAC definition without general agreement on a unified definition of RBAC or RBAC features (e.g., inheritance relationships among roles). The RBAC standard includes the RBAC Reference Model which serves as a basis for defining the scope of RBAC features and functional specifications of RBAC features.
+The use of RBAC has become popular since the National Institute for Standards and Technology (NIST) first proposed the RBAC standard in 2000 \cite{sandhu2000nist}.
+NIST requested that a unified standard be created by combining the Ferraiolo and Kuhn model \cite{ferraiolokuhn} with the framework proposed by Sandhu et al.~\cite{sandhu1996role}.  
+In 2004, this standard was adopted as ANSI/INCITS 359-2004 approved by American National Standards Institute\footnote{http://www.ansi.org/} (ANSI) and the InterNational Committee for Information Technology Standards\footnote{http://www.incits.org/} (INCITS).
+The development of a standard was inspired by an economic impact study done during the 1990s\cite{impact1996}, again in 2002\cite{impact2002} and later confirmed in 2010\cite{o20102010}. 
+The study showed the cost savings of RBAC implementation and maintenance. 
+Prior to the development of the RBAC standard, vendors proposed and implemented their own RBAC definition without general agreement on a unified definition of RBAC or RBAC features (e.g., inheritance relationships among roles). 
+The RBAC standard includes the RBAC Reference Model which serves as a basis for defining the scope and functional specifications of RBAC features.
 
 Since the introduction of the RBAC standard, researchers have proposed domain-targeted extensions that add one or more features on top of components in the RBAC Reference Model \cite{kuhn2010adding}.
-For example, there are extensions that provide dynamic context or privacy, which can be critical in medical and mobile domains.
+For example, extensions that target the medical and mobile domains provide dynamic context or privacy around the access control policies.
 Further, Ni et al. \cite{ni2010privacy} proposed an RBAC extension model to incorporate privacy concerns in to the RBAC Reference Model noting that the RBAC Reference Model is ``not designed to enforce privacy policies and barely meet privacy protection requirements'' with the introduction of privacy concerns in to the medical domain.
-Further, these extension models are each building upon and adding features to a standard that was designed to reduce the economic impact experienced by enterprises and increase interoperability \cite{o20102010}.
+These extension models are each building upon and adding features to a standard that was designed to reduce the economic impact experienced by enterprises and to increase interoperability \cite{o20102010}.
 
 \textit{The goal of our work is to aid practitioners and researchers in choosing an RBAC extension model, and in understanding
-how the RBAC extension models are evaluated by providing an assessment of RBAC extensions. We established a set of extension categories, examined the state of the art in evaluations of the RBAC extension models, and categorized the motivations that have led to the RBAC extension models.
-} To accomplish this goal, we seek to answer following research questions:
+how the RBAC extension models are evaluated by providing an assessment of the state of RBAC extension model1s.} We established a set of extension categories, examined the state of the art in evaluations of the RBAC extension models, and categorized the motivations that have led to the RBAC extension models.
+To accomplish this goal, we seek to answer following research questions:
 
 \begin{itemize}
 \setlength{\itemsep}{0.25pt}
-\item RQ1: What categories exist within the RBAC extension models?
-\item RQ2: What are the motivations behind the RBAC extension models?
-\item RQ3: Do the RBAC extension models have corresponding implementations?
-\item RQ4: How are the RBAC extension models evaluated theoretically and in practice?
-\item RQ5: What domains have the RBAC extension models been created for?
-\item RQ6: What commonalities or generalizations exist across all categories?
+\item RQ1: How can RBAC extension models be classified?
+\item RQ2: What are motivations behind the RBAC extension models?
+\item RQ3: How are RBAC extension models implemented and evaluated by their authors?
+\item RQ4: What domains have been targeted by RBAC extension models?
+\item RQ5: What commonalities exist across RBAC extension models?
 \end{itemize}
 
 We performed a systematic literature review to explore the current body of research in the area of extensions to the RBAC Reference Model. 
 The review began with 1,716 papers, of which 27 were deemed primary sources for inclusion as extension models to the RBAC Reference Model.
-Our research provides contributions to the community in following ways:
+Our research provides the following:
 
 \begin{itemize}
 \setlength{\itemsep}{0.25pt}
-\item Serves as a starting place for researchers looking to tackle new problems in the realm of authorization and as a reference guide for discovering
+\item A starting place for researchers looking to tackle new problems in the realm of authorization and as a reference guide for discovering
 the current state of the RBAC extension models. 
-\item Provides a basis for comparison and look up for what extension model to use for developers looking to find a model to fit their access control needs
-\item Summarizes current evaluation methods used in research on RBAC extension models.
-%\item Guides a direction for a new standard based on the RBAC extension models.
+\item A basis for comparison and look up for what extension model to use for developers looking to find a model to fit their access control needs.
+\item A summary of current evaluation methods used in research on RBAC extension models.
+\item A starting direction for a new standard based on conclusions drawn from the RBAC extension models.
 \end{itemize}
 
 The rest of the paper is organized as follows. 
