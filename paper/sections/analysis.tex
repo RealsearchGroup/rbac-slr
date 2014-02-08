@@ -49,8 +49,6 @@ The Task category claims that the RBAC extension model does not support the noti
 
 RQ3: Do the RBAC extension models have corresponding implementations?
 
-%\subsection{Results}
-
 When designing and proposing a model targeted at a feature that is rooted in practical
 usage by real software systems, bringing the model to life is strong evidence that the
 proposed model can work in practice. The concept of authorization and access control
@@ -62,27 +60,10 @@ and/or used in a production environment.
 
 \subsection{Results}
 
-\begin{table}
-\centering
-\caption{Implementation types found and the count of primary sources}
-\begin{tabular}{ | c | c | }
-\cline{1-2}
-
-\textbf{Implementation Type} & \textbf{Paper Count} \\ \cline{1-2}
-Enterprise Implementation & 4 \\ \cline{1-2}
-Prototype Implementation & 4 \\ \cline{1-2}
-No Implementation & 20 \\
-
-\cline{1-2}
-\end{tabular}
-\label{tab:implementations}
-\end{table}
-
 Table \ref{tab:implementations} shows the breakdown of implementations found within the primary sources.
 Of the 27 papers surveyed, 4 papers~\cite{zhou2007team,bao08:role, cholewka00:acontext-sensitive,huang06:pervasive} were simply prototypes developed by the authors whereas 4 papers~\cite{jian2008extended, aich09:role, yao2008task, motta03:contextual} were claimed to be implemented within a real
 system. The remaining 20 papers provide no
 mention of an implementation or prototype.  
-
 
 \subsection{Analysis and Discussion}
 
@@ -96,11 +77,62 @@ implementation within the enterprise world, two were from within the medical dom
 
 \greybox{Research on RBAC extension models shows a lack of application and testing in the real world scenarios that the models are ultimately designed for.}
 
+\begin{table}
+\centering
+\caption{Implementation types found and the count of primary sources}
+\vspace{0.1 in}
+\begin{tabular*}{.9\linewidth}{| l | p{.5\linewidth} | r | }
+\cline{1-3}
+
+\textbf{Implementation Type} & \textbf{Papers} & \textbf{Count} \\ \cline{1-3}
+Enterprise
+&
+\cite{motta03:contextual}
+\cite{aich09:role}
+\cite{yao2008task}
+&
+3 \\ \cline{1-3}
+Prototype
+& 
+\cite{cholewka00:acontext-sensitive}
+\cite{huang06:pervasive}
+\cite{bao08:role}
+\cite{zhou07:network}
+&
+4 \\ \cline{1-3}
+None
+&
+\cite{alam06:constraint}
+\cite{tzelepi01:flexible}
+\cite{yamazaki04:designing}
+\cite{jian2008extended}
+\cite{thein2011leveraging}
+\cite{zou2009crbac}
+\cite{haibo05:context}
+\cite{zhang06:collaborative}
+\cite{ni2010privacy}
+\cite{masoumzadeh2008purbac}
+\cite{damiani2007geo}
+\cite{ray2006lrbac}
+\cite{hansen2003spatial}
+\cite{aich07:STARBAC}
+\cite{chen08:spatio-temporal}
+\cite{samuel07:spatio-temporal}
+\cite{chandran05:llt}
+\cite{ray07:spatio}
+\cite{oh2003task}
+\cite{joshi05:generalized}
+&
+20 \\
+
+\cline{1-3}
+\end{tabular*}
+\label{tab:implementations}
+\end{table}
+
 \section{Evaluations} \label{sec:evaluations}
 
 RQ4: How are extensions to RBAC evaluated theoretically and in practice?
-
-%\subsection{Results}
 
 The 27 primary sources were examined for evidence that evaluations of the proposed model were presented by the model authors.
 Further, we identified a set of evaluation types found within  each of the primary sources and provide below a list of the 
@@ -108,17 +140,6 @@ evaluation types and which primary sources provided which type.  In some cases a
 types.
 
 \subsection{Results}
-
-\begin{itemize}
-\setlength{\itemsep}{0.25pt}
-\item Time-based Performance \cite{ni2010privacy}, \cite{aich09:role}
-\item Complexity analysis \cite{bao08:role}, \cite{zhang06:collaborative}, \cite{chen08:spatio-temporal}, \cite{aich09:role}
-\item Comparison to standard RBAC \cite{bao08:role}, \cite{zou2009crbac}, \cite{zhang06:collaborative}, \cite{zhao2008flexible}, \cite{ray07:spatio}
-\item Mathematical modeling \cite{damiani2007geo}, \cite{hansen2003spatial}, \cite{aich07:STARBAC}, \cite{chen08:spatio-temporal}, \cite{joshi05:generalized}
-\item Example scenarios of the model in action \cite{alam06:constraint}, \cite{tzelepi01:flexible}, \cite{cholewka00:acontext-sensitive}, \cite{huang06:pervasive}, \cite{bao08:role}, \cite{jian2008extended}, \cite{yamazaki04:designing}, \cite{zou2009crbac}, \cite{ray07:spatio}, \cite{samuel07:spatio-temporal}, \cite{joshi05:generalized}, \cite{yao2008task}, \cite{zhou2007team}, \cite{oh2003task}
-%\item Experimental analysis of the model
-\item Case study of the model in practice \cite{motta03:contextual}
-\end{itemize}
 
 Based on the diverse evaluation criteria, 12 models presented no evidence of an evaluation. 14 models presented example scenarios
 and how application of their model would apply and resolve the situation.  6 models provided some form of performance
@@ -156,6 +177,74 @@ entities.
 
 \greybox{RBAC extension model research lacks comprehensive evaluation of the models both in theory and in practice.}
 
+\begin{table}
+\centering
+\caption{Evaluation types by primary source}
+\vspace{0.1 in}
+\begin{tabular*}{.9\linewidth}{| p{.45\linewidth} | p{.3\linewidth} | r | }
+\cline{1-3}
+
+\textbf{Evaluation Type} & \textbf{Papers} & \textbf{Count} \\ \cline{1-3}
+Time-Based Performance
+&
+\cite{ni2010privacy}
+\cite{aich09:role}
+&
+2 \\ \cline{1-3}
+Complexity Analysis
+&
+\cite{bao08:role}
+\cite{zhang06:collaborative}
+\cite{chen08:spatio-temporal}
+\cite{aich09:role}
+&
+4 \\ \cline{1-3}
+Comparison to Standard RBAC
+& 
+\cite{bao08:role}
+\cite{zou2009crbac}
+\cite{zhang06:collaborative}
+\cite{zhao2008flexible}
+\cite{ray07:spatio}
+&
+5 \\ \cline{1-3}
+Mathematical Modeling
+& 
+\cite{damiani2007geo}
+\cite{hansen2003spatial}
+\cite{aich07:STARBAC}
+\cite{chen08:spatio-temporal}
+\cite{joshi05:generalized}
+&
+5 \\ \cline{1-3}
+Example Scenarios of the Model in Action
+& 
+\cite{alam06:constraint}
+\cite{tzelepi01:flexible}
+\cite{cholewka00:acontext-sensitive}
+\cite{huang06:pervasive}
+\cite{bao08:role}
+\cite{jian2008extended}
+\cite{yamazaki04:designing}
+\cite{zou2009crbac}
+\cite{ray07:spatio}
+\cite{samuel07:spatio-temporal}
+\cite{joshi05:generalized}
+\cite{yao2008task}
+\cite{zhou2007team}
+\cite{oh2003task}
+&
+14 \\ \cline{1-3}
+Case Study of the Model in Practice
+&
+\cite{motta03:contextual}
+&
+1 \\ \cline{1-3}
+
+\end{tabular*}
+\label{tab:implementations}
+\end{table}
+
 \section{Domains} \label{sec:domains}
 
 RQ5: What domains have RBAC extensions been created for?
@@ -173,15 +262,68 @@ scenarios cast within a particular domain or mention of domain requirements with
 
 We found that the domains mentioned and their associated sources are:
 
-\begin{itemize}
-\setlength{\itemsep}{0.25pt}
-\item Medical domain \cite{alam06:constraint}, \cite{tzelepi01:flexible}, \cite{motta03:contextual}, \cite{ni2010privacy}, \cite{damiani2007geo}, \cite{hansen2003spatial}, \cite{samuel07:spatio-temporal}, \cite{aich09:role}, \cite{zhou2007team}
-\item Pervasive computing environments \cite{huang06:pervasive}, \cite{chen08:spatio-temporal}, \cite{ray07:spatio}
-\item Web applications \cite{masoumzadeh2008purbac}
-\item Mobile computing \cite{thein2011leveraging}, \cite{zou2009crbac}, \cite{chandran05:llt}, \cite{ray07:spatio}, \cite{aich09:role}
-\item Large-scale organizations with many sub-departments \cite{yamazaki04:designing}, \cite{han08:extended}, \cite{yao2008task}
-\item Enterprise, organization workflows \cite{cholewka00:acontext-sensitive}, \cite{bao08:role}, \cite{zhang06:collaborative}, \cite{oh2003task}, \cite{joshi05:generalized}
-\end{itemize}
+\begin{table}
+\centering
+\caption{Domains by primary source}
+\vspace{0.1 in}
+\begin{tabular*}{.9\linewidth}{| p{.45\linewidth} | p{.3\linewidth} | r | }
+\cline{1-3}
+
+\textbf{Domain} & \textbf{Papers} & \textbf{Count} \\ \cline{1-3}
+Medical Domain
+&
+\cite{alam06:constraint}
+\cite{tzelepi01:flexible}
+\cite{motta03:contextual}
+\cite{ni2010privacy}
+\cite{damiani2007geo}
+\cite{hansen2003spatial}
+\cite{samuel07:spatio-temporal}
+\cite{aich09:role}
+\cite{zhou2007team}
+&
+9 \\ \cline{1-3}
+Pervasive Computing Environments
+& 
+\cite{huang06:pervasive}
+\cite{chen08:spatio-temporal}
+\cite{ray07:spatio}
+&
+3 \\ \cline{1-3}
+Web Applications
+& 
+\cite{masoumzadeh2008purbac}
+&
+1 \\ \cline{1-3}
+Mobile Computing
+& 
+\cite{thein2011leveraging}
+\cite{zou2009crbac}
+\cite{chandran05:llt}
+\cite{ray07:spatio}
+\cite{aich09:role}
+&
+5 \\ \cline{1-3}
+Organizations with Many Sub-departments
+& 
+\cite{yamazaki04:designing}
+\cite{jian2008extended}
+\cite{yao2008task}
+&
+3 \\ \cline{1-3}
+Enterprise Workflows
+&
+\cite{cholewka00:acontext-sensitive}
+\cite{bao08:role}
+\cite{zhang06:collaborative}
+\cite{oh2003task}
+\cite{joshi05:generalized}
+&
+5 \\ \cline{1-3}
+
+\end{tabular*}
+\label{tab:implementations}
+\end{table}
 
 The predominant domain for which extension models have been generated for is that of the medical domain with 9 of 27 mentioning scenarios or requirements of that industry.
 Mobile computing and enterprise workflows were each represented by five papers claiming to be influenced by the requirements for access control within these domains. The final set
