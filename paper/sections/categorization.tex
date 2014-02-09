@@ -1,13 +1,13 @@
 
-\section{Categorization} \label{sec:categorization}
+\section{RQ1: Classification} \label{sec:categorization}
 
-RQ1: What categories exist within the RBAC extension models?
+\textit{How can RBAC extension models be classified?}
 
-During the paper reading phase, we identify categorical themes, which are
-central topic or context of the RBAC extension models. 
-For example, the paper ``Privacy-aware role-based access control'' \cite{ni2010privacy} brings in the notion of privacy explicitly within the title of the paper and the name of their model. 
-Some papers presented this direct pronouncement of theme of the RBAC extension models, whereas others were less obvious. 
-Thus, we developed a set of guidelines to aide in determining a set of eight categories based upon observations during the paper reading phase. 
+During the paper reading phase, we identify classification themes, which are
+central topic or context of the RBAC extension models. Our classification process
+yields a set of categories based upon observations during the paper reading phase.
+For example, the paper ``Privacy-aware role-based access control'' \cite{ni2010privacy} brings in the notion of privacy explicitly within the title of the paper and the name of their model. We classify this paper into the Privacy category. Some papers presented this direct pronouncement of theme of the RBAC extension models, whereas others were less obvious.
+Thus, we developed a set of guidelines to aide in determining a set of eight categories. 
 In developing these guidelines, we defined each category by a single noun-phrase descriptor.
 The guidelines were as follows:
 
@@ -41,14 +41,14 @@ Some category descriptors contain abbreviations in parenthesis that match the sh
 
   \item \textbf{Spatial}: The RBAC extension model provides spatial constraints, location-based constraints in specifying access
 	control policies. For example, in organizations, locations are enforced whereas a
-	specific role is permitted to conduct an action. Consider that a part-time employee works only in a specific location.
-	In such cases, the part-time employee role should access required resources only when the user is in that location. 
+	specific role is permitted to conduct an action. Consider that a temporal employee works only in a specific location.
+	In such cases, the temporal employee role should access required resources only when the user is in that location. 
 	Spatial constraints can integrate with roles, user-role assignments, or role-permission assignments. 
 
   \item \textbf{Temporal (Temp)}:  The RBAC extension model provides temporal constraints, time-based constraints in specifying access
 	control policies. For example, in organizations, periodic temporal durations are enforced whereas a
-	specific role is permitted to conduct an action. Consider that a part-time employee works only from 9:00 a.m. to 3:00 p.m.
-	In such cases, the part-time employee role should be allowed to access required resources during the interval. 
+	specific role is permitted to conduct an action. Consider that a temporal employee works only from 9:00 a.m. to 3:00 p.m.
+	In such cases, the temporal employee role should be allowed to access required resources during the interval. 
 	Temporal constraints can integrate with roles, user-role assignments, or role-permission assignments.   
 	
 \end{itemize}
