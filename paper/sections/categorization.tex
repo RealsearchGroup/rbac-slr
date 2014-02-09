@@ -3,10 +3,11 @@
 \textit{How can RBAC extension models be classified?}
 \\
 
-During the paper reading phase, we identify classification themes, which are
-central topic or context of the RBAC extension models. Our classification process
-yields a set of categories based upon observations during the paper reading phase.
-For example, the paper ``Privacy-aware role-based access control'' \cite{ni2010privacy} brings in the notion of privacy explicitly within the title of the paper and the name of their model. We classify this paper into the Privacy category. Some papers presented this direct pronouncement of theme of the RBAC extension models, whereas others were less obvious.
+During the paper reading phase, we identify classification themes, which are central topic or context of the RBAC extension models. 
+Our classification process yields a set of categories based upon observations during the paper reading phase.
+For example, the paper ``Privacy-aware role-based access control'' \cite{ni2010privacy} brings in the notion of privacy explicitly within the title of the paper and the name of their model. 
+We classify this paper into the Privacy category. 
+Some papers presented this direct pronouncement of theme of the RBAC extension models, whereas others were less obvious.
 Thus, we developed a set of guidelines to aide in determining a set of eight categories. 
 In developing these guidelines, we defined each category by a single noun-phrase descriptor.
 The guidelines were as follows:
@@ -17,38 +18,40 @@ The guidelines were as follows:
 \item Repetition of Phrase - Does the body of the paper present the same phrase repeatedly when discussing their model?
 \end{itemize}
 
-The previous example paper ``Privacy-aware role-based access control'' \cite{ni2010privacy} contained ``privacy'' in
-the title and in the name of the model leading to the creation of the Privacy category and the subsequent placement of the paper under that category.
-By comparison, the paper ``An extended RBAC model based on granular logic'' \cite{jian2008extended} does not contain a direct categorization in the title or model name. However, in reading the body of the paper, we determined that this paper discussed RBAC extension based on context. 
-We offer definitions for each of the eight observed categories based on the data extracted from the primary sources and the English definitions for each noun-phrase. 
-Some category descriptors contain abbreviations in parenthesis that match the shortened name found within Table \ref{tab:categorization}.
+The previous example paper ``Privacy-aware role-based access control'' \cite{ni2010privacy} contained ``privacy'' in the title and in the name of the model leading to the creation of the Privacy category and the subsequent placement of the paper under that category.
+By comparison, the paper ``An extended RBAC model based on granular logic'' \cite{jian2008extended} does not contain a direct categorization in the title or model name. 
+However, in reading the body of the paper, we determined that this paper discussed RBAC extension based on context. 
+In Section 4.1, we offer definitions for each of the eight observed categories.
 
 \subsection{Results}
 
+Based on data extracted from the primary sources and the English definitions for each noun-phrase we provide a definition for each observed model category. 
+Some category descriptors contain abbreviations in parenthesis that match the shortened name found within Appendix A \ref{tab:categorization} which presents each primary source within it's designated category.
+
 \begin{itemize}
 
-  \item \textbf{Context}: The extension model integrates contextual information into the RBAC standard model. Context is defined as a user's current state and environment (e.g., location, time, system resources, network state, network security configuration, etc) which may affect the user's access privileges.
+  \item \textbf{Context}: The extension model integrates contextual information into the RBAC standard model. Context is defined as a user's current state and environment (e.g., location, time, system resources, network state, network security configuration, etc). The user's access privileges are dependent upon the values of the current state and environment at any given time.
 
-  \item \textbf{Constraint (Const)}: The extension model provides conditional restrictions on permissions of given roles. The constraint is either static or dynamic. For example, a doctor may modify any medical record for which the doctor is assigned as the designated primary care physician. This example describes a doctor's permission with a conditional restriction - ``only when the doctor is assigned as the designated primary care physician may modify a particular medical record''.
+  \item \textbf{Constraint (Const)}: The extension model provides conditional restrictions on permissions of given roles. The constraint is either static or dynamic. For example, a doctor may modify any medical record for which the doctor is assigned as the designated primary care physician. This example describes a doctor's permission with a conditional restriction - ``only when the doctor is assigned as the designated primary care physician may the doctor modify a particular medical record''.
 
-  \item \textbf{Organizational (Org)}: The RBAC extension model is concerned with providing mechanisms and entities that allow for RBAC across multiple organizations. Typically, users may have the same role name in different organizations, but may have different access privileges due to different local variations.
+  \item \textbf{Organizational (Org)}: The extension model is concerned with providing mechanisms and entities that allow for RBAC across multiple organizations. Typically, users may have the same role name in different organizations, but may have different access privileges due to departmental variations.
   
-  \item \textbf{Privacy (Priv)}: The RBAC extension model provides entities and mechanisms to describe privacy policies, which are legal statements or documents about disclosure or management of personally identifiable information such as name, address, or date of birth.
+  \item \textbf{Privacy (Priv)}: The extension model provides entities and mechanisms to describe privacy policies, which are legal statements or documents about disclosure or management of personally identifiable information such as name, address, or date of birth.
   
-  \item \textbf{Task}: The RBAC extension model provides task entities which are associated with permissions and roles. A task is a fundamental unit of a business activity. Different from core RBAC, in task-role-based access control model, roles are not directly associated with permissions. Roles are associated with tasks that are associated with permissions. For example, the employee role is associated with a task, for example, to write a report. Then, this task is associated with a permission.
+  \item \textbf{Task}: The extension model provides task entities which are associated with permissions and roles. A task is a fundamental unit of a business activity. Different from core RBAC, in task-role-based access control model, roles are not directly associated with permissions. Roles are associated with tasks that are associated with permissions. For example, the employee role is associated with a task to write a report. This task is then associated with a permission.
 
-  \item \textbf{Spatio-Temporal}: The RBAC extension model combines spatial (location-based) and temporal (time-based) constraints in specifying access control policies. For example, specific locations permit roles to conduct actions from 8:00 a.m. to 5:00 p.m.
+  \item \textbf{Spatio-Temporal}: The extension model combines spatial (location-based) and temporal (time-based) constraints in specifying access control policies. For example, specific locations permit roles to conduct actions from 8:00 a.m. to 5:00 p.m.
 
-  \item \textbf{Spatial}: The RBAC extension model provides spatial constraints, location-based constraints in specifying access
+  \item \textbf{Spatial}: The extension model provides spatial (location-based) constraints in specifying access
 	control policies. For example, in organizations, locations are enforced whereas a
-	specific role is permitted to conduct an action. Consider that a temporal employee works only in a specific location.
-	In such cases, the temporal employee role should access required resources only when the user is in that location. 
+	specific role is permitted to conduct an action. Consider that an employee works only at a specific location.
+	In such cases, a role should allow access to required resources only when the user is in that location. 
 	Spatial constraints can integrate with roles, user-role assignments, or role-permission assignments. 
 
-  \item \textbf{Temporal (Temp)}:  The RBAC extension model provides temporal constraints, time-based constraints in specifying access
+  \item \textbf{Temporal (Temp)}:  The extension model provides temporal (time-based) constraints in specifying access
 	control policies. For example, in organizations, periodic temporal durations are enforced whereas a
 	specific role is permitted to conduct an action. Consider that a temporal employee works only from 9:00 a.m. to 3:00 p.m.
-	In such cases, the temporal employee role should be allowed to access required resources during the interval. 
+	In such cases, the temporal employee role should only be allowed to access required resources during the interval. 
 	Temporal constraints can integrate with roles, user-role assignments, or role-permission assignments.   
 	
 \end{itemize}
