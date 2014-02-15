@@ -4,7 +4,7 @@ RBAC provides effective and efficient permissions management for operations, esp
 Prior to the creation of the NIST RBAC standard, no general agreement on the definition 
 of RBAC existed among practitioners or within the research community. 
 Without a unified definition of RBAC, software developers described similar concepts and features of RBAC models using different terminology. 
-This lack of consistent terminology was shown to slow the implementation of RBAC~\cite{o20102010}.  
+The lack of consistent terminology was shown to slow the implementation of RBAC~\cite{o20102010}.  
 Moreover, in cases where organizations were concerned with adopting RBAC,
 evaluation and comparison of RBAC technologies developed by different vendors was difficult.
 NIST, in collaboration with industry and academics, worked on defining a set of consensus RBAC concepts and terminology and proposed a standard for 
@@ -12,7 +12,7 @@ RBAC that addressed these cost and interoperability issues by developing a commo
 
 NIST's work can directly benefit organizations by lowering the cost of early phase research and development, and implementation of RBAC.
 Since the RBAC standard was first introduced, a 2010 report by RTI International showed that the rate of RBAC adoption has rapidly grown~\cite{o20102010}. 
-The analysts estimate that RBAC technology has generated \$6.1 billion in net economic benefits to industry where NIST RBAC standard saved \$1.1 billion.
+The analysts estimate that the use of RBAC technology has saved industry \$6.1 billion from 1992 to 2009 and the research and development work by NIST to produce an RBAC standard has saved an additional \$1.1 billion that wold have otherwise been spent across the industry doing research and development on RBAC.
 
 The RBAC standard includes three components of RBAC: core RBAC, hierarchical RBAC, and constrained RBAC. Each component includes a corresponding RBAC Reference model. We first describe the core RBAC, associated entities and other terminology. We next describe hierarchical RBAC and constrained RBAC, which are developed by incorporating new features into core RBAC. 
 
@@ -33,15 +33,6 @@ In addition to the four basic entities, two functions are defined:
 user assignment ($UA$) and permission assignment ($PA$) functions.
 $UA$ represents assignment of users to roles.
 $PA$ represents assignment of permissions to roles.
-
-\begin{figure}[ht]
-    \centering
-        \includegraphics[width=4.0in]{sections/core-model.png}
-    \caption{\label{fig:overview}Diagram in Core RBAC reference model\cite{ferraiolokuhn}.}
-\end{figure}
-
-Figure~\ref{fig:overview} presents an overview of the core RBAC reference model where entities and their relations are described.
-Let "USERS", "ROLES", "OBS", "OPS", "PRM", and "SESSIONS" denote users, roles, objects, operations, permissions, and sessions, respectively.
 Permissions are associated with possible users' pre-defined operation on an object (e.g., execute a file).
 Note that, at user or role activation, a session associated with user or role is established.
 
@@ -64,7 +55,8 @@ $r_1$ inherits all permissions from more than one role (e.g., two roles $r_2$ an
 \subsection{Constrained RBAC}
 
 The constrained RBAC Reference Model adds separation of duty relations to the core and hierarchical RBAC Reference Models. 
-Separation of duty relations enforce conflicts of interest among roles. This model defines two types of separation of duty relations: static and dynamic.
+Separation of duty relations enforce conflicts of interest among roles. 
+The Constrained RBAC model defines two types of separation of duty relations: static and dynamic.
 
 \begin{itemize}
 \item Static Separation of Duty (SSoD): SSoD restricts the conflicting-roles, which can be assigned to a single user statically. 
