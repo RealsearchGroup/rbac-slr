@@ -241,8 +241,8 @@ access control model and in comparison to the model upon which the enhancements 
 extension models are lacking. 
 
 The primary source of validation a developer or practitioner may encounter is a qualitative discussion of real-world
-scenarios and how the proposed model can tackle those situations. In rare cases, five primary sources, the model 
-authors provide some discussion of how the RBAC Reference Model is deficient in tackling the scenario.
+scenarios and how the proposed model can tackle those situations. 
+For five of the primary sources \cite{bao08:role} \cite{zou2009crbac} \cite{zhang06:collaborative} \cite{zhao2008flexible} \cite{ray07:spatio} the model authors provide some discussion of how the RBAC Reference Model is deficient in tackling the scenario.
 In Table \ref{tab:evaluations}, we observe that one paper includes a case study to examine how the proposed model works in practice. Discussions
 of how an extension model handles a real-world scenario provides developers and practitioners anecdotal evidence at best
 for what types of situations the proposed model could handle. Further, by not providing a comparison to the RBAC Reference Model, developers may be left implementing a more complex model to address their requirements when the RBAC Reference Model would
@@ -397,10 +397,15 @@ The authors use propositional logic to describe access control model across all 
 \subsection{Analysis and Discussion}
 
 Since NIST proposed RBAC standard using propositional logic, researchers describe extended RBAC models using propositional logic. Given context, propositional logic is used to evaluate true or false based on specified rules and access control logic. As access control is typically evaluated to either true or false based on predicates, propositional logic is sufficient to describe key ideas and definitions. Propositional logic specifies what combination of attributes values a request must satisfy to be authorized to roles. 
-Combination of attribute values may handle constraints such as temporal and spatial constraints. For example, we describe user-role authorization as $ae$ $\Rightarrow$ $r$ using propositional logic where $ae$ is an attribute expression and $r$ is a role. Propositional logic for RBAC has two parts. The left hand side (LHS) is an attribute expression $ae$. The right hand side (RHS) is a role. If a request satisfies the attribute expression, a user $u$ in the request is authorized to the role specified in RHS.
+Combination of attribute values may handle constraints such as temporal and spatial constraints. For example, we describe user-role authorization as $ae$ $\Rightarrow$ $r$ using propositional logic where $ae$ is an attribute expression and $r$ is a role. Propositional logic for RBAC has two parts. The left hand side (LHS) is an attribute expression $ae$. 
+The right hand side (RHS) is a role. 
+If a request satisfies the attribute expression, a user $u$ in the request is authorized to the role specified in RHS.
 
 We found that 27 papers of RBAC extensions use propositional logic to describe its extended model.
 However, propositional logic has limitations. While this logic is simple, this logic does not support for reasoning about RBAC, which helps
 reduce the administrative complexity of associations such as user- role associations.
 To support for reasoning of access control, one may describe the RBAC extended models in first-order logic. 
-Given an RBAC extension model, Samuel et al.~\cite{samuel07:spatio-temporal} proposed verification of the model using a specification language, which is based first-order logic. This logic is sufficient to model RBAC and extended RBAC for reasoning. Moreover, this logic supports for concise and elegant formulation of the Reference Model and its relation.  First-Order logic is expressive enough to concisely represent access control systems. First-Order logic uses relations, variables, and quantifiers.
+Given an RBAC extension model, Samuel et al.~\cite{samuel07:spatio-temporal} proposed verification of the model using a specification language, which is based first-order logic. 
+This logic is sufficient to model RBAC and extended RBAC for reasoning. 
+Moreover, this logic supports for concise and elegant formulation of the Reference Model and its relation. 
+First-Order logic is expressive enough to concisely represent access control systems. First-Order logic uses relations, variables, and quantifiers.

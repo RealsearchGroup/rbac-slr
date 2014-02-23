@@ -1,28 +1,45 @@
 \section{Discussion} \label{sec:discussion}
 
-The research questions we identified, presented results for and analyzed provide specific views of portions of the RBAC extension model landscape. 
-By stepping back, and looking across all the research questions we can arrive at cross-cutting concerns and identify areas that may benefit from future work.
+The research questions we identified, presented results for and analyzed provide a view of the RBAC extension model landscape. 
+By looking across all the research questions we can arrive at cross-cutting concerns and identify areas that may benefit from future work.
 We break the discussion into two issues: recommendations for the enhancement of the evaluation of RBAC extension models to role-based access control models and guidelines for developers needing to choose an RBAC extension model to meet their requirements.
 
 \subsection{Metrics for the Evaluation of RBAC Extension Models}
 
-A small percentage of primary sources presented evaluations or implementations of their model. This result leaves researchers and practitioners little data from which to compare one model to the next. Given the wide swath of popular and critical domains being targeted by RBAC extension models, Hu and Scarfone proposed metrics for access control system evaluation or a security system in general~\cite{hu2012:NIST7874}. They collect metrics, which can be applicable for not only access control models, but also requirements, system implementation, and extended application such as verification and testing. For example, ``Ease of Privilege Assignments'' metric measures the number of steps for assigning, changing, or deleting a privilege for users and roles when a user or administrator manages RBAC. This metric can be applicable for not only the RBAC Reference Model but also RBAC extension models.
-%Future work could include providing metric measurements for the primary sources presented in this paper. 
-We plan to use these metrics proposed by Hu and Scarfone for any extension models presented in this paper. 
+A small percentage of primary sources presented robust evaluations or implementations of their model. 
+This result leaves researchers and practitioners little data from which to compare one model to the next. 
+Given the wide swath of popular and critical domains being targeted by RBAC extension models, Hu and Scarfone proposed metrics for access control system evaluation or a security system in general~\cite{hu2012:NIST7874}. 
+They collect metrics, which can be applicable for not only access control models, but also requirements, system implementation, and extended application such as verification and testing. 
+For example, ``Ease of Privilege Assignments'' metric measures the number of steps for assigning, changing, or deleting a privilege for users and roles when a user or administrator manages RBAC. 
+This metric can be applicable for not only the RBAC Reference Model but also RBAC extension models.
+We propose the metrics introduced by Hu and Scarfone should be applied to the extension models presented in this paper as well as any future models.
 A developer could attempt to apply these metrics to an RBAC extension model not already evaluated when attempting to choose a model. 
-These metrics focus on comparing specific features support of access control models.
+These metrics focus on comparing feature support of access control models.
 
 
 \subsection{Adoption of RBAC Extension Models}
 
-To adopt a model in practice, software developers would implement the model in real system environments based on intended use of the models. Typically, a model provides abstract formal representation of RBAC extension and its operation. To configure intended use (i.e., which subjects can access which resources), we define an access control policy, which specifies high-level rules such as which subjects can access to which resources. Given an access control model and policy, security mechanism provides low-level implementation in a system, which controls access of roles.
+To adopt a model in practice, software developers would implement the model in real system environments based on intended use of the models. 
+As shown by RQ6, all primary sources were found to provide an abstract formal representations of their extension model and the model's operation.
+The presence of an abstract formal representation of the model stands as a starting place for developers to configure intended use (i.e. which subjects can access which resources), and define an access control policy (i.e. which specifies high-level rules such as which subjects can access to which resources). 
 
 A formal representation of access control models is a critical step of designing high-level abstraction where which entities are used and how these entities are operated.
-One of the objectives of a formal representation is to help ensure the correct behaviors through formal verification. Given the formal representation of access control models, software developers may prove of properties (e.g., safety, consistency and completeness) and check whether these properties are satisfied. 
+One of the objectives of a formal representation is to help ensure the correct behaviors through formal verification. 
+Given the formal representation of access control models, software developers may prove of properties (e.g., safety, consistency and completeness) and check whether these properties are satisfied. 
 
-While the concept of the Reference Model is clear and can be applicable to any system, it is challenging to implement the security mechanism of RBAC because the Reference Model is can be interpreted in more than one interpretation due to its complexity. To bridge gap between RBAC standard and its implementation, NIST published RBAC Implementation and Interoperability standard (RIIS/ ANSI INCITS-459) in 2011. This standard specifies how to implement RBAC system, which is consistent with NIST RBAC standard. Moreover, this standard describes interoperability specification where one RBAC implementation can be translated to another one.
+While the concept of the Reference Model is clear and can be applicable to any system, it is challenging to implement the security mechanism of RBAC because the Reference Model is can be interpreted in more than one interpretation due to its complexity. 
+To bridge gap between RBAC standard and its implementation, NIST published RBAC Implementation and Interoperability standard (RIIS/ ANSI INCITS-459) in 2011. 
+This standard specifies how to implement RBAC system, which is consistent with NIST RBAC standard. 
+Moreover, this standard describes interoperability specification where one RBAC implementation can be translated to another one.
 
 This standard does not provide a specific guideline for implementation of various RBAC extension models.
-Moreover, when software developers implemented RBAC extension models, they require clear security requirements of extended role-based access control, which identifies security objectives, intended environments, and assumed threats. Moreover, software developers understand how this RBAC extension model overlaps with other access control models when more than two access control models are integrated into a single system. A survey~\cite{o20102010} shows that over 50\% of users at organizations with more than 500 employees are given some of their permissions to access resources based on RBAC. To adopt RBAC into a system, organizations often use hybrid approaches, which combine RBAC and access control lists because specific user types, systems, and workflow may not be effective to manage access based on roles. Therefore, when RBAC is extended and combined with other access control models, software developers often require to provide a formal representation, which can support of proof of the model. Then, software developers implement RBAC extension models based on NIST standard of RBAC implementation. Especially, software developers understand intended use of RBAC extension models to meet a new system requirement. For example, for a spatial RBAC model, software developers incorporate additional spatial constraints, which can be either static or dynamic, in practice into the RBAC model.
+Moreover, when software developers implemented RBAC extension models, they require clear security requirements of extended role-based access control, which identifies security objectives, intended environments, and assumed threats. 
+Moreover, software developers understand how this RBAC extension model overlaps with other access control models when more than two access control models are integrated into a single system. 
+A survey~\cite{o20102010} shows that over 50\% of users at organizations with more than 500 employees are given some of their permissions to access resources based on RBAC. 
+To adopt RBAC into a system, organizations often use hybrid approaches, which combine RBAC and access control lists because specific user types, systems, and workflow may not be effective to manage access based on roles. 
+Therefore, when RBAC is extended and combined with other access control models, software developers can provide a formal representation which can serve as support for proof of the model. 
+Then, software developers implement RBAC extension models based on NIST standard of RBAC implementation. 
+Especially, software developers understand intended use of RBAC extension models to meet a new system requirement. 
+For example, for a spatial RBAC model, software developers incorporate additional spatial constraints, which can be either static or dynamic, in practice into the RBAC model.
 
 
