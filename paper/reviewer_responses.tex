@@ -1,0 +1,167 @@
+Reviewer #1:
+
+The paper aims to present a systematic literature review (SLR) on RBAC
+extensions.  However, a couple of serious issues raise doubts if the
+literature review was actually "systematic". In particular, the
+process described in the paper is intransparent and hides important
+information that is needed to actually assess the paper.
+
+Section 3 ("Methodology and Process") does not describe a systematic
+literature review process, as claimed by the authors.  Instead, this
+section merely gives an overview of the search and screening part of
+the SLR.  However, even this part is roughly sketched only and omits
+significant information. For example, it is never explained why
+certain search engines resp. certain digital libraries were included
+in the review while other very important libraries are ignored. Why
+were Springer (SpringerLink) and Elsevier (ScienceDirect), two of the
+most important publishers of scientific research, excluded from the
+review ?
+
+Moreover, Section 3 does neither reveal the search terms that were
+used in the review, nor does it describe the actual search procedure.
+Are the 3 terms from Table 1 the final search terms ? If so, these
+terms are way too generic. Why didn't the authors focus the search on
+their research questions (defined in Section 1) ?
+
+Furthermore, every search engine works differently - how did the
+search strings look like ?  Were the search terms applied to paper
+titles and abstracts only or did the authors conduct a full-text
+search ?  Which type of papers did the authors target (research
+papers, opinion papers, white papers, conference papers, journal
+papers)? Was the search restricted to a certain publication period ?
+
+In steps 2-4 of the search and screening process (Section 3), the
+paper reports on pairs of authors serving as raters on publications
+(elimination steps). The paper also refers to (substantial)
+negotiation rounds to establish agreement on whether to
+include/exclude a publication item. However, the paper does not report
+on the levels of agreement/disagreement between the raters over all
+items. The elimination quantities from Table 2 are too coarse
+grained. However, such IRR analyses are recommended by Kitchenham's
+guidelines (allegedly adopted by the authors).
+
+In addition, the stopping criteria are strange . Why was the search
+stopped if the result set was greater than 1000 ? How could you
+guarantee that the most relevant papers are amongst the first 1000
+publications found in the search and not among the papers that were
+simply ignored? The paper says "the result set size stopping criteria
+was chosen due to a technical limitation of some search
+engines". However, the alleged "technical limitations" are never
+discussed in more detail. Everybody is well aware of certain "quota"
+for searches per hour or searches per day that are enforced by
+different scientific search engines. This, however, is certainly no
+valid reason for truncating a systematic (!) literature review.
+
+Moreover, stopping "if the last ten results did not contain the search
+term phrase within the title" is certainly not the best option: a
+potentially large number of relevant publications will not be found.
+An alternative would be to establish a quasi-gold standard and search
+until a threshold is reached.
+
+Section 3.2.1.: Why was it a requirement that the paper titles must
+include certain terms, such as "model"?  I fear that this requirement
+is excessively limiting and potentially excluding relevant papers.
+Moreover, why is a reference to the term "model" important in the
+first place? This is never motivated, no rationale for this
+requirement is provided to the reader.
+
+Section 3.2.3.: The use of "conditional inclusion criteria" is not
+clear to me (given that they are also not covered by the SLR
+guidelines allegedly adopted by the authors). Moreover, the statement
+that "without this conditional include, the paper list size" would
+have been too "small" indicates that the authors deviated from the
+initial procedure (protocol) without justifying or reporting this
+deviation.  Arbitrarily changing the inclusion/exclusion criteria to
+expand the paper base is not a systematic approach.  With respect to
+the content elimination criteria: what does "inspired by real world
+example" mean exactly ?
+
+The search strategy results in a relatively small corpus of 27 papers,
+searching the papers' references via snowballing could help here.
+
+Moreover, the paper includes a number of inconsistencies that are
+never explained. For example, the data from Table 3 and Table 4 are
+inconsistent -- in Table 4, papers [21] and [23] are missing while [36]
+is newly introduced.
+
+Section 4/RQ1: It is not clear how the authors established the common
+terms and how they systematically tagged the included papers in terms
+of a content analysis. Also, the wording indicates that all of this
+happened during paper reading (ad hoc), rather than as a preparatory
+step.
+
+Section 5/RQ2: I do not see how the answers to this RQ are related to
+the SLR. The section rather reads like a discussion based on the
+authors' intuitions or conjectures.
+
+Section 7/RQ4: Why do the authors only distinguish between
+enterprise/prototype "implementations" of RBAC approaches? Wouldn't
+it be more interesting to distinguish different "implementation
+techniques"?  Moreover, often an implementation alone doesn't say much
+about the actual applicability of a certain approach. What about other
+evaluation techniques such as case studies, static and dynamic
+analysis, formal proofs, or controlled experiments for example ?
+
+Section 9/RQ6: The authors' suggestion of using "propositional
+logic" is a pure discussion item and not even remotely backed by the
+data extracted from the SLR.
+
+In chapter 10.1. (Discussion) the paper proposes the use of metrics
+developed by Hu & Scarfone when choosing an RBAC extension model. Why
+this metric in particular? Did the authors perform a prior comparative
+analysis of different metrics?
+
+From the results presented in the paper, i have major doubts that the
+search terms were adequate and that the search was conducted
+thoroughly.  For example, the authors did not find a single
+contribution published in the proceedings of the the premier access
+control conference -- the ACM Symposium on Access Control Models and
+Technologies (SACMAT) which was established in 2001 as a successor of
+the ACM RBAC workshop. Moreover, although the paper references some
+papers published in ACM TISSEC, many other papers from ACM TISSEC that
+do also present extensions to the RBAC reference model were not found
+in the SLR.
+
+In its current state, the paper has to be classified as work in
+progress. It does neither increase our knowledge of RBAC nor of RBAC
+extensions.  The literature review reported in this paper may serve as
+a pre-study for an actual SLR. However, the paper needs a lot of work
+before it can be accepted for publication in a journal. In particular,
+the paper is intransparent and includes a number of serious
+methodological flaws.
+
+Minor:
+
+- Section 2 should be shortened to at most one page
+
+- The definitions of static and dynamic separation of duty in Section
+2.3 are not correct.
+
+- why are the paper references from Tables 3, 4, and 5 sorted randomly
+and not in an ascending order ?
+
+- Table 5 includes a broken literature reference (probably to [29])
+
+- additional figures/visualizations would help to improve the paper
+
+- a number of entries in the References section are incomplete
+
+- the paper includes a number of spelling errors, grammatical errors,
+and punctuation flaws.
+
+- Table 6 (Appendix A) should be revised, esp. the structure needs to
+be improved
+
+Reviewer #2:
+
+The topic analysed in this paper is interesting and the literature review has been carried out by following a formal approach.
+
+Nevertheles, the authors should justify some decisions made in the systematic review.
+
+Their search strategy should be justified.
+        - Why have they selected that search chain?
+        - What is the criteria for selecting those sources (Google Shoolar, etc.) and no other?
+        - Why were they using as a title elimination criteria that title contains a reference to 'model' and not to "policy", etc. ?
+
+On the other hand, the authors have defined the classification criteria by observation when they were reading the papers. And also, they have defined the comparison items by themself. I consider that these criteria should be defined based on existing frameworks for comparing access control policies and if they do not exist, justify why they propose these criteria.
+
