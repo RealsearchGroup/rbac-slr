@@ -1,0 +1,206 @@
+\pagebreak
+
+\section{General Breakdown}
+
+\begin{itemize}
+
+\item Broken literature references in Table 5
+
+\item Tables 3,4,5 are not sorted in any order
+
+\item Additional figures/visualizations would help
+
+\item Reference section has incomplete entries
+
+\item Spelling, grammar and punctuation flaws
+
+\item Table 6 should be revised to have better structure
+
+\end{itemize}
+
+
+\section{Background Breakdown}
+
+\begin{itemize}
+
+\item This section should be shortened to at most 1 page.
+
+\item Definitions of static and dynamic separation of duty are incorrect.
+
+\end{itemize}
+
+\section{Methodology Breakdown}
+
+\begin{itemize}
+
+\item Calls into question the "systematic" nature of the paper.
+
+We can address this by adjusting our search method to follow an accepted systematic approach as noted in the SLR literature. Notably the Zhang \cite{zhang2011identifying} approach mentioned in \cite{kitchenham2013systematic}. 
+In this approach we do a two phase manual + automatic search. 
+The manual phase identifies premier journals and conferences specifically related to our research questions and pulls out the "quasi-gold standard" set of papers.
+We derive our search term from this set of papers and use them as an oracle for the precision and sensitivity of our automatic search
+
+\item Why the search we chose? Why not others like Springer? Elsevier?
+
+Looking at the recent work by Kitchenham to review SLRs from 2013 \cite{kitchenham2013systematic}, the literature justifies the use of: 
+
+  \begin{itemize}
+    \item ACM Digital Library (already included)
+    \item IEEE Explore (already included)
+  \end{itemize}
+
+Two of the following indexes:
+  \begin{itemize}
+    \item SCOPUS
+    \item EI Compndix
+    \item Web of Science
+    \item Google Scholar (already included)
+  \end{itemize}
+
+\item Where are the search terms?
+
+We will explicitly enumerate and mention the search term.
+
+\item Search process not described
+
+This will be beefed up with added information from the adjusted search strategy derived from the Zhang method.
+
+\item Search terms too generic. Why isn't search focused on research questions?
+
+Zhang \cite{zhang2011identifying} proposes (based on empirical testing) two methods for selecting search terms.
+
+Subjective - researchers derive search terms based on expert knowledge and the results of the "quasi-gold standard (QGS)" paper set or the use of Kitchenhams suggested population, intervention, comparison, outcomes, context, study designs
+Objective - researchers use a textual analysis tool aimed at the QGS paper set to derive most commonly used words and word relationships to then build the search term
+
+\item No mention of using different syntax for different search engines based on how different engines parse search strings.
+
+We will note any differences in how the search term is applied for different search engines.
+
+\item Type of search: full-text? title? abstract?
+
+We can address this by only specifically mentioning it for the manual search process since the automatic search will use common search engines.
+
+\item Whyat type of papers did the authors target? research? white paper? journal? conference?
+
+We can address this by only specifically mentioning it for the manual search process since the automatic search will use common search engines.
+
+\item Was search restricted to a publication period?
+
+We can address this by only specifically mentioning it for the manual search process since the automatic search will use common search engines.
+
+\item Reports of reviewers agreement/disagreement too coarse. IRR analyses recommended by Kitchenham.
+
+We'll calculate and use the Cohen Kappa value for this.
+
+\item Reasoning for stopping criteria never explained, especially technical limitations and what they are.
+
+This one may be trickier as a lot of SLRs don't require a stopping criteria due to how the search term is constructed.
+This item may take care of itself with the adjustments to the process and if not we'll specify the technical limitations for any search engine as the reason for why we "stopped".
+
+\item Why not use quasi-gold standard for search threshold?
+
+Zhang method will achieve this.
+
+\item No motivation for why "model" is important as a search term.
+
+Choice of subjective or objective will handle this justification.
+
+\item "conditional inclusion criteria" not allowed by SLR process
+
+We can pair down our inclusion/exclusion criteria and move some of the items into the data collection aspect.
+I noted that a number of SLRs use only a few inclusion/exclusion criteria.
+
+\item Corpus too small
+
+We can add a threat to validity if the corpus is too small and note that the search process followed a systematic approach.
+
+\item Question about changing the inclusion/exclusion criteria as not being systematic
+
+We can justify this more in the text as Kitchenham even mentions being able to iterate some elements as the search proceeds.
+
+\item No jutification for deviating from initial procedure
+
+Changing our methodology to Zhang should take care of this.
+
+\item "inspired by real world example" - what does this mean?
+
+\item Table 3/4 inconsistent
+
+\item No papers from joournals/conferences related to access control such as SACMAT, missing papers from ACM TISSEC
+
+We can include these journals as part of the manual QGS approach prior to the automatic search.
+
+\item Why the search chain?
+
+Handled by Zhang.
+
+\item Criteria for selecting sources?
+
+Handled by Zhang method manual and automatic engines listed from Kitchenham.
+
+\item Why "model" in the title is important and not something like "policy"?
+
+This can be handled by the derivation of search terms from the subjective/objective method.
+
+\end{itemize}
+
+
+\section{RQ1 Breakdown}
+
+\begin{itemize}
+
+\item Not clear how the authors established the common terms.
+
+\item How did the authors systematically tag the included papers in terms of a content analysis?
+
+\item Was this done ad hoc (during paper reading) or as a preparatory step?
+
+\item Authors defined the classification criteria by observation during paper reading.
+
+\item The authors defined comparison items by themselves. Are there existing frameworks for comparing access control policies?
+
+\end{itemize}
+
+
+\section{RQ2 Breakdown}
+
+\begin{itemize}
+
+\item How do the answers to this RQ relate to the SLR?
+
+\item This section reads like a discussion based on authors intuitions or conjectures
+
+\end{itemize}
+
+
+\section{RQ4 Breakdown}
+
+\begin{itemize}
+
+\item Why do the authors only distinguish between enterprise/prototype implementations?
+
+\item What about distinguishing different "implementation techniques" ?
+
+\item What about other evaluation techniques such as case studies, static and dynamic analysis, formal proofs or controller experiments for example?
+
+\end{itemize}
+
+
+\section{RQ6 Breakdown}
+
+\begin{itemize}
+
+\item Authors suggestion of "propositional logic" is purely discussion and not backed by any data from the SLR
+
+\end{itemize}
+
+
+\section{Discussion Breakdown}
+
+\begin{itemize}
+
+\item Why the "Hu \& Scarfone" metrics?
+
+\item Did the authors perform a prior comparative analysis of different metrics?
+
+\end{itemize}
