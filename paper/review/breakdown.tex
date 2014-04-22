@@ -5,16 +5,22 @@
 \begin{itemize}
 
 \item Broken literature references in Table 5
+We address this issue.
 
 \item Tables 3,4,5 are not sorted in any order
+We manually sort by the order of the paper.
 
 \item Additional figures/visualizations would help
+[TBD] Eric and I would discuss this issue because the reviewer did not clearly which kinds of figures/visualizations would be needed.
 
 \item Reference section has incomplete entries
+We address this comment by looking at the each reference item and find missing entry. We check each entry with ACM or IEEE Bibtex. Consistent formatting will be done as well.
 
 \item Spelling, grammar and punctuation flaws
+We address this by spell check and grammar check (in Latex compiler). In addition, we convert it to MS word for additional spell check and grammar check. After this step, we will conduct manual proof reading.
 
 \item Table 6 should be revised to have better structure
+[TBD]  Eric and I would discuss this issue because the reviewer did not clearly mention what's the issue or how to revise Table 6.
 
 \end{itemize}
 
@@ -24,8 +30,10 @@
 \begin{itemize}
 
 \item This section should be shortened to at most 1 page.
+We address this comment by revising the background section.
 
 \item Definitions of static and dynamic separation of duty are incorrect.
+We find reference of static and dynamic separation of duty from NIST RBAC standard. We refer to "The NIST Model for Role-Based Access Control: Towards A Unified Standard."
 
 \end{itemize}
 
@@ -70,6 +78,8 @@ Journals/Conferences of Access Control:
     \item International Conference on Information Security and Assurance
     \item International Conference on Information Systems Security
     \item International Conference on Information Assurance and Security
+    \item International Symposium on Policies for Distributed Systems and Networks
+    \item ACM Conference on Data and Application Security and Privacy
   \end{itemize}
 
 \item Where are the search terms?
@@ -165,14 +175,21 @@ This can be handled by the derivation of search terms from the subjective/object
 \begin{itemize}
 
 \item Not clear how the authors established the common terms.
+We find the terms by bottom-up approach by looking at the paper and finding common terms that can characterize the paper. 
 
 \item How did the authors systematically tag the included papers in terms of a content analysis?
 
 \item Was this done ad hoc (during paper reading) or as a preparatory step?
+We address this issue by describing our approach. We do it by bottom-up search to find terms and construct it. Need to find such a method for classification (I don't think that our approach is ad-hoc if we find it during paper reading).
 
 \item Authors defined the classification criteria by observation during paper reading.
+Same as above.
 
 \item The authors defined comparison items by themselves. Are there existing frameworks for comparing access control policies?
+
+In our SLR, we measure not only access control policies, but also measure approaches of papers.
+There are some such as "Hu \& Scarfone" metrics to measure access control policies themselves. We may find some papers that describe metrics. However, their metrics are limited to measure a specific property (such as complexity) of a given access control policy. 
+
 
 \end{itemize}
 
@@ -182,8 +199,10 @@ This can be handled by the derivation of search terms from the subjective/object
 \begin{itemize}
 
 \item How do the answers to this RQ relate to the SLR?
+We address this issue by checking SLR process to understand what kinds of answers would be expected. Then, we adjust our answers to fit to SLR.
 
 \item This section reads like a discussion based on authors intuitions or conjectures
+We would move this section to discussion section if this one may not fit well to the RQs for SLR.
 
 \end{itemize}
 
@@ -193,10 +212,13 @@ This can be handled by the derivation of search terms from the subjective/object
 \begin{itemize}
 
 \item Why do the authors only distinguish between enterprise/prototype implementations?
+In the development process, modeling -> research prototype -> implementations in the real world systems.
+Our selected papers dealt with modeling of access control policies. Then, we would like to check whether this model is provided with a prototype and implementation.
 
 \item What about distinguishing different "implementation techniques" ?
 
 \item What about other evaluation techniques such as case studies, static and dynamic analysis, formal proofs or controller experiments for example?
+We find from bottom-up approach.
 
 \end{itemize}
 
@@ -206,6 +228,7 @@ This can be handled by the derivation of search terms from the subjective/object
 \begin{itemize}
 
 \item Authors suggestion of "propositional logic" is purely discussion and not backed by any data from the SLR
+We find reference paper about this propositional logic, which is used for papers collected for us. 
 
 \end{itemize}
 
@@ -215,7 +238,9 @@ This can be handled by the derivation of search terms from the subjective/object
 \begin{itemize}
 
 \item Why the "Hu \& Scarfone" metrics?
+We use this metric to show additional metrics.
 
 \item Did the authors perform a prior comparative analysis of different metrics?
+[TBD] 
 
 \end{itemize}
