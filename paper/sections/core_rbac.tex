@@ -1,24 +1,14 @@
 \section{Role-Based Access Control Standard} \label{sec:core-rbac}
 
-RBAC provides effective and efficient permissions management for operations, especially when sharing resources within an organization.
-Prior to the creation of the NIST RBAC standard, no general agreement on the definition 
-of RBAC existed among practitioners or within the research community. 
-Without a unified definition of RBAC, software developers described similar concepts and features of RBAC models using different terminology. 
-The lack of consistent terminology was shown to slow the implementation of RBAC~\cite{o20102010}.  
-Moreover, in cases where organizations were concerned with adopting RBAC,
-evaluation and comparison of RBAC technologies developed by different vendors was difficult.
-NIST, in collaboration with industry and academics, worked on defining a set of consensus RBAC concepts and terminology and proposed a standard for 
-RBAC that addressed these cost and interoperability issues by developing a common definition that can be used across different vendors.
+RBAC provides a high level abstraction of permissions management for operations, especially when sharing resources among roles within an organization. 
+In cases where organizations were concerned with adopting RBAC, evaluation and comparison of RBAC technologies developed by different vendors was difficult.
+To address this issue, NIST proposed a standard for RBAC.
+NIST's RBAC standard can benefit organizations by lowering the cost of RBAC adoption~\cite{o20102010}.
+The RBAC standard includes three components of RBAC: core RBAC, hierarchical RBAC, and constrained RBAC. 
+Hierarchical RBAC and constrained RBAC are developed by incorporating new features into core RBAC.
+Each component includes a corresponding RBAC Reference model.
 
-NIST's work can directly benefit organizations by lowering the cost of early phase research and development, and implementation of RBAC.
-Since the RBAC standard was first introduced, a 2010 report by RTI International showed that the rate of RBAC adoption has rapidly grown~\cite{o20102010}. 
-The analysts estimate that the use of RBAC technology has saved industry \$6.1 billion from 1992 to 2009 and the research and development work by NIST to produce an RBAC standard has saved an additional \$1.1 billion that wold have otherwise been spent across the industry doing research and development on RBAC.
-
-The RBAC standard includes three components of RBAC: core RBAC, hierarchical RBAC, and constrained RBAC. Each component includes a corresponding RBAC Reference model. We first describe the core RBAC, associated entities and other terminology. We next describe hierarchical RBAC and constrained RBAC, which are developed by incorporating new features into core RBAC. 
-
-\subsection{Core RBAC} 
-
-The four entities of the core RBAC Reference Model are:
+We describe the four entities of these reference models.
 
 \begin{itemize}
 \setlength{\itemsep}{0.25pt}
@@ -28,6 +18,9 @@ The four entities of the core RBAC Reference Model are:
 \item \emph{Sessions}: A session is a mapping between a user and an activated subset of roles that are assigned to the user.
 \end{itemize}
 
+%\subsection{Core RBAC} 
+%The four entities of the core RBAC Reference Model are:
+
 In RBAC, a user can exercise a permission only if the user is assigned to a role that contains the permission.
 In addition to the four basic entities, two functions are defined:
 user assignment ($UA$) and permission assignment ($PA$) functions.
@@ -36,39 +29,25 @@ $PA$ represents assignment of permissions to roles.
 Permissions are associated with possible users' pre-defined operation on an object (e.g., execute a file).
 Note that, at user or role activation, a session associated with user or role is established.
 
-
-\subsection{Hierarchical RBAC} 
-
-The hierarchical RBAC Reference Model adds role hierarchies ($RH$) as a feature to the core RBAC Reference Model.
-$RH$ incorporates a structure of roles in an organization using inheritance relationships among attributes such as roles.
+On the top of the core RBAC Reference Model, the hierarchical RBAC Reference Model adds role hierarchies ($RH$) as a feature. 
 The role structure in an organization may use
 a role $r_1$, which inherits all permissions of another role $r_2$.
-For example, a manager role may inherit all permissions of an employee role.
-Role hierarchies help simplify access control policy creation and maintenance by reducing the number of
-individual role assignments for a user. 
-Concept of the role inheritance describes the many-to-many mapping role inheritance relations among roles.
-Therefore, more than one role (e.g., two roles $r_1$ and $r_1'$) can inherit all permissions of $r_2$ 
-General role hierarchies can be extended to use the concept of multiple inheritances where
-$r_1$ inherits all permissions from more than one role (e.g., two roles $r_2$ and $r_2'$) .
+Concept of the role inheritance describes the many-to-many mapping role inheritance relations among roles. Therefore, more than one role (e.g., two roles $r_1$ and $r_1'$) can inherit all permissions of $r_2$.
 
-
-\subsection{Constrained RBAC}
-
-The constrained RBAC Reference Model adds separation of duty relations to the core and hierarchical RBAC Reference Models. 
-Separation of duty relations enforce conflicts of interest among roles. 
-The Constrained RBAC model defines two types of separation of duty relations: static and dynamic.
+The constrained RBAC Reference Model adds separation of duty relations to the core and hierarchical RBAC Reference Models. Separation of duty relations enforce conflicts of interest among roles. 
+The Constrained RBAC model defines two types of constraints placed on the user-role assignments:
+Static Separation of Duty (SSoD) and Dynamic Separation of Duty (DSD).
 
 \begin{itemize}
-\item Static Separation of Duty (SSoD): SSoD restricts the conflicting-roles, which can be assigned to a single user statically. 
-Suppose roles $Role_A$ and $Role_B$ conflict with each other. On situations where multiple roles can be associated with a single user, no permission is given to a user who is assigned to both $Role_A$ and $Role_B$ statically. 
-SSoD is known to be too rigid for practical use in cases where a user should have permissions when a user is assigned to both $Role_A$ and $Role_B$. 
-For example, an accounting clerk role requests a check and an accounting manager role approves the check. 
-These two roles must be mutually exclusive to avoid a situation where one approves the check that the other requested.
+\item SSoD relations define constraints as a pair ($role set$, $n$) statically where no user is assigned to more than $n$ roles from the $role set$.
+Suppose roles $Role_A$ and $Role_B$ in $role set$ conflict with each other and $n$ is 2. A user who is assinged to $Role_A$ cannot be assigned to $Role_B$.
+%For example, an accounting clerk role requests a check and an accounting manager role approves the check. 
+%These two roles must be mutually exclusive to avoid a situation where one approves the check that the other requested.
 	
-\item Dynamic Separation of Duty (DSD): DSD is known to be more flexible than SSoD. 
-DSD restricts the conflicting-role assignments dynamically that are associated with a user. 
-Suppose roles $Role_A$ and $Role_B$ conflict with each other. 
-For situations where multiple roles can be associated with a single user, no permission is given to a user who is assigned to both $Role_A$ and $Role_B$ dynamically.	
-Consider that a user can be assigned to the accounting clerk and accounting manager role at the same time.
-In such a situation, DSD can enforce that the accounting manager role does not approve her/his requested checks but can only approve checks that others have requested.
+\item DSD relations define constraints as a pair ($role set$, $n$) dynamically where $n$ is a number, with the property that
+user session may not activate more than $n$ roles from the $role set$.
+For situations where multiple roles can be associated with a single user and $n$ is 2, a user session cannot be assigned to both $Role_A$ and $Role_B$ at the same time. 
+%Consider that a user can be assigned to the accounting clerk and accounting manager role at the same time.
+%In such a situation, DSD can enforce that the accounting manager role does not approve her/his requested checks but can only approve checks that others have requested.
 \end{itemize}
+
